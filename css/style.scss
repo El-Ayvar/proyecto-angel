@@ -57,6 +57,7 @@
 
 @mixin header {
     align-items: center;
+    background-color: rgb(238, 249, 250);
     display: flex;
     flex-direction: row;
     height: 15vh;
@@ -80,6 +81,11 @@
         @include info-cards();
         @include box-column();
         }
+}
+
+@mixin text_reveal {
+    height: 55vh;
+    margin: 0vw;
 }
 
 @mixin info-cards {
@@ -178,9 +184,8 @@ main {
         height: 20vh;
     }
 
-    .text_reveal {
-        height: 47vh;
-        margin: 0vw;
+    #box_fractura {
+        @include text_reveal();
     }
 
     .text_slide {
@@ -203,12 +208,12 @@ main {
     .fractura {
         @include img();
         @include opacar-right();
-        height: 22vh;
+        height: 20vh;
     }
 
     .card_fractura {
         background-color: $color-fondo;
-        height: 45vh;
+        height: 40vh;
         border-radius: 15px;
     }
 
@@ -217,8 +222,8 @@ main {
     }
 
     #boximg_fractura {
-        height: 41.4vh;
-        margin: 1vw 0 0 0;
+        height: 40vh;
+        margin: 0vw;
     }
 
     .desvanecido {
@@ -250,9 +255,68 @@ main {
         }
     }
     #tratamientos {
-        height: 110vh;
+        height: 210vh;
     }
     
+    #card_sarro {
+        @include box-row();
+        border-radius: 15px;
+        background-color: $color-fondo;
+        height: 50vh;
+    }
+
+    #info_sarro {
+        height: 46vh
+    }
+
+    .sarro {
+        @include opacar-right();
+        border-radius: 15px;
+        width: 60vw;
+        height: 23vh;
+    }
+
+    #box_sarro {
+        @include text_reveal();
+        height: 46vh;
+    }
+
+    #boximg_sarro {
+        border-radius: 15px;
+        height: 46vh;
+        margin: 0vw;
+    }
+
+    #box_amalgama {
+        height: 40vh
+    }
+
+    #card_amalgama {
+        @include box-row();
+        border-radius: 15px;
+        background-color: $color-fondo;
+        height: 40vh;
+    }
+    
+    #boximg_amalgama {
+        margin: 0vw;
+        height: 40vh;
+    }
+
+    .amalgama {
+        @include opacar-left();
+        border-radius: 15px;
+        height: 40vh;
+        width: 50vw;
+    }
+
+    #info_amalgama {
+        padding: 0 0 0 1vw;
+        strong {
+            width: 40vw;
+            text-align: start;
+        }
+    }
 }
 
 button {

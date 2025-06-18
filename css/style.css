@@ -16,6 +16,7 @@ body {
 
 header {
   align-items: center;
+  background-color: rgb(238, 249, 250);
   display: flex;
   flex-direction: row;
   height: 15vh;
@@ -102,8 +103,8 @@ main .reveal_slide {
 main .reveal_fade {
   height: 20vh;
 }
-main .text_reveal {
-  height: 47vh;
+main #box_fractura {
+  height: 55vh;
   margin: 0vw;
 }
 main .text_slide {
@@ -126,11 +127,11 @@ main .fractura {
   mask-image: linear-gradient(to right, black 40%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  height: 22vh;
+  height: 20vh;
 }
 main .card_fractura {
   background-color: #DAF1F0;
-  height: 45vh;
+  height: 40vh;
   border-radius: 15px;
 }
 main .cards_tratamientos {
@@ -147,8 +148,8 @@ main .cards_tratamientos div {
   justify-content: space-around;
 }
 main #boximg_fractura {
-  height: 41.4vh;
-  margin: 1vw 0 0 0;
+  height: 40vh;
+  margin: 0vw;
 }
 main .desvanecido {
   -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
@@ -182,7 +183,70 @@ main #info_restauracion p {
   font-size: 3.5vw;
 }
 main #tratamientos {
-  height: 110vh;
+  height: 210vh;
+}
+main #card_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 15px;
+  background-color: #DAF1F0;
+  height: 50vh;
+}
+main #info_sarro {
+  height: 46vh;
+}
+main .sarro {
+  -webkit-mask-image: linear-gradient(to right, black 40%, transparent 100%);
+  mask-image: linear-gradient(to right, black 40%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  border-radius: 15px;
+  width: 60vw;
+  height: 23vh;
+}
+main #box_sarro {
+  height: 55vh;
+  margin: 0vw;
+  height: 46vh;
+}
+main #boximg_sarro {
+  border-radius: 15px;
+  height: 46vh;
+  margin: 0vw;
+}
+main #box_amalgama {
+  height: 40vh;
+}
+main #card_amalgama {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 15px;
+  background-color: #DAF1F0;
+  height: 40vh;
+}
+main #boximg_amalgama {
+  margin: 0vw;
+  height: 40vh;
+}
+main .amalgama {
+  -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
+  mask-image: linear-gradient(to left, black 40%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  border-radius: 15px;
+  height: 40vh;
+  width: 50vw;
+}
+main #info_amalgama {
+  padding: 0 0 0 1vw;
+}
+main #info_amalgama strong {
+  width: 40vw;
+  text-align: start;
 }
 
 button {
