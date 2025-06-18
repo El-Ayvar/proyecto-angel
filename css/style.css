@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-size: 16px;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 15vh;
+  justify-content: space-around;
+  width: 100vw;
+}
+header img {
+  width: 15vw;
+  cursor: pointer;
+}
+header #logo {
+  width: 40vw;
+}
+header #menu {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#sideMenu {
+  position: fixed;
+  top: 0;
+  right: -10rem;
+  width: 10rem;
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 1;
+}
+#sideMenu.active {
+  right: 0;
+}
+#sideMenu .menu_option {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+main h1 {
+  color: #87D0CD;
+  font-size: 7vw;
+  text-align: center;
+  margin: 3vw 0 3vw 0;
+}
+main h2 {
+  color: #86D3DC;
+  font-size: 5vw;
+  padding: 0 0 0 1vw;
+}
+main section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 25vh;
+  margin: 0 0 2vw 0;
+}
+main .subtitulo_fade {
+  position: relative;
+  width: 90vw;
+  height: 8vh;
+  margin: 0vw;
+  right: 5vw;
+}
+main .subtitulo_slide {
+  position: relative;
+  width: 90vw;
+  height: 8vh;
+  margin: 0vw;
+  right: 5vw;
+}
+main .reveal_slide {
+  height: 20vh;
+}
+main .reveal_fade {
+  height: 20vh;
+}
+main .text_reveal {
+  height: 43vh;
+}
+main p {
+  font-size: 3vw;
+}
+main a {
+  color: #86D3DC;
+}
+main h3 {
+  color: #86D3DC;
+  font-size: 6vw;
+}
+main .fractura {
+  border-radius: 15px;
+  width: 50vw;
+  -webkit-mask-image: linear-gradient(to right, black 40%, transparent 100%);
+  mask-image: linear-gradient(to right, black 40%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+main .card_fractura {
+  background-color: #DAF1F0;
+  height: 44.6vh;
+  border-radius: 15px;
+}
+main .cards_tratamientos {
+  flex-direction: row;
+  width: 90vw;
+  height: 40vh;
+}
+main .cards_tratamientos div {
+  height: 40vh;
+  opacity: 0.5;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+main #boximg_fractura {
+  height: 40vh;
+  margin: 1vw 0 0 0;
+}
+main .desvanecido {
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+main #card_restauracion {
+  background-color: #DAF1F0;
+  border-radius: 15px;
+  height: 60vh;
+}
+main .restauracion {
+  border-radius: 15px;
+  width: 50vw;
+  -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
+  mask-image: linear-gradient(to left, black 40%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+main #boximg_restauracion {
+  height: 60vh;
+  margin: 0px;
+}
+main #info_restauracion {
+  padding: 0 0 0 1vw;
+  height: 60vh;
+}
+main #info_restauracion p {
+  font-size: 3.5vw;
+}
+main #tratamientos {
+  height: 120vh;
+}
+
+button {
+  background-color: rgba(255, 255, 255, 0.674);
+  border: 2px solid rgb(99, 130, 143);
+  color: rgb(99, 130, 143);
+  font-size: 4vw;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+footer {
+  width: 100vw;
+  border: solid;
+}/*# sourceMappingURL=style.css.map */

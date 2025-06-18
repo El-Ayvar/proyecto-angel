@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Ayvar dent</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="assets/img/logo.png" alt="Logo de AyvarDent">
+        <img src="assets/img/hamburgues.png" alt="Abrir menú" onclick="toggleMenu()" />
+
+        <div id="sideMenu">
+            <div class="menu_option">Inicio</div>
+            <div class="menu_option">Hubicación</div>
+            <div class="menu_option">Tratamientos</div>
+            <div class="menu_option">Contacto</div>
+            <div class="menu_option" onclick="closeMenu()">Cerrar menú</div>
+        </div>
+    </header>
+    <main>
+        <h1>Excelencia clínica para una sonrisa funcional y hermosa</h1>
+        <section class="subtitulo_fade">
+            <h2>Bienvenido a tu espacio de salud bucal.</h2>
+        </section>
+        <section class="reveal_fade">
+            <p>Soy cirujano dentista egresado del Instituto de Desarrollo Salvador Allende Gossens <a href="https://www.indesag.com/"> (INDESAG) </a> , una institución comprometida con la formación integral, la ética profesional y la excelencia clínica. </p>
+            <p>Mi misión es brindarte atención personalizada, basada en conocimiento científico, tecnología actual y un trato humano que inspire confianza. Tu sonrisa es única.</p>
+            <p>Mi compromiso es cuidarla con precisión, empatía y dedicación.</p>
+        </section>
+        <section class="subtitulo_slide">
+        <h2>Formación integral, atención de excelencia</h2>
+        </section>
+        <section class="reveal_slide">
+            <p>Gracias a su formación en el Instituto de Desarrollo Salvador Allende Gossens <a href="https://www.indesag.com/"> (INDESAG) </a>, el Dr. Jose Angel cuenta con una preparación sólida en diagnóstico clínico, tratamientos restaurativos, cirugía oral, implantología, estética dental y prevención integral.</p> 
+            <p>Su enfoque combina precisión técnica, sensibilidad humana y el uso de tecnología moderna para ofrecer soluciones personalizadas a cada paciente.</p>
+        </section>
+        <section id="tratamientos">
+            <section class="text_reveal">
+                <section class="card_fractura">
+                    <h3>¿Qué puedo hacer por ti?</h3>
+                    <section class="cards_tratamientos">
+                        <section id="boximg_fractura" >
+                            <img class="fractura" src="assets/img/RFractura.jpg" alt="Diente fracturado">
+                            <img class="fractura" src="assets/img/RFractura1.jpg" alt="Diente fracturado arreglado">
+                        </section>
+                        <div class="info_cards"><strong>RESTAURACIÓN DENTAL POR FRACTURA </strong>
+                            <p>Procedimientos basicos de restauración por fractura.</p>
+                            <p class="desvanecido">El dentista examina el diente fracturado y toma radiografías para determinar si la fractura afecta solo el esmalte, la dentina o también la pulpa.</p>
+                            <button type="button" id="search_btn">Ver màs</button>
+                        </div>
+                    </section>
+                </section>    
+            </section>
+                    <section id="card_restauracion" class="cards_tratamientos">
+                            <div id="info_restauracion" class="info_cards"> <strong>RESTAURACIÓN Y REHABILITACIÓN DENTAL</strong>
+                                <strong>Procedimientos involucrados: </strong>
+                                <p>Endodoncia: Si el daño llegó a la pulpa dental.</p>
+                                <p>Tallado dental: Para preparar el diente para una corona.</p>
+                                <p>Colocación de coronas o puentes: Para restaurar la funcionalidad y estética.</p>
+                                <p class="desvanecido">Implantes dentales: Si el diente no pudo salvarse y fue reemplazado.</p>
+                                <button type="button" id="search_btn">Ver màs</button>
+                            </div>
+                        <section id="boximg_restauracion">
+                            <img class="restauracion" src="assets/img/restauracion.jpg" alt="Diente con caries severa">
+                            <img class="restauracion" src="assets/img/restauracion1.jpg" alt="Diente con caries severa a la mitad de arreglo">
+                            <img class="restauracion" src="assets/img/restauracion2.jpg" alt="Diente totalmente reparado">
+                        </section>
+                    </section>
+                    <li>Implantología</li>
+                    <li>Estética dental</li>
+                    <li>Prevención integral</li>  
+        </section> 
+    </main>
+    <footer>
+        <p>Hubicación</p>
+        <p>Como contactarlo</p>
+    </footer>
+</body>
+</html>

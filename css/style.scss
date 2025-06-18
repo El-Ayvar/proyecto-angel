@@ -1,0 +1,266 @@
+
+@mixin wiport {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+@mixin body {
+    align-items:center;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-size: 16px;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+@mixin opacar-right{
+        -webkit-mask-image: linear-gradient(to right, black 40%, transparent 100%);
+        mask-image: linear-gradient(to right, black 40%, transparent 100%);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+}
+
+@mixin opacar-left{
+        -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
+        mask-image: linear-gradient(to left, black 40%, transparent 100%);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+}
+
+@mixin opacar-botom {
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+@mixin img {
+    border-radius: 15px;
+    width: 50vw;
+}
+
+@mixin box-column {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+
+@mixin box-row {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+@mixin header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    height: 15vh;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+@mixin subtitulos{
+    position: relative;
+    width: 90vw;
+    height: 8vh;
+    margin: 0vw;
+    right: 5vw;
+}
+
+@mixin cards {
+    flex-direction: row;
+    width: 90vw;
+    height: 40vh;
+    div {
+        @include info-cards();
+        @include box-column();
+        }
+}
+
+@mixin info-cards {
+        height: 40vh;
+        opacity: 0.5;
+}
+
+$menu-width: 10rem;
+$menu-bg: #333;
+$transition-speed: 0.3s;
+$titulo: #87D0CD;
+$sub-titulo: #86D3DC;
+$color-fondo: #DAF1F0;
+
+* {
+    @include wiport();
+}
+
+body {
+    @include body();
+}
+
+header{
+    @include header();
+    img {
+        width:15vw;
+        cursor: pointer;
+    }
+
+    #logo {
+        width: 40vw;
+    }
+
+    #menu {
+        @include box-row();
+    }
+}
+
+#sideMenu {
+    position: fixed;
+    top: 0;
+    right: -$menu-width;
+    width: $menu-width;
+    height: 100vh;
+    background-color: $menu-bg;
+    color: white;
+    padding: 20px;
+    transition: right $transition-speed ease;
+    z-index: 1;
+
+    &.active {
+        right: 0;
+    }
+
+    .menu_option {
+        margin: 10px 0;
+        cursor: pointer;
+    }
+}
+
+main {
+    @include box-column();
+    h1 {
+        color: $titulo;
+        font-size: 7vw;
+        text-align: center;
+        margin: 3vw 0 3vw 0;
+    }
+
+    h2 {
+        color: $sub-titulo;
+        font-size: 5vw;
+        padding: 0 0 0 1vw;
+    }
+
+    section {
+        @include box-column();
+        width: 90vw;
+        height: 25vh;
+        margin: 0 0 2vw 0;
+    }
+
+    .subtitulo_fade {
+        @include subtitulos();
+    }
+
+    .subtitulo_slide {
+        @include subtitulos();
+    }
+
+    .reveal_slide {
+        height: 20vh;
+    }
+
+    .reveal_fade {
+        height: 20vh;
+    }
+
+    .text_reveal {
+        height: 43vh;
+    }
+
+    p {
+        font-size: 3vw;
+    }
+
+    a {
+        color: $sub-titulo;
+    }
+
+    h3 {
+        color: $sub-titulo;
+        font-size: 6vw;
+    }
+    
+    .fractura {
+        @include img();
+        @include opacar-right();
+    }
+
+    .card_fractura {
+        background-color: $color-fondo;
+        height: 44.6vh;
+        border-radius: 15px;
+    }
+
+    .cards_tratamientos {
+        @include cards();
+    }
+
+    #boximg_fractura {
+        height: 40vh;
+        margin: 1vw 0 0 0;
+    }
+
+    .desvanecido {
+        @include opacar-botom();
+    }
+
+    #card_restauracion {
+        background-color: $color-fondo;
+        border-radius: 15px;
+        height: 60vh;
+    }
+
+    .restauracion {
+        @include img();
+        @include opacar-left();
+    }
+        
+    #boximg_restauracion {
+        height: 60vh;
+        margin: 0px;
+    }
+
+    #info_restauracion {
+        padding: 0 0 0 1vw;
+        height: 60vh;
+        p {
+            font-size: 3.5vw;
+        }
+    }
+    #tratamientos {
+        height: 120vh;
+    }
+    
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.674);
+    //background: transparent;
+    border: 2px solid rgb(99, 130, 143);;
+    color: rgb(99, 130, 143);
+    font-size: 4vw;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+footer {
+    width: 100vw;
+    border: solid;
+}
