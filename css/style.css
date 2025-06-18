@@ -103,12 +103,16 @@ main .reveal_fade {
   height: 20vh;
 }
 main .text_reveal {
-  height: 43vh;
+  height: 47vh;
+  margin: 0vw;
+}
+main .text_slide {
+  height: 60vh;
 }
 main p {
   font-size: 3vw;
 }
-main a {
+main .links {
   color: #86D3DC;
 }
 main h3 {
@@ -122,10 +126,11 @@ main .fractura {
   mask-image: linear-gradient(to right, black 40%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+  height: 22vh;
 }
 main .card_fractura {
   background-color: #DAF1F0;
-  height: 44.6vh;
+  height: 45vh;
   border-radius: 15px;
 }
 main .cards_tratamientos {
@@ -142,7 +147,7 @@ main .cards_tratamientos div {
   justify-content: space-around;
 }
 main #boximg_fractura {
-  height: 36vh;
+  height: 41.4vh;
   margin: 1vw 0 0 0;
 }
 main .desvanecido {
@@ -154,7 +159,7 @@ main .desvanecido {
 main #card_restauracion {
   background-color: #DAF1F0;
   border-radius: 15px;
-  height: 56vh;
+  height: 60vh;
 }
 main .restauracion {
   border-radius: 15px;
@@ -163,6 +168,7 @@ main .restauracion {
   mask-image: linear-gradient(to left, black 40%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+  height: 20vh;
 }
 main #boximg_restauracion {
   height: 60vh;
@@ -176,7 +182,7 @@ main #info_restauracion p {
   font-size: 3.5vw;
 }
 main #tratamientos {
-  height: 120vh;
+  height: 110vh;
 }
 
 button {

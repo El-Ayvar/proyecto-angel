@@ -179,14 +179,19 @@ main {
     }
 
     .text_reveal {
-        height: 43vh;
+        height: 47vh;
+        margin: 0vw;
+    }
+
+    .text_slide {
+        height: 60vh;
     }
 
     p {
         font-size: 3vw;
     }
 
-    a {
+    .links {
         color: $sub-titulo;
     }
 
@@ -198,11 +203,12 @@ main {
     .fractura {
         @include img();
         @include opacar-right();
+        height: 22vh;
     }
 
     .card_fractura {
         background-color: $color-fondo;
-        height: 44.6vh;
+        height: 45vh;
         border-radius: 15px;
     }
 
@@ -211,7 +217,7 @@ main {
     }
 
     #boximg_fractura {
-        height: 36vh;
+        height: 41.4vh;
         margin: 1vw 0 0 0;
     }
 
@@ -222,12 +228,13 @@ main {
     #card_restauracion {
         background-color: $color-fondo;
         border-radius: 15px;
-        height: 56vh;
+        height: 60vh;
     }
 
     .restauracion {
         @include img();
         @include opacar-left();
+        height: 20vh;
     }
         
     #boximg_restauracion {
@@ -243,7 +250,7 @@ main {
         }
     }
     #tratamientos {
-        height: 120vh;
+        height: 110vh;
     }
     
 }
