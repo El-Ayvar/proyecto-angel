@@ -142,7 +142,7 @@ main .cards_tratamientos div {
   justify-content: space-around;
 }
 main #boximg_fractura {
-  height: 40vh;
+  height: 36vh;
   margin: 1vw 0 0 0;
 }
 main .desvanecido {
@@ -154,7 +154,7 @@ main .desvanecido {
 main #card_restauracion {
   background-color: #DAF1F0;
   border-radius: 15px;
-  height: 60vh;
+  height: 56vh;
 }
 main .restauracion {
   border-radius: 15px;
