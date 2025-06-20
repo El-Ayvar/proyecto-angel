@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-mx">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +9,16 @@
     <title>Ayvar dent</title>
 </head>
 <body>
+    <div id="inicio"></div>
     <header>
         <img id="logo" src="assets/img/logo.png" alt="Logo de AyvarDent">
         <img src="assets/img/hamburgues.png" alt="Abrir menú" onclick="toggleMenu()" />
 
         <div id="sideMenu">
             <div class="menu_option">Inicio</div>
-            <div class="menu_option">Hubicación</div>
+            <div class="menu_option">Ubicación</div>
             <div class="menu_option">Tratamientos</div>
+            <div class="menu_option">Promociones</div>
             <div class="menu_option">Contacto</div>
             <div class="menu_option" onclick="closeMenu()">Cerrar menú</div>
         </div>
@@ -103,12 +105,85 @@
                     </section>
                 </section>
             </section>
+            <section id="box_extraccion" class="text_reveal">
+                <section id="card_amalgama" class="cards_tratamientos">
+                    <section id="boximg_extraccion">
+                        <video id="video_extraccion"
+                            src="assets/img/extraccion.mp4" controls autoplay loop muted poster="assets/img/imgExtraccion.png">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </section>
+                    <div id="info_extraccion" class="info_cards"> <strong>EXTRACCIÓN QUIRÚRJICA DE MOLAR</strong>
+                        <strong>Procedimiento</strong>
+                        <p>Incisión gingival y despegue del colgajo.</p>
+                        <p>Osteotomía parcial para liberar la muela (si estaba retenida o impactada).</p>
+                        <p class="desvanecido">Sección de la corona y raíces, en caso de estar fusionadas o en</p>
+                        <button type="button" id="search_btn">Ver màs</button>
+                    <div>  
+                </section>
+            </section>
+            <section  id="box_blanqueamiento" class="text_slide">
+                <section id="card_blanqueamiento" class="cards_tratamientos">
+                    <div id="info_blanqueamiento" class="info_cards"> <strong>BLANQUEAMIENTO DENTAL PROFESIONAL</strong>
+                        <strong>Procedimiento realizado</strong>
+                        <p>Profilaxis inicial para eliminar placa y sarro.</p>
+                        <p>Aplicación de gel blanqueador con peróxido de hidrógeno.</p>
+                        <p class="desvanecido">Activación con lámpara LED para potenciar el efecto.</p>
+                        <button type="button" id="search_btn">Ver màs</button>
+                    </div>
+                    <section id="boximg_blanqueamiento">
+                        <img class="blanqueamiento" src="assets/img/blanqueamiento.jpg" alt="Dientes amarillentos">
+                        <img class="blanqueamiento" src="assets/img/blanqueamiento1.jpg" alt="Dientes blancos">
+                    </section>
+                </section>
+            </section>
         </section>
-                    <li>Prevención integral</li>  
+        <section id="box_publicidad">
+            <img class="text_slide" id="pub_promo" src="assets/img/blanqueamiento.png" alt="Promoción de blanqueamiento dental con limpieza ultrasonica">
+            <img class="text_reveal" id="pub_limpieza" src="assets/img/ultrasonica.jpg" alt="Promocion de limpiesa ultrasónica">
+        </section>
+            <a href="https://wa.me/527443822853?text=Hola%20mucho%20gusto,%20me%20gustaria%20agendar%20una%20cita%20con%20el%20doctor%20Jose%20Angel" target="_blank">
+                <img id="whatsapp" class="acceso_redes" src="assets/img/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100083437804633" target="_blank">
+                <img class="acceso_redes" src="assets/img/facebook.png" alt="Facebook">
+            </a>
     </main>
     <footer>
-        <p>Hubicación</p>
-        <p>Como contactarlo</p>
+        <section id="redes_sociales">
+            <section class="box_redes">
+                <strong>CONTÁCTANOS</strong>
+                <div class="box_social">
+                    <img class="logo" src="assets/img/logoWBN.png" alt="logo de whatsapp">
+                    <p><strong>Whatsapp:</strong>7443822853</p>
+                </div>
+                <div class="box_social">
+                    <img class="logo" src="assets/img/logoFBN.png" alt="logo de whatsapp">
+                    <p><strong>facebook:</strong>Ayvar den't</p>
+                </div>
+            </section>
+            <section class="box_redes">
+                <strong>CONTACT US</strong>
+                <div class="box_social">
+                    <img class="logo" src="assets/img/logoWBN.png" alt="logo de whatsapp">
+                    <p><strong>Whatsapp:</strong>7443822853</p>
+                </div>
+                <div class="box_social">
+                    <img class="logo" src="assets/img/logoFBN.png" alt="logo de whatsapp">
+                    <p><strong>facebook:</strong>Ayvar den't</p>
+                </div>
+            </section>
+        </section>
+        <section id="box_ubicacion">
+                <p><strong>Ubicación:</strong>
+                Nos encontramos en la Avenida Fuerza Aerea, Playa pie de la cuesta, a un costado del Hawai 5-0.</p>
+            <iframe id="maps" src="https://maps.app.goo.gl/eugFFb27c1TpNFhQ9" style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+        <a href="#inicio" id="box_boton"> <img class="btn_subir" src="assets/img/flecha.png" alt="boton para subir"></a>
     </footer>
 </body>
 </html>

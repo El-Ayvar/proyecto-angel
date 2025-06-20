@@ -93,6 +93,11 @@
         opacity: 0.5;
 }
 
+@mixin publicidad {
+    width: 95vw;
+    margin: 0vw 0 3vw 0;
+}
+
 $menu-width: 10rem;
 $menu-bg: #333;
 $transition-speed: 0.3s;
@@ -186,6 +191,7 @@ main {
 
     #box_fractura {
         @include text_reveal();
+        height: 48vh;
     }
 
     .text_slide {
@@ -255,7 +261,7 @@ main {
         }
     }
     #tratamientos {
-        height: 210vh;
+        height: 300vh;
     }
     
     #card_sarro {
@@ -266,7 +272,7 @@ main {
     }
 
     #info_sarro {
-        height: 46vh
+        height: 46vh;
     }
 
     .sarro {
@@ -288,7 +294,7 @@ main {
     }
 
     #box_amalgama {
-        height: 40vh
+        height: 40vh;
     }
 
     #card_amalgama {
@@ -317,12 +323,110 @@ main {
             text-align: start;
         }
     }
+
+    #box_extraccion {
+        height: 40vh;
+    }
+
+    #boximg_extraccion {
+        height: 40vh;
+        margin: 0vw;
+    }
+
+    #video_extraccion {
+        @include opacar-right();
+        width: 58vw;
+        border-radius: 15px;
+    }
+
+    #info_extraccion {
+        strong {
+            width: 30vw;
+            text-align: start;
+        }
+    }
+
+    .blanqueamiento {
+        @include opacar-left();
+        border-radius: 15px;
+        height: 40vh;
+        width: 50vw;
+    }
+
+    #box_blanqueamiento {
+        height: 40vh;
+    }
+
+    #boximg_blanqueamiento {
+        height: 40vh;
+        margin: 0vw;
+    }
+
+    #card_blanqueamiento {
+        @include box-row();
+        border-radius: 15px;
+        background-color: $color-fondo;
+    }
+
+    #pub_promo {
+        @include publicidad();
+    }
+
+    #pub_limpieza {
+        @include publicidad();
+    }
+
+    #box_publicidad {
+        width: 100vw;
+        height: 130vh;
+        background-color: rgba(238, 249, 250, 0.582);
+    }
+}
+
+.logo {
+    width: 4vw;
+}
+
+.box_social {
+    width: 42vw;
+    @include box-column();
+    height: 6vh;
+    color: rgba(0, 0, 0, 0.586);
+}
+
+#redes_sociales {
+    padding: 3vw;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50vh;
+    color: rgba(0, 0, 0, 0.586)
+}
+
+.box_redes {
+    @include box-column();
+    height: 20vh;
+}
+
+#box_ubicacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 35vh;
+    color: rgba(0, 0, 0, 0.586);
+    p {
+        padding: 3vw;
+    }
+}
+
+#maps {
+    width: 100vw;
 }
 
 button {
     background-color: rgba(255, 255, 255, 0.674);
     //background: transparent;
-    border: 2px solid rgb(99, 130, 143);;
+    border: 2px solid rgb(99, 130, 143);
     color: rgb(99, 130, 143);
     font-size: 4vw;
     padding: 10px 20px;
@@ -331,7 +435,35 @@ button {
     cursor: pointer;
 }
 
-footer {
+.acceso_redes {
+    width: 10vw;
+    position: fixed;
+    bottom: 5vw;
+    right: 1vw;
+}
+
+#whatsapp {
+    bottom: 17vw;
+}
+
+#box_boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
-    border: solid;
+}
+
+.btn_subir {
+    margin: 0 0 3vw 0;
+    border-radius: 20px;
+    background-color: rgba(121, 194, 196, 0.762);
+    width: 10vw;
+}
+
+footer {
+    @include box-column();
+    background-image: url("../assets/img/fondo.png");
+    background-size:cover;
+    background-attachment: fixed;
+    width: 100vw;
 }

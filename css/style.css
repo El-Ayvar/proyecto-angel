@@ -106,6 +106,7 @@ main .reveal_fade {
 main #box_fractura {
   height: 55vh;
   margin: 0vw;
+  height: 48vh;
 }
 main .text_slide {
   height: 60vh;
@@ -183,7 +184,7 @@ main #info_restauracion p {
   font-size: 3.5vw;
 }
 main #tratamientos {
-  height: 210vh;
+  height: 300vh;
 }
 main #card_sarro {
   align-items: center;
@@ -248,6 +249,108 @@ main #info_amalgama strong {
   width: 40vw;
   text-align: start;
 }
+main #box_extraccion {
+  height: 40vh;
+}
+main #boximg_extraccion {
+  height: 40vh;
+  margin: 0vw;
+}
+main #video_extraccion {
+  -webkit-mask-image: linear-gradient(to right, black 40%, transparent 100%);
+  mask-image: linear-gradient(to right, black 40%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  width: 58vw;
+  border-radius: 15px;
+}
+main #info_extraccion strong {
+  width: 30vw;
+  text-align: start;
+}
+main .blanqueamiento {
+  -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
+  mask-image: linear-gradient(to left, black 40%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  border-radius: 15px;
+  height: 40vh;
+  width: 50vw;
+}
+main #box_blanqueamiento {
+  height: 40vh;
+}
+main #boximg_blanqueamiento {
+  height: 40vh;
+  margin: 0vw;
+}
+main #card_blanqueamiento {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 15px;
+  background-color: #DAF1F0;
+}
+main #pub_promo {
+  width: 95vw;
+  margin: 0vw 0 3vw 0;
+}
+main #pub_limpieza {
+  width: 95vw;
+  margin: 0vw 0 3vw 0;
+}
+main #box_publicidad {
+  width: 100vw;
+  height: 130vh;
+  background-color: rgba(238, 249, 250, 0.582);
+}
+
+.logo {
+  width: 4vw;
+}
+
+.box_social {
+  width: 42vw;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 6vh;
+  color: rgba(0, 0, 0, 0.586);
+}
+
+#redes_sociales {
+  padding: 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
+  color: rgba(0, 0, 0, 0.586);
+}
+
+.box_redes {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20vh;
+}
+
+#box_ubicacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 35vh;
+  color: rgba(0, 0, 0, 0.586);
+}
+#box_ubicacion p {
+  padding: 3vw;
+}
+
+#maps {
+  width: 100vw;
+}
 
 button {
   background-color: rgba(255, 255, 255, 0.674);
@@ -260,7 +363,38 @@ button {
   cursor: pointer;
 }
 
-footer {
+.acceso_redes {
+  width: 10vw;
+  position: fixed;
+  bottom: 5vw;
+  right: 1vw;
+}
+
+#whatsapp {
+  bottom: 17vw;
+}
+
+#box_boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
-  border: solid;
+}
+
+.btn_subir {
+  margin: 0 0 3vw 0;
+  border-radius: 20px;
+  background-color: rgba(121, 194, 196, 0.762);
+  width: 10vw;
+}
+
+footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: url("../assets/img/fondo.png");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
 }/*# sourceMappingURL=style.css.map */
