@@ -1,5 +1,5 @@
-@use "_mixin.scss";
-@use "_variables.scss";
+@use "../sass/mixin" as *;
+@use "../sass/variables" as *;
 
 * {
     @include wiport();
@@ -41,15 +41,7 @@ html, body {
 }
 
 button {
-    background-color: rgba(255, 255, 255, 0.674);
-    //background: transparent;
-    border: 2px solid rgb(99, 130, 143);
-    border-radius: 30px;
-    color: rgb(99, 130, 143);
-    cursor: pointer;
-    font-size: 4vw;
-    padding: 10px 20px;
-    transition: all 0.3s ease-in-out;
+    @include boton();
 }
 
 #box_boton {
@@ -74,7 +66,6 @@ footer {
     background-attachment: fixed;
     margin: 5vw 0 0 0;
     width: 100vw;
-    
 }
 
 header{
@@ -99,9 +90,9 @@ header{
 }
 
 main {
-    
+
     @include box-column();
-    
+
     .amalgama {
         @include opacar-left();
         border-radius: 15px;
@@ -176,8 +167,8 @@ main {
     }
     
     #card_blanqueamiento {
-        background-color: $color-fondo;
         @include box-row();
+        background-color: $color-fondo;
         border-radius: 15px;
     }
     
@@ -212,7 +203,7 @@ main {
     }    
     
     .desvanecido {
-        @include opacar-botom();
+        @include opacar-bottom();
     }
     
     .fractura {
@@ -349,8 +340,10 @@ main {
 }
 
 #side_menu {
-    background-color: #6facb3f4;
-    color: white;
+    background: rgba(88, 177, 226, 0.15);
+    backdrop-filter: blur(1.5vw);
+    -webkit-backdrop-filter: blur(1vw);
+    border: 1px solid rgba(100, 175, 229, 0.3);    color: white;
     height: 100vh;
     padding: 3vw;
     position: fixed;
@@ -364,11 +357,32 @@ main {
         right: 0;
     }
 
+    #close_menu {
+        cursor: pointer;
+        font-size: 7vw;
+        text-align: end;
+        padding: 0 3vw 0 0;
+        margin: 0vw;
+    }
+
+    img {
+        margin: 2vw;
+        width: 5vw;
+    }
+
+    #img_menu {
+        cursor: pointer;
+        text-align: center;
+        width: 30vw;
+    }
+
     .menu_option {
+        color: rgba(0, 0, 0, 0.57);
         cursor: pointer;
         font-size: 3.5vw;
         margin: 5vw 0;
     }
+    
 }
 
 #whatsapp {

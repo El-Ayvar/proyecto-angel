@@ -16,6 +16,18 @@
     overflow-x: hidden;
 }
 
+@mixin boton {
+    background-color: rgba(255, 255, 255, 0.674);
+    //background: transparent;
+    border: 2px solid rgb(99, 130, 143);
+    border-radius: 30px;
+    color: rgb(99, 130, 143);
+    cursor: pointer;
+    font-size: 4vw;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
 @mixin box-row {
     align-items: center;
     display: flex;
@@ -67,7 +79,7 @@
     mask-repeat: no-repeat;
 }
 
-@mixin opacar-botom {
+@mixin opacar-bottom {
     mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;

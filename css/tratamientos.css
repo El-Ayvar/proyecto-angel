@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-size: 16px;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+header {
+  align-items: center;
+  background-color: rgb(238, 249, 250);
+  display: flex;
+  flex-direction: row;
+  height: 15vh;
+  justify-content: space-around;
+  width: 100vw;
+}
+header img {
+  cursor: pointer;
+  width: 15vw;
+}
+header #logo {
+  width: 40vw;
+}
+header #menu {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#side_menu {
+  background: rgba(88, 177, 226, 0.15);
+  backdrop-filter: blur(1.5vw);
+  -webkit-backdrop-filter: blur(1vw);
+  border: 1px solid rgba(100, 175, 229, 0.3);
+  color: white;
+  height: 100vh;
+  padding: 3vw;
+  position: fixed;
+  right: -40vw;
+  transition: right 0.3s ease;
+  top: 0;
+  width: 40vw;
+  z-index: 1;
+}
+#side_menu.active {
+  right: 0;
+}
+#side_menu #close_menu {
+  cursor: pointer;
+  font-size: 7vw;
+  text-align: end;
+  padding: 0 3vw 0 0;
+  margin: 0vw;
+}
+#side_menu img {
+  margin: 2vw;
+  width: 5vw;
+}
+#side_menu #img_menu {
+  cursor: pointer;
+  text-align: center;
+  width: 30vw;
+}
+#side_menu .menu_option {
+  color: rgba(0, 0, 0, 0.57);
+  cursor: pointer;
+  font-size: 3.5vw;
+  margin: 5vw 0;
+}/*# sourceMappingURL=tratamientos.css.map */

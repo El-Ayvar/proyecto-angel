@@ -1,0 +1,74 @@
+@use "../sass/mixin" as *;
+@use "../sass/variables" as *;
+
+* {
+    @include wiport();
+}
+
+html, body {
+    @include body();
+}
+
+
+header{
+    @include header();
+    img {
+        cursor: pointer;
+        width:15vw;
+    }
+
+    #logo {
+        width: 40vw;
+    }
+    
+    #menu {
+        @include box-row();
+    }
+}
+
+
+#side_menu {
+    background: rgba(88, 177, 226, 0.15);
+    backdrop-filter: blur(1.5vw);
+    -webkit-backdrop-filter: blur(1vw);
+    border: 1px solid rgba(100, 175, 229, 0.3);    color: white;
+    height: 100vh;
+    padding: 3vw;
+    position: fixed;
+    right: -$menu-width;
+    transition: right $transition-speed ease;
+    top: 0;
+    width: $menu-width;
+    z-index: 1;
+
+    &.active {
+        right: 0;
+    }
+
+    #close_menu {
+        cursor: pointer;
+        font-size: 7vw;
+        text-align: end;
+        padding: 0 3vw 0 0;
+        margin: 0vw;
+    }
+
+    img {
+        margin: 2vw;
+        width: 5vw;
+    }
+
+    #img_menu {
+        cursor: pointer;
+        text-align: center;
+        width: 30vw;
+    }
+
+    .menu_option {
+        color: rgba(0, 0, 0, 0.57);
+        cursor: pointer;
+        font-size: 3.5vw;
+        margin: 5vw 0;
+    }
+    
+}
