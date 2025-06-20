@@ -1,11 +1,11 @@
 
 function toggleMenu() {
-  const menu = document.getElementById('sideMenu');
+  const menu = document.getElementById('side_menu');
   menu.classList.toggle('active');
 }
 
 function closeMenu() {
-  const menu = document.getElementById('sideMenu');
+  const menu = document.getElementById('side_menu');
   menu.classList.remove('active');
 }
 

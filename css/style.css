@@ -37,23 +37,24 @@ header #menu {
   justify-content: space-around;
 }
 
-#sideMenu {
+#side_menu {
   position: fixed;
   top: 0;
   right: -10rem;
   width: 10rem;
   height: 100vh;
-  background-color: #333;
+  background-color: rgba(111, 172, 179, 0.9568627451);
   color: white;
-  padding: 20px;
+  padding: 3vw;
   transition: right 0.3s ease;
   z-index: 1;
 }
-#sideMenu.active {
+#side_menu.active {
   right: 0;
 }
-#sideMenu .menu_option {
-  margin: 10px 0;
+#side_menu .menu_option {
+  font-size: 3.5vw;
+  margin: 5vw 0;
   cursor: pointer;
 }
 
@@ -262,6 +263,7 @@ main #video_extraccion {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   width: 58vw;
+  height: 40vh;
   border-radius: 15px;
 }
 main #info_extraccion strong {
@@ -324,8 +326,8 @@ main #box_publicidad {
   padding: 3vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   height: 50vh;
+  justify-content: space-around;
   color: rgba(0, 0, 0, 0.586);
 }
 
@@ -338,11 +340,11 @@ main #box_publicidad {
 }
 
 #box_ubicacion {
+  color: rgba(0, 0, 0, 0.586);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   height: 35vh;
-  color: rgba(0, 0, 0, 0.586);
+  justify-content: space-around;
 }
 #box_ubicacion p {
   padding: 3vw;
@@ -355,19 +357,20 @@ main #box_publicidad {
 button {
   background-color: rgba(255, 255, 255, 0.674);
   border: 2px solid rgb(99, 130, 143);
+  border-radius: 30px;
   color: rgb(99, 130, 143);
+  cursor: pointer;
   font-size: 4vw;
   padding: 10px 20px;
-  border-radius: 30px;
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
 }
 
 .acceso_redes {
-  width: 10vw;
-  position: fixed;
   bottom: 5vw;
+  cursor: pointer;
+  position: fixed;
   right: 1vw;
+  width: 10vw;
 }
 
 #whatsapp {
@@ -375,16 +378,17 @@ button {
 }
 
 #box_boton {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
   width: 100vw;
 }
 
 .btn_subir {
-  margin: 0 0 3vw 0;
-  border-radius: 20px;
   background-color: rgba(121, 194, 196, 0.762);
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 0 3vw 0;
   width: 10vw;
 }
 
@@ -396,5 +400,6 @@ footer {
   background-image: url("../assets/img/fondo.png");
   background-size: cover;
   background-attachment: fixed;
-  width: 99vw;
+  margin: 5vw 0 0 0;
+  width: 100vw;
 }/*# sourceMappingURL=style.css.map */

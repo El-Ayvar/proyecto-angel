@@ -1,0 +1,99 @@
+
+@mixin box-column {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+
+@mixin body {
+    align-items:center;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-size: 16px;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+@mixin box-row {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+@mixin cards {
+    flex-direction: row;
+    height: 40vh;
+    width: 90vw;
+    div {
+        @include info-cards();
+        @include box-column();
+    }
+}
+
+@mixin header {
+    align-items: center;
+    background-color: rgb(238, 249, 250);
+    display: flex;
+    flex-direction: row;
+    height: 15vh;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+@mixin img {
+    border-radius: 15px;
+    width: 50vw;
+}
+
+@mixin info-cards {
+    height: 40vh;
+    opacity: 0.5;
+}
+
+@mixin opacar-right{
+    mask-repeat: no-repeat;
+    mask-image: linear-gradient(to right, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 40%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+}
+
+@mixin opacar-left{
+    -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
+    mask-image: linear-gradient(to left, black 40%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+@mixin opacar-botom {
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+
+@mixin publicidad {
+    margin: 0vw 0 3vw 0;
+    width: 95vw;
+}
+
+@mixin subtitulos{
+    height: 8vh;
+    margin: 0vw;
+    position: relative;
+    right: 5vw;
+    width: 90vw;
+}
+
+@mixin text_reveal {
+    height: 55vh;
+    margin: 0vw;
+}
+
+@mixin wiport {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}

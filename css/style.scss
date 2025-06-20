@@ -1,109 +1,5 @@
-
-@mixin wiport {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-}
-
-@mixin body {
-    align-items:center;
-    display: flex;
-    flex-direction: column;
-    font-family: sans-serif;
-    font-size: 16px;
-    justify-content: space-between;
-    overflow-x: hidden;
-}
-
-@mixin opacar-right{
-        -webkit-mask-image: linear-gradient(to right, black 40%, transparent 100%);
-        mask-image: linear-gradient(to right, black 40%, transparent 100%);
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-}
-
-@mixin opacar-left{
-        -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
-        mask-image: linear-gradient(to left, black 40%, transparent 100%);
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-}
-
-@mixin opacar-botom {
-    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-}
-
-@mixin img {
-    border-radius: 15px;
-    width: 50vw;
-}
-
-@mixin box-column {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-around;
-}
-
-@mixin box-row {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-}
-
-@mixin header {
-    align-items: center;
-    background-color: rgb(238, 249, 250);
-    display: flex;
-    flex-direction: row;
-    height: 15vh;
-    justify-content: space-around;
-    width: 100vw;
-}
-
-@mixin subtitulos{
-    position: relative;
-    width: 90vw;
-    height: 8vh;
-    margin: 0vw;
-    right: 5vw;
-}
-
-@mixin cards {
-    flex-direction: row;
-    width: 90vw;
-    height: 40vh;
-    div {
-        @include info-cards();
-        @include box-column();
-        }
-}
-
-@mixin text_reveal {
-    height: 55vh;
-    margin: 0vw;
-}
-
-@mixin info-cards {
-        height: 40vh;
-        opacity: 0.5;
-}
-
-@mixin publicidad {
-    width: 95vw;
-    margin: 0vw 0 3vw 0;
-}
-
-$menu-width: 10rem;
-$menu-bg: #333;
-$transition-speed: 0.3s;
-$titulo: #87D0CD;
-$sub-titulo: #86D3DC;
-$color-fondo: #DAF1F0;
+@use "_mixin.scss";
+@use "_variables.scss";
 
 * {
     @include wiport();
@@ -113,175 +9,123 @@ html, body {
     @include body();
 }
 
+.acceso_redes {
+    bottom: 5vw;
+    cursor: pointer;
+    position: fixed;
+    right: 1vw;
+    width: 10vw;
+}
+
+.box_redes {
+    @include box-column();
+    height: 20vh;
+}
+
+.box_social {
+    @include box-column();
+    color: rgba(0, 0, 0, 0.586);
+    height: 6vh;
+    width: 42vw;
+}
+
+#box_ubicacion {
+    color: rgba(0, 0, 0, 0.586);
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    justify-content: space-around;
+    p {
+        padding: 3vw;
+    }
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.674);
+    //background: transparent;
+    border: 2px solid rgb(99, 130, 143);
+    border-radius: 30px;
+    color: rgb(99, 130, 143);
+    cursor: pointer;
+    font-size: 4vw;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+#box_boton {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.btn_subir {
+    background-color: rgba(121, 194, 196, 0.762);
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 0 3vw 0;
+    width: 10vw;
+}
+
+footer {
+    @include box-column();
+    background-image: url("../assets/img/fondo.png");
+    background-size:cover;
+    background-attachment: fixed;
+    margin: 5vw 0 0 0;
+    width: 100vw;
+    
+}
+
 header{
     @include header();
     img {
-        width:15vw;
         cursor: pointer;
+        width:15vw;
     }
 
     #logo {
         width: 40vw;
     }
-
+    
     #menu {
         @include box-row();
     }
 }
 
-#sideMenu {
-    position: fixed;
-    top: 0;
-    right: -$menu-width;
-    width: $menu-width;
-    height: 100vh;
-    background-color: $menu-bg;
-    color: white;
-    padding: 20px;
-    transition: right $transition-speed ease;
-    z-index: 1;
 
-    &.active {
-        right: 0;
-    }
-
-    .menu_option {
-        margin: 10px 0;
-        cursor: pointer;
-    }
+.logo {
+    width: 4vw;
 }
 
 main {
+    
     @include box-column();
-    h1 {
-        color: $titulo;
-        font-size: 7vw;
-        text-align: center;
-        margin: 3vw 0 3vw 0;
+    
+    .amalgama {
+        @include opacar-left();
+        border-radius: 15px;
+        height: 40vh;
+        width: 50vw;
     }
-
-    h2 {
-        color: $sub-titulo;
-        font-size: 5vw;
-        padding: 0 0 0 1vw;
+    
+    .blanqueamiento {
+        @include opacar-left();
+        border-radius: 15px;
+        height: 40vh;
+        width: 50vw;
     }
-
-    section {
-        @include box-column();
-        width: 90vw;
-        height: 25vh;
-        margin: 0 0 2vw 0;
-    }
-
-    .subtitulo_fade {
-        @include subtitulos();
-    }
-
-    .subtitulo_slide {
-        @include subtitulos();
-    }
-
-    .reveal_slide {
-        height: 20vh;
-    }
-
-    .reveal_fade {
-        height: 20vh;
-    }
-
+    
     #box_fractura {
         @include text_reveal();
         height: 48vh;
     }
-
-    .text_slide {
-        height: 60vh;
-    }
-
-    p {
-        font-size: 3vw;
-    }
-
-    .links {
-        color: $sub-titulo;
-    }
-
-    h3 {
-        color: $sub-titulo;
-        font-size: 6vw;
-    }
     
-    .fractura {
-        @include img();
-        @include opacar-right();
-        height: 20vh;
-    }
-
-    .card_fractura {
-        background-color: $color-fondo;
-        height: 40vh;
-        border-radius: 15px;
-    }
-
-    .cards_tratamientos {
-        @include cards();
-    }
-
     #boximg_fractura {
         height: 40vh;
         margin: 0vw;
     }
-
-    .desvanecido {
-        @include opacar-botom();
-    }
-
-    #card_restauracion {
-        background-color: $color-fondo;
-        border-radius: 15px;
-        height: 60vh;
-    }
-
-    .restauracion {
-        @include img();
-        @include opacar-left();
-        height: 20vh;
-    }
-        
-    #boximg_restauracion {
-        height: 60vh;
-        margin: 0px;
-    }
-
-    #info_restauracion {
-        padding: 0 0 0 1vw;
-        height: 60vh;
-        p {
-            font-size: 3.5vw;
-        }
-    }
-    #tratamientos {
-        height: 300vh;
-    }
     
-    #card_sarro {
-        @include box-row();
-        border-radius: 15px;
-        background-color: $color-fondo;
-        height: 50vh;
-    }
-
-    #info_sarro {
-        height: 46vh;
-    }
-
-    .sarro {
-        @include opacar-right();
-        border-radius: 15px;
-        width: 60vw;
-        height: 23vh;
-    }
-
     #box_sarro {
         @include text_reveal();
         height: 46vh;
@@ -297,6 +141,46 @@ main {
         height: 40vh;
     }
 
+    #boximg_restauracion {
+        height: 60vh;
+        margin: 0px;
+    }
+    
+    #box_extraccion {
+        height: 40vh;
+    }
+    
+    #boximg_extraccion {
+        height: 40vh;
+        margin: 0vw;
+    }
+    
+    #boximg_amalgama {
+        height: 40vh;
+        margin: 0vw;
+    }
+    
+    #box_blanqueamiento {
+        height: 40vh;
+    }
+    
+    #boximg_blanqueamiento {
+        height: 40vh;
+        margin: 0vw;
+    }
+    
+    #box_publicidad {
+        background-color: rgba(238, 249, 250, 0.582);
+        height: 120vh;
+        width: 100vw;
+    }
+    
+    #card_blanqueamiento {
+        background-color: $color-fondo;
+        @include box-row();
+        border-radius: 15px;
+    }
+    
     #card_amalgama {
         @include box-row();
         border-radius: 15px;
@@ -304,70 +188,92 @@ main {
         height: 40vh;
     }
     
-    #boximg_amalgama {
-        margin: 0vw;
-        height: 40vh;
-    }
-
-    .amalgama {
-        @include opacar-left();
+    .card_fractura {
+        background-color: $color-fondo;
         border-radius: 15px;
         height: 40vh;
-        width: 50vw;
     }
-
-    #info_amalgama {
-        padding: 0 0 0 1vw;
-        strong {
-            width: 40vw;
-            text-align: start;
-        }
-    }
-
-    #box_extraccion {
-        height: 40vh;
-    }
-
-    #boximg_extraccion {
-        height: 40vh;
-        margin: 0vw;
-    }
-
-    #video_extraccion {
-        @include opacar-right();
-        width: 58vw;
+    
+    #card_restauracion {
+        background-color: $color-fondo;
         border-radius: 15px;
+        height: 60vh;
     }
-
-    #info_extraccion {
-        strong {
-            width: 30vw;
-            text-align: start;
-        }
-    }
-
-    .blanqueamiento {
-        @include opacar-left();
-        border-radius: 15px;
-        height: 40vh;
-        width: 50vw;
-    }
-
-    #box_blanqueamiento {
-        height: 40vh;
-    }
-
-    #boximg_blanqueamiento {
-        height: 40vh;
-        margin: 0vw;
-    }
-
-    #card_blanqueamiento {
+    
+    #card_sarro {
         @include box-row();
         border-radius: 15px;
         background-color: $color-fondo;
+        height: 50vh;
+    }    
+    
+    .cards_tratamientos {
+        @include cards();
+    }    
+    
+    .desvanecido {
+        @include opacar-botom();
     }
-
+    
+    .fractura {
+        @include img();
+        @include opacar-right();
+        height: 20vh;
+    }    
+    
+    h1 {
+        color: $titulo;
+        font-size: 7vw;
+        margin: 3vw 0 3vw 0;
+        text-align: center;
+    }    
+    
+    h2 {
+        color: $sub-titulo;
+        font-size: 5vw;
+        padding: 0 0 0 1vw;
+    }    
+    
+    h3 {
+        color: $sub-titulo;
+        font-size: 6vw;
+    }    
+    
+    #info_extraccion {
+        strong {
+            text-align: start;
+            width: 30vw;
+        }
+    }
+    
+    #info_restauracion {
+        height: 60vh;
+        padding: 0 0 0 1vw;
+        p {
+            font-size: 3.5vw;
+        }
+    }
+    
+    #info_sarro {
+        height: 46vh;
+    }
+    
+    #info_amalgama {
+        padding: 0 0 0 1vw;
+        strong {
+            text-align: start;
+            width: 40vw;
+        }
+    }
+    
+    .links {
+        color: $sub-titulo;
+    }    
+    
+    p {
+        font-size: 3vw;
+    }    
+    
     #pub_promo {
         @include publicidad();
     }
@@ -375,47 +281,57 @@ main {
     #pub_limpieza {
         @include publicidad();
     }
+    
+    .reveal_slide {
+        height: 20vh;
+    }    
 
-    #box_publicidad {
-        width: 100vw;
-        height: 120vh;
-        background-color: rgba(238, 249, 250, 0.582);
+    .reveal_fade {
+        height: 20vh;
+    }    
+    
+    .restauracion {
+        @include img();
+        @include opacar-left();
+        height: 20vh;
     }
-}
+    
+    section {
+        @include box-column();
+        height: 25vh;
+        margin: 0 0 2vw 0;
+        width: 90vw;
+    }    
+    
+    .subtitulo_fade {
+        @include subtitulos();
+    }    
+    
+    .subtitulo_slide {
+        @include subtitulos();
+    }    
+    
+    .sarro {
+        @include opacar-right();
+        border-radius: 15px;
+        height: 23vh;
+        width: 60vw;
+    }
 
-.logo {
-    width: 4vw;
-}
+    .text_slide {
+        height: 60vh;
+    }    
+        
+    
+    #tratamientos {
+        height: 300vh;
+    }
 
-.box_social {
-    width: 42vw;
-    @include box-column();
-    height: 6vh;
-    color: rgba(0, 0, 0, 0.586);
-}
-
-#redes_sociales {
-    padding: 3vw;
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-around;
-    height: 50vh;
-    color: rgba(0, 0, 0, 0.586)
-}
-
-.box_redes {
-    @include box-column();
-    height: 20vh;
-}
-
-#box_ubicacion {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 35vh;
-    color: rgba(0, 0, 0, 0.586);
-    p {
-        padding: 3vw;
+    #video_extraccion {
+        @include opacar-right();
+        width: 58vw;
+        height: 40vh;
+        border-radius: 15px;
     }
 }
 
@@ -423,47 +339,38 @@ main {
     width: 100vw;
 }
 
-button {
-    background-color: rgba(255, 255, 255, 0.674);
-    //background: transparent;
-    border: 2px solid rgb(99, 130, 143);
-    color: rgb(99, 130, 143);
-    font-size: 4vw;
-    padding: 10px 20px;
-    border-radius: 30px;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+#redes_sociales {
+    display: flex; 
+    color: rgba(0, 0, 0, 0.586);
+    flex-direction: column;
+    height: 50vh;
+    justify-content: space-around;
+    padding: 3vw;
 }
 
-.acceso_redes {
-    width: 10vw;
+#side_menu {
+    background-color: #6facb3f4;
+    color: white;
+    height: 100vh;
+    padding: 3vw;
     position: fixed;
-    bottom: 5vw;
-    right: 1vw;
+    right: -$menu-width;
+    transition: right $transition-speed ease;
+    top: 0;
+    width: $menu-width;
+    z-index: 1;
+
+    &.active {
+        right: 0;
+    }
+
+    .menu_option {
+        cursor: pointer;
+        font-size: 3.5vw;
+        margin: 5vw 0;
+    }
 }
 
 #whatsapp {
     bottom: 17vw;
-}
-
-#box_boton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-}
-
-.btn_subir {
-    margin: 0 0 3vw 0;
-    border-radius: 20px;
-    background-color: rgba(121, 194, 196, 0.762);
-    width: 10vw;
-}
-
-footer {
-    @include box-column();
-    background-image: url("../assets/img/fondo.png");
-    background-size:cover;
-    background-attachment: fixed;
-    width: 99vw;
 }
