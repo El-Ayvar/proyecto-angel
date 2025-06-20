@@ -109,7 +109,7 @@ $color-fondo: #DAF1F0;
     @include wiport();
 }
 
-body {
+html, body {
     @include body();
 }
 
@@ -378,7 +378,7 @@ main {
 
     #box_publicidad {
         width: 100vw;
-        height: 130vh;
+        height: 120vh;
         background-color: rgba(238, 249, 250, 0.582);
     }
 }
@@ -465,5 +465,5 @@ footer {
     background-image: url("../assets/img/fondo.png");
     background-size:cover;
     background-attachment: fixed;
-    width: 100vw;
+    width: 99vw;
 }

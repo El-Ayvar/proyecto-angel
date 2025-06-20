@@ -4,7 +4,7 @@
   padding: 0px;
 }
 
-body {
+html, body {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -302,7 +302,7 @@ main #pub_limpieza {
 }
 main #box_publicidad {
   width: 100vw;
-  height: 130vh;
+  height: 120vh;
   background-color: rgba(238, 249, 250, 0.582);
 }
 
@@ -396,5 +396,5 @@ footer {
   background-image: url("../assets/img/fondo.png");
   background-size: cover;
   background-attachment: fixed;
-  width: 100vw;
+  width: 99vw;
 }/*# sourceMappingURL=style.css.map */
