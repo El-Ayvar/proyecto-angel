@@ -121,6 +121,7 @@ main {
     #box_sarro {
         @include text_reveal();
         height: 46vh;
+        margin: 0 0 2vw 0;
     }
 
     #boximg_sarro {

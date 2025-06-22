@@ -245,7 +245,7 @@ main {
         @include box-centrado();
         background-color: #87D0CD;
         border: black;
-        height: 280vh;
+        height: 300vh;
         padding: 30vw 0 0 0;
         width: 100vw;
     }
@@ -256,6 +256,7 @@ main {
 
         p {
             color: white;
+            margin: 1vw 0 1vw 0;
         }
 
         h2 {
@@ -263,7 +264,7 @@ main {
             text-align: center;
             width: 90vw;
         }
-        height: 260vh;
+        height: 280vh;
         width: 90vw;
     }
 
@@ -297,7 +298,7 @@ main {
             border-radius: 0vw 40vw 0vw 40vw;
             width: 90vw;
         }
-        height: 65vh;
+        height: 80vh;
     }
 
     #pasos_rehabilitacion {
@@ -309,7 +310,7 @@ main {
         h2 {
             font-size: 7vw;
         }
-        height: 140vh;
+        height: 160vh;
         #firs_rehabilitacion {
             h4 {
                 font-size: 4.5vw;
@@ -347,6 +348,65 @@ main {
                 font-size: 3vw;
             }
         }
+    }
+
+    #background_inter {
+        @include opacar-bottom();
+        background-color:#87D0CD;
+        height: 5vh;
+        
+        width: 100vw;
+    }
+
+    #box_sarro {
+        @include box-centrado();
+        h2 {
+            color: $titulo;
+            font-size: 6vw;
+        }
+
+        #intro_sarro {
+            @include box-row();
+            color: $sub-titulo;
+            font-size: 4vw;
+            img {
+                width: 23vw;
+            }
+            width: 70vw;
+        }
+
+        #text_intro {
+            @include box-centrado();
+            height: 32vh;
+            p {
+                font-size: 3.5vw;
+            }
+        }
+
+        #because_sarro {
+            @include box-centrado();
+            height: 80vh;
+            img {
+                border-radius: 0vw 40vw 0vw 40vw;
+                width: 90vw;
+            }
+            p {
+                font-size: 3.5vw;
+            }
+        }
+        
+        #after_sarro {
+            @include box-centrado();
+            height: 85vh;
+            img {
+                border-radius: 0vw 40vw 0vw 40vw;
+                width: 90vw;
+            }
+            p {
+                font-size: 3.5vw;
+            }
+        }
+        
     }
 }
 

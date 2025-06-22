@@ -290,7 +290,7 @@ main #background {
   width: 90vw;
   background-color: #87D0CD;
   border: black;
-  height: 280vh;
+  height: 300vh;
   padding: 30vw 0 0 0;
   width: 100vw;
 }
@@ -301,11 +301,12 @@ main #box_rehabilitacion {
   justify-content: space-around;
   width: 90vw;
   color: white;
-  height: 260vh;
+  height: 280vh;
   width: 90vw;
 }
 main #box_rehabilitacion p {
   color: white;
+  margin: 1vw 0 1vw 0;
 }
 main #box_rehabilitacion h2 {
   font-size: 6vw;
@@ -333,7 +334,7 @@ main #caso_rehabilitacion {
   flex-direction: column;
   justify-content: space-around;
   width: 90vw;
-  height: 65vh;
+  height: 80vh;
 }
 main #caso_rehabilitacion p {
   color: white;
@@ -356,7 +357,7 @@ main #pasos_rehabilitacion {
   flex-direction: column;
   justify-content: space-around;
   width: 90vw;
-  height: 140vh;
+  height: 160vh;
 }
 main #pasos_rehabilitacion img {
   border-radius: 0vw 40vw 0vw 40vw;
@@ -393,6 +394,79 @@ main #pasos_rehabilitacion #fourth_rehabilitacion h4 {
 }
 main #pasos_rehabilitacion #fourth_rehabilitacion p {
   font-size: 3vw;
+}
+main #background_inter {
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  background-color: #87D0CD;
+  height: 5vh;
+  width: 100vw;
+}
+main #box_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #box_sarro h2 {
+  color: #87D0CD;
+  font-size: 6vw;
+}
+main #box_sarro #intro_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 70vw;
+}
+main #box_sarro #intro_sarro img {
+  width: 23vw;
+}
+main #box_sarro #text_intro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 32vh;
+}
+main #box_sarro #text_intro p {
+  font-size: 3.5vw;
+}
+main #box_sarro #because_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 80vh;
+}
+main #box_sarro #because_sarro img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #box_sarro #because_sarro p {
+  font-size: 3.5vw;
+}
+main #box_sarro #after_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 85vh;
+}
+main #box_sarro #after_sarro img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #box_sarro #after_sarro p {
+  font-size: 3.5vw;
 }
 
 ul {

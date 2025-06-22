@@ -153,6 +153,7 @@ main #box_sarro {
   height: 55vh;
   margin: 0vw;
   height: 46vh;
+  margin: 0 0 2vw 0;
 }
 main #boximg_sarro {
   border-radius: 15px;
