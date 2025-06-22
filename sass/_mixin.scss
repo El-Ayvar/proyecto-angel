@@ -35,6 +35,11 @@
     justify-content:space-around;
 }
 
+@mixin box-centrado {
+    @include box-column();
+    width: 90vw;
+}
+
 @mixin cards {
     flex-direction: row;
     height: 40vh;
@@ -84,6 +89,13 @@
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+
+@mixin opacar-top {
+    mask-image: linear-gradient(to top, black 90%, transparent 100%);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%);
 }
 
 @mixin publicidad {

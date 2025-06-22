@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -58,8 +59,8 @@ header #menu {
 #side_menu #close_menu {
   cursor: pointer;
   font-size: 7vw;
-  text-align: end;
   padding: 0 3vw 0 0;
+  text-align: end;
   margin: 0vw;
 }
 #side_menu img {
@@ -76,4 +77,336 @@ header #menu {
   cursor: pointer;
   font-size: 3.5vw;
   margin: 5vw 0;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+main #box_tratamientos {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main p {
+  color: rgba(24, 24, 24, 0.636);
+  font-size: 3vw;
+}
+main h1 {
+  color: #87D0CD;
+  font-size: 8vw;
+  margin: 3vw 0 3vw 0;
+}
+main #beginning_text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 33vh;
+  width: 90vw;
+}
+main #slogan {
+  color: #86D3DC;
+  font-size: 4.2vw;
+  margin: 4vw 0 0vw 2vw;
+}
+main #muela {
+  margin: 8vw 0 0 0;
+  width: 13vw;
+}
+main #title_restauracion {
+  color: #87D0CD;
+  font-size: 5vw;
+  margin: 8vw 0 0 4vw;
+}
+main #sub_restauracion {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #86D3DC;
+  width: 50vw;
+}
+main #sub_restauracion img {
+  margin: 0 3vw 0 0;
+  width: 10vw;
+}
+main #sub_restauracion h3 {
+  font-size: 4vw;
+}
+main #box_restauracion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 280vh;
+}
+main #intro_restauracion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 85vw;
+}
+main li {
+  color: #86D3DC;
+  font-size: 3.5vw;
+  margin: 2vw 0 2vw 0;
+}
+main #caso_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 70vh;
+}
+main #caso_fractura h3 {
+  font-size: 5vw;
+  color: #87D0CD;
+  text-align: center;
+}
+main #caso_fractura h4 {
+  font-size: 5vw;
+  color: #86D3DC;
+}
+main #caso_fractura img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #seg_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 70vh;
+}
+main #seg_fractura #firs_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 10vh;
+}
+main #seg_fractura #firs_fractura strong {
+  align-items: start;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 90vw;
+}
+main #seg_fractura h3 {
+  font-size: 5vw;
+  color: #87D0CD;
+}
+main #seg_fractura #second_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 10vh;
+}
+main #seg_fractura #second_fractura strong {
+  align-items: start;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 90vw;
+}
+main #seg_fractura #third_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 10vh;
+}
+main #seg_fractura #third_fractura strong {
+  align-items: start;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 90vw;
+}
+main #seg_fractura #fourth_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 15vh;
+}
+main #seg_fractura #fourth_fractura strong {
+  align-items: start;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 90vw;
+}
+main #seg_fractura #fifth_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 12vh;
+}
+main #seg_fractura #fifth_fractura strong {
+  align-items: start;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 90vw;
+}
+main #final_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 65vh;
+}
+main #final_fractura img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #final_fractura h3 {
+  color: #87D0CD;
+  font-size: 6vw;
+}
+main #background {
+  mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  background-color: #87D0CD;
+  border: black;
+  height: 350vh;
+  padding: 30vw 0 0 0;
+  width: 100vw;
+}
+main #box_rehabilitacion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: white;
+  height: 350vh;
+  width: 90vw;
+}
+main #box_rehabilitacion p {
+  color: white;
+}
+main #box_rehabilitacion h2 {
+  font-size: 6vw;
+  text-align: center;
+  width: 90vw;
+}
+main #intro_rehabilitacion {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #intro_rehabilitacion img {
+  width: 10vw;
+}
+main #intro_rehabilitacion h3 {
+  font-size: 6vw;
+  text-align: center;
+  width: 90vw;
+}
+main #caso_rehabilitacion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 80vh;
+}
+main #caso_rehabilitacion p {
+  color: white;
+}
+main #caso_rehabilitacion h3 {
+  font-size: 5vw;
+  text-align: center;
+}
+main #caso_rehabilitacion h4 {
+  font-size: 5vw;
+  width: 90vw;
+}
+main #caso_rehabilitacion img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #pasos_rehabilitacion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 180vh;
+}
+main #pasos_rehabilitacion img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #pasos_rehabilitacion h2 {
+  font-size: 7vw;
+}
+main #pasos_rehabilitacion #firs_rehabilitacion h4 {
+  font-size: 4.5vw;
+  margin: 0 0 3vw 0;
+}
+main #pasos_rehabilitacion #firs_rehabilitacion p {
+  font-size: 3vw;
+}
+main #pasos_rehabilitacion #second_rehabilitacion h4 {
+  font-size: 4.5vw;
+  margin: 0 0 3vw 0;
+}
+main #pasos_rehabilitacion #second_rehabilitacion p {
+  font-size: 3vw;
+}
+main #pasos_rehabilitacion #third_rehabilitacion h4 {
+  font-size: 4.5vw;
+  text-align: center;
+  margin: 0 0 3vw 0;
+}
+main #pasos_rehabilitacion #third_rehabilitacion p {
+  font-size: 3vw;
+}
+main #pasos_rehabilitacion #fourth_rehabilitacion h4 {
+  font-size: 4.5vw;
+  margin: 0 0 3vw 0;
+}
+main #pasos_rehabilitacion #fourth_rehabilitacion p {
+  font-size: 3vw;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  background-image: url("../assets/img/viñetaFracturada.png");
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 5vw;
+  margin-right: 1vw;
+  vertical-align: middle;
+  width: 5vw;
 }/*# sourceMappingURL=tratamientos.css.map */

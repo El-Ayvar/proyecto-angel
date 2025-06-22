@@ -9,7 +9,6 @@ html, body {
     @include body();
 }
 
-
 header{
     @include header();
     img {
@@ -48,8 +47,8 @@ header{
     #close_menu {
         cursor: pointer;
         font-size: 7vw;
-        text-align: end;
         padding: 0 3vw 0 0;
+        text-align: end;
         margin: 0vw;
     }
 
@@ -71,4 +70,298 @@ header{
         margin: 5vw 0;
     }
     
+}
+
+main {
+    
+    @include box-column();
+
+    #box_tratamientos {
+        @include box-centrado();
+    }
+
+    p {
+        color: rgba(24, 24, 24, 0.636);
+        font-size: 3vw;
+    }
+
+    h1 {
+        color: $titulo;
+        font-size: 8vw;
+        margin: 3vw 0 3vw 0;
+    }
+
+    #beginning_text {
+        @include box-column();
+        height: 33vh;
+        width: 90vw;
+    }
+
+    #slogan {
+        color: $sub-titulo;
+        font-size: 4.2vw;
+        margin: 4vw 0 0vw 2vw;
+    }
+
+    #muela {
+        margin: 8vw 0 0 0;
+        width: 13vw;
+    }
+
+    #title_restauracion {
+        color: $titulo;
+        font-size: 5vw;
+        margin: 8vw 0 0 4vw;
+    }
+
+    #sub_restauracion {
+        @include box-row();
+        color: $sub-titulo;
+        img {
+            margin: 0 3vw 0 0;
+            width: 10vw;
+        }
+        h3 {
+            font-size: 4vw;
+        }
+        width: 50vw;
+    }
+
+    #box_restauracion {
+        @include box-centrado();
+        height: 280vh;
+    }
+
+    #intro_restauracion {
+        @include box-centrado();
+        height: 85vw;
+    }
+
+    li {
+        color: $sub-titulo;
+        font-size: 3.5vw;
+        margin: 2vw 0 2vw 0;
+    }
+
+    #caso_fractura{
+        @include box-centrado();
+        height: 70vh;
+        h3 {
+            font-size: 5vw;
+            color: $titulo;
+            text-align: center;
+        }
+        h4 {
+            font-size: 5vw;
+            color: $sub-titulo;
+        }
+        img {
+            border-radius: 0vw 40vw 0vw 40vw;
+            width: 90vw;
+        }
+    }
+
+    #seg_fractura {
+        @include box-centrado();
+        #firs_fractura {
+            @include box-centrado();
+            height: 10vh;
+            strong {
+                align-items: start;
+                color: $sub-titulo;
+                font-size: 4vw;
+                width: 90vw;
+            }
+        }
+        h3 {
+            font-size: 5vw;
+            color: $titulo;
+        }
+        
+        height: 70vh;
+        
+        #second_fractura {
+            @include box-centrado();
+            height: 10vh;
+
+            strong {
+                align-items: start;
+                color: $sub-titulo;
+                font-size: 4vw;
+                width: 90vw;
+            }
+            
+        }
+
+        #third_fractura {
+            @include box-centrado();
+            strong {
+                align-items: start;
+                color: $sub-titulo;
+                font-size: 4vw;
+                width: 90vw;
+            }
+            height: 10vh;
+        }
+
+        #fourth_fractura {
+            @include box-centrado();
+            height: 15vh;
+            strong {
+                align-items: start;
+                color: $sub-titulo;
+                font-size: 4vw;
+                width: 90vw;
+            }
+        }
+
+        #fifth_fractura {
+            @include box-centrado();
+            height: 12vh;
+            strong {
+                align-items: start;
+                color: $sub-titulo;
+                font-size: 4vw;
+                width: 90vw;
+            }
+        }
+    }
+
+    #final_fractura {
+        @include box-centrado();
+        img {
+            border-radius: 0vw 40vw 0vw 40vw;
+            width: 90vw;
+        }
+        height: 65vh;
+        h3 {
+            color: $titulo;
+            font-size: 6vw;
+        }
+    }
+
+    #background {
+        @include opacar-top();
+        @include box-centrado();
+        background-color: #87D0CD;
+        border: black;
+        height: 350vh;
+        padding: 30vw 0 0 0;
+        width: 100vw;
+    }
+
+    #box_rehabilitacion {
+        @include box-centrado();
+        color: white;
+
+        p {
+            color: white;
+        }
+
+        h2 {
+            font-size: 6vw; 
+            text-align: center;
+            width: 90vw;
+        }
+        height: 350vh;
+        width: 90vw;
+    }
+
+    #intro_rehabilitacion {
+        @include box-row();
+        img {
+            width: 10vw;
+        }
+        h3 {
+            font-size: 6vw;
+            text-align: center;
+            width: 90vw;
+        }
+        width: 90vw;
+    }
+
+    #caso_rehabilitacion {
+        @include box-centrado();
+        p {
+            color: white;
+        }
+        h3 {
+            font-size: 5vw;
+            text-align: center;
+        }
+        h4 {
+            font-size: 5vw;
+            width: 90vw;
+        }
+        img {
+            border-radius: 0vw 40vw 0vw 40vw;
+            width: 90vw;
+        }
+        height: 80vh;
+    }
+
+    #pasos_rehabilitacion {
+        @include box-centrado;
+        img {
+            border-radius: 0vw 40vw 0vw 40vw;
+            width: 90vw;
+        }
+        h2 {
+            font-size: 7vw;
+        }
+        height: 180vh;
+        #firs_rehabilitacion {
+            h4 {
+                font-size: 4.5vw;
+                margin: 0 0 3vw 0;
+            }
+            p {
+                font-size: 3vw;
+            }
+        }
+        #second_rehabilitacion {
+            h4 {
+                font-size: 4.5vw;
+                margin: 0 0 3vw 0;
+            }
+            p {
+                font-size: 3vw;
+            }
+        }
+        #third_rehabilitacion {
+            h4 {
+                font-size: 4.5vw;
+                text-align: center;
+                margin: 0 0 3vw 0;
+            }
+            p {
+                font-size: 3vw;
+            }
+        }
+        #fourth_rehabilitacion {
+            h4 {
+                font-size: 4.5vw;
+                margin: 0 0 3vw 0;
+            }
+            p {
+                font-size: 3vw;
+            }
+        }
+    }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+    background-image: url("../assets/img/viñetaFracturada.png");
+    background-size: contain;
+    content: "";
+    display: inline-block;
+    height: 5vw;
+    margin-right: 1vw;
+    vertical-align: middle;
+    width: 5vw;
 }
