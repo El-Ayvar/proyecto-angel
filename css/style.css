@@ -187,7 +187,7 @@ main #boximg_blanqueamiento {
 }
 main #box_publicidad {
   background-color: rgba(238, 249, 250, 0.582);
-  height: 110vh;
+  height: 140vh;
   width: 100vw;
 }
 main #card_blanqueamiento {
@@ -299,10 +299,12 @@ main p {
 main #pub_promo {
   margin: 0vw 0 3vw 0;
   width: 95vw;
+  height: 95vh;
 }
 main #pub_limpieza {
   margin: 0vw 0 3vw 0;
   width: 95vw;
+  height: 95vh;
 }
 main .reveal_slide {
   height: 20vh;

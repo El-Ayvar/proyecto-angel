@@ -93,7 +93,7 @@ main {
 
     #beginning_text {
         @include box-column();
-        height: 25vh;
+        height: 28vh;
         width: 90vw;
     }
 
@@ -129,7 +129,7 @@ main {
 
     #box_restauracion {
         @include box-centrado();
-        height: 230vh;
+        height: 233vh;
     }
 
     #intro_restauracion {
@@ -145,7 +145,7 @@ main {
 
     #caso_fractura{
         @include box-centrado();
-        height: 60vh;
+        height: 70vh;
         h3 {
             font-size: 5vw;
             color: $titulo;
@@ -231,7 +231,7 @@ main {
         img {
             @include img-tratamientos();
         }
-        height: 55vh;
+        height: 65vh;
         h3 {
             color: $titulo;
             font-size: 6vw;
@@ -243,7 +243,7 @@ main {
         @include box-centrado();
         background-color: #87D0CD;
         border: black;
-        height: 260vh;
+        height: 340vh;
         padding: 30vw 0 0 0;
         width: 100vw;
     }
@@ -253,6 +253,7 @@ main {
         color: white;
 
         p {
+            font-size: 3.5vw;
             color: white;
             margin: 1vw 0 1vw 0;
         }
@@ -262,7 +263,7 @@ main {
             text-align: center;
             width: 90vw;
         }
-        height: 250vh;
+        height: 310vh;
         width: 90vw;
     }
 
@@ -295,7 +296,7 @@ main {
         img {
             @include img-tratamientos();
         }
-        height: 60vh;
+        height: 80vh;
     }
 
     #pasos_rehabilitacion {
@@ -306,7 +307,7 @@ main {
         h2 {
             font-size: 7vw;
         }
-        height: 135vh;
+        height: 170vh;
         #firs_rehabilitacion {
             h4 {
                 font-size: 4.5vw;
@@ -356,6 +357,7 @@ main {
 
     #box_sarro {
         @include box-centrado();
+        height: 340vh;
         h2 {
             color: $titulo;
             font-size: 6vw;
@@ -373,7 +375,7 @@ main {
 
         #text_intro {
             @include box-centrado();
-            height: 25vh;
+            height: 30vh;
             p {
                 font-size: 3.5vw;
             }
@@ -381,7 +383,7 @@ main {
 
         #because_sarro {
             @include box-centrado();
-            height: 65vh;
+            height: 80vh;
             img {
                 @include img-tratamientos();
             }
@@ -392,7 +394,7 @@ main {
         
         #after_sarro {
             @include box-centrado();
-            height: 65vh;
+            height: 83vh;
             img {
                 @include img-tratamientos();
             }
@@ -405,7 +407,7 @@ main {
 
     #second_sarro {
         @include box-centrado();
-        height: 100vh;
+        height: 120vh;
 
         p {
             font-size: 3.5vw;
@@ -436,11 +438,14 @@ main {
             @include box-column ();
             text-align: center;
             color: $sub-titulo;
-            height: 65vh;
+            height: 60vh;
             img {
-            @include img-tratamientos();
-            width: 90vw;
+                @include img-tratamientos();
             }
+            p {
+                font-size: 3vw;
+            }
+            width: 90vw;
         }
     }
 
