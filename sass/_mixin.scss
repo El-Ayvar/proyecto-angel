@@ -65,15 +65,20 @@
     width: 50vw;
 }
 
+@mixin img-tratamientos {
+    border-radius: 0vw 40vw 0vw 40vw;
+    width: 90vw;
+}
+
 @mixin info-cards {
     height: 40vh;
-    opacity: 0.5;
+    color: rgba(0, 0, 0, 0.519);
 }
 
 @mixin opacar-right{
     mask-repeat: no-repeat;
-    mask-image: linear-gradient(to right, black 40%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, black 40%, transparent 100%);
+    mask-image: linear-gradient(to right, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
     -webkit-mask-repeat: no-repeat;
 }
 

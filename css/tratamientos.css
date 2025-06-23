@@ -106,7 +106,7 @@ main #beginning_text {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 30vh;
+  height: 25vh;
   width: 90vw;
 }
 main #slogan {
@@ -290,7 +290,7 @@ main #background {
   width: 90vw;
   background-color: #87D0CD;
   border: black;
-  height: 300vh;
+  height: 260vh;
   padding: 30vw 0 0 0;
   width: 100vw;
 }
@@ -301,7 +301,7 @@ main #box_rehabilitacion {
   justify-content: space-around;
   width: 90vw;
   color: white;
-  height: 280vh;
+  height: 250vh;
   width: 90vw;
 }
 main #box_rehabilitacion p {
@@ -334,7 +334,7 @@ main #caso_rehabilitacion {
   flex-direction: column;
   justify-content: space-around;
   width: 90vw;
-  height: 80vh;
+  height: 60vh;
 }
 main #caso_rehabilitacion p {
   color: white;
@@ -357,7 +357,7 @@ main #pasos_rehabilitacion {
   flex-direction: column;
   justify-content: space-around;
   width: 90vw;
-  height: 160vh;
+  height: 135vh;
 }
 main #pasos_rehabilitacion img {
   border-radius: 0vw 40vw 0vw 40vw;
@@ -433,7 +433,7 @@ main #box_sarro #text_intro {
   flex-direction: column;
   justify-content: space-around;
   width: 90vw;
-  height: 32vh;
+  height: 25vh;
 }
 main #box_sarro #text_intro p {
   font-size: 3.5vw;
@@ -444,7 +444,7 @@ main #box_sarro #because_sarro {
   flex-direction: column;
   justify-content: space-around;
   width: 90vw;
-  height: 80vh;
+  height: 65vh;
 }
 main #box_sarro #because_sarro img {
   border-radius: 0vw 40vw 0vw 40vw;
@@ -459,7 +459,7 @@ main #box_sarro #after_sarro {
   flex-direction: column;
   justify-content: space-around;
   width: 90vw;
-  height: 85vh;
+  height: 65vh;
 }
 main #box_sarro #after_sarro img {
   border-radius: 0vw 40vw 0vw 40vw;
@@ -467,6 +467,56 @@ main #box_sarro #after_sarro img {
 }
 main #box_sarro #after_sarro p {
   font-size: 3.5vw;
+}
+main #second_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 100vh;
+}
+main #second_sarro p {
+  font-size: 3.5vw;
+}
+main #second_sarro h2 {
+  font-size: 5vw;
+}
+main #second_sarro #intro_sarroSecond {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+main #second_sarro #intro_sarroSecond img {
+  width: 20vw;
+}
+main #second_sarro #first_sarroSecond {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  height: 50vh;
+}
+main #second_sarro #first_sarroSecond img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+  width: 90vw;
+}
+main #second_sarro #second_sarroSecond {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  color: #86D3DC;
+  height: 65vh;
+}
+main #second_sarro #second_sarroSecond img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+  width: 90vw;
 }
 
 ul {

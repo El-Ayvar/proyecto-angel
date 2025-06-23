@@ -93,7 +93,7 @@ main {
 
     #beginning_text {
         @include box-column();
-        height: 30vh;
+        height: 25vh;
         width: 90vw;
     }
 
@@ -156,8 +156,7 @@ main {
             color: $sub-titulo;
         }
         img {
-            border-radius: 0vw 40vw 0vw 40vw;
-            width: 90vw;
+            @include img-tratamientos();
         }
     }
 
@@ -230,8 +229,7 @@ main {
     #final_fractura {
         @include box-centrado();
         img {
-            border-radius: 0vw 40vw 0vw 40vw;
-            width: 90vw;
+            @include img-tratamientos();
         }
         height: 55vh;
         h3 {
@@ -245,7 +243,7 @@ main {
         @include box-centrado();
         background-color: #87D0CD;
         border: black;
-        height: 300vh;
+        height: 260vh;
         padding: 30vw 0 0 0;
         width: 100vw;
     }
@@ -264,7 +262,7 @@ main {
             text-align: center;
             width: 90vw;
         }
-        height: 280vh;
+        height: 250vh;
         width: 90vw;
     }
 
@@ -295,22 +293,20 @@ main {
             width: 90vw;
         }
         img {
-            border-radius: 0vw 40vw 0vw 40vw;
-            width: 90vw;
+            @include img-tratamientos();
         }
-        height: 80vh;
+        height: 60vh;
     }
 
     #pasos_rehabilitacion {
         @include box-centrado;
         img {
-            border-radius: 0vw 40vw 0vw 40vw;
-            width: 90vw;
+            @include img-tratamientos();
         }
         h2 {
             font-size: 7vw;
         }
-        height: 160vh;
+        height: 135vh;
         #firs_rehabilitacion {
             h4 {
                 font-size: 4.5vw;
@@ -377,7 +373,7 @@ main {
 
         #text_intro {
             @include box-centrado();
-            height: 32vh;
+            height: 25vh;
             p {
                 font-size: 3.5vw;
             }
@@ -385,10 +381,9 @@ main {
 
         #because_sarro {
             @include box-centrado();
-            height: 80vh;
+            height: 65vh;
             img {
-                border-radius: 0vw 40vw 0vw 40vw;
-                width: 90vw;
+                @include img-tratamientos();
             }
             p {
                 font-size: 3.5vw;
@@ -397,10 +392,9 @@ main {
         
         #after_sarro {
             @include box-centrado();
-            height: 85vh;
+            height: 65vh;
             img {
-                border-radius: 0vw 40vw 0vw 40vw;
-                width: 90vw;
+                @include img-tratamientos();
             }
             p {
                 font-size: 3.5vw;
@@ -408,6 +402,49 @@ main {
         }
         
     }
+
+    #second_sarro {
+        @include box-centrado();
+        height: 100vh;
+
+        p {
+            font-size: 3.5vw;
+        }
+
+        h2 {
+            font-size: 5vw;
+        }
+
+        #intro_sarroSecond{
+            @include box-row();
+            img{
+                width: 20vw;
+            }
+        }
+
+        #first_sarroSecond {
+            @include box-column ();
+            text-align: center;
+            height: 50vh;
+            img {
+            @include img-tratamientos();
+            width: 90vw;
+            }
+        }
+
+        #second_sarroSecond {
+            @include box-column ();
+            text-align: center;
+            color: $sub-titulo;
+            height: 65vh;
+            img {
+            @include img-tratamientos();
+            width: 90vw;
+            }
+        }
+    }
+
+    
 }
 
 ul {
