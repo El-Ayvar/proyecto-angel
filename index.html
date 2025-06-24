@@ -45,89 +45,77 @@
             <p>Su enfoque combina precisión técnica, sensibilidad humana y el uso de tecnología moderna para ofrecer soluciones personalizadas a cada paciente.</p>
         </section>
         <article id="tratamientos">
-            <section id="box_fractura" class="text_reveal">
-                <h3>¿Qué puedo hacer por ti?</h3>
-                <section class="card_fractura">
-                    <section class="cards_tratamientos">
-                        <div id="boximg_fractura" >
-                            <img class="fractura" src="assets/img/RFractura.jpg" alt="Diente fracturado">
-                            <img class="fractura" src="assets/img/RFractura1.jpg" alt="Diente fracturado arreglado">
-                        </div>
-                        <div class="info_cards"><strong>RESTAURACIÓN DENTAL POR FRACTURA </strong>
-                            <p>Procedimientos basicos de restauración por fractura.</p>
-                            <p class="desvanecido">El dentista examina el diente fracturado y toma radiografías para determinar si la fractura afecta solo el esmalte, la dentina o también la pulpa.</p>
-                            <a href="views/tratamientos.html#box_restauracion"> <button type="button" id="search_btn">Ver màs</button> </a>
-                        </div>
-                    </section>
-                </section>    
-            </section>
-            <section class="text_slide">
-                <section id="card_restauracion" class="cards_tratamientos">
-                        <div id="info_restauracion" class="info_cards"> <strong>RESTAURACIÓN Y REHABILITACIÓN DENTAL</strong>
-                            <strong>Procedimientos involucrados: </strong>
-                            <p>Endodoncia: Si el daño llegó a la pulpa dental.</p>
-                            <p>Tallado dental: Para preparar el diente para una corona.</p>
-                            <p>Colocación de coronas o puentes: Para restaurar la funcionalidad y estética.</p>
-                            <p class="desvanecido">Implantes dentales: Si el diente no pudo salvarse y fue reemplazado.</p>
-                            <a href="views/tratamientos.html#box_rehabilitacion"> <button type="button" id="search_btn">Ver màs</button></a>
-                        </div>
-                    <div id="boximg_restauracion">
-                        <img class="restauracion" src="assets/img/restauracion.jpg" alt="Diente con caries severa">
-                        <img class="restauracion" src="assets/img/restauracion1.jpg" alt="Diente con caries severa a la mitad de arreglo">
-                        <img class="restauracion" src="assets/img/restauracion2.jpg" alt="Diente totalmente reparado">
+            <h3>¿Qué puedo hacer por ti?</h3>
+            <section class="reveal_slide" id="card_fractura">
+                    <div id="boximg_fractura" >
+                        <img class="fractura" src="assets/img/RFractura.jpg" alt="Diente fracturado">
+                        <img class="fractura" src="assets/img/RFractura1.jpg" alt="Diente fracturado arreglado">
                     </div>
+                    <div id="info_fractura"><strong>RESTAURACIÓN DENTAL POR FRACTURA </strong>
+                        <p>Procedimientos basicos de restauración por fractura.</p>
+                        <p id="second_PF" class="desvanecido">El dentista examina el diente fracturado y toma radiografías para determinar si la fractura afecta solo el esmalte, la dentina o también la pulpa.</p>
+                        <a href="views/tratamientos.html#box_restauracion"> <button type="button" id="search_btn">Ver màs</button> </a>
+                    </div>
+            </section>    
+            <section class="reveal_fade" id="card_restauracion">
+                    <div id="info_restauracion"> 
+                        <strong>RESTAURACIÓN Y REHABILITACIÓN DENTAL</strong>
+                        <strong>Procedimientos involucrados: </strong>
+                        <p>Endodoncia: Si el daño llegó a la pulpa dental.</p>
+                        <p>Tallado dental: Para preparar el diente para una corona.</p>
+                        <p>Colocación de coronas o puentes: Para restaurar la funcionalidad y estética.</p>
+                        <p class="desvanecido">Implantes dentales: Si el diente no pudo salvarse y fue reemplazado.</p>
+                        <a href="views/tratamientos.html#box_rehabilitacion"> <button type="button" id="search_btn">Ver màs</button></a>
+                    </div>
+                <div id="boximg_restauracion">
+                    <img class="restauracion" src="assets/img/restauracion.jpg" alt="Diente con caries severa">
+                    <img class="restauracion" src="assets/img/restauracion1.jpg" alt="Diente con caries severa a la mitad de arreglo">
+                    <img class="restauracion" src="assets/img/restauracion2.jpg" alt="Diente totalmente reparado">
+                </div>
+            </section>
+            <section id="card_sarro" class="reveal_slide">
+                <div id="boximg_sarro">
+                    <img class="sarro" src="assets/img/sarro.jpg" alt="caso de sarro en dentadura">
+                    <img class="sarro" src="assets/img/sarro1.jpg" alt="sarro eliminado">
+                </div>
+                <div id="info_sarro" class="info_cards"> <strong>PROFILAXIS DENTAL PROFESIONAL</strong>
+                    <strong>Tratamiento realizado:</strong>
+                    <p>Raspado cuidadoso con ultrasonido y/o curetas manuales.</p>
+                    <p>Remoción del sarro adherido al esmalte.</p>
+                    <p class="desvanecido">Fue realizado un raspado supragingival y posiblemente un alisado radicular </p>
+                    <a href="views/tratamientos.html#box_sarro"> <button type="button" id="search_btn">Ver màs</button> </a>
+                </div>
+            </section>
+            <section id="card_amalgama" class="reveal_fade">
+                <div id="info_amalgama" class="info_cards"> <strong>Rehabilitación adhesiva con resina compuesta</strong>
+                    <strong>Procedimiento:</strong>
+                    <p> Diagnóstico clínico y radiográfico.</p>
+                    <p> Retiro cuidadoso de la amalgama y tejido cariado.</p>
+                    <p> Aislamiento del diente (posiblemente con dique de goma).</p>
+                    <p class="desvanecido"> Grabado ácido, adhesivo y aplicación de resina.</p>
+                    <button type="button" id="search_btn">Ver màs</button>
+                </div>
+                <div id="boximg_amalgama">
+                    <img class="amalgama" src="assets/img/amalgama.jpg" alt="Una muela picada con amalgama">
+                    <img class="amalgama" src="assets/img/amalgama1.jpg" alt="La misma muela pero reconstruida con resina compuesta">
+                </div>
+            </section>
+            <section id="card_extraccion" class="reveal_slide">
+                <section id="boximg_extraccion">
+                    <video id="video_extraccion"
+                        src="assets/img/extraccion2.mp4" controls autoplay loop muted poster="assets/img/imgExtraccion.png">
+                        Tu navegador no soporta el video.
+                    </video>
                 </section>
+                <div id="info_extraccion" class="info_cards"> <strong>EXTRACCIÓN QUIRÚRJICA DE MOLAR</strong>
+                    <strong>Procedimiento</strong>
+                    <p>Incisión gingival y despegue del colgajo.</p>
+                    <p>Osteotomía parcial para liberar la muela (si estaba retenida o impactada).</p>
+                    <p class="desvanecido">Sección de la corona y raíces, en caso de estar fusionadas o en</p>
+                    <button type="button" id="search_btn">Ver màs</button>
+                <div>  
             </section>
-            <section id="box_sarro" class="text_reveal">
-                <section id="card_sarro" class="cards_tratamientos">
-                    <div id="boximg_sarro">
-                        <img class="sarro" src="assets/img/sarro.jpg" alt="caso de sarro en dentadura">
-                        <img class="sarro" src="assets/img/sarro1.jpg" alt="sarro eliminado">
-                    </div>
-                    <div id="info_sarro" class="info_cards"> <strong>PROFILAXIS DENTAL PROFESIONAL</strong>
-                        <strong>Tratamiento realizado:</strong>
-                        <p>Raspado cuidadoso con ultrasonido y/o curetas manuales.</p>
-                        <p>Remoción del sarro adherido al esmalte.</p>
-                        <p class="desvanecido">Fue realizado un raspado supragingival y posiblemente un alisado radicular </p>
-                        <a href="views/tratamientos.html#box_sarro"> <button type="button" id="search_btn">Ver màs</button> </a>
-                    </div>
-                </section>
-            </section>
-            <section id="box_amalgama" class="text_slide">
-                <section id="card_amalgama" class="cards_tratamientos">
-                    <div id="info_amalgama" class="info_cards"> <strong>Rehabilitación adhesiva con resina compuesta</strong>
-                        <strong>Procedimiento:</strong>
-                        <p> Diagnóstico clínico y radiográfico.</p>
-                        <p> Retiro cuidadoso de la amalgama y tejido cariado.</p>
-                        <p> Aislamiento del diente (posiblemente con dique de goma).</p>
-                        <p class="desvanecido"> Grabado ácido, adhesivo y aplicación de resina.</p>
-                        <button type="button" id="search_btn">Ver màs</button>
-                    </div>
-                    <div id="boximg_amalgama">
-                        <img class="amalgama" src="assets/img/amalgama.jpg" alt="Una muela picada con amalgama">
-                        <img class="amalgama" src="assets/img/amalgama1.jpg" alt="La misma muela pero reconstruida con resina compuesta">
-                    </div>
-                </section>
-            </section>
-            <section id="box_extraccion" class="text_reveal">
-                <section id="card_amalgama" class="cards_tratamientos">
-                    <section id="boximg_extraccion">
-                        <video id="video_extraccion"
-                            src="assets/img/extraccion.mp4" controls autoplay loop muted poster="assets/img/imgExtraccion.png">
-                            Tu navegador no soporta el video.
-                        </video>
-                    </section>
-                    <div id="info_extraccion" class="info_cards"> <strong>EXTRACCIÓN QUIRÚRJICA DE MOLAR</strong>
-                        <strong>Procedimiento</strong>
-                        <p>Incisión gingival y despegue del colgajo.</p>
-                        <p>Osteotomía parcial para liberar la muela (si estaba retenida o impactada).</p>
-                        <p class="desvanecido">Sección de la corona y raíces, en caso de estar fusionadas o en</p>
-                        <button type="button" id="search_btn">Ver màs</button>
-                    <div>  
-                </section>
-            </section>
-            <section  id="box_blanqueamiento" class="text_slide">
-                <section id="card_blanqueamiento" class="cards_tratamientos">
+                <section id="card_blanqueamiento" class="reveal_fade">
                     <div id="info_blanqueamiento" class="info_cards"> <strong>BLANQUEAMIENTO DENTAL PROFESIONAL</strong>
                         <strong>Procedimiento realizado</strong>
                         <p>Profilaxis inicial para eliminar placa y sarro.</p>
@@ -140,7 +128,6 @@
                         <img class="blanqueamiento" src="assets/img/blanqueamiento1.jpg" alt="Dientes blancos">
                     </div>
                 </section>
-            </section>
         </article>
         <section id="box_publicidad">
             <img class="text_slide" id="pub_promo" src="assets/img/blanqueamiento.png" alt="Promoción de blanqueamiento dental con limpieza ultrasonica">

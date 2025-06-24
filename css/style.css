@@ -52,7 +52,7 @@ html, body {
 }
 
 button {
-  background-color: rgba(255, 255, 255, 0.674);
+  background: transparent;
   border: 2px solid rgb(99, 130, 143);
   border-radius: 30px;
   color: rgb(99, 130, 143);
@@ -105,12 +105,6 @@ header img {
 header #logo {
   width: 40vw;
 }
-header #menu {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
 
 .logo {
   width: 4vw;
@@ -128,7 +122,6 @@ main .amalgama {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   border-radius: 15px;
-  height: 40vh;
   width: 50vw;
 }
 main .blanqueamiento {
@@ -137,58 +130,58 @@ main .blanqueamiento {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   border-radius: 15px;
-  height: 40vh;
   width: 50vw;
 }
-main #box_fractura {
-  height: 55vh;
-  margin: 0vw;
-  height: 48vh;
-}
 main #boximg_fractura {
-  height: 40vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
   margin: 0vw;
-}
-main #box_sarro {
-  height: 55vh;
-  margin: 0vw;
-  height: 46vh;
-  margin: 0 0 2vw 0;
+  width: 50vw;
 }
 main #boximg_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
   border-radius: 15px;
-  height: 46vh;
   margin: 0vw;
 }
-main #box_amalgama {
-  height: 40vh;
-}
 main #boximg_restauracion {
-  height: 60vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
   margin: 0px;
 }
-main #box_extraccion {
-  height: 40vh;
-}
 main #boximg_extraccion {
-  height: 40vh;
+  height: auto;
   margin: 0vw;
 }
 main #boximg_amalgama {
-  height: 40vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
   margin: 0vw;
 }
-main #box_blanqueamiento {
-  height: 40vh;
-}
 main #boximg_blanqueamiento {
-  height: 40vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
   margin: 0vw;
 }
 main #box_publicidad {
   background-color: rgba(238, 249, 250, 0.582);
-  height: 140vh;
   width: 100vw;
+  height: auto;
 }
 main #card_blanqueamiento {
   align-items: center;
@@ -197,6 +190,8 @@ main #card_blanqueamiento {
   justify-content: space-around;
   background-color: #DAF1F0;
   border-radius: 15px;
+  height: auto;
+  padding: 0 0 0 1vw;
 }
 main #card_amalgama {
   align-items: center;
@@ -205,17 +200,34 @@ main #card_amalgama {
   justify-content: space-around;
   border-radius: 15px;
   background-color: #DAF1F0;
-  height: 40vh;
+  height: auto;
 }
-main .card_fractura {
+main #card_extraccion {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 15px;
+  background-color: #DAF1F0;
+  height: auto;
+}
+main #card_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   background-color: #DAF1F0;
   border-radius: 15px;
-  height: 40vh;
+  height: auto;
 }
 main #card_restauracion {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   background-color: #DAF1F0;
   border-radius: 15px;
-  height: 60vh;
+  height: auto;
 }
 main #card_sarro {
   align-items: center;
@@ -224,11 +236,10 @@ main #card_sarro {
   justify-content: space-around;
   border-radius: 15px;
   background-color: #DAF1F0;
-  height: 50vh;
+  height: auto;
 }
 main .cards_tratamientos {
   flex-direction: row;
-  height: 40vh;
   width: 90vw;
 }
 main .cards_tratamientos div {
@@ -252,7 +263,6 @@ main .fractura {
   mask-image: linear-gradient(to right, black 60%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
-  height: 20vh;
 }
 main h1 {
   color: #87D0CD;
@@ -269,25 +279,102 @@ main h3 {
   color: #86D3DC;
   font-size: 6vw;
 }
+main #info_blanqueamiento {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: rgba(0, 0, 0, 0.532);
+}
+main #info_blanqueamiento p {
+  font-size: 3vw;
+  margin: 2vw 0 2vw 0;
+}
+main #info_blanqueamiento strong {
+  text-align: start;
+  width: 40vw;
+  margin: 2vw 0 2vw 0;
+}
+main #info_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: rgba(0, 0, 0, 0.578);
+}
+main #info_fractura p {
+  font-size: 3vw;
+  margin: 2vw 0 2vw 0;
+}
+main #info_fractura #second_PF {
+  height: 15vh;
+  margin: 2vw 0 2vw 0;
+}
+main #info_extraccion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: rgba(0, 0, 0, 0.575);
+}
 main #info_extraccion strong {
   text-align: start;
+  margin: 2vw 0 0vw 0;
   width: 30vw;
 }
+main #info_extraccion p {
+  margin: 2vw 0 1vw 0;
+}
 main #info_restauracion {
-  height: 60vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: rgba(0, 0, 0, 0.545);
   padding: 0 0 0 1vw;
 }
 main #info_restauracion p {
   font-size: 3.5vw;
+  margin: 2vw 0 1vw 0;
+}
+main #info_restauracion strong {
+  margin: 1vw 0 1vw 0;
 }
 main #info_sarro {
-  height: 46vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: rgba(0, 0, 0, 0.571);
+}
+main #info_sarro p {
+  font-size: 3vw;
+  margin: 0vw 0 1vw 0;
+}
+main #info_sarro strong {
+  margin: 2vw 0 2vw 0;
 }
 main #info_amalgama {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: rgba(0, 0, 0, 0.574);
   padding: 0 0 0 1vw;
+}
+main #info_amalgama p {
+  font-size: 3vw;
+  margin: 2vw 0 1vw 0;
 }
 main #info_amalgama strong {
   text-align: start;
+  margin: 2vw 0 2vw 0;
   width: 40vw;
 }
 main .links {
@@ -299,12 +386,10 @@ main p {
 main #pub_promo {
   margin: 0vw 0 3vw 0;
   width: 95vw;
-  height: 95vh;
 }
 main #pub_limpieza {
   margin: 0vw 0 3vw 0;
   width: 95vw;
-  height: 95vh;
 }
 main .reveal_slide {
   height: 20vh;
@@ -319,7 +404,6 @@ main .restauracion {
   mask-image: linear-gradient(to left, black 40%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  height: 20vh;
 }
 main section {
   align-items: center;
@@ -350,23 +434,28 @@ main .sarro {
   -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
   border-radius: 15px;
-  height: 23vh;
   width: 60vw;
 }
 main .text_slide {
   height: 60vh;
 }
 main #tratamientos {
-  height: 283vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #tratamientos h3 {
+  margin: 2vw 0 4vw 0;
 }
 main #video_extraccion {
   mask-repeat: no-repeat;
   mask-image: linear-gradient(to right, black 60%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
   -webkit-mask-repeat: no-repeat;
-  width: 58vw;
-  height: 40vh;
   border-radius: 15px;
+  width: 60vw;
 }
 
 #maps {

@@ -78,10 +78,6 @@ header{
     #logo {
         width: 40vw;
     }
-    
-    #menu {
-        @include box-row();
-    }
 
 }
 
@@ -97,107 +93,94 @@ main {
     .amalgama {
         @include opacar-left();
         border-radius: 15px;
-        height: 40vh;
         width: 50vw;
     }
     
     .blanqueamiento {
         @include opacar-left();
         border-radius: 15px;
-        height: 40vh;
         width: 50vw;
     }
     
-    #box_fractura {
-        @include text_reveal();
-        height: 48vh;
-    }
-    
     #boximg_fractura {
-        height: 40vh;
+        @include box-centrado();
         margin: 0vw;
-    }
-    
-    #box_sarro {
-        @include text_reveal();
-        height: 46vh;
-        margin: 0 0 2vw 0;
+        width: 50vw;
     }
 
     #boximg_sarro {
+        @include box-centrado();
         border-radius: 15px;
-        height: 46vh;
         margin: 0vw;
     }
 
-    #box_amalgama {
-        height: 40vh;
-    }
-
     #boximg_restauracion {
-        height: 60vh;
+        @include box-centrado();
         margin: 0px;
     }
     
-    #box_extraccion {
-        height: 40vh;
-    }
-    
     #boximg_extraccion {
-        height: 40vh;
+        height: auto;
         margin: 0vw;
     }
     
     #boximg_amalgama {
-        height: 40vh;
+        @include box-centrado();
         margin: 0vw;
     }
     
-    #box_blanqueamiento {
-        height: 40vh;
-    }
-    
     #boximg_blanqueamiento {
-        height: 40vh;
+        @include box-centrado();
         margin: 0vw;
     }
     
     #box_publicidad {
         background-color: rgba(238, 249, 250, 0.582);
-        height: 140vh;
         width: 100vw;
+        height: auto;
     }
     
     #card_blanqueamiento {
         @include box-row();
         background-color: $color-fondo;
         border-radius: 15px;
+        height: auto;
+        padding: 0 0 0 1vw;
     }
     
     #card_amalgama {
         @include box-row();
         border-radius: 15px;
         background-color: $color-fondo;
-        height: 40vh;
+        height: auto;
     }
     
-    .card_fractura {
+    #card_extraccion {
+        @include box-row();
+        border-radius: 15px;
+        background-color: $color-fondo;
+        height: auto;
+    }
+
+    #card_fractura {
+        @include box-row();
         background-color: $color-fondo;
         border-radius: 15px;
-        height: 40vh;
+        height: auto;
     }
     
     #card_restauracion {
+        @include box-row();
         background-color: $color-fondo;
         border-radius: 15px;
-        height: 60vh;
+        height: auto;
     }
     
     #card_sarro {
         @include box-row();
         border-radius: 15px;
         background-color: $color-fondo;
-        height: 50vh;
+        height: auto;
     }    
     
     .cards_tratamientos {
@@ -211,7 +194,6 @@ main {
     .fractura {
         @include img();
         @include opacar-right();
-        height: 20vh;
     }    
     
     h1 {
@@ -231,30 +213,84 @@ main {
         color: $sub-titulo;
         font-size: 6vw;
     }    
-    
-    #info_extraccion {
+
+    #info_blanqueamiento {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.532);
+        p {
+            font-size: 3vw;
+            margin: 2vw 0 2vw 0;
+        }
         strong {
             text-align: start;
+            width: 40vw;
+            margin: 2vw 0 2vw 0;
+        }
+    }
+
+    #info_fractura {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.578);
+        p {
+            font-size: 3vw;
+            margin: 2vw 0 2vw 0;
+        }
+        #second_PF {
+            height: 15vh;
+            margin: 2vw 0 2vw 0;
+        }
+
+    }
+    
+    #info_extraccion {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.575);
+        strong {
+            text-align: start;
+            margin: 2vw 0 0vw 0;
             width: 30vw;
+        }
+        p {
+            margin: 2vw 0 1vw 0;
         }
     }
     
     #info_restauracion {
-        height: 60vh;
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.545);
         padding: 0 0 0 1vw;
         p {
             font-size: 3.5vw;
+            margin: 2vw 0 1vw 0;
+        }
+        strong {
+            margin: 1vw 0 1vw 0;
         }
     }
     
     #info_sarro {
-        height: 46vh;
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.571);
+        p {
+            font-size: 3vw;
+            margin: 0vw 0 1vw 0;
+        }
+        strong {
+            margin: 2vw 0 2vw 0;
+        }
     }
     
     #info_amalgama {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.574);
         padding: 0 0 0 1vw;
+        p {
+            font-size: 3vw;
+            margin: 2vw 0 1vw 0;
+        }
         strong {
             text-align: start;
+            margin: 2vw 0 2vw 0;
             width: 40vw;
         }
     }
@@ -286,7 +322,6 @@ main {
     .restauracion {
         @include img();
         @include opacar-left();
-        height: 20vh;
     }
     
     section {
@@ -307,7 +342,6 @@ main {
     .sarro {
         @include opacar-right();
         border-radius: 15px;
-        height: 23vh;
         width: 60vw;
     }
 
@@ -317,14 +351,16 @@ main {
         
     
     #tratamientos {
-        height: 283vh;
+        @include box-centrado();
+        h3 {
+            margin: 2vw 0 4vw 0;
+        }
     }
 
     #video_extraccion {
         @include opacar-right();
-        width: 58vw;
-        height: 40vh;
         border-radius: 15px;
+        width: 60vw;
     }
 }
 

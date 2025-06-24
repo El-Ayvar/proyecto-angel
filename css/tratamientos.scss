@@ -93,7 +93,9 @@ main {
 
     #beginning_text {
         @include box-column();
-        height: 28vh;
+        p{
+            margin: 2vw 0 2vw 0;
+        }
         width: 90vw;
     }
 
@@ -111,7 +113,7 @@ main {
     #title_restauracion {
         color: $titulo;
         font-size: 5vw;
-        margin: 8vw 0 0 4vw;
+        margin: 8vw 0 4vw 4vw;
     }
 
     #sub_restauracion {
@@ -129,12 +131,11 @@ main {
 
     #box_restauracion {
         @include box-centrado();
-        height: 233vh;
     }
 
     #intro_restauracion {
         @include box-centrado();
-        height: 85vw;
+        height: 70vw;
     }
 
     li {
@@ -145,18 +146,22 @@ main {
 
     #caso_fractura{
         @include box-centrado();
-        height: 70vh;
         h3 {
             font-size: 5vw;
             color: $titulo;
             text-align: center;
         }
         h4 {
-            font-size: 5vw;
             color: $sub-titulo;
+            font-size: 5vw;
+            margin: 2vw 0 2vw 0;
         }
         img {
             @include img-tratamientos();
+        }
+        margin: 5vw 0 0 0;
+        p {
+            margin: 1vw 0 1vw 0;
         }
     }
 
@@ -164,7 +169,7 @@ main {
         @include box-centrado();
         #firs_fractura {
             @include box-centrado();
-            height: 10vh;
+            margin: 3vw 0 0 0;
             strong {
                 align-items: start;
                 color: $sub-titulo;
@@ -175,14 +180,11 @@ main {
         h3 {
             font-size: 5vw;
             color: $titulo;
-        }
-        
-        height: 55vh;
-        
+        }            
+        margin: 5vw 0 0 0;    
         #second_fractura {
             @include box-centrado();
-            height: 10vh;
-
+            margin: 3vw 0 0 0;
             strong {
                 align-items: start;
                 color: $sub-titulo;
@@ -194,18 +196,18 @@ main {
 
         #third_fractura {
             @include box-centrado();
+            margin: 3vw 0 0 0;
             strong {
                 align-items: start;
                 color: $sub-titulo;
                 font-size: 4vw;
                 width: 90vw;
             }
-            height: 10vh;
         }
 
         #fourth_fractura {
             @include box-centrado();
-            height: 15vh;
+            margin: 3vw 0 0 0;
             strong {
                 align-items: start;
                 color: $sub-titulo;
@@ -216,7 +218,7 @@ main {
 
         #fifth_fractura {
             @include box-centrado();
-            height: 12vh;
+            margin: 3vw 0 0 0;
             strong {
                 align-items: start;
                 color: $sub-titulo;
@@ -228,14 +230,16 @@ main {
 
     #final_fractura {
         @include box-centrado();
-        img {
-            @include img-tratamientos();
-        }
-        height: 65vh;
         h3 {
             color: $titulo;
             font-size: 6vw;
+            margin: 0vw 0 2vw 0;
         }
+        img {
+            @include img-tratamientos();
+            margin: 2vw 0 0vw 0;
+        }
+        margin: 5vw 0 0vw 0;
     }
 
     #background {
@@ -243,7 +247,6 @@ main {
         @include box-centrado();
         background-color: #87D0CD;
         border: black;
-        height: 340vh;
         padding: 30vw 0 0 0;
         width: 100vw;
     }
@@ -263,7 +266,6 @@ main {
             text-align: center;
             width: 90vw;
         }
-        height: 310vh;
         width: 90vw;
     }
 
@@ -284,30 +286,34 @@ main {
         @include box-centrado();
         p {
             color: white;
+            margin: 1vw 0 1vw 0;
         }
         h3 {
             font-size: 5vw;
             text-align: center;
+            margin: 2vw 0 2vw 0;
         }
         h4 {
             font-size: 5vw;
             width: 90vw;
+            margin: 2vw 0 2vw 0;
         }
         img {
             @include img-tratamientos();
+            margin: 2vw 0 2vw 0;
         }
-        height: 80vh;
     }
 
     #pasos_rehabilitacion {
         @include box-centrado;
         img {
             @include img-tratamientos();
+            margin: 2vw 0 2vw 0;
         }
         h2 {
             font-size: 7vw;
+            margin: 2vw 0 2vw 0;
         }
-        height: 170vh;
         #firs_rehabilitacion {
             h4 {
                 font-size: 4.5vw;
@@ -357,12 +363,19 @@ main {
 
     #box_sarro {
         @include box-centrado();
-        height: 340vh;
         h2 {
+            margin: 2vw 0 2vw 0;
             color: $titulo;
             font-size: 6vw;
         }
+        
+        p {
+            margin: 2vw 0 2vw 0;
+        }
 
+        img {
+            margin: 2vw 0 2vw 0;
+        }
         #intro_sarro {
             @include box-row();
             color: $sub-titulo;
@@ -375,7 +388,6 @@ main {
 
         #text_intro {
             @include box-centrado();
-            height: 30vh;
             p {
                 font-size: 3.5vw;
             }
@@ -383,7 +395,6 @@ main {
 
         #because_sarro {
             @include box-centrado();
-            height: 80vh;
             img {
                 @include img-tratamientos();
             }
@@ -394,7 +405,6 @@ main {
         
         #after_sarro {
             @include box-centrado();
-            height: 83vh;
             img {
                 @include img-tratamientos();
             }
@@ -407,7 +417,6 @@ main {
 
     #second_sarro {
         @include box-centrado();
-        height: 120vh;
 
         p {
             font-size: 3.5vw;
@@ -427,7 +436,6 @@ main {
         #first_sarroSecond {
             @include box-column ();
             text-align: center;
-            height: 50vh;
             img {
             @include img-tratamientos();
             width: 90vw;
@@ -438,7 +446,6 @@ main {
             @include box-column ();
             text-align: center;
             color: $sub-titulo;
-            height: 60vh;
             img {
                 @include img-tratamientos();
             }
