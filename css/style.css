@@ -310,7 +310,7 @@ main #info_fractura p {
 }
 main #info_fractura #second_PF {
   height: 15vh;
-  margin: 2vw 0 2vw 0;
+  margin: 2vw 0 0vw 0;
 }
 main #info_extraccion {
   align-items: center;

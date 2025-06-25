@@ -1,3 +1,10 @@
+@mixin background {
+    @include opacar-top();
+    @include box-centrado();
+    background-color: #87D0CD;
+    padding: 30vw 0 0 0;
+    width: 100vw;
+}
 
 @mixin box-column {
     align-items: center;

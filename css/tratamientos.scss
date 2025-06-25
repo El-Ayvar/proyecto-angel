@@ -9,6 +9,53 @@ html, body {
     @include body();
 }
 
+.box_redes {
+    @include box-column();
+    height: 20vh;
+}
+
+.box_social {
+    @include box-column();
+    color: rgba(0, 0, 0, 0.586);
+    height: 6vh;
+    width: 42vw;
+}
+
+#box_ubicacion {
+    color: rgba(0, 0, 0, 0.586);
+    display: flex;
+    flex-direction: column;
+    height: 35vh;
+    justify-content: space-around;
+    p {
+        padding: 3vw;
+    }
+}
+
+#box_boton {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.btn_subir {
+    background-color: rgba(121, 194, 196, 0.762);
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 0 3vw 0;
+    width: 10vw;
+}
+
+footer {
+    @include box-column();
+    background-image: url("../assets/img/fondo.png");
+    background-size:cover;
+    background-attachment: fixed;
+    margin: 5vw 0 0 0;
+    width: 100vw;
+}
+
 header{
     @include header();
     img {
@@ -25,6 +72,9 @@ header{
     }
 }
 
+.logo {
+    width: 4vw;
+}
 
 #side_menu {
     background: rgba(88, 177, 226, 0.15);
@@ -75,22 +125,98 @@ header{
 main {
     
     @include box-column();
+    
+    .background_inter {
+        @include opacar-bottom();
+        background-color:#87D0CD;
+        height: 5vh;
+        
+        width: 100vw;
+    }
+
+    #box_amalgama {
+        @include box-centrado();
+        color: white;
+
+        #first_amalgama {
+            h3 {
+                margin: 3vw 0 3vw 0;
+            }
+            img {
+                @include img-tratamientos();
+            }
+        }
+
+        #second_amalgama {
+            h4 {
+                margin: 3vw 0 0 0;
+            }
+            img {
+                @include img-tratamientos();
+            }
+        }
+
+        h2 {
+            text-align: center;
+            margin: 2vw 0 3vw 0;
+        }
+
+        #intro_amalgama {
+            @include box-row();
+            margin: 3vw 0 3vw 0;
+            img{
+                margin: 0 2vw 0 0;
+                width: 20vw;
+            }
+            width: 70vw;
+        }
+
+        p {
+            color: white;
+            margin: 2vw 0 2vw 0;
+        }
+    }
+    
+    #box_extraccion {
+        @include box-centrado();
+        h2{
+            color: $titulo;
+            font-size: 6vw;
+        }
+        h4 {
+            color: $sub-titulo;
+            font-size: 4vw;
+            margin: 0vw 0 3vw 0;
+            text-align:start;
+            width: 90vw;
+        }   
+        #intro_extraccion {
+            @include box-row();
+            text-align: center;
+            margin: 5vw 0 5vw 0;
+            h2 {
+                font-size: 5vw;
+            }
+            img {
+                width: 10vw;
+            }
+            width: 70vw;
+        }
+        #text_introE {
+            @include box-centrado();
+        }
+        p {
+            margin: 2vw 0 2vw 0;
+        }
+        video {
+            width: 90vw;
+        }
+    }
 
     #box_tratamientos {
         @include box-centrado();
     }
-
-    p {
-        color: rgba(24, 24, 24, 0.636);
-        font-size: 3vw;
-    }
-
-    h1 {
-        color: $titulo;
-        font-size: 8vw;
-        margin: 3vw 0 3vw 0;
-    }
-
+    
     #beginning_text {
         @include box-column();
         p{
@@ -98,52 +224,106 @@ main {
         }
         width: 90vw;
     }
-
-    #slogan {
-        color: $sub-titulo;
-        font-size: 4.2vw;
-        margin: 4vw 0 0vw 2vw;
-    }
-
-    #muela {
-        margin: 8vw 0 0 0;
-        width: 13vw;
-    }
-
-    #title_restauracion {
-        color: $titulo;
-        font-size: 5vw;
-        margin: 8vw 0 4vw 4vw;
-    }
-
-    #sub_restauracion {
-        @include box-row();
-        color: $sub-titulo;
-        img {
-            margin: 0 3vw 0 0;
-            width: 10vw;
-        }
-        h3 {
-            font-size: 4vw;
-        }
-        width: 50vw;
-    }
-
+    
     #box_restauracion {
         @include box-centrado();
     }
+    
+    #background {
+        @include background();
+    }
 
-    #intro_restauracion {
+    #box_rehabilitacion {
         @include box-centrado();
-        height: 70vw;
+        color: white;
+        h2 {
+            font-size: 6vw; 
+            text-align: center;
+            width: 90vw;
+        }
+        p {
+            color: white;
+            font-size: 3.5vw;
+            margin: 1vw 0 1vw 0;
+        }
+        width: 90vw;
     }
 
-    li {
-        color: $sub-titulo;
-        font-size: 3.5vw;
-        margin: 2vw 0 2vw 0;
-    }
+    #box_sarro {
+        @include box-centrado();
+        #after_sarro {
+            @include box-centrado();
+            img {
+                @include img-tratamientos();
+            }
+            p {
+                font-size: 3.5vw;
+            }
+        }
+        
+        #because_sarro {
+            @include box-centrado();
+            img {
+                @include img-tratamientos();
+            }
+            p {
+                font-size: 3.5vw;
+            }
+        }
+        
+        h2 {
+            color: $titulo;
+            font-size: 6vw;
+            margin: 2vw 0 2vw 0;
+        }
+        
+        img {
+            margin: 2vw 0 2vw 0;
+        }
+        #intro_sarro {
+            @include box-row();
+            color: $sub-titulo;
+            font-size: 4vw;
+            img {
+                width: 23vw;
+            }
+            width: 70vw;
+        }
+        
+        p {
+            margin: 2vw 0 2vw 0;
+        }
 
+        #text_introS {
+            @include box-centrado();
+            p {
+                font-size: 3.5vw;
+            }
+        }    
+    }
+    
+    #caso_rehabilitacion {
+        @include box-centrado();
+        h3 {
+            font-size: 5vw;
+            margin: 2vw 0 2vw 0;
+            text-align: center;
+        }
+        h4 {
+            font-size: 5vw;
+            margin: 2vw 0 2vw 0;
+            width: 90vw;
+        }
+        img {
+            @include img-tratamientos();
+            margin: 2vw 0 2vw 0;
+        }
+        p {
+            color: white;
+            margin: 1vw 0 1vw 0;
+        }
+    }
+    
     #caso_fractura{
         @include box-centrado();
         h3 {
@@ -162,6 +342,173 @@ main {
         margin: 5vw 0 0 0;
         p {
             margin: 1vw 0 1vw 0;
+        }
+    }
+    
+    #final_fractura {
+        @include box-centrado();
+        h3 {
+            color: $titulo;
+            font-size: 6vw;
+            margin: 0vw 0 2vw 0;
+        }
+        img {
+            @include img-tratamientos();
+            margin: 2vw 0 0vw 0;
+        }
+        margin: 5vw 0 0vw 0;
+    }
+    
+    h1 {
+        color: $titulo;
+        font-size: 8vw;
+        margin: 3vw 0 3vw 0;
+    }
+
+    #intro_rehabilitacion {
+        @include box-row();
+        h3 {
+            font-size: 6vw;
+            text-align: center;
+            width: 90vw;
+        }
+        img {
+            width: 10vw;
+        }
+        width: 90vw;
+    }
+    
+    #intro_restauracion {
+        @include box-centrado();
+        height: 70vw;
+    }
+    
+    li {
+        color: $sub-titulo;
+        font-size: 3.5vw;
+        margin: 2vw 0 2vw 0;
+    }
+    
+    #muela {
+        margin: 8vw 0 0 0;
+        width: 13vw;
+    }
+   
+    #pasos_rehabilitacion {
+        @include box-centrado;
+        #fourth_rehabilitacion {
+            h4 {
+                font-size: 4.5vw;
+                margin: 0 0 3vw 0;
+            }
+            p {
+                font-size: 3vw;
+            }
+        }
+        #firs_rehabilitacion {
+            h4 {
+                font-size: 4.5vw;
+                margin: 0 0 3vw 0;
+            }
+            p {
+                font-size: 3vw;
+            }
+        }
+        h2 {
+            font-size: 7vw;
+            margin: 2vw 0 2vw 0;
+        }
+        img {
+            @include img-tratamientos();
+            margin: 2vw 0 2vw 0;
+        }
+        #second_rehabilitacion {
+            h4 {
+                font-size: 4.5vw;
+                margin: 0 0 3vw 0;
+            }
+            p {
+                font-size: 3vw;
+            }
+        }
+        #third_rehabilitacion {
+            h4 {
+                font-size: 4.5vw;
+                text-align: center;
+                margin: 0 0 3vw 0;
+            }
+            p {
+                font-size: 3vw;
+            }
+        }
+    }
+    
+    p {
+        color: rgba(24, 24, 24, 0.636);
+        font-size: 3vw;
+    }
+
+    #second_background {
+        @include background();
+    }
+
+    #slogan {
+        color: $sub-titulo;
+        font-size: 4.2vw;
+        margin: 4vw 0 0vw 2vw;
+    }
+    
+    #sub_restauracion {
+        @include box-row();
+        color: $sub-titulo;
+        img {
+            margin: 0 3vw 0 0;
+            width: 10vw;
+        }
+        h3 {
+            font-size: 4vw;
+        }
+        width: 50vw;
+    }
+    
+    #second_sarro {
+        @include box-centrado();
+        
+        h2 {
+            font-size: 5vw;
+        }
+
+        p {
+            font-size: 3.5vw;
+        }
+
+        #intro_sarroSecond{
+            @include box-row();
+            img{
+                width: 20vw;
+            }
+        }
+
+        #first_sarroSecond {
+            @include box-column ();
+            img {
+                @include img-tratamientos();
+                width: 90vw;
+            }
+            text-align: center;
+        }
+
+        #second_sarroSecond {
+            @include box-column ();
+            color: $sub-titulo;
+            img {
+                @include img-tratamientos();
+            }
+            p {
+                font-size: 3vw;
+            }
+            text-align: center;
+            width: 90vw;
         }
     }
 
@@ -227,236 +574,12 @@ main {
             }
         }
     }
-
-    #final_fractura {
-        @include box-centrado();
-        h3 {
-            color: $titulo;
-            font-size: 6vw;
-            margin: 0vw 0 2vw 0;
-        }
-        img {
-            @include img-tratamientos();
-            margin: 2vw 0 0vw 0;
-        }
-        margin: 5vw 0 0vw 0;
-    }
-
-    #background {
-        @include opacar-top();
-        @include box-centrado();
-        background-color: #87D0CD;
-        border: black;
-        padding: 30vw 0 0 0;
-        width: 100vw;
-    }
-
-    #box_rehabilitacion {
-        @include box-centrado();
-        color: white;
-
-        p {
-            font-size: 3.5vw;
-            color: white;
-            margin: 1vw 0 1vw 0;
-        }
-
-        h2 {
-            font-size: 6vw; 
-            text-align: center;
-            width: 90vw;
-        }
-        width: 90vw;
-    }
-
-    #intro_rehabilitacion {
-        @include box-row();
-        img {
-            width: 10vw;
-        }
-        h3 {
-            font-size: 6vw;
-            text-align: center;
-            width: 90vw;
-        }
-        width: 90vw;
-    }
-
-    #caso_rehabilitacion {
-        @include box-centrado();
-        p {
-            color: white;
-            margin: 1vw 0 1vw 0;
-        }
-        h3 {
-            font-size: 5vw;
-            text-align: center;
-            margin: 2vw 0 2vw 0;
-        }
-        h4 {
-            font-size: 5vw;
-            width: 90vw;
-            margin: 2vw 0 2vw 0;
-        }
-        img {
-            @include img-tratamientos();
-            margin: 2vw 0 2vw 0;
-        }
-    }
-
-    #pasos_rehabilitacion {
-        @include box-centrado;
-        img {
-            @include img-tratamientos();
-            margin: 2vw 0 2vw 0;
-        }
-        h2 {
-            font-size: 7vw;
-            margin: 2vw 0 2vw 0;
-        }
-        #firs_rehabilitacion {
-            h4 {
-                font-size: 4.5vw;
-                margin: 0 0 3vw 0;
-            }
-            p {
-                font-size: 3vw;
-            }
-        }
-        #second_rehabilitacion {
-            h4 {
-                font-size: 4.5vw;
-                margin: 0 0 3vw 0;
-            }
-            p {
-                font-size: 3vw;
-            }
-        }
-        #third_rehabilitacion {
-            h4 {
-                font-size: 4.5vw;
-                text-align: center;
-                margin: 0 0 3vw 0;
-            }
-            p {
-                font-size: 3vw;
-            }
-        }
-        #fourth_rehabilitacion {
-            h4 {
-                font-size: 4.5vw;
-                margin: 0 0 3vw 0;
-            }
-            p {
-                font-size: 3vw;
-            }
-        }
-    }
-
-    #background_inter {
-        @include opacar-bottom();
-        background-color:#87D0CD;
-        height: 5vh;
-        
-        width: 100vw;
-    }
-
-    #box_sarro {
-        @include box-centrado();
-        h2 {
-            margin: 2vw 0 2vw 0;
-            color: $titulo;
-            font-size: 6vw;
-        }
-        
-        p {
-            margin: 2vw 0 2vw 0;
-        }
-
-        img {
-            margin: 2vw 0 2vw 0;
-        }
-        #intro_sarro {
-            @include box-row();
-            color: $sub-titulo;
-            font-size: 4vw;
-            img {
-                width: 23vw;
-            }
-            width: 70vw;
-        }
-
-        #text_intro {
-            @include box-centrado();
-            p {
-                font-size: 3.5vw;
-            }
-        }
-
-        #because_sarro {
-            @include box-centrado();
-            img {
-                @include img-tratamientos();
-            }
-            p {
-                font-size: 3.5vw;
-            }
-        }
-        
-        #after_sarro {
-            @include box-centrado();
-            img {
-                @include img-tratamientos();
-            }
-            p {
-                font-size: 3.5vw;
-            }
-        }
-        
-    }
-
-    #second_sarro {
-        @include box-centrado();
-
-        p {
-            font-size: 3.5vw;
-        }
-
-        h2 {
-            font-size: 5vw;
-        }
-
-        #intro_sarroSecond{
-            @include box-row();
-            img{
-                width: 20vw;
-            }
-        }
-
-        #first_sarroSecond {
-            @include box-column ();
-            text-align: center;
-            img {
-            @include img-tratamientos();
-            width: 90vw;
-            }
-        }
-
-        #second_sarroSecond {
-            @include box-column ();
-            text-align: center;
-            color: $sub-titulo;
-            img {
-                @include img-tratamientos();
-            }
-            p {
-                font-size: 3vw;
-            }
-            width: 90vw;
-        }
-    }
-
     
+    #title_restauracion {
+        color: $titulo;
+        font-size: 5vw;
+        margin: 8vw 0 4vw 4vw;
+    }
 }
 
 ul {
