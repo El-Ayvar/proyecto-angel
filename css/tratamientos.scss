@@ -176,9 +176,61 @@ main {
             margin: 2vw 0 2vw 0;
         }
     }
+
+    #box_blanqueamiento {
+        @include box-centrado();
+        color: white;
+        #first_blanqueamiento {
+            img {
+                @include img-tratamientos();
+                margin: 2vw 0 2vw 0;
+            }
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 6vw;
+            margin: 2vw 0 2vw 0;
+        }
+
+        h4 {
+            font-size: 4vw;
+        }
+
+        #intro_blanqueamiento {
+            @include box-row();
+            h2 {
+                font-size: 4.5vw;
+            }
+            img {
+                margin: 2vw 0 2vw 0;
+                width: 25vw;
+            }
+        }
+
+        p {
+            color: white;
+            margin: 2vw 0 2vw 0;
+        }
+
+        #second_blanqueamiento {
+            img {
+                @include img-tratamientos();
+            }
+        }
+
+        video {
+            margin: 2vw 0 2vw 0;
+            width: 90vw;
+        }
+    }
     
     #box_extraccion {
         @include box-centrado();
+        em {
+            color: rgba(0, 0, 0, 0.6);
+            margin: 0 0 2vw 0;
+        }
         h2{
             color: $titulo;
             font-size: 6vw;
@@ -573,6 +625,10 @@ main {
                 width: 90vw;
             }
         }
+    }
+
+    #third_background {
+        @include background ();
     }
     
     #title_restauracion {

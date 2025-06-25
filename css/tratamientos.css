@@ -196,12 +196,62 @@ main #box_amalgama p {
   color: white;
   margin: 2vw 0 2vw 0;
 }
+main #box_blanqueamiento {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: white;
+}
+main #box_blanqueamiento #first_blanqueamiento img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+  margin: 2vw 0 2vw 0;
+}
+main #box_blanqueamiento h2 {
+  text-align: center;
+  font-size: 6vw;
+  margin: 2vw 0 2vw 0;
+}
+main #box_blanqueamiento h4 {
+  font-size: 4vw;
+}
+main #box_blanqueamiento #intro_blanqueamiento {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+main #box_blanqueamiento #intro_blanqueamiento h2 {
+  font-size: 4.5vw;
+}
+main #box_blanqueamiento #intro_blanqueamiento img {
+  margin: 2vw 0 2vw 0;
+  width: 25vw;
+}
+main #box_blanqueamiento p {
+  color: white;
+  margin: 2vw 0 2vw 0;
+}
+main #box_blanqueamiento #second_blanqueamiento img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #box_blanqueamiento video {
+  margin: 2vw 0 2vw 0;
+  width: 90vw;
+}
 main #box_extraccion {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 90vw;
+}
+main #box_extraccion em {
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 0 2vw 0;
 }
 main #box_extraccion h2 {
   color: #87D0CD;
@@ -687,6 +737,20 @@ main #seg_fractura #fifth_fractura strong {
   color: #86D3DC;
   font-size: 4vw;
   width: 90vw;
+}
+main #third_background {
+  mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  background-color: #87D0CD;
+  padding: 30vw 0 0 0;
+  width: 100vw;
 }
 main #title_restauracion {
   color: #87D0CD;
