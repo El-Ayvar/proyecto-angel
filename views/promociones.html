@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/promociones.css">
+    <script src="../js/main.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Promociones de Ayvar Den't</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="../assets/img/logo.png" alt="Logo de AyvarDent">
+        <img src="../assets/img/hamburgues.png" alt="Abrir menú" onclick="toggleMenu()" />
+        
+        <section id="side_menu">
+            <div id="close_menu" class="menu_option" onclick="closeMenu()">x</div>
+            <a href="../index.html"><div class="menu_option" onclick="closeMenu()">Inicio</div> </a>
+            <a href="../views/ubicacion.html"> <div class="menu_option">Ubicación</div> </a>
+            <a href="../views/tratamientos.html"><div class="menu_option" onclick="closeMenu()">Tratamientos</div> </a>
+            <div class="menu_option">Contacto</div>
+            <div id="img_menu" class="menu_option"> 
+                <a href="https://wa.me/527443822853?text=Hola%20mucho%20gusto,%20me%20gustaria%20agendar%20una%20cita%20con%20el%20doctor%20Jose%20Angel"> <img src="../assets/img/logoWBN.png" alt="Acceso al Whatsapp"> </a>
+                <a href="https://www.facebook.com/profile.php?id=100083437804633"> <img src="../assets/img/logoFBN.png" alt="Acceso al Facebook"> </a>
+            </div>
+        </section>
+    </header>
+    <main>
+        <img src="../assets/img/blanqueamiento.png" alt="Promocion de blanqueamiento">
+        <img src="../assets/img/ultrasonica.jpg" alt="Promocion de limpieza ultrasonica">
+    </main>
+    <footer>
+        <section id="redes_sociales">
+            <section class="box_redes">
+                <strong>CONTÁCTANOS</strong>
+                <div class="box_social">
+                    <img class="logo" src="../assets/img/logoWBN.png" alt="logo de whatsapp">
+                    <p><strong>Whatsapp:</strong>7443822853</p>
+                </div>
+                <div class="box_social">
+                    <img class="logo" src="../assets/img/logoFBN.png" alt="logo de whatsapp">
+                    <p><strong>facebook:</strong>Ayvar den't</p>
+                </div>
+            </section>
+            <section class="box_redes">
+                <strong>CONTACT US</strong>
+                <div class="box_social">
+                    <img class="logo" src="../assets/img/logoWBN.png" alt="logo de whatsapp">
+                    <p><strong>Whatsapp:</strong>7443822853</p>
+                </div>
+                <div class="box_social">
+                    <img class="logo" src="../assets/img/logoFBN.png" alt="logo de whatsapp">
+                    <p><strong>facebook:</strong>Ayvar den't</p>
+                </div>
+            </section>
+        </section>
+        <section id="box_ubicacion">
+                <p><strong>Ubicación:</strong>
+                Nos encontramos en la Avenida Fuerza Aerea, Playa pie de la cuesta, a un costado del Hawai 5-0.</p>
+            <iframe id="maps" src="//www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d712.8545273888217!2d-99.96937086467611!3d16.90060982530357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1750887761074!5m2!1ses!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+        <a href="promociones.html" id="box_boton"> <img class="btn_subir" src="../assets/img/flecha.png" alt="boton para subir"></a>
+    </footer>
+</body>
+</html>

@@ -9,7 +9,6 @@ html, body {
     @include body();
 }
 
-
 footer {
     @include box-column();
     background-image: url("../assets/img/fondo.png");
@@ -70,63 +69,10 @@ header{
 
 main {
     @include box-centrado();
-    background-color: $color-fondo;
-    #box_location {
-        @include box-column();
-        background-color: white;
-        border-radius: 15px;
-        #direccion {
-            @include box-row();
-            img {
-                margin: 0 2vw 0 0;
-                width: 7vw;
-            }
-            strong {
-                color: rgba(0, 0, 0, 0.585);
-            }
-            width:90vw;
-        }
-        #maps {
-            border-radius: 15px;
-            margin: 0vw 0 2vw 0;
-            width: 90vw;
-        }
+    img {
+        margin: 5vw 0 5vw 0;
         width: 90vw;
     }
-    #box_horario {
-        @include box-row();
-        background-color: white;
-        border-radius: 15px;
-        #horario {
-            @include box-column();
-            p {
-                color: rgba(0, 0, 0, 0.56);
-                margin: 0 0 1vw 0;
-                width: 58vw;
-            }
-            h3 {
-                margin: 0 0 1vw 0;
-                text-align: start;
-                width: 58vw;
-            }
-        }
-        margin: 5vw 0 5vw 0;
-        img {
-            margin: 0 0 7vw 0;
-            width: 8vw;
-        }
-        width: 70vw;
-    }
-    h1 {
-        color: rgba(0, 0, 0, 0.582);
-        margin: 3vw 0 3vw 0;
-    }
-    h3 {
-        color: rgba(0, 0, 0, 0.582);
-        margin: 3vw 0 3vw 0;
-        text-align: center;
-    }
-    width: 100vw;
 }
 
 #side_menu {
@@ -174,3 +120,4 @@ main {
     }
     
 }
+
