@@ -15,48 +15,11 @@ html, body {
   overflow-x: hidden;
 }
 
-.box_redes {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 20vh;
-}
-
-.box_social {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  color: rgba(0, 0, 0, 0.586);
-  height: 6vh;
-  width: 42vw;
-}
-
-#box_ubicacion {
-  color: rgba(0, 0, 0, 0.586);
-  display: flex;
-  flex-direction: column;
-  height: 35vh;
-  justify-content: space-around;
-}
-#box_ubicacion p {
-  padding: 3vw;
-}
-
 #box_boton {
   align-items: center;
   display: flex;
   justify-content: center;
   width: 100vw;
-}
-
-.btn_subir {
-  background-color: rgba(121, 194, 196, 0.762);
-  border-radius: 20px;
-  cursor: pointer;
-  margin: 0 0 3vw 0;
-  width: 10vw;
 }
 
 footer {
@@ -69,6 +32,58 @@ footer {
   background-attachment: fixed;
   margin: 5vw 0 0 0;
   width: 100vw;
+}
+footer .btn_subir {
+  background-color: rgba(121, 194, 196, 0.762);
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 0 3vw 0;
+  width: 10vw;
+}
+footer .box_redes {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 2vw 0 2vw 0;
+}
+footer .box_social {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: rgba(0, 0, 0, 0.586);
+  width: 42vw;
+}
+footer #box_ubicacion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: rgba(0, 0, 0, 0.586);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+footer #box_ubicacion #maps {
+  margin: 0 0 3vw 0;
+  width: 90vw;
+}
+footer #box_ubicacion p {
+  margin: 3vw 0 3vw 0;
+}
+footer .logo {
+  margin: 2vw 0 2vw 0;
+  width: 4vw;
+}
+footer #redes_sociales {
+  display: flex;
+  color: rgba(0, 0, 0, 0.586);
+  flex-direction: column;
+  height: 50vh;
+  justify-content: space-around;
+  padding: 3vw;
 }
 
 header {
@@ -92,10 +107,6 @@ header #menu {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.logo {
-  width: 4vw;
 }
 
 #side_menu {

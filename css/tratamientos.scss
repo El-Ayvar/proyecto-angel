@@ -9,29 +9,6 @@ html, body {
     @include body();
 }
 
-.box_redes {
-    @include box-column();
-    height: 20vh;
-}
-
-.box_social {
-    @include box-column();
-    color: rgba(0, 0, 0, 0.586);
-    height: 6vh;
-    width: 42vw;
-}
-
-#box_ubicacion {
-    color: rgba(0, 0, 0, 0.586);
-    display: flex;
-    flex-direction: column;
-    height: 35vh;
-    justify-content: space-around;
-    p {
-        padding: 3vw;
-    }
-}
-
 #box_boton {
     align-items: center;
     display: flex;
@@ -39,19 +16,53 @@ html, body {
     width: 100vw;
 }
 
-.btn_subir {
-    background-color: rgba(121, 194, 196, 0.762);
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 0 0 3vw 0;
-    width: 10vw;
-}
-
 footer {
     @include box-column();
     background-image: url("../assets/img/fondo.png");
     background-size:cover;
     background-attachment: fixed;
+    .btn_subir {
+        background-color: rgba(121, 194, 196, 0.762);
+        border-radius: 20px;
+        cursor: pointer;
+        margin: 0 0 3vw 0;
+        width: 10vw;
+    }
+    .box_redes {
+        @include box-column();
+        margin: 2vw 0 2vw 0;
+    }
+    .box_social {
+        @include box-column();
+        color: rgba(0, 0, 0, 0.586);
+        width: 42vw;
+    }
+    #box_ubicacion {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.586);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        #maps {
+            margin: 0 0 3vw 0;
+            width: 90vw;
+        }
+        p {
+            margin: 3vw 0 3vw 0;
+        }
+    }
+    .logo {
+        margin: 2vw 0 2vw 0;
+        width: 4vw;
+    }
+    #redes_sociales {
+        display: flex; 
+        color: rgba(0, 0, 0, 0.586);
+        flex-direction: column;
+        height: 50vh;
+        justify-content: space-around;
+        padding: 3vw;
+    }
     margin: 5vw 0 0 0;
     width: 100vw;
 }
@@ -70,10 +81,6 @@ header{
     #menu {
         @include box-row();
     }
-}
-
-.logo {
-    width: 4vw;
 }
 
 #side_menu {

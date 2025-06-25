@@ -1,0 +1,177 @@
+@use "../sass/mixin" as *;
+@use "../sass/variables" as *;
+
+* {
+    @include wiport();
+}
+
+html, body {
+    @include body();
+}
+
+
+footer {
+    @include box-column();
+    background-image: url("../assets/img/fondo.png");
+    background-size:cover;
+    background-attachment: fixed;
+    .btn_subir {
+        background-color: rgba(121, 194, 196, 0.762);
+        border-radius: 20px;
+        cursor: pointer;
+        margin: 0 0 3vw 0;
+        width: 10vw;
+    }
+    .box_redes {
+        @include box-column();
+        margin: 2vw 0 2vw 0;
+    }
+    .box_social {
+        @include box-column();
+        color: rgba(0, 0, 0, 0.586);
+        width: 42vw;
+    }
+    #box_ubicacion {
+        color: rgba(0, 0, 0, 0.586);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        p {
+            padding: 3vw;
+        }
+    }
+    .logo {
+        margin: 2vw 0 2vw 0;
+        width: 4vw;
+    }
+    #redes_sociales {
+        display: flex; 
+        color: rgba(0, 0, 0, 0.586);
+        flex-direction: column;
+        height: 50vh;
+        justify-content: space-around;
+        padding: 3vw;
+    }
+    margin: 5vw 0 0 0;
+    width: 100vw;
+}
+
+header{
+    @include header();
+    img {
+        cursor: pointer;
+        width:15vw;
+    }
+
+    #logo {
+        width: 40vw;
+    }
+
+}
+
+main {
+    @include box-centrado();
+    background-color: $color-fondo;
+    #box_location {
+        @include box-column();
+        background-color: white;
+        border-radius: 15px;
+        #direccion {
+            @include box-row();
+            img {
+                margin: 0 2vw 0 0;
+                width: 7vw;
+            }
+            strong {
+                color: rgba(0, 0, 0, 0.585);
+            }
+            width:90vw;
+        }
+        #maps {
+            border-radius: 15px;
+            margin: 0vw 0 2vw 0;
+            width: 90vw;
+        }
+        width: 90vw;
+    }
+    #box_horario {
+        @include box-row();
+        background-color: white;
+        border-radius: 15px;
+        #horario {
+            @include box-column();
+            p {
+                color: rgba(0, 0, 0, 0.56);
+                margin: 0 0 1vw 0;
+                width: 58vw;
+            }
+            h3 {
+                margin: 0 0 1vw 0;
+                text-align: start;
+                width: 58vw;
+            }
+        }
+        margin: 5vw 0 5vw 0;
+        img {
+            margin: 0 0 7vw 0;
+            width: 8vw;
+        }
+        width: 70vw;
+    }
+    h1 {
+        color: rgba(0, 0, 0, 0.582);
+        margin: 3vw 0 3vw 0;
+    }
+    h3 {
+        color: rgba(0, 0, 0, 0.582);
+        margin: 3vw 0 3vw 0;
+        text-align: center;
+    }
+    width: 100vw;
+}
+
+#side_menu {
+    background: rgba(88, 177, 226, 0.15);
+    backdrop-filter: blur(1.5vw);
+    -webkit-backdrop-filter: blur(1vw);
+    border: 1px solid rgba(100, 175, 229, 0.3);    color: white;
+    height: 100vh;
+    padding: 3vw;
+    position: fixed;
+    right: -$menu-width;
+    transition: right $transition-speed ease;
+    top: 0;
+    width: $menu-width;
+    z-index: 1;
+
+    &.active {
+        right: 0;
+    }
+
+    #close_menu {
+        cursor: pointer;
+        font-size: 7vw;
+        text-align: end;
+        padding: 0 3vw 0 0;
+        margin: 0vw;
+    }
+
+    img {
+        margin: 2vw;
+        width: 5vw;
+    }
+
+    #img_menu {
+        cursor: pointer;
+        text-align: center;
+        width: 30vw;
+    }
+
+    .menu_option {
+        color: rgba(0, 0, 0, 0.57);
+        cursor: pointer;
+        font-size: 3.5vw;
+        margin: 5vw 0;
+    }
+    
+}
