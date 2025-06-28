@@ -12,18 +12,22 @@
     <div id="tratamientos"></div>
     <header>
         <img id="logo" src="../assets/img/logo.png" alt="Logo de AyvarDent">
-        <img src="../assets/img/hamburgues.png" alt="Abrir menú" onclick="toggleMenu()" />
+        <img id="hamburguesa" src="../assets/img/hamburgues.png" alt="Abrir menú" onclick="toggleMenu()" />
         
         <section id="side_menu">
             <div id="close_menu" class="menu_option" onclick="closeMenu()">x</div>
             <a href="../index.html"><div class="menu_option" onclick="closeMenu()">Inicio</div> </a>
             <a href="../views/ubicacion.html"> <div class="menu_option">Ubicación</div> </a>
             <a href="../views/promociones.html"> <div class="menu_option">Promociones</div> </a> 
-            <div class="menu_option">Contacto</div>
             <div id="img_menu" class="menu_option"> 
                 <a href="https://wa.me/527443822853?text=Hola%20mucho%20gusto,%20me%20gustaria%20agendar%20una%20cita%20con%20el%20doctor%20Jose%20Angel"> <img src="../assets/img/logoWBN.png" alt="Acceso al Whatsapp"> </a>
                 <a href="https://www.facebook.com/profile.php?id=100083437804633"> <img src="../assets/img/logoFBN.png" alt="Acceso al Facebook"> </a>
             </div>
+        </section>
+        <section id="menu_tablet">
+            <a href="../index.html"> <button type="button" class="search_btn">Inicio</button> </a>
+            <a href="../views/ubicacion.html"> <button type="button" class="search_btn">Ubicación</button> </a>
+            <a href="../views/promociones.html"> <button type="button" class="search_btn"> Promociones</button> </a>
         </section>
     </header>
     <main>
@@ -212,7 +216,7 @@
                         <h2>Impacto inmediato de una limpieza dental profesional</h2>
                     </section>
                     <section id="first_sarroSecond">
-                        <p>afectando tanto la estética como el estado de salud gingival.</p>
+                        <p>El paciente present sarro excesivo afectando tanto la estética como el estado de salud gingival.</p>
                         <p>El paciente presenta acumulación visible de sarro en el sector anterior inferior. </p>
                         <img src="../assets/img/secondsarro.jpg" alt="Dientes con exceso de sarro">
                     </section>

@@ -1,0 +1,84 @@
+@use "../sass/mixin" as *;
+@use "../sass/variables" as *;
+
+@mixin footer {
+    @include box-column();
+    background-image: url("../assets/img/fondo.png");
+    background-size:cover;
+    background-attachment: fixed;
+    .btn_subir {
+        background-color: rgba(121, 194, 196, 0.762);
+        border-radius: 20px;
+        cursor: pointer;
+        margin: 0 0 3vw 0;
+        width: 10vw;
+    }
+    .box_redes {
+        @include box-column();
+        margin: 2vw 0 2vw 0;
+    }
+    .box_social {
+        @include box-column();
+        color: rgba(0, 0, 0, 0.586);
+        width: 42vw;
+    }
+    #box_ubicacion {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.586);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        #maps {
+            margin: 0 0 3vw 0;
+            width: 90vw;
+        }
+        p {
+            margin: 3vw 0 3vw 0;
+        }
+    }
+    .logo {
+        margin: 2vw 0 2vw 0;
+        width: 4vw;
+    }
+    #redes_sociales {
+        display: flex; 
+        color: rgba(0, 0, 0, 0.586);
+        flex-direction: column;
+        height: 50vh;
+        justify-content: space-around;
+        padding: 3vw;
+    }
+    margin: 5vw 0 0 0;
+    width: 100vw;
+    @media (min-width: 481.98px) {
+        #redes_sociales {
+            height: auto;
+            strong {
+                font-size: 2vw;
+            }
+            p {
+                font-size: 2vw;
+            }
+            .logo {
+                width: 3vw;
+            }
+        }
+        #box_ubicacion {
+            strong {
+                font-size: 2.5vw;
+            }
+            p {
+                font-size: 2.5vw;
+            }
+            #maps {
+                height: 40vh;
+                width: 90vw;
+            }
+        }
+        #box_boton {
+            .btn_subir {
+                width: 7vw;
+            }
+        }
+    }
+}

@@ -10,7 +10,7 @@ function closeMenu() {
 }
 
 ScrollReveal().reveal('.reveal_fade', {
-  duration: 2000,
+  duration: 1500,
   origin: 'rigth',
   distance: '20px',
   opacity: 0,
@@ -20,27 +20,7 @@ ScrollReveal().reveal('.reveal_fade', {
 });
 
 ScrollReveal().reveal('.reveal_slide', {
-  duration: 2000,
-  origin: 'left',
-  distance: '50px',
-  opacity: 0,
-  easing: 'ease-in-out',
-  delay: 200,
-  reset: false
-});
-
-ScrollReveal().reveal('.subtitulo_fade', {
-  duration: 2000,
-  origin: 'rigth',
-  distance: '20px',
-  opacity: 0,
-  easing: 'ease-out',
-  delay: 100,
-  reset: false
-});
-
-ScrollReveal().reveal('.subtitulo_slide', {
-  duration: 2000,
+  duration: 1500,
   origin: 'left',
   distance: '50px',
   opacity: 0,

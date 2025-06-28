@@ -14,6 +14,17 @@ html, body {
   overflow-x: hidden;
 }
 
+button {
+  background: transparent;
+  border: 2px solid rgb(99, 130, 143);
+  border-radius: 30px;
+  color: rgb(99, 130, 143);
+  cursor: pointer;
+  font-size: 4vw;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
 footer {
   align-items: center;
   display: flex;
@@ -48,13 +59,22 @@ footer .box_social {
   width: 42vw;
 }
 footer #box_ubicacion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
   color: rgba(0, 0, 0, 0.586);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
+footer #box_ubicacion #maps {
+  margin: 0 0 3vw 0;
+  width: 90vw;
+}
 footer #box_ubicacion p {
-  padding: 3vw;
+  margin: 3vw 0 3vw 0;
 }
 footer .logo {
   margin: 2vw 0 2vw 0;
@@ -68,22 +88,76 @@ footer #redes_sociales {
   justify-content: space-around;
   padding: 3vw;
 }
+@media (min-width: 481.98px) {
+  footer #redes_sociales {
+    height: auto;
+  }
+  footer #redes_sociales strong {
+    font-size: 2vw;
+  }
+  footer #redes_sociales p {
+    font-size: 2vw;
+  }
+  footer #redes_sociales .logo {
+    width: 3vw;
+  }
+  footer #box_ubicacion strong {
+    font-size: 2.5vw;
+  }
+  footer #box_ubicacion p {
+    font-size: 2.5vw;
+  }
+  footer #box_ubicacion #maps {
+    height: 40vh;
+    width: 90vw;
+  }
+  footer #box_boton .btn_subir {
+    width: 7vw;
+  }
+}
 
 header {
   align-items: center;
   background-color: rgb(238, 249, 250);
   display: flex;
   flex-direction: row;
-  height: 15vh;
   justify-content: space-around;
   width: 100vw;
 }
 header img {
   cursor: pointer;
+  margin: 2vw 0 2vw 0;
   width: 15vw;
 }
 header #logo {
   width: 40vw;
+}
+header #menu_tablet {
+  display: none;
+}
+@media (min-width: 481.98px) {
+  header button {
+    font-size: 2vw;
+    margin: 0 2vw 0 0vw;
+  }
+  header button:hover {
+    background-color: #acc9e9;
+    border: white;
+    color: white;
+    cursor: pointer;
+  }
+  header #hamburguesa {
+    display: none;
+  }
+  header #logo {
+    width: 20vw;
+  }
+  header .side_menu {
+    display: flex;
+  }
+  header #menu_tablet {
+    display: flex;
+  }
 }
 
 main {
@@ -115,13 +189,35 @@ main #box_location #direccion img {
   margin: 0 2vw 0 0;
   width: 7vw;
 }
+@media (min-width: 481.98px) {
+  main #box_location #direccion img {
+    margin: 0 0 0 0vw;
+  }
+}
 main #box_location #direccion strong {
   color: rgba(0, 0, 0, 0.585);
+}
+@media (min-width: 481.98px) {
+  main #box_location #direccion strong {
+    font-size: 2.5vw;
+    text-align: center;
+  }
+}
+@media (min-width: 481.98px) {
+  main #box_location #direccion {
+    margin: 0 0 2vw 0;
+    width: 70vw;
+  }
 }
 main #box_location #maps {
   border-radius: 15px;
   margin: 0vw 0 2vw 0;
   width: 90vw;
+}
+@media (min-width: 481.98px) {
+  main #box_location #maps {
+    height: 50vh;
+  }
 }
 main #box_horario {
   align-items: center;
@@ -144,14 +240,34 @@ main #box_horario #horario p {
   margin: 0 0 1vw 0;
   width: 58vw;
 }
+@media (min-width: 481.98px) {
+  main #box_horario #horario p {
+    margin: 0 0 0 2vw;
+  }
+}
 main #box_horario #horario h3 {
   margin: 0 0 1vw 0;
   text-align: start;
   width: 58vw;
 }
+@media (min-width: 481.98px) {
+  main #box_horario #horario h3 {
+    margin: 0 0 0 2vw;
+  }
+}
 main #box_horario img {
   margin: 0 0 7vw 0;
   width: 8vw;
+}
+@media (min-width: 481.98px) {
+  main #box_horario img {
+    margin: 0vw 0 0 0;
+  }
+}
+@media (min-width: 481.98px) {
+  main #box_horario {
+    width: 50vw;
+  }
 }
 main h1 {
   color: rgba(0, 0, 0, 0.582);

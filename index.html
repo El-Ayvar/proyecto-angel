@@ -12,7 +12,7 @@
     <div id="inicio"></div>
     <header>
         <img id="logo" src="assets/img/logo.png" alt="Logo de AyvarDent">
-        <img src="assets/img/hamburgues.png" alt="Abrir menú" onclick="toggleMenu()" />
+        <img id="hamburguesa" src="assets/img/hamburgues.png" alt="Abrir menú" onclick="toggleMenu()" />
         
         <section id="side_menu">
             <div id="close_menu" class="menu_option" onclick="closeMenu()">x</div>
@@ -20,32 +20,33 @@
             <a href="views/ubicacion.html"> <div class="menu_option">Ubicación</div> </a>
             <a href="views/tratamientos.html"><div class="menu_option" onclick="closeMenu()">Tratamientos</div> </a>
             <a href="views/promociones.html"> <div class="menu_option">Promociones</div> </a>
-            <div class="menu_option">Contacto</div>
             <div id="img_menu" class="menu_option"> 
                 <a href="https://wa.me/527443822853?text=Hola%20mucho%20gusto,%20me%20gustaria%20agendar%20una%20cita%20con%20el%20doctor%20Jose%20Angel"> <img src="assets/img/logoWBN.png" alt="Acceso al Whatsapp"> </a>
                 <a href="https://www.facebook.com/profile.php?id=100083437804633"> <img src="assets/img/logoFBN.png" alt="Acceso al Facebook"> </a>
             </div>
         </section>
+        <section id="menu_tablet">
+            <a href="#inicio"> <button type="button" class="search_btn">Inicio</button> </a>
+            <a href="views/ubicacion.html"> <button type="button" class="search_btn">Ubicación</button> </a>
+            <a href="views/tratamientos.html"> <button type="button" class="search_btn">Tratamientos</button> </a>
+            <a href="views/promociones.html"> <button type="button" class="search_btn"> Promociones</button> </a>
+        </section>
     </header>
     <main>
         <h1>Excelente clínica para una sonrisa funcional y hermosa</h1>
-        <section class="subtitulo_fade">
+        <section id="intro_text" class="reveal_fade">
             <h2>Bienvenido a tu espacio de salud bucal.</h2>
-        </section>
-        <section class="reveal_fade">
             <p>Soy cirujano dentista egresado del Instituto de Desarrollo Salvador Allende Gossens <a class="links" href="https://www.indesag.com/"> (INDESAG) </a> , una institución comprometida con la formación integral, la ética profesional y la excelencia clínica. </p>
             <p>Mi misión es brindarte atención personalizada, basada en conocimiento científico, tecnología actual y un trato humano que inspire confianza. Tu sonrisa es única.</p>
             <p>Mi compromiso es cuidarla con precisión, empatía y dedicación, para que siempre sea tu mejor opción.</p>
         </section>
-        <section class="subtitulo_slide">
-        <h2>Formación integral, atención de excelencia</h2>
-        </section>
-        <section class="reveal_slide">
+        <section id="second_intro" class="reveal_slide">
+            <h2>Formación integral, atención de excelencia</h2>
             <p>Gracias a su formación en el Instituto de Desarrollo Salvador Allende Gossens <a class="links" href="https://www.indesag.com/"> (INDESAG) </a>, el Dr. Jose Angel cuenta con una preparación sólida en diagnóstico clínico, tratamientos restaurativos, cirugía oral, implantología, estética dental y prevención integral.</p> 
             <p>Su enfoque combina precisión técnica, sensibilidad humana y el uso de tecnología moderna para ofrecer soluciones personalizadas a cada paciente.</p>
         </section>
+        <h3>¿Qué puedo hacer por ti?</h3>
         <article id="tratamientos">
-            <h3>¿Qué puedo hacer por ti?</h3>
             <section class="reveal_slide" id="card_fractura">
                     <div id="boximg_fractura" >
                         <img class="fractura" src="assets/img/RFractura.jpg" alt="Diente fracturado">
@@ -130,8 +131,8 @@
                 </section>
         </article>
         <section id="box_publicidad">
-            <img class="text_slide" id="pub_promo" src="assets/img/blanqueamiento.png" alt="Promoción de blanqueamiento dental con limpieza ultrasonica">
-            <img class="text_reveal" id="pub_limpieza" src="assets/img/ultrasonica.jpg" alt="Promocion de limpiesa ultrasónica">
+            <img class="reveal_slide" id="pub_promo" src="assets/img/blanqueamiento.png" alt="Promoción de blanqueamiento dental con limpieza ultrasonica">
+            <img class="reveal_fade" id="pub_limpieza" src="assets/img/ultrasonica.jpg" alt="Promocion de limpiesa ultrasónica">
         </section>
             <a href="https://wa.me/527443822853?text=Hola%20mucho%20gusto,%20me%20gustaria%20agendar%20una%20cita%20con%20el%20doctor%20Jose%20Angel" target="_blank">
                 <img id="whatsapp" class="acceso_redes" src="assets/img/whatsapp.png" alt="WhatsApp">

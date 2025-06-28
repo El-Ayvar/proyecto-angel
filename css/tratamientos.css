@@ -15,6 +15,17 @@ html, body {
   overflow-x: hidden;
 }
 
+button {
+  background: transparent;
+  border: 2px solid rgb(99, 130, 143);
+  border-radius: 30px;
+  color: rgb(99, 130, 143);
+  cursor: pointer;
+  font-size: 4vw;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
 #box_boton {
   align-items: center;
   display: flex;
@@ -85,28 +96,79 @@ footer #redes_sociales {
   justify-content: space-around;
   padding: 3vw;
 }
+@media (min-width: 481.98px) {
+  footer #redes_sociales {
+    height: auto;
+  }
+  footer #redes_sociales strong {
+    font-size: 2vw;
+  }
+  footer #redes_sociales p {
+    font-size: 2vw;
+  }
+  footer #redes_sociales .logo {
+    width: 3vw;
+  }
+  footer #box_ubicacion strong {
+    font-size: 2.5vw;
+  }
+  footer #box_ubicacion p {
+    font-size: 2.5vw;
+  }
+  footer #box_ubicacion #maps {
+    height: 40vh;
+    width: 90vw;
+  }
+  footer #box_boton .btn_subir {
+    width: 7vw;
+  }
+}
 
 header {
   align-items: center;
   background-color: rgb(238, 249, 250);
   display: flex;
   flex-direction: row;
-  height: 15vh;
   justify-content: space-around;
   width: 100vw;
 }
 header img {
   cursor: pointer;
+  margin: 2vw 0 2vw 0;
   width: 15vw;
 }
 header #logo {
   width: 40vw;
 }
-header #menu {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+header #menu_tablet {
+  display: none;
+}
+@media (min-width: 481.98px) {
+  header button {
+    font-size: 2vw;
+    margin: 0 2vw 0 0vw;
+  }
+  header button:hover {
+    background-color: #acc9e9;
+    border: white;
+    color: white;
+    cursor: pointer;
+  }
+  header #hamburguesa {
+    display: none;
+  }
+  header #logo {
+    width: 20vw;
+  }
+  header .side_menu {
+    display: flex;
+  }
+  header #menu_tablet {
+    display: flex;
+  }
+}
+header button {
+  margin: 0 0 0 3vw;
 }
 
 #side_menu {
@@ -783,4 +845,223 @@ ul li::before {
   margin-right: 1vw;
   vertical-align: middle;
   width: 5vw;
+}
+
+@media (min-width: 481.98px) {
+  main #beginning_text h1 {
+    font-size: 6vw;
+  }
+  main #beginning_text p {
+    font-size: 2.5vw;
+  }
+  main #slogan {
+    font-size: 4vw;
+  }
+  main #muela {
+    width: 9vw;
+  }
+  main #box_restauracion #title_restauracion {
+    font-size: 4.5vw;
+  }
+  main #box_restauracion h3 {
+    font-size: 4vw;
+  }
+  main #box_restauracion h4 {
+    font-size: 4vw;
+  }
+  main #box_restauracion p {
+    font-size: 2.3vw;
+  }
+  main #box_restauracion li {
+    font-size: 3vw;
+  }
+  main #box_restauracion strong {
+    font-size: 1vw;
+  }
+  main #seg_fractura #firs_fractura strong {
+    font-size: 3vw;
+  }
+  main #seg_fractura #firs_fractura p {
+    font-size: 2.2vw;
+  }
+  main #seg_fractura #second_fractura strong {
+    font-size: 3vw;
+  }
+  main #seg_fractura #second_fractura p {
+    font-size: 2.2vw;
+  }
+  main #seg_fractura #third_fractura strong {
+    font-size: 3vw;
+  }
+  main #seg_fractura #third_fractura p {
+    font-size: 2.2vw;
+  }
+  main #seg_fractura #fourth_fractura strong {
+    font-size: 3vw;
+  }
+  main #seg_fractura #fourth_fractura p {
+    font-size: 2.2vw;
+  }
+  main #seg_fractura #fifth_fractura strong {
+    font-size: 3vw;
+  }
+  main #seg_fractura #fifth_fractura p {
+    font-size: 2.2vw;
+  }
+  main #box_rehabilitacion h2 {
+    font-size: 5vw;
+  }
+  main #box_rehabilitacion h3 {
+    font-size: 4vw;
+  }
+  main #box_rehabilitacion h4 {
+    font-size: 4vw;
+  }
+  main #box_rehabilitacion #intro_rehabilitacion {
+    width: 60vw;
+  }
+  main #box_rehabilitacion #intro_rehabilitacion img {
+    width: 7vw;
+  }
+  main #box_rehabilitacion p {
+    font-size: 2.5vw;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion h2 {
+    font-size: 4vw;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion h4 {
+    font-size: 3.3vw;
+    margin: 2vw 0 0 0;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro h2 {
+    font-size: 5vw;
+  }
+  main #box_sarro p {
+    font-size: 3vw;
+  }
+  main #box_sarro #intro_sarro {
+    width: 50vw;
+  }
+  main #box_sarro #intro_sarro h3 {
+    font-size: 3.5vw;
+    text-align: center;
+  }
+  main #box_sarro #intro_sarro img {
+    width: 13vw;
+  }
+  main #box_sarro #text_introS p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro #because_sarro h2 {
+    font-size: 4vw;
+  }
+  main #box_sarro #because_sarro p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro #after_sarro h2 {
+    font-size: 4.5vw;
+    text-align: center;
+  }
+  main #box_sarro #after_sarro p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro #second_sarro #intro_sarroSecond {
+    width: 70vw;
+  }
+  main #box_sarro #second_sarro #intro_sarroSecond h2 {
+    font-size: 4vw;
+    text-align: center;
+  }
+  main #box_sarro #second_sarro #intro_sarroSecond img {
+    width: 13vw;
+  }
+  main #box_sarro #second_sarro p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro #second_sarro #second_sarroSecond h3 {
+    font-size: 4vw;
+  }
+  main #box_sarro #second_sarro #second_sarroSecond p {
+    font-size: 2.5vw;
+  }
+  main #box_amalgama h2 {
+    font-size: 4vw;
+  }
+  main #box_amalgama #intro_amalgama {
+    text-align: center;
+    width: 60vw;
+  }
+  main #box_amalgama #intro_amalgama h3 {
+    font-size: 3vw;
+  }
+  main #box_amalgama #intro_amalgama img {
+    margin: 0vw;
+    width: 10vw;
+  }
+  main #box_amalgama p {
+    font-size: 2.5vw;
+  }
+  main #box_amalgama #first_amalgama h3 {
+    font-size: 4vw;
+  }
+  main #box_amalgama #first_amalgama h4 {
+    font-size: 3vw;
+  }
+  main #box_amalgama #first_amalgama p {
+    font-size: 2.3vw;
+  }
+  main #box_amalgama #second_amalgama h4 {
+    font-size: 3vw;
+  }
+  main #box_amalgama #second_amalgama p {
+    font-size: 2.3vw;
+  }
+  main #box_extraccion h2 {
+    font-size: 5vw;
+  }
+  main #box_extraccion #intro_extraccion {
+    width: 60vw;
+  }
+  main #box_extraccion #intro_extraccion h2 {
+    font-size: 4vw;
+  }
+  main #box_extraccion #intro_extraccion img {
+    width: 8vw;
+  }
+  main #box_extraccion #text_introE p {
+    font-size: 2.3vw;
+  }
+  main #box_extraccion #first_extraccion p {
+    font-size: 2.3vw;
+  }
+  main #box_blanqueamiento #first_blanqueamiento h4 {
+    font-size: 3vw;
+  }
+  main #box_blanqueamiento #first_blanqueamiento p {
+    font-size: 2.5vw;
+  }
+  main #box_blanqueamiento h2 {
+    font-size: 4vw;
+  }
+  main #box_blanqueamiento #intro_blanqueamiento {
+    width: 50vw;
+  }
+  main #box_blanqueamiento #intro_blanqueamiento h2 {
+    font-size: 2.6vw;
+  }
+  main #box_blanqueamiento #intro_blanqueamiento img {
+    width: 15vw;
+  }
+  main #box_blanqueamiento #second_blanqueamiento p {
+    font-size: 2.5vw;
+  }
+  main #box_blanqueamiento #text_introB p {
+    font-size: 2.5vw;
+  }
+  main #box_blanqueamiento #third_blanqueamiento p {
+    font-size: 2.5vw;
+  }
 }/*# sourceMappingURL=tratamientos.css.map */
