@@ -51,6 +51,7 @@
     margin: 5vw 0 0 0;
     width: 100vw;
     @media (min-width: 481.98px) {
+        background-image: url(../assets/img/fondotablet.png);
         #redes_sociales {
             height: auto;
             strong {
@@ -79,6 +80,35 @@
             .btn_subir {
                 width: 7vw;
             }
+        }
+    }
+    @media (min-width: 769.98px) {
+        background-image: url(../assets/img/fondolaptop.png);
+        #redes_sociales {
+            @include box-row();
+            strong {
+                font-size: 1.5vw;
+            }
+            p {
+                font-size: 1.5vw;
+            }
+            .logo {
+                width: 2.5vw;
+            }
+        }
+        #box_boton {
+            .btn_subir {
+                width: 5vw;
+            }
+        }
+        #box_ubicacion {
+            p {
+                font-size: 2vw;
+            }
+            strong {
+                font-size: 2vw;
+            }
+            text-align: center;
         }
     }
 }

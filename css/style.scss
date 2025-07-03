@@ -569,3 +569,190 @@ main {
         bottom: 15vw;
     }
 }
+
+@media (min-width: 769.98px) {
+    main {
+        @include box-row();
+        flex-wrap: wrap;
+        h1 {
+            font-size: 3.5vw;
+        }
+
+        h3 {
+            font-size: 4vw;
+        }
+
+        #intro_text {
+            h2 {
+                font-size: 1.5vw;
+                padding: 0vw;
+                width: 45vw;
+            }
+            p {
+                font-size: 1vw;
+                margin: 0.5vw 0 0.5vw 0;
+            }
+            width: 45vw;
+        }
+
+        #second_intro {
+            h2 {
+                font-size: 1.5vw;
+                padding: 0vw;
+                width: 45vw;
+            }
+            p {
+                font-size: 1vw;
+                margin: 0.5vw 0 0.5vw 0;
+            }
+            margin: 0 0 4vw 0;
+            width: 45vw;
+        }
+        #tratamientos {
+            #card_fractura {
+                button {
+                    font-size: 2vw;
+                }
+                #boximg_fractura {
+                    height: auto;
+                    width: auto;
+                }
+                .fractura {
+                    height: auto;
+                    width: 25vw;
+                }
+                #info_fractura {
+                    width: 35vw;
+                }
+                strong {
+                    font-size: 1.7vw;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 0.5vw 0 0 0;
+                }
+                width: 44vw;
+            }
+            #card_restauracion {
+                button {
+                    font-size: 2vw;
+                }
+                #boximg_restauracion {
+                    height: auto;
+                    width: auto;
+                }
+                .restauracion {
+                    height: auto;
+                    width: 25vw;
+                }
+                strong {
+                    font-size: 1.7vw;
+                    margin: 0 0 1vw 0;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 1vw 0 0 0;
+                }
+                width: 44vw;
+            }
+            #card_sarro {
+                button {
+                    font-size: 2vw;
+                }
+                #boximg_sarro {
+                    height: auto;
+                    width: auto;
+                }
+                strong {
+                    font-size: 1.7vw;
+                    margin: 0 0 0.5vw 0;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 0.5vw 0 0 0;
+                }
+                .sarro {
+                    width: 25vw;
+                }
+                width: 44vw;
+            }
+            #card_amalgama {
+                .amalgama {
+                    width: 25vw;
+                }
+                #boximg_amalgama {
+                    height: auto;
+                    width: auto;
+                }
+                button {
+                    font-size: 2vw;
+                }
+                #info_amalgama {
+                    width: 20vw;
+                }
+                strong {
+                    font-size: 1.7vw;
+                    margin: 0 0 1vw 0;
+                    width: 18vw;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 1vw 0 0 0;
+                }
+                width: 44vw;
+            }
+            #card_extraccion {
+                #boximg_extraccion {
+                    height: auto;
+                    width: auto;
+                }
+                button {
+                    font-size: 2vw;
+                }
+                strong {
+                    font-size: 1.7vw;
+                    margin: 0 0 0vw 0;
+                    width: 19vw;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 0.5vw 0 0 0;
+                }
+                video {
+                    width: 25vw;
+                }
+                width: 44vw;
+            }
+            #card_blanqueamiento {
+                #boximg_blanqueamiento {
+                    height: auto;
+                    width: auto;
+                }
+                .blanqueamiento {
+                    width: 25vw;
+                }
+                button {
+                    font-size: 2vw;
+                    margin: 2vw 0 0 0;
+                }
+                strong {
+                    font-size: 1.7vw;
+                    margin: 0 0 1vw 0;
+                    width: auto;
+                }
+                #info_blanqueamiento {
+                    width: 20vw;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 1vw 0 0 0;
+                }
+                width: 44vw;
+            }
+            
+            column-count: 2;
+            column-gap: 1vw;
+            flex-wrap: wrap;
+        }
+    }
+}

@@ -18,12 +18,18 @@ html, body {
 button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 30px;
+  border-radius: 50vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
-  padding: 10px 20px;
+  padding: 0.3vw 0.8vw 0.3vw 0.8vw;
   transition: all 0.3s ease-in-out;
+}
+button:hover {
+  background-color: #acc9e9;
+  border: white;
+  color: white;
+  cursor: pointer;
 }
 
 #box_boton {
@@ -97,6 +103,9 @@ footer #redes_sociales {
   padding: 3vw;
 }
 @media (min-width: 481.98px) {
+  footer {
+    background-image: url(../assets/img/fondotablet.png);
+  }
   footer #redes_sociales {
     height: auto;
   }
@@ -121,6 +130,38 @@ footer #redes_sociales {
   }
   footer #box_boton .btn_subir {
     width: 7vw;
+  }
+}
+@media (min-width: 769.98px) {
+  footer {
+    background-image: url(../assets/img/fondolaptop.png);
+  }
+  footer #redes_sociales {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  footer #redes_sociales strong {
+    font-size: 1.5vw;
+  }
+  footer #redes_sociales p {
+    font-size: 1.5vw;
+  }
+  footer #redes_sociales .logo {
+    width: 2.5vw;
+  }
+  footer #box_boton .btn_subir {
+    width: 5vw;
+  }
+  footer #box_ubicacion {
+    text-align: center;
+  }
+  footer #box_ubicacion p {
+    font-size: 2vw;
+  }
+  footer #box_ubicacion strong {
+    font-size: 2vw;
   }
 }
 
@@ -165,6 +206,12 @@ header #menu_tablet {
   }
   header #menu_tablet {
     display: flex;
+  }
+}
+@media (min-width: 769.98px) {
+  header #logo {
+    margin: 1vw 0 1vw 0;
+    width: 15vw;
   }
 }
 header button {

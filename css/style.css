@@ -25,12 +25,18 @@ html, body {
 button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 30px;
+  border-radius: 50vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
-  padding: 10px 20px;
+  padding: 0.3vw 0.8vw 0.3vw 0.8vw;
   transition: all 0.3s ease-in-out;
+}
+button:hover {
+  background-color: #acc9e9;
+  border: white;
+  color: white;
+  cursor: pointer;
 }
 
 #box_boton {
@@ -104,6 +110,9 @@ footer #redes_sociales {
   padding: 3vw;
 }
 @media (min-width: 481.98px) {
+  footer {
+    background-image: url(../assets/img/fondotablet.png);
+  }
   footer #redes_sociales {
     height: auto;
   }
@@ -128,6 +137,38 @@ footer #redes_sociales {
   }
   footer #box_boton .btn_subir {
     width: 7vw;
+  }
+}
+@media (min-width: 769.98px) {
+  footer {
+    background-image: url(../assets/img/fondolaptop.png);
+  }
+  footer #redes_sociales {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  footer #redes_sociales strong {
+    font-size: 1.5vw;
+  }
+  footer #redes_sociales p {
+    font-size: 1.5vw;
+  }
+  footer #redes_sociales .logo {
+    width: 2.5vw;
+  }
+  footer #box_boton .btn_subir {
+    width: 5vw;
+  }
+  footer #box_ubicacion {
+    text-align: center;
+  }
+  footer #box_ubicacion p {
+    font-size: 2vw;
+  }
+  footer #box_ubicacion strong {
+    font-size: 2vw;
   }
 }
 
@@ -172,6 +213,12 @@ header #menu_tablet {
   }
   header #menu_tablet {
     display: flex;
+  }
+}
+@media (min-width: 769.98px) {
+  header #logo {
+    margin: 1vw 0 1vw 0;
+    width: 15vw;
   }
 }
 
@@ -778,5 +825,192 @@ main #video_extraccion {
   }
   #whatsapp {
     bottom: 15vw;
+  }
+}
+@media (min-width: 769.98px) {
+  main {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  main h1 {
+    font-size: 3.5vw;
+  }
+  main h3 {
+    font-size: 4vw;
+  }
+  main #intro_text {
+    width: 45vw;
+  }
+  main #intro_text h2 {
+    font-size: 1.5vw;
+    padding: 0vw;
+    width: 45vw;
+  }
+  main #intro_text p {
+    font-size: 1vw;
+    margin: 0.5vw 0 0.5vw 0;
+  }
+  main #second_intro {
+    margin: 0 0 4vw 0;
+    width: 45vw;
+  }
+  main #second_intro h2 {
+    font-size: 1.5vw;
+    padding: 0vw;
+    width: 45vw;
+  }
+  main #second_intro p {
+    font-size: 1vw;
+    margin: 0.5vw 0 0.5vw 0;
+  }
+  main #tratamientos {
+    -moz-column-count: 2;
+         column-count: 2;
+    -moz-column-gap: 1vw;
+         column-gap: 1vw;
+    flex-wrap: wrap;
+  }
+  main #tratamientos #card_fractura {
+    width: 44vw;
+  }
+  main #tratamientos #card_fractura button {
+    font-size: 2vw;
+  }
+  main #tratamientos #card_fractura #boximg_fractura {
+    height: auto;
+    width: auto;
+  }
+  main #tratamientos #card_fractura .fractura {
+    height: auto;
+    width: 25vw;
+  }
+  main #tratamientos #card_fractura #info_fractura {
+    width: 35vw;
+  }
+  main #tratamientos #card_fractura strong {
+    font-size: 1.7vw;
+  }
+  main #tratamientos #card_fractura p {
+    font-size: 1.7vw;
+    margin: 0.5vw 0 0 0;
+  }
+  main #tratamientos #card_restauracion {
+    width: 44vw;
+  }
+  main #tratamientos #card_restauracion button {
+    font-size: 2vw;
+  }
+  main #tratamientos #card_restauracion #boximg_restauracion {
+    height: auto;
+    width: auto;
+  }
+  main #tratamientos #card_restauracion .restauracion {
+    height: auto;
+    width: 25vw;
+  }
+  main #tratamientos #card_restauracion strong {
+    font-size: 1.7vw;
+    margin: 0 0 1vw 0;
+  }
+  main #tratamientos #card_restauracion p {
+    font-size: 1.7vw;
+    margin: 1vw 0 0 0;
+  }
+  main #tratamientos #card_sarro {
+    width: 44vw;
+  }
+  main #tratamientos #card_sarro button {
+    font-size: 2vw;
+  }
+  main #tratamientos #card_sarro #boximg_sarro {
+    height: auto;
+    width: auto;
+  }
+  main #tratamientos #card_sarro strong {
+    font-size: 1.7vw;
+    margin: 0 0 0.5vw 0;
+  }
+  main #tratamientos #card_sarro p {
+    font-size: 1.7vw;
+    margin: 0.5vw 0 0 0;
+  }
+  main #tratamientos #card_sarro .sarro {
+    width: 25vw;
+  }
+  main #tratamientos #card_amalgama {
+    width: 44vw;
+  }
+  main #tratamientos #card_amalgama .amalgama {
+    width: 25vw;
+  }
+  main #tratamientos #card_amalgama #boximg_amalgama {
+    height: auto;
+    width: auto;
+  }
+  main #tratamientos #card_amalgama button {
+    font-size: 2vw;
+  }
+  main #tratamientos #card_amalgama #info_amalgama {
+    width: 20vw;
+  }
+  main #tratamientos #card_amalgama strong {
+    font-size: 1.7vw;
+    margin: 0 0 1vw 0;
+    width: 18vw;
+  }
+  main #tratamientos #card_amalgama p {
+    font-size: 1.7vw;
+    margin: 1vw 0 0 0;
+  }
+  main #tratamientos #card_extraccion {
+    width: 44vw;
+  }
+  main #tratamientos #card_extraccion #boximg_extraccion {
+    height: auto;
+    width: auto;
+  }
+  main #tratamientos #card_extraccion button {
+    font-size: 2vw;
+  }
+  main #tratamientos #card_extraccion strong {
+    font-size: 1.7vw;
+    margin: 0 0 0vw 0;
+    width: 19vw;
+  }
+  main #tratamientos #card_extraccion p {
+    font-size: 1.7vw;
+    margin: 0.5vw 0 0 0;
+  }
+  main #tratamientos #card_extraccion video {
+    width: 25vw;
+  }
+  main #tratamientos #card_blanqueamiento {
+    width: 44vw;
+  }
+  main #tratamientos #card_blanqueamiento #boximg_blanqueamiento {
+    height: auto;
+    width: auto;
+  }
+  main #tratamientos #card_blanqueamiento .blanqueamiento {
+    width: 25vw;
+  }
+  main #tratamientos #card_blanqueamiento button {
+    font-size: 2vw;
+    margin: 2vw 0 0 0;
+  }
+  main #tratamientos #card_blanqueamiento strong {
+    font-size: 1.7vw;
+    margin: 0 0 1vw 0;
+    width: auto;
+  }
+  main #tratamientos #card_blanqueamiento #info_blanqueamiento {
+    width: 20vw;
+  }
+  main #tratamientos #card_blanqueamiento p {
+    font-size: 1.7vw;
+    margin: 1vw 0 0 0;
   }
 }/*# sourceMappingURL=style.css.map */

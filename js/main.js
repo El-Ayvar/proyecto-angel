@@ -11,7 +11,7 @@ function closeMenu() {
 
 ScrollReveal().reveal('.reveal_fade', {
   duration: 1500,
-  origin: 'rigth',
+  origin: 'right',
   distance: '20px',
   opacity: 0,
   easing: 'ease-out',

@@ -43,4 +43,10 @@
             display: flex;
         }
     }
+    @media (min-width: 769.98px) {
+        #logo {
+            margin: 1vw 0 1vw 0;
+            width: 15vw;
+        }
+    }
 }
