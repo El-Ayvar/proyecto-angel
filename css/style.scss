@@ -575,11 +575,11 @@ main {
         @include box-row();
         flex-wrap: wrap;
         h1 {
-            font-size: 3.5vw;
+            font-size:2.8vw;
         }
 
         h3 {
-            font-size: 4vw;
+            font-size: 3vw;
         }
 
         #intro_text {
@@ -589,12 +589,14 @@ main {
                 width: 45vw;
             }
             p {
+                color: $color-letra;
                 font-size: 1vw;
                 margin: 0.5vw 0 0.5vw 0;
             }
+            margin: 0 0vw 4vw 3vw;
             width: 45vw;
         }
-
+        
         #second_intro {
             h2 {
                 font-size: 1.5vw;
@@ -602,16 +604,17 @@ main {
                 width: 45vw;
             }
             p {
+                color: $color-letra;
                 font-size: 1vw;
                 margin: 0.5vw 0 0.5vw 0;
             }
-            margin: 0 0 4vw 0;
+            margin: 0 1vw 4vw 0;
             width: 45vw;
         }
         #tratamientos {
             #card_fractura {
                 button {
-                    font-size: 2vw;
+                    font-size: 1.5vw;
                 }
                 #boximg_fractura {
                     height: auto;
@@ -619,23 +622,24 @@ main {
                 }
                 .fractura {
                     height: auto;
-                    width: 25vw;
+                    width: 17vw;
                 }
                 #info_fractura {
-                    width: 35vw;
+                    width: 15vw;
                 }
                 strong {
-                    font-size: 1.7vw;
+                    font-size: 1.3vw;
                 }
                 p {
-                    font-size: 1.7vw;
+                    font-size: 1.2vw;
                     margin: 0.5vw 0 0 0;
                 }
-                width: 44vw;
+                margin: 0 0 5vw 0;
+                width: auto;
             }
             #card_restauracion {
                 button {
-                    font-size: 2vw;
+                    font-size: 1.5vw;
                 }
                 #boximg_restauracion {
                     height: auto;
@@ -643,85 +647,98 @@ main {
                 }
                 .restauracion {
                     height: auto;
-                    width: 25vw;
+                    width: 15vw;
                 }
                 strong {
-                    font-size: 1.7vw;
+                    font-size: 1.2vw;
                     margin: 0 0 1vw 0;
+                    width: 100%;
                 }
                 p {
-                    font-size: 1.7vw;
-                    margin: 1vw 0 0 0;
+                    font-size: 1.2vw;
+                    margin: 0vw 0 0.8vw 0;
                 }
-                width: 44vw;
+                width:auto;
             }
             #card_sarro {
                 button {
-                    font-size: 2vw;
+                    font-size: 1.5vw;
                 }
                 #boximg_sarro {
                     height: auto;
                     width: auto;
                 }
                 strong {
-                    font-size: 1.7vw;
+                    font-size: 1.2vw;
                     margin: 0 0 0.5vw 0;
+                    width: 100%;
                 }
                 p {
-                    font-size: 1.7vw;
+                    font-size: 1.2vw;
                     margin: 0.5vw 0 0 0;
                 }
                 .sarro {
-                    width: 25vw;
+                    width: 18vw;
                 }
-                width: 44vw;
+                margin: 0 0 4vw 0;
+                width: auto;
             }
+
             #card_amalgama {
                 .amalgama {
-                    width: 25vw;
+                    width: 18vw;
                 }
                 #boximg_amalgama {
                     height: auto;
                     width: auto;
                 }
                 button {
-                    font-size: 2vw;
+                    font-size: 1.5vw;
                 }
                 #info_amalgama {
-                    width: 20vw;
+                    width: 15vw;
                 }
                 strong {
-                    font-size: 1.7vw;
+                    font-size: 1.2vw;
                     margin: 0 0 1vw 0;
-                    width: 18vw;
+                    width: 100%;
                 }
                 p {
-                    font-size: 1.7vw;
-                    margin: 1vw 0 0 0;
+                    font-size: 1.2vw;
+                    margin: 0vw 0 1vw 0;
                 }
-                width: 44vw;
+                width: auto;
             }
             #card_extraccion {
                 #boximg_extraccion {
                     height: auto;
                     width: auto;
                 }
+
                 button {
-                    font-size: 2vw;
+                    font-size: 1.5vw;
                 }
+
+                #info_extraccion {
+                    width: 13vw;
+                }
+
                 strong {
-                    font-size: 1.7vw;
-                    margin: 0 0 0vw 0;
-                    width: 19vw;
+                    font-size: 1.2vw;
+                    margin: 0 0 0.3vw 0;
+                    width: 13vw;
                 }
+
                 p {
-                    font-size: 1.7vw;
-                    margin: 0.5vw 0 0 0;
+                    font-size: 1.2vw;
+                    margin: 0vw 0 0.8vw 0;
                 }
+
                 video {
-                    width: 25vw;
+                    width: 18vw;
                 }
-                width: 44vw;
+                margin: 0 0 5vw 0;
+                width: auto;
             }
             #card_blanqueamiento {
                 #boximg_blanqueamiento {
@@ -729,30 +746,40 @@ main {
                     width: auto;
                 }
                 .blanqueamiento {
-                    width: 25vw;
+                    width: 16vw;
                 }
                 button {
-                    font-size: 2vw;
-                    margin: 2vw 0 0 0;
+                    font-size: 1.5vw;
+                    margin: 0vw;
                 }
                 strong {
-                    font-size: 1.7vw;
+                    font-size: 1.2vw;
                     margin: 0 0 1vw 0;
-                    width: auto;
+                    padding: 0vw;
+                    width: 15vw;
                 }
                 #info_blanqueamiento {
-                    width: 20vw;
+                    width: 15vw;
                 }
                 p {
-                    font-size: 1.7vw;
-                    margin: 1vw 0 0 0;
+                    font-size: 1.2vw;
+                    margin: 0vw 0 1vw 0vw;
                 }
-                width: 44vw;
+                width: auto;
             }
-            
-            column-count: 2;
+            column-count: 3;
             column-gap: 1vw;
             flex-wrap: wrap;
+            width: 95vw;
+        }
+        #box_publicidad {
+            @include box-row();
+            #pub_promo {
+                width: 45vw;
+            }
+            #pub_limpieza {
+                width: 45vw;
+            }
         }
     }
 }

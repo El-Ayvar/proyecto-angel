@@ -8,10 +8,10 @@
     background-attachment: fixed;
     .btn_subir {
         background-color: rgba(121, 194, 196, 0.762);
-        border-radius: 20px;
+        border-radius: 10vw;
         cursor: pointer;
         margin: 0 0 3vw 0;
-        width: 10vw;
+        width: 8vw;
     }
     .box_redes {
         @include box-column();
@@ -33,6 +33,7 @@
             width: 90vw;
         }
         p {
+            color: $color-letra;
             margin: 3vw 0 3vw 0;
         }
     }

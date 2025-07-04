@@ -52,10 +52,10 @@ footer {
 }
 footer .btn_subir {
   background-color: rgba(121, 194, 196, 0.762);
-  border-radius: 20px;
+  border-radius: 10vw;
   cursor: pointer;
   margin: 0 0 3vw 0;
-  width: 10vw;
+  width: 8vw;
 }
 footer .box_redes {
   align-items: center;
@@ -88,6 +88,7 @@ footer #box_ubicacion #maps {
   width: 90vw;
 }
 footer #box_ubicacion p {
+  color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
 }
 footer .logo {
@@ -212,6 +213,9 @@ header #menu_tablet {
   header #logo {
     margin: 1vw 0 1vw 0;
     width: 15vw;
+  }
+  header button {
+    font-size: 1.5vw;
   }
 }
 header button {
