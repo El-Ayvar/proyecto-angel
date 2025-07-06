@@ -94,7 +94,9 @@ main {
     #box_amalgama {
         @include box-centrado();
         color: white;
-
+        #sub_titulo_laptop {
+            display: none;
+        }
         #first_amalgama {
             h3 {
                 margin: 3vw 0 3vw 0;
@@ -288,6 +290,9 @@ main {
         
         img {
             margin: 2vw 0 2vw 0;
+        }
+        #intro_sarro_laptop {
+            display: none;
         }
         #intro_sarro {
             @include box-row();
@@ -880,6 +885,558 @@ ul li::before {
             #third_blanqueamiento {
                 p {
                     font-size: 2.5vw;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 769.98px) {
+main {
+    #second_background {
+        padding: 10vw 0 7vw 0;
+    }
+    #beginning_text {
+            @include box-row();
+            flex-wrap: wrap;
+            h1 {
+                font-size: 3.5vw;
+                text-align: center;
+                margin: 2vw 0 0vw 0;
+                width: 70vw;
+            }
+            p {
+                font-size: 1.3vw;
+                width: 40vw;
+            }
+        }
+        #slogan {
+            font-size: 2.5vw;
+            margin: 0vw;
+            width: 90vw;
+        }
+        #muela {
+            margin: 3vw 0 0 0vw;
+            width: 5vw;
+        }
+        #box_restauracion {
+            @include box-row();
+            flex-wrap: wrap;
+            #title_restauracion {
+                font-size: 3vw;
+                margin: 2vw 0 2vw 0;
+            }
+            h3 {
+                font-size: 3vw;
+            }
+            h4  {
+                font-size: 3vw;
+            }
+            p {
+                font-size: 2.3vw;
+            }
+            #intro_restauracion {
+                @include box-row();
+                flex-wrap: wrap;
+                height: auto;
+                #sub_restauracion {
+                    h3 {
+                        font-size: 2.5vw;
+                    }
+                    img {
+                        width: 7vw;
+                    }
+                    padding: 0 4vw 0 4vw;
+                    width: 40vw;
+                }
+                p {
+                    font-size: 1.3vw;
+                    margin: 1vw 0 1vw 0;
+                    text-align: center;
+                }
+                ul {
+                    @include box-row();
+                    flex-wrap: wrap;
+                    width: 70vw;
+                    li {
+                        margin: 1vw 0 1vw 0;
+                    }
+                }
+                ul li::before {
+                    background-image: url("../assets/img/viñetaFracturada.png");
+                    background-size: contain;
+                    content: "";
+                    display: inline-block;
+                    height: 2vw;
+                    margin-right: 1vw;
+                    vertical-align: middle;
+                    width: 2vw;
+                }
+            }
+            li {
+                font-size: 2vw;      
+            }
+            strong {
+                font-size: 1vw;
+            }
+        }
+        #caso_fractura {
+            @include box-row();
+            flex-wrap: wrap;
+            #caso_fractura_text {
+                @include box-centrado();
+                h4  {
+                    font-size: 2.5vw;
+                    margin: 0vw 0 1vw 0;
+                }
+                p {
+                    font-size: 1.5vw;
+                }
+                width: 50vw;
+            }
+            img {
+                border-radius: 0vw 15vw 0vw 15vw;
+                margin: 2vw 0 0 0;
+                width: 30vw;
+            }
+            margin: 2vw 0 0 0;
+        }
+        #seg_fractura {
+            #firs_fractura {
+                margin: 1vw 0 0 0;
+                strong {
+                    font-size: 1.5vw;
+                    margin: 1vw 0 1vw 0;
+                    width: auto;
+                }
+                p {
+                    font-size: 1.3vw;   
+                    text-align: center;              
+                }
+                width: auto;
+            }
+            #second_fractura {
+                margin: 1vw 0 0 0;
+                strong {
+                    font-size: 1.5vw;
+                    margin: 1vw 0 1vw 0;
+                    width: auto;
+                }
+                p {
+                    font-size: 1.3vw; 
+                    text-align: center;                
+                }
+                width: auto;
+            }
+            #third_fractura {
+                margin: 1vw 0 0 0;
+                strong {
+                    font-size: 1.5vw;
+                    margin: 1vw 0 1vw 0;
+                    width: auto;
+                }
+                p {
+                    font-size: 1.3vw;   
+                    text-align: center;              
+                }
+                width: auto;
+            }
+            #fourth_fractura {
+                margin: 1vw 0 0 0;
+                strong {
+                    font-size: 1.5vw;
+                    margin: 1vw 0 1vw 0;
+                    width: auto;
+                }
+                p {
+                    font-size: 1.3vw;   
+                    text-align: center;              
+                }
+                width: auto;
+            }
+            #fifth_fractura {
+                margin: 1vw 0 0 0;
+                strong {
+                    font-size: 1.5vw;
+                    margin: 1vw 0 1vw 0;
+                    width: auto;
+                }
+                p {
+                    font-size: 1.3vw;   
+                    text-align: center;              
+                }
+                width: auto;
+            }
+            margin: 0vw;
+            width: 45vw;
+        }
+        #final_fractura {
+            img {
+                border-radius: 0vw 15vw 0vw 15vw;
+                width: 40vw;
+            }
+            p {
+                font-size: 1.3vw;
+                text-align: center;
+            }
+            width: 43vw;
+        }
+        #box_rehabilitacion {
+            @include box-row();
+            flex-wrap: wrap;
+            h2 {
+                font-size: 3vw;
+            }
+            h3 {
+                font-size: 4vw;
+            }
+            h4 {
+                font-size: 4vw;
+            }
+            #intro_rehabilitacion {
+                h3 {
+                    font-size: 2vw;
+                }
+                img {
+                    width: 7vw;
+                }
+                margin: 2vw 0 2vw 0;
+                width: 40vw;
+            }
+            p {
+                font-size: 1.3vw;
+                margin: 0vw 0 1vw 0;
+            }
+            #caso_rehabilitacion {
+                h3 {
+                    font-size: 3vw;
+                    margin: 1vw 0 0vw 0;
+                }
+
+                h4 {
+                    font-size: 3vw;
+                }
+                img {
+                    border-radius: 0vw 20vw 0vw 20vw;
+                    width: 45vw;
+                }
+                p {
+                    font-size: 1.5vw;
+                    margin: 0vw;
+                    text-align: center;
+                }
+            }
+            #pasos_rehabilitacion {
+                @include box-row();
+                flex-wrap: wrap;
+                //#firs_rehabilitacion {
+                //    width: 43vw;
+                //}
+                //#second_rehabilitacion {
+                //    width: 43vw;
+                //}
+                h2 {
+                    font-size: 3vw;
+                }
+                h4 {
+                    font-size: 2.3vw;
+                    margin: 2vw 0 0 0;
+                }
+                img {
+                    border-radius: 0vw 30vw 0vw 30vw;
+                    width: 60vw;
+                }
+                .pasos_rehabilitacion_laptop {
+                    h2 {
+                        width: auto;
+                    }
+                    h4 {
+                        margin: 0vw;
+                    }
+                    img {
+                        border-radius: 0vw 20vw 0vw 20vw;
+                        width: 43vw;
+                    }
+                    p {
+                        margin: 1vw 0 1vw 0;
+                    }
+                    width: 43vw;
+                }
+                p {
+                    font-size: 1.3vw;
+                }
+            }
+        }
+        #box_sarro {
+            @include box-row();
+            flex-wrap: wrap;
+            h2 {
+                font-size: 3.5vw;
+                margin: 0vw;
+            }
+            #intro_sarro {
+                h3 {
+                    font-size: 2.5vw;
+                    text-align: center;
+                }
+                img {
+                    width: 10vw;
+                }
+                padding: 0 3vw 0 3vw;
+                width: 50vw;
+            }
+            #text_introS {
+                p {
+                    color: $color-letra;
+                    font-size: 1.3vw;
+                    margin: 0vw 0 1vw 0;
+                }
+            }
+            #because_sarro {
+                h2 {
+                    font-size: 2vw;
+                    margin: 0 0 2vw 0;
+                    text-align: center;
+                }
+                img {
+                    border-radius: 0vw 20vw 0vw 20vw;
+                    width: 40vw;
+                }
+                p {
+                    font-size: 1.3vw;
+                    margin: 0vw 0 1vw 0;
+                }
+                width: 43vw;
+            }
+            #after_sarro {
+                h2 {
+                    font-size: 2vw;
+                    margin: 0 0 2vw 0;
+                    text-align: center;
+                }
+                img {
+                    border-radius: 0vw 20vw 0vw 20vw;
+                    width: 40vw;
+                }
+                p {
+                    font-size: 1.3vw;
+                    margin: 0vw 0 1vw 0;
+                }
+                width: 43vw;
+            }
+            #second_sarro {
+                @include box-row();
+                flex-wrap: wrap;
+                #intro_sarroSecond {
+                    display: none;
+                }
+                p {
+                    font-size: 2.5vw;
+                }
+                #first_sarroSecond {
+                    #intro_sarro_laptop {
+                        @include box-row();
+                        h2 {
+                            font-size: 2.4vw;
+                            text-align: center;
+                        }
+                        img {
+                            border-radius: 0vw;
+                            width: 10vw;
+                        }
+                        padding: 0 8vw 0 8vw;
+                        width: 60vw;
+                    }
+                    img {
+                        border-radius: 0 20vw 0 20vw;
+                        width: 40vw;
+                    }
+                    p {
+                        font-size: 1.5vw;
+                        margin: 0 0 1vw 0;
+                    }
+                    width: 40vw;
+                }
+                #second_sarroSecond {
+                    h3 {
+                        font-size: 2.4vw;
+                        margin: 0 0 1vw 0;
+                    }
+                    img {
+                        border-radius: 0 20vw 0 20vw;
+                        width: 40vw;
+                    }
+                    p {
+                        font-size: 1.5vw;
+                        margin: 0 0 1vw 0;
+                    }
+                    width: 40vw;
+                }
+            }
+            width: 90vw;
+        }
+        #box_amalgama {
+           @include box-row();
+           flex-wrap: wrap; 
+            #sub_titulo_laptop {
+                display: flex;
+                justify-content: center;
+                font-size: 3vw;
+                margin: 2vw 0 2vw 0;
+                width: 90vw;
+            }
+            h2 {
+                font-size: 3vw;
+                margin: 1vw 0 1vw 0;
+            }
+            #intro_amalgama {
+                h3 {
+                    font-size: 2vw;
+                }
+                img {
+                    margin: 0vw;
+                    width: 8vw;
+                }
+                margin: 0 0 1vw 0;
+                text-align: center;
+                width: 45vw;
+            }
+            #text_introA {
+                p {
+                    font-size: 1.5vw;
+                    margin: 0 0 1vw 0;
+                }
+            }
+            #sub_titulo_nothinglap {
+                display: none;
+            }
+            #first_amalgama {
+                h4 {
+                    font-size: 2vw;
+                }
+                img {
+                    border-radius: 0 10vw 0 10vw;
+                    width: 43vw;
+                }
+                p {
+                    font-size: 1.5vw;
+                }
+                width: 43vw;
+            }
+            #second_amalgama {
+                h4 {
+                    font-size: 2vw;
+                    margin: 0vw;
+                }
+                img {
+                    border-radius: 0 10vw 0 10vw;
+                    width: 40vw;
+                }
+                p {
+                    font-size: 1.5vw;
+                }
+                width: 40vw;
+            }
+        }
+        #box_extraccion {
+            h2 {
+                font-size: 3.3vw;
+            }
+            #intro_extraccion {
+                h2 {
+                    font-size: 2.5vw;
+                }
+                img {
+                    width: 6vw;
+                }
+                margin: 2vw 0 1vw 0;
+                width: 40vw;
+            }
+            #text_introE {
+                font-size: 1.5vw;
+                p {
+                    font-size: 1.5vw;
+                }
+            }
+            #first_extraccion {
+                @include box-centrado();
+                h4 {
+                    display: flex;
+                    font-size: 3vw;
+                    justify-content: center;
+                    margin: 0vw;
+                    width: 90vw;
+                }
+                p {
+                    font-size: 1.5vw;
+                }
+                video {
+                    width: 60vw;
+                }
+            }
+        }
+        #box_blanqueamiento {
+            @include box-row();
+            flex-wrap: wrap;
+            #first_blanqueamiento {
+                h4 {
+                    font-size: 2.5vw;
+                }
+                img {
+                    width: 40vw;
+                }
+                margin: 2vw 0 0 0;
+                p {
+                    font-size: 1.5vw;
+                }
+                width: 40vw;
+            }
+            h2 {
+                font-size: 3vw;
+                margin: 0vw;
+            }
+            #intro_blanqueamiento {
+                h2 {
+                    font-size: 2vw;
+                }
+                img {
+                    width: 12vw;
+                }
+                width: 40vw;
+            }
+            #second_blanqueamiento {
+                h4 {
+                    font-size: 2.5vw;
+                }
+                img {
+                    width: 40vw;
+                }
+                margin: 2vw 0 0 0;
+                p {
+                    font-size: 1.5vw;
+                }
+                width: 40vw;
+            }
+            #text_introB {
+                p {
+                    font-size: 1.5vw;
+                    margin: 0 0 1vw 0;
+                }
+                font-size: 1.5vw;
+                margin: 0 0 2vw 0;
+            }
+            #third_blanqueamiento {
+                @include box-centrado();
+                em {
+                    font-size: 1.8vw;
+                }
+                h4 {
+                    font-size: 3vw;
+                }
+                p {
+                    font-size: 1.8vw;
+                }
+                video {
+                    width: 60vw;
                 }
             }
         }

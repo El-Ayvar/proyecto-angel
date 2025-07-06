@@ -134,6 +134,7 @@ footer #redes_sociales {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: 0vw;
   }
   footer #redes_sociales strong {
     font-size: 1.5vw;
@@ -151,7 +152,8 @@ footer #redes_sociales {
     text-align: center;
   }
   footer #box_ubicacion p {
-    font-size: 2vw;
+    font-size: 1.5vw;
+    margin: 0vw 0 2vw 0;
   }
   footer #box_ubicacion strong {
     font-size: 2vw;

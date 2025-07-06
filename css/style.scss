@@ -573,6 +573,10 @@ main {
 @media (min-width: 769.98px) {
     main {
         @include box-row();
+        .acceso_redes {
+            bottom: 1vw;
+            width: 5vw;
+        }
         flex-wrap: wrap;
         h1 {
             font-size:2.8vw;
@@ -781,5 +785,8 @@ main {
                 width: 45vw;
             }
         }
+    }
+    #whatsapp {
+        bottom: 7vw;
     }
 }
