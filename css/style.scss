@@ -36,6 +36,9 @@ footer {
 
 header{
     @include header();
+    .opcion_oculta_because {
+        display: none
+    }
 }
 
 main {

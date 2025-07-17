@@ -27,10 +27,13 @@ footer {
 }
 
 header{
- @include header();
- button {
-    margin: 0 0 0 3vw;
- }
+    @include header();
+    button {
+        margin: 0 0 0 3vw;
+    }
+    .opcion_oculta_because {
+            display: none;
+    }
 }
 
 #side_menu {
@@ -242,6 +245,9 @@ main {
     
     #background {
         @include background();
+        @media (min-width: 769.98px) {
+            padding: 13vw 0 0 0;
+        }
     }
 
     #box_rehabilitacion {
@@ -591,6 +597,9 @@ main {
 
     #third_background {
         @include background ();
+        @media (min-width: 769.98px) {
+            padding: 13vw 0 0 0;
+        }
     }
     
     #title_restauracion {

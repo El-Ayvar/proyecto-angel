@@ -33,11 +33,12 @@
     font-size: 4vw;
     padding: 0.3vw 0.8vw 0.3vw 0.8vw;
     transition: all 0.3s ease-in-out;
+    
     &:hover {
-    background-color: #acc9e9;
-    border: white;
-    color: white;
-    cursor: pointer;
+        background-color: #acc9e9;
+        border: white;
+        color: white;
+        cursor: pointer;
     }
 }
 

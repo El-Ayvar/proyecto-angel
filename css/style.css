@@ -227,6 +227,9 @@ header #menu_tablet {
     font-size: 1.5vw;
   }
 }
+header .opcion_oculta_because {
+  display: none;
+}
 
 main {
   align-items: center;

@@ -21,6 +21,13 @@ footer {
 
 header{
     @include header();
+    .opcion_oculta_because {
+        display: none;
+    }
+}
+// Siempre ocultar el perfil por defecto en cualquier parte
+.opcion_oculta_because {
+  display: none !important;
 }
 
 main {

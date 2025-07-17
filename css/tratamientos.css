@@ -223,6 +223,9 @@ header #menu_tablet {
 header button {
   margin: 0 0 0 3vw;
 }
+header .opcion_oculta_because {
+  display: none;
+}
 
 #side_menu {
   background: rgba(88, 177, 226, 0.15);
@@ -458,6 +461,11 @@ main #background {
   background-color: #87D0CD;
   padding: 30vw 0 0 0;
   width: 100vw;
+}
+@media (min-width: 769.98px) {
+  main #background {
+    padding: 13vw 0 0 0;
+  }
 }
 main #box_rehabilitacion {
   align-items: center;
@@ -883,6 +891,11 @@ main #third_background {
   background-color: #87D0CD;
   padding: 30vw 0 0 0;
   width: 100vw;
+}
+@media (min-width: 769.98px) {
+  main #third_background {
+    padding: 13vw 0 0 0;
+  }
 }
 main #title_restauracion {
   color: #87D0CD;

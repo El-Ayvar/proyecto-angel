@@ -21,6 +21,14 @@ footer {
 
 header{
     @include header();
+    .opcion_oculta_because {
+        display: none;
+    }
+
+// Siempre ocultar el perfil por defecto en cualquier parte
+    .opcion_oculta_because {
+      display: none !important;
+    }
 }
 
 main {
@@ -44,6 +52,9 @@ main {
                 @media (min-width: 481.98px) {
                     font-size: 2.5vw;
                     text-align: center;
+                }
+                @media (min-width: 769.98px) {
+                    font-size: 2vw;
                 }
             }
             width:90vw;
@@ -75,6 +86,9 @@ main {
                 @media (min-width: 481.98px) {
                     margin: 0 0 0 2vw;
                 }
+                @media (min-width: 769.98px) {
+                    font-size: 1.5vw;
+                }
             }
             h3 {
                 margin: 0 0 1vw 0;
@@ -97,15 +111,24 @@ main {
         @media (min-width: 481.98px) {
             width: 50vw;
         }
+        @media (min-width: 769.98px) {
+            width: 38vw;
+        }
     }
     h1 {
         color: rgba(0, 0, 0, 0.582);
         margin: 3vw 0 3vw 0;
+        @media (min-width: 769.98px) {
+            font-size: 2.5vw;
+        }
     }
     h3 {
         color: rgba(0, 0, 0, 0.582);
         margin: 3vw 0 3vw 0;
         text-align: center;
+        @media (min-width: 769.98px) {
+            font-size: 1.5vw;
+        }
     }
     width: 100vw;
 }

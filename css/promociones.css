@@ -212,6 +212,13 @@ header #menu_tablet {
     font-size: 1.5vw;
   }
 }
+header .opcion_oculta_because {
+  display: none;
+}
+
+.opcion_oculta_because {
+  display: none !important;
+}
 
 main {
   align-items: center;

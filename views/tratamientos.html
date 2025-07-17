@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/tratamientos.css">
     <script src="../js/main.js" defer></script>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../js/login.js" defer></script>
+    <script src="../js/tratamientos.js" defer></script>
     <title>Tratamientos de Ayvar Den't</title>
 </head>
 <body>
@@ -16,10 +18,12 @@
         
         <section id="side_menu">
             <div id="close_menu" class="menu_option" onclick="closeMenu()">x</div>
-            <a href="../index.html"><div class="menu_option" onclick="closeMenu()">Inicio</div> </a>
-            <a href="../views/ubicacion.html"> <div class="menu_option">Ubicación</div> </a>
-            <a href="../views/promociones.html"> <div class="menu_option">Promociones</div> </a> 
-            <div id="img_menu" class="menu_option"> 
+                <a href="../index.html"><div class="menu_option" onclick="closeMenu()">Inicio</div> </a>
+                <a href="../views/ubicacion.html"> <div class="menu_option">Ubicación</div> </a>
+                <a href="../views/promociones.html"> <div class="menu_option">Promociones</div> </a> 
+                <a href="../views/iniciar-sesion.html"> <div class="menu_option opcion_oculta_after iniciar-sesion">Iniciar sesion</div></a>
+                <a href="views/perfil.html"><div class="menu_option opcion_oculta_because perfil">Perfil</div></a>
+                <div id="img_menu" class="menu_option"> 
                 <a href="https://wa.me/527443822853?text=Hola%20mucho%20gusto,%20me%20gustaria%20agendar%20una%20cita%20con%20el%20doctor%20Jose%20Angel"> <img src="../assets/img/logoWBN.png" alt="Acceso al Whatsapp"> </a>
                 <a href="https://www.facebook.com/profile.php?id=100083437804633"> <img src="../assets/img/logoFBN.png" alt="Acceso al Facebook"> </a>
             </div>
@@ -28,6 +32,8 @@
             <a href="../index.html"> <button type="button" class="search_btn">Inicio</button> </a>
             <a href="../views/ubicacion.html"> <button type="button" class="search_btn">Ubicación</button> </a>
             <a href="../views/promociones.html"> <button type="button" class="search_btn"> Promociones</button> </a>
+            <a href="../views/iniciar-sesion.html"> <button type="button" class="search_btn opcion_oculta_after iniciar-sesion">Iniciar sesion</button></a>
+            <a href="views/perfil.html"><button type="button" class="search_btn opcion_oculta_because perfil">Perfil</button></a>
         </section>
     </header>
     <main>

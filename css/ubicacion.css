@@ -212,6 +212,12 @@ header #menu_tablet {
     font-size: 1.5vw;
   }
 }
+header .opcion_oculta_because {
+  display: none;
+}
+header .opcion_oculta_because {
+  display: none !important;
+}
 
 main {
   align-items: center;
@@ -256,6 +262,11 @@ main #box_location #direccion strong {
     text-align: center;
   }
 }
+@media (min-width: 769.98px) {
+  main #box_location #direccion strong {
+    font-size: 2vw;
+  }
+}
 @media (min-width: 481.98px) {
   main #box_location #direccion {
     margin: 0 0 2vw 0;
@@ -298,6 +309,11 @@ main #box_horario #horario p {
     margin: 0 0 0 2vw;
   }
 }
+@media (min-width: 769.98px) {
+  main #box_horario #horario p {
+    font-size: 1.5vw;
+  }
+}
 main #box_horario #horario h3 {
   margin: 0 0 1vw 0;
   text-align: start;
@@ -322,14 +338,29 @@ main #box_horario img {
     width: 50vw;
   }
 }
+@media (min-width: 769.98px) {
+  main #box_horario {
+    width: 38vw;
+  }
+}
 main h1 {
   color: rgba(0, 0, 0, 0.582);
   margin: 3vw 0 3vw 0;
+}
+@media (min-width: 769.98px) {
+  main h1 {
+    font-size: 2.5vw;
+  }
 }
 main h3 {
   color: rgba(0, 0, 0, 0.582);
   margin: 3vw 0 3vw 0;
   text-align: center;
+}
+@media (min-width: 769.98px) {
+  main h3 {
+    font-size: 1.5vw;
+  }
 }
 
 #side_menu {
