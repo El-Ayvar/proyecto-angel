@@ -50,7 +50,7 @@ console.log('PERFIL:', perfil);
 console.log('INICIAR SESION:', iniciarSesion);
 
 function mostrarPerfil() {
-  perfil.forEach(el => el.style.setProperty('display', 'inline-block', 'important'));
+perfil.forEach(el => el.style.setProperty('display', 'block', 'important'));
   iniciarSesion.forEach(el => el.style.setProperty('display', 'none', 'important'));
 }
 function mostrarIniciarSesion() {
