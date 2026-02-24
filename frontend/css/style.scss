@@ -1,0 +1,791 @@
+@use "../sass/mixin" as *;
+@use "../sass/variables" as *;
+@use "../sass/footer" as *;
+@use "../sass/header" as *;
+
+* {
+    @include wiport();
+}
+
+html, body {
+    @include body();
+}
+
+.acceso_redes {
+    bottom: 5vw;
+    cursor: pointer;
+    position: fixed;
+    right: 1vw;
+    width: 10vw;
+}
+
+button {
+    @include boton();
+}
+
+#box_boton {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+footer {
+    @include footer();
+}
+
+header{
+    @include header();
+}
+
+main {
+
+    @include box-column();
+
+    .amalgama {
+        @include opacar-left();
+        border-radius: 15px;
+        width: 50vw;
+    }
+    
+    .blanqueamiento {
+        @include opacar-left();
+        border-radius: 15px;
+        width: 50vw;
+    }
+    
+    #boximg_fractura {
+        @include box-centrado();
+        margin: 0vw;
+        width: 50vw;
+    }
+
+    #boximg_sarro {
+        @include box-centrado();
+        border-radius: 15px;
+        margin: 0vw;
+    }
+
+    #boximg_restauracion {
+        @include box-centrado();
+        margin: 0px;
+    }
+    
+    #boximg_extraccion {
+        height: auto;
+        margin: 0vw;
+    }
+    
+    #boximg_amalgama {
+        @include box-centrado();
+        margin: 0vw;
+    }
+    
+    #boximg_blanqueamiento {
+        @include box-centrado();
+        margin: 0vw;
+    }
+    
+    #box_publicidad {
+        background-color: rgba(238, 249, 250, 0.582);
+        #pub_promo {
+            @include publicidad();
+        }
+    
+        #pub_limpieza {
+            @include publicidad();
+        }
+    
+        height: auto;
+        width: 100vw;
+    }
+    
+    #card_blanqueamiento {
+        @include box-row();
+        background-color: $color-fondo;
+        border-radius: 15px;
+        height: auto;
+        padding: 0 0 0 1vw;
+        margin: 0 0 7vw 0;
+    }
+    
+    #card_amalgama {
+        @include box-row();
+        border-radius: 15px;
+        background-color: $color-fondo;
+        height: auto;
+        margin: 0 0 7vw 0;
+    }
+    
+    #card_extraccion {
+        @include box-row();
+        border-radius: 15px;
+        background-color: $color-fondo;
+        height: auto;
+        margin: 0 0 7vw 0;
+    }
+
+    #card_fractura {
+        @include box-row();
+        background-color: $color-fondo;
+        border-radius: 15px;
+        height: auto;
+        margin: 0 0 7vw 0;
+    }
+    
+    #card_restauracion {
+        @include box-row();
+        background-color: $color-fondo;
+        border-radius: 15px;
+        height: auto;
+        margin: 0 0 7vw 0;
+    }
+    
+    #card_sarro {
+        @include box-row();
+        border-radius: 15px;
+        background-color: $color-fondo;
+        height: auto;
+        margin: 0 0 7vw 0;
+    }    
+    
+    .cards_tratamientos {
+        @include cards();
+    }    
+    
+    .desvanecido {
+        @include opacar-bottom();
+    }
+    
+    .fractura {
+        @include img();
+        @include opacar-right();
+    }    
+    
+    h1 {
+        color: $titulo;
+        font-size: 7vw;
+        margin: 3vw 0 3vw 0;
+        text-align: center;
+    }    
+    
+    h2 {
+        color: $sub-titulo;
+        font-size: 5vw;
+        padding: 0 0 0 1vw;
+    }    
+    
+    h3 {
+        color: $sub-titulo;
+        font-size: 6vw;
+    }    
+
+    #info_blanqueamiento {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.532);
+        p {
+            font-size: 3vw;
+            margin: 2vw 0 2vw 0;
+        }
+        strong {
+            text-align: start;
+            width: 40vw;
+            margin: 2vw 0 2vw 0;
+        }
+    }
+
+    #info_fractura {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.578);
+        p {
+            font-size: 3vw;
+            margin: 2vw 0 2vw 0;
+        }
+        #second_PF {
+            margin: 2vw 0 0vw 0;
+        }
+
+    }
+    
+    #info_extraccion {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.575);
+        strong {
+            text-align: start;
+            margin: 2vw 0 0vw 0;
+            width: 30vw;
+        }
+        p {
+            margin: 2vw 0 1vw 0;
+        }
+    }
+    
+    #info_restauracion {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.545);
+        padding: 0 0 0 1vw;
+        p {
+            font-size: 3.5vw;
+            margin: 2vw 0 1vw 0;
+        }
+        strong {
+            margin: 1vw 0 1vw 0;
+        }
+    }
+    
+    #info_sarro {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.571);
+        p {
+            font-size: 3vw;
+            margin: 0vw 0 1vw 0;
+        }
+        strong {
+            margin: 2vw 0 2vw 0;
+        }
+    }
+    
+    #info_amalgama {
+        @include box-centrado();
+        color: rgba(0, 0, 0, 0.574);
+        padding: 0 0 0 1vw;
+        p {
+            font-size: 3vw;
+            margin: 2vw 0 1vw 0;
+        }
+        strong {
+            text-align: start;
+            margin: 2vw 0 2vw 0;
+            width: 40vw;
+        }
+    }
+    
+    #intro_text {
+        h2 {
+            padding: 0 10vw 0 1vw;
+            width: 100vw;
+        }
+        height: auto;
+        p {
+            margin: 1vw 0 1vw 0;
+        }
+    }
+
+    .links {
+        color: $sub-titulo;
+    }    
+    
+    p {
+        font-size: 3vw;
+    }    
+    
+    .restauracion {
+        @include img();
+        @include opacar-left();
+    }
+    
+    section {
+        @include box-column();
+        height: 25vh;
+        margin: 0 0 2vw 0;
+        width: 90vw;
+    }    
+    
+    .subtitulo_fade {
+        @include subtitulos();
+    }    
+    
+    .subtitulo_slide {
+        @include subtitulos();
+    }    
+    
+    .sarro {
+        @include opacar-right();
+        border-radius: 15px;
+        width: 60vw;
+    }
+
+    #second_intro {
+        height: auto;
+        h2 {
+            padding: 0 10vw 0 1vw;
+            width: 100vw;
+        }
+        p {
+            margin: 1vw 0 1vw 0;
+        }
+    }
+
+    .text_slide {
+        height: 60vh;
+    }    
+        
+    
+    #tratamientos {
+        @include box-centrado();
+        h3 {
+            margin: 2vw 0 4vw 0;
+        }
+    }
+
+    #video_extraccion {
+        @include opacar-right();
+        border-radius: 15px;
+        width: 60vw;
+    }
+}
+
+#maps {
+    width: 100vw;
+}
+
+#side_menu {
+    background: rgba(88, 177, 226, 0.15);
+    backdrop-filter: blur(1.5vw);
+    -webkit-backdrop-filter: blur(1vw);
+    border: 1px solid rgba(100, 175, 229, 0.3);    color: white;
+    height: 100vh;
+    padding: 3vw;
+    position: fixed;
+    right: -$menu-width;
+    transition: right $transition-speed ease;
+    top: 0;
+    width: $menu-width;
+    z-index: 1;
+
+    &.active {
+        right: 0;
+    }
+
+    #close_menu {
+        cursor: pointer;
+        font-size: 7vw;
+        text-align: end;
+        padding: 0 3vw 0 0;
+        margin: 0vw;
+    }
+
+    img {
+        margin: 2vw;
+        width: 5vw;
+    }
+
+    #img_menu {
+        cursor: pointer;
+        text-align: center;
+        width: 30vw;
+    }
+
+    .menu_option {
+        color: rgba(0, 0, 0, 0.57);
+        cursor: pointer;
+        font-size: 3.5vw;
+        margin: 5vw 0;
+    }   
+}
+
+#whatsapp {
+    bottom: 17vw;
+}
+
+@media (min-width: 481.98px) {
+    main {
+        .acceso_redes {
+            width: 8vw;
+        }
+        #tratamientos {
+            @include box-row();
+            display: block; //Si quito esto se vuelvea display flexy hace que se ponga todo en linea
+            #card_fractura {
+                button {
+                    font-size: 2vw;
+                }
+                #boximg_fractura {
+                    height: auto;
+                    width: auto;
+                }
+                .fractura {
+                    height: auto;
+                    width: 25vw;
+                }
+                #info_fractura {
+                    width: 35vw;
+                }
+                strong {
+                    font-size: 1.7vw;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 0.5vw 0 0 0;
+                }
+                width: 44vw;
+            }
+            #card_restauracion {
+                button {
+                    font-size: 2vw;
+                }
+                #boximg_restauracion {
+                    height: auto;
+                    width: auto;
+                }
+                .restauracion {
+                    height: auto;
+                    width: 25vw;
+                }
+                strong {
+                    font-size: 1.7vw;
+                    margin: 0 0 1vw 0;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 1vw 0 0 0;
+                }
+                width: 44vw;
+            }
+            #card_sarro {
+                button {
+                    font-size: 2vw;
+                }
+                #boximg_sarro {
+                    height: auto;
+                    width: auto;
+                }
+                strong {
+                    font-size: 1.7vw;
+                    margin: 0 0 0.5vw 0;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 0.5vw 0 0 0;
+                }
+                .sarro {
+                    width: 25vw;
+                }
+                width: 44vw;
+            }
+            #card_amalgama {
+                .amalgama {
+                    width: 25vw;
+                }
+                #boximg_amalgama {
+                    height: auto;
+                    width: auto;
+                }
+                button {
+                    font-size: 2vw;
+                }
+                #info_amalgama {
+                    width: 20vw;
+                }
+                strong {
+                    font-size: 1.7vw;
+                    margin: 0 0 1vw 0;
+                    width: 18vw;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 1vw 0 0 0;
+                }
+                width: 44vw;
+            }
+            #card_extraccion {
+                #boximg_extraccion {
+                    height: auto;
+                    width: auto;
+                }
+                button {
+                    font-size: 2vw;
+                }
+                strong {
+                    font-size: 1.7vw;
+                    margin: 0 0 0vw 0;
+                    width: 19vw;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 0.5vw 0 0 0;
+                }
+                video {
+                    width: 25vw;
+                }
+                width: 44vw;
+            }
+            #card_blanqueamiento {
+                #boximg_blanqueamiento {
+                    height: auto;
+                    width: auto;
+                }
+                .blanqueamiento {
+                    width: 25vw;
+                }
+                button {
+                    font-size: 2vw;
+                    margin: 2vw 0 0 0;
+                }
+                strong {
+                    font-size: 1.7vw;
+                    margin: 0 0 1vw 0;
+                    width: auto;
+                }
+                #info_blanqueamiento {
+                    width: 20vw;
+                }
+                p {
+                    font-size: 1.7vw;
+                    margin: 1vw 0 0 0;
+                }
+                width: 44vw;
+            }
+            column-count: 2;
+            column-gap: 1vw;
+            flex-wrap: wrap;
+        }
+        h1 {
+            font-size: 5vw;
+        }
+        h3 {
+            font-size: 5vw;
+            margin: 0 0 4vw 0;
+        }
+        #intro_text {
+            h2 {
+                font-size: 4vw;
+            }
+            p {
+                font-size: 2.3vw;
+            }
+        }
+        #second_intro {
+            h2 {
+                font-size: 4vw;
+            }
+            p {
+                font-size: 2.3vw;
+            }
+        }
+    }
+    #whatsapp {
+        bottom: 15vw;
+    }
+}
+
+@media (min-width: 769.98px) {
+    main {
+        @include box-row();
+        .acceso_redes {
+            bottom: 1vw;
+            width: 5vw;
+        }
+        flex-wrap: wrap;
+        h1 {
+            font-size:2.8vw;
+        }
+
+        h3 {
+            font-size: 3vw;
+        }
+
+        #intro_text {
+            h2 {
+                font-size: 1.5vw;
+                padding: 0vw;
+                width: 45vw;
+            }
+            p {
+                color: $color-letra;
+                font-size: 1vw;
+                margin: 0.5vw 0 0.5vw 0;
+            }
+            margin: 0 0vw 4vw 3vw;
+            width: 45vw;
+        }
+        
+        #second_intro {
+            h2 {
+                font-size: 1.5vw;
+                padding: 0vw;
+                width: 45vw;
+            }
+            p {
+                color: $color-letra;
+                font-size: 1vw;
+                margin: 0.5vw 0 0.5vw 0;
+            }
+            margin: 0 1vw 4vw 0;
+            width: 45vw;
+        }
+        #tratamientos {
+            #card_fractura {
+                button {
+                    font-size: 1.5vw;
+                }
+                #boximg_fractura {
+                    height: auto;
+                    width: auto;
+                }
+                .fractura {
+                    height: auto;
+                    width: 17vw;
+                }
+                #info_fractura {
+                    width: 15vw;
+                }
+                strong {
+                    font-size: 1.3vw;
+                }
+                p {
+                    font-size: 1.2vw;
+                    margin: 0.5vw 0 0 0;
+                }
+                margin: 0 0 5vw 0;
+                width: auto;
+            }
+            #card_restauracion {
+                button {
+                    font-size: 1.5vw;
+                }
+                #boximg_restauracion {
+                    height: auto;
+                    width: auto;
+                }
+                .restauracion {
+                    height: auto;
+                    width: 15vw;
+                }
+                strong {
+                    font-size: 1.2vw;
+                    margin: 0 0 1vw 0;
+                    width: 100%;
+                }
+                p {
+                    font-size: 1.2vw;
+                    margin: 0vw 0 0.8vw 0;
+                }
+                width:auto;
+            }
+            #card_sarro {
+                button {
+                    font-size: 1.5vw;
+                }
+                #boximg_sarro {
+                    height: auto;
+                    width: auto;
+                }
+                strong {
+                    font-size: 1.2vw;
+                    margin: 0 0 0.5vw 0;
+                    width: 100%;
+                }
+                p {
+                    font-size: 1.2vw;
+                    margin: 0.5vw 0 0 0;
+                }
+                .sarro {
+                    width: 18vw;
+                }
+                margin: 0 0 4vw 0;
+                width: auto;
+            }
+
+            #card_amalgama {
+                .amalgama {
+                    width: 18vw;
+                }
+                #boximg_amalgama {
+                    height: auto;
+                    width: auto;
+                }
+                button {
+                    font-size: 1.5vw;
+                }
+                #info_amalgama {
+                    width: 15vw;
+                }
+                strong {
+                    font-size: 1.2vw;
+                    margin: 0 0 1vw 0;
+                    width: 100%;
+                }
+                p {
+                    font-size: 1.2vw;
+                    margin: 0vw 0 1vw 0;
+                }
+                width: auto;
+            }
+            #card_extraccion {
+                #boximg_extraccion {
+                    height: auto;
+                    width: auto;
+                }
+
+                button {
+                    font-size: 1.5vw;
+                }
+
+                #info_extraccion {
+                    width: 13vw;
+                }
+
+                strong {
+                    font-size: 1.2vw;
+                    margin: 0 0 0.3vw 0;
+                    width: 13vw;
+                }
+
+                p {
+                    font-size: 1.2vw;
+                    margin: 0vw 0 0.8vw 0;
+                }
+
+                video {
+                    width: 18vw;
+                }
+                margin: 0 0 5vw 0;
+                width: auto;
+            }
+            #card_blanqueamiento {
+                #boximg_blanqueamiento {
+                    height: auto;
+                    width: auto;
+                }
+                .blanqueamiento {
+                    width: 16vw;
+                }
+                button {
+                    font-size: 1.5vw;
+                    margin: 0vw;
+                }
+                strong {
+                    font-size: 1.2vw;
+                    margin: 0 0 1vw 0;
+                    padding: 0vw;
+                    width: 15vw;
+                }
+                #info_blanqueamiento {
+                    width: 15vw;
+                }
+                p {
+                    font-size: 1.2vw;
+                    margin: 0vw 0 1vw 0vw;
+                }
+                width: auto;
+            }
+            column-count: 3;
+            column-gap: 1vw;
+            flex-wrap: wrap;
+            width: 95vw;
+        }
+        #box_publicidad {
+            @include box-row();
+            #pub_promo {
+                width: 45vw;
+            }
+            #pub_limpieza {
+                width: 45vw;
+            }
+        }
+    }
+    #whatsapp {
+        bottom: 7vw;
+    }
+}

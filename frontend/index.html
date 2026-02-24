@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <title>Ayvar Den't</title>
+</head>
+<body>
+    <div id="inicio"></div>
+    <header>
+        <img id="logo" src="assets/img/logo.png" alt="Logo de AyvarDent">
+        <img id="hamburguesa" src="assets/img/hamburgues.png" alt="Abrir menú" onclick="toggleMenu()" />
+        
+        <section id="side_menu">
+            <div id="close_menu" class="menu_option" onclick="closeMenu()">x</div>
+                <a href="views/ubicacion.html"> <div class="menu_option">Ubicación</div> </a>
+                <a href="views/tratamientos.html"><div class="menu_option" onclick="closeMenu()">Tratamientos</div> </a>
+                <a href="views/promociones.html"> <div class="menu_option">Promociones</div> </a>
+                <a href="views/iniciar-sesion.html"><div class="menu_option opcion_oculta_after iniciar-sesion">Iniciar Sesion</div></a>
+                <a href="views/agendar-cita.html"><div class="menu_option opcion_oculta_because perfil">Agendar Cita</div></a>
+                <a href="views/perfil.html"><div class="menu_option opcion_oculta_because perfil">Perfil</div></a>
+            <div id="img_menu" class="menu_option"> 
+                <a href="https://wa.me/527443822853?text=Hola%20mucho%20gusto,%20me%20gustaria%20agendar%20una%20cita%20con%20el%20doctor%20Jose%20Angel"> <img src="assets/img/logoWBN.png" alt="Acceso al Whatsapp"> </a>
+                <a href="https://www.facebook.com/profile.php?id=100083437804633"> <img src="assets/img/logoFBN.png" alt="Acceso al Facebook"> </a>
+            </div>
+        </section>
+        <section id="menu_tablet">
+            <a href="views/ubicacion.html"> <button type="button" class="search_btn">Ubicación</button> </a>
+            <a href="views/tratamientos.html"> <button type="button" class="search_btn">Tratamientos</button> </a>
+            <a href="views/promociones.html"> <button type="button" class="search_btn"> Promociones</button> </a>
+            <a href="views/iniciar-sesion.html"><button type="button" class="search_btn opcion_oculta_after iniciar-sesion"> Iniciar sesion</button></a>
+            <a href="views/agendar-cita.html"><button type="button" class="search_btn opcion_oculta_because perfil">Agendar Cita</button></a>
+            <a href="views/perfil.html"><button type="button" class="search_btn opcion_oculta_because perfil">Perfil</button></a>
+        </section>
+    </header>
+    <main>
+        <h1 id="mensajeBienvenida">Excelente clínica para una sonrisa funcion al y hermosa</h1>
+        <section id="intro_text" class="reveal_fade">
+            <h2>Bienvenido a tu espacio de salud bucal.</h2>
+            <p>Soy cirujano dentista egresado del Instituto de Desarrollo Salvador Allende Gossens <a class="links" href="https://www.indesag.com/"> (INDESAG) </a> , una institución comprometida con la formación integral, la ética profesional y la excelencia clínica. </p>
+            <p>Mi misión es brindarte atención personalizada, basada en conocimiento científico, tecnología actual y un trato humano que inspire confianza. Tu sonrisa es única.</p>
+            <p>Mi compromiso es cuidarla con precisión, empatía y dedicación, para que siempre sea tu mejor opción.</p>
+        </section>
+        <section id="second_intro" class="reveal_slide">
+            <h2>Formación integral, atención de excelencia</h2>
+            <p>Gracias a su formación en el Instituto de Desarrollo Salvador Allende Gossens <a class="links" href="https://www.indesag.com/"> (INDESAG) </a>, el Dr. Jose Angel cuenta con una preparación sólida en diagnóstico clínico, tratamientos restaurativos, cirugía oral, implantología, estética dental y prevención integral.</p> 
+            <p>Su enfoque combina precisión técnica, sensibilidad humana y el uso de tecnología moderna para ofrecer soluciones personalizadas a cada paciente.</p>
+        </section>
+        <h3>¿Qué puedo hacer por ti?</h3>
+        <article id="tratamientos">
+            <section class="reveal_slide" id="card_fractura">
+                    <div id="boximg_fractura" >
+                        <img class="fractura" src="assets/img/RFractura.jpg" alt="Diente fracturado">
+                        <img class="fractura" src="assets/img/RFractura1.jpg" alt="Diente fracturado arreglado">
+                    </div>
+                    <div id="info_fractura"><strong>RESTAURACIÓN DENTAL POR FRACTURA </strong>
+                        <p>Procedimientos basicos de restauración por fractura.</p>
+                        <p id="second_PF" class="desvanecido">El dentista examina el diente fracturado y toma radiografías para determinar si la fractura afecta solo el esmalte, la dentina o también la pulpa.</p>
+                        <a href="views/tratamientos.html#box_restauracion"> <button type="button" id="search_btn">Ver màs</button> </a>
+                    </div>
+            </section>    
+            <section class="reveal_fade" id="card_restauracion">
+                    <div id="info_restauracion"> 
+                        <strong>RESTAURACIÓN Y REHABILITACIÓN DENTAL</strong>
+                        <strong>Procedimientos involucrados: </strong>
+                        <p>Endodoncia: Si el daño llegó a la pulpa dental.</p>
+                        <p>Tallado dental: Para preparar el diente para una corona.</p>
+                        <p>Colocación de coronas o puentes: Para restaurar la funcionalidad y estética.</p>
+                        <p class="desvanecido">Implantes dentales: Si el diente no pudo salvarse y fue reemplazado.</p>
+                        <a href="views/tratamientos.html#box_rehabilitacion"> <button type="button" id="search_btn">Ver màs</button></a>
+                    </div>
+                <div id="boximg_restauracion">
+                    <img class="restauracion" src="assets/img/restauracion.jpg" alt="Diente con caries severa">
+                    <img class="restauracion" src="assets/img/restauracion1.jpg" alt="Diente con caries severa a la mitad de arreglo">
+                    <img class="restauracion" src="assets/img/restauracion2.jpg" alt="Diente totalmente reparado">
+                </div>
+            </section>
+            <section id="card_sarro" class="reveal_slide">
+                <div id="boximg_sarro">
+                    <img class="sarro" src="assets/img/sarro.jpg" alt="caso de sarro en dentadura">
+                    <img class="sarro" src="assets/img/sarro1.jpg" alt="sarro eliminado">
+                </div>
+                <div id="info_sarro" class="info_cards"> <strong>PROFILAXIS DENTAL PROFESIONAL</strong>
+                    <strong>Tratamiento realizado:</strong>
+                    <p>Raspado cuidadoso con ultrasonido y/o curetas manuales.</p>
+                    <p>Remoción del sarro adherido al esmalte.</p>
+                    <p class="desvanecido">Fue realizado un raspado supragingival y posiblemente un alisado radicular </p>
+                    <a href="views/tratamientos.html#box_sarro"> <button type="button" id="search_btn">Ver màs</button> </a>
+                </div>
+            </section>
+            <section id="card_amalgama" class="reveal_fade">
+                <div id="info_amalgama" class="info_cards"> <strong>Rehabilitación adhesiva con resina compuesta</strong>
+                    <strong>Procedimiento:</strong>
+                    <p> Diagnóstico clínico y radiográfico.</p>
+                    <p> Retiro cuidadoso de la amalgama y tejido cariado.</p>
+                    <p> Aislamiento del diente (posiblemente con dique de goma).</p>
+                    <p class="desvanecido"> Grabado ácido, adhesivo y aplicación de resina.</p>
+                    <a href="views/tratamientos.html#box_amalgama"> <button type="button" id="search_btn">Ver màs</button> </a>
+                </div>
+                <div id="boximg_amalgama">
+                    <img class="amalgama" src="assets/img/amalgama.jpg" alt="Una muela picada con amalgama">
+                    <img class="amalgama" src="assets/img/amalgama1.jpg" alt="La misma muela pero reconstruida con resina compuesta">
+                </div>
+            </section>
+            <section id="card_extraccion" class="reveal_slide">
+                <section id="boximg_extraccion">
+                    <video id="video_extraccion"
+                        src="assets/img/extraccion2.mp4" controls autoplay loop muted poster="assets/img/imgExtraccion.png">
+                        Tu navegador no soporta el video.
+                    </video>
+                </section>
+                <div id="info_extraccion" class="info_cards"> <strong>EXTRACCIÓN QUIRÚRJICA DE MOLAR</strong>
+                    <strong>Procedimiento</strong>
+                    <p>Incisión gingival y despegue del colgajo.</p>
+                    <p>Osteotomía parcial para liberar la muela (si estaba retenida o impactada).</p>
+                    <p class="desvanecido">Sección de la corona y raíces, en caso de estar fusionadas o en</p>
+                    <a href="views/tratamientos.html#box_extraccion"> <button type="button" id="search_btn">Ver màs</button> </a>
+                <div>  
+            </section>
+                <section id="card_blanqueamiento" class="reveal_fade">
+                    <div id="info_blanqueamiento" class="info_cards"> <strong>BLANQUEAMIENTO DENTAL PROFESIONAL</strong>
+                        <strong>Procedimiento realizado</strong>
+                        <p>Profilaxis inicial para eliminar placa y sarro.</p>
+                        <p>Aplicación de gel blanqueador con peróxido de hidrógeno.</p>
+                        <p class="desvanecido">Activación con lámpara LED para potenciar el efecto.</p>
+                        <a href="views/tratamientos.html#box_blanqueamiento"> <button type="button" id="search_btn">Ver màs</button> </a>
+                    </div>
+                    <div id="boximg_blanqueamiento">
+                        <img class="blanqueamiento" src="assets/img/blanqueamiento.jpg" alt="Dientes amarillentos">
+                        <img class="blanqueamiento" src="assets/img/blanqueamiento1.jpg" alt="Dientes blancos">
+                    </div>
+                </section>
+        </article>
+        <section id="box_publicidad">
+            <img class="reveal_slide" id="pub_promo" src="assets/img/blanqueamiento.png" alt="Promoción de blanqueamiento dental con limpieza ultrasonica">
+            <img class="reveal_fade" id="pub_limpieza" src="assets/img/ultrasonica.jpg" alt="Promocion de limpiesa ultrasónica">
+        </section>
+            <a href="https://wa.me/527443822853?text=Hola%20mucho%20gusto,%20me%20gustaria%20agendar%20una%20cita%20con%20el%20doctor%20Jose%20Angel" target="_blank">
+                <img id="whatsapp" class="acceso_redes" src="assets/img/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100083437804633" target="_blank">
+                <img class="acceso_redes" src="assets/img/facebook.png" alt="Facebook">
+            </a>
+    </main>
+    <footer>
+        <section id="redes_sociales">
+            <section class="box_redes">
+                <strong>CONTÁCTANOS</strong>
+                <div class="box_social">
+                    <img class="logo" src="assets/img/logoWBN.png" alt="logo de whatsapp">
+                    <p><strong>Whatsapp:</strong>7443822853</p>
+                </div>
+                <div class="box_social">
+                    <img class="logo" src="assets/img/logoFBN.png" alt="logo de whatsapp">
+                    <p><strong>facebook:</strong>Ayvar den't</p>
+                </div>
+            </section>
+            <section class="box_redes">
+                <strong>CONTACT US</strong>
+                <div class="box_social">
+                    <img class="logo" src="assets/img/logoWBN.png" alt="logo de whatsapp">
+                    <p><strong>Whatsapp:</strong>7443822853</p>
+                </div>
+                <div class="box_social">
+                    <img class="logo" src="assets/img/logoFBN.png" alt="logo de whatsapp">
+                    <p><strong>facebook:</strong>Ayvar den't</p>
+                </div>
+            </section>
+        </section>
+        <section id="box_ubicacion">
+                <p><strong>Ubicación:</strong>
+                Nos encontramos en la Avenida Fuerza Aerea, Playa pie de la cuesta, a un costado del Hawai 5-0.</p>
+            <iframe id="maps" src="//www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d712.8545273888217!2d-99.96937086467611!3d16.90060982530357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1750887761074!5m2!1ses!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+        <a href="#inicio" id="box_boton"> <img class="btn_subir" src="assets/img/flecha.png" alt="boton para subir"></a>
+    </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const nombre = localStorage.getItem('nombre');
+    if (nombre) {
+      document.getElementById('mensajeBienvenida').textContent = ` al consultorio de AyvarDent, ${nombre}`;
+    }
+  });
+</script>
+</body>
+</html>

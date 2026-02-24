@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/perfil.css">
+    <script src="../js/main.js" defer></script>
+    <script src="../js/perfil.js" defer></script>
+    <title>tu perfilen AyvarDent</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="../assets/img/logo.png" alt="Logo de AyvarDent">
+        <img id="hamburguesa" src="../assets/img/hamburgues.png" alt="Abrir menú" onclick="toggleMenu()" />
+        
+        <section id="side_menu">
+            <div id="close_menu" class="menu_option" onclick="closeMenu()">x</div>
+                <a href="../index.html"><div class="menu_option" onclick="closeMenu()">Inicio</div> </a>
+                <a href="../views/ubicacion.html"> <div class="menu_option">Ubicación</div> </a>
+                <a href="../views/tratamientos.html"><div class="menu_option" onclick="closeMenu()">Tratamientos</div> </a>
+                <a href="../views/promociones.html"><div class="menu_option" onclick="closeMenu()">Promociones</div> </a>
+                <a href="../views/agendar-cita.html"><div class="menu_option opcion_oculta_because perfil">Agendar Cita</div></a>
+            <div id="img_menu" class="menu_option"> 
+                <a href="https://wa.me/527443822853?text=Hola%20mucho%20gusto,%20me%20gustaria%20agendar%20una%20cita%20con%20el%20doctor%20Jose%20Angel"> <img src="../assets/img/logoWBN.png" alt="Acceso al Whatsapp"> </a>
+                <a href="https://www.facebook.com/profile.php?id=100083437804633"> <img src="../assets/img/logoFBN.png" alt="Acceso al Facebook"> </a>
+                
+            </div>
+        </section>
+        <section id="menu_tablet">
+            <a href="../index.html"> <button type="button" class="search_btn">Inicio</button> </a>
+            <a href="../views/ubicacion.html"> <button type="button" class="search_btn">Ubicación</button> </a>
+            <a href="../views/tratamientos.html"> <button type="button" class="search_btn">Tratamientos</button> </a>
+            <a href="../views/promociones.html"> <button type="button" class="search_btn">Promociones</button> </a>
+            <a href="../views/agendar-cita.html"><button type="button" class="search_btn opcion_oculta_because perfil">Agendar Cita</button></a>
+        </section>
+    </header>
+<main>
+        <section class="perfil-container">
+            <h2 id="titulo-perfil">Mi Expediente Clínico</h2>
+            <p>Mantén tu información actualizada para una atención segura.</p>
+
+            <form id="perfilForm">
+                <section class="ficha-personal">
+                    <legend>Datos Personales</legend>
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="email" disabled> 
+                    <small>El correo no se puede modificar.</small>
+
+                    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+                </section>
+
+                <section class="ficha-medica">
+                    <legend>Ficha Médica</legend>
+                    
+                    <label for="tipoSangre">Tipo de Sangre:</label>
+                    <select id="tipoSangre" name="tipoSangre">
+                        <option value="Desconocido">No lo sé</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+
+                    <label for="alergias">Alergias (separadas por comas):</label>
+                    <input type="text" id="alergias" name="alergias" placeholder="Ej: Penicilina, Látex, Ibuprofeno">
+
+                    <label for="enfermedadesCronicas">Enfermedades Crónicas:</label>
+                    <input type="text" id="enfermedadesCronicas" name="enfermedadesCronicas" placeholder="Ej: Diabetes, Hipertensión">
+
+                    <label for="medicacionActual">Medicamentos que toma actualmente:</label>
+                    <textarea id="medicacionActual" name="medicacionActual" placeholder="Nombre del medicamento y dosis"></textarea>
+                </section>
+
+                    <button type="submit" id="btnGuardar">Guardar Cambios</button>
+            </form>
+
+            <hr>
+
+            <section id="seccion-citas-paciente">
+                <h3>Mis Citas Solicitadas</h3>
+                <div id="lista-citas">
+                    <p>Cargando citas...</p>
+                </div>
+            </section>
+
+            <button id="cerrar-sesion" class="btn-danger">Cerrar Sesión</button>
+        </section>
+    </main>
+    <footer>
+        <section id="redes_sociales">
+            <section class="box_redes">
+                <strong>CONTÁCTANOS</strong>
+                <div class="box_social">
+                    <img class="logo" src="../assets/img/logoWBN.png" alt="logo de whatsapp">
+                    <p><strong>Whatsapp:</strong>7443822853</p>
+                </div>
+                <div class="box_social">
+                    <img class="logo" src="../assets/img/logoFBN.png" alt="logo de whatsapp">
+                    <p><strong>facebook:</strong>Ayvar den't</p>
+                </div>
+            </section>
+            <section class="box_redes">
+                <strong>CONTACT US</strong>
+                <div class="box_social">
+                    <img class="logo" src="../assets/img/logoWBN.png" alt="logo de whatsapp">
+                    <p><strong>Whatsapp:</strong>7443822853</p>
+                </div>
+                <div class="box_social">
+                    <img class="logo" src="../assets/img/logoFBN.png" alt="logo de whatsapp">
+                    <p><strong>facebook:</strong>Ayvar den't</p>
+                </div>
+            </section>
+        </section>
+        <section id="box_ubicacion">
+                <p><strong>Ubicación:</strong>
+                Nos encontramos en la Avenida Fuerza Aerea, Playa pie de la cuesta, a un costado del Hawai 5-0.</p>
+            <iframe id="maps" src="//www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d712.8545273888217!2d-99.96937086467611!3d16.90060982530357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1750887761074!5m2!1ses!2smx" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </section>
+        <a href="promociones.html" id="box_boton"> <img class="btn_subir" src="../assets/img/flecha.png" alt="boton para subir"></a>
+    </footer>
+</body>
+</html>

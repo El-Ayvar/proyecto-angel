@@ -1,0 +1,1768 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-size: 16px;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+button {
+  background: transparent;
+  border: 2px solid rgb(99, 130, 143);
+  border-radius: 50vw;
+  color: rgb(99, 130, 143);
+  cursor: pointer;
+  font-size: 4vw;
+  padding: 0.3vw 0.8vw 0.3vw 0.8vw;
+  transition: all 0.3s ease-in-out;
+}
+button:hover {
+  background-color: #acc9e9;
+  border: white;
+  color: white;
+  cursor: pointer;
+}
+
+#box_boton {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image: url("../assets/img/fondo.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+footer .btn_subir {
+  background-color: rgba(121, 194, 196, 0.762);
+  border-radius: 10vw;
+  cursor: pointer;
+  margin: 0 0 3vw 0;
+  width: 8vw;
+}
+footer .box_redes {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 2vw 0 2vw 0;
+}
+footer .box_social {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: rgba(0, 0, 0, 0.586);
+  width: 42vw;
+}
+footer #box_ubicacion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: rgba(0, 0, 0, 0.586);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+footer #box_ubicacion #maps {
+  margin: 0 0 3vw 0;
+  width: 90vw;
+}
+footer #box_ubicacion p {
+  color: rgba(0, 0, 0, 0.5921568627);
+  margin: 3vw 0 3vw 0;
+}
+footer .logo {
+  margin: 2vw 0 2vw 0;
+  width: 4vw;
+}
+footer #redes_sociales {
+  display: flex;
+  color: rgba(0, 0, 0, 0.586);
+  flex-direction: column;
+  height: auto;
+  justify-content: space-around;
+  padding: 3vw;
+}
+footer {
+  margin: 5vw 0 0 0;
+  width: 100vw;
+}
+@media (min-width: 481.98px) {
+  footer {
+    background-image: url(../assets/img/fondotablet.png);
+  }
+  footer #redes_sociales {
+    height: auto;
+  }
+  footer #redes_sociales strong {
+    font-size: 2vw;
+  }
+  footer #redes_sociales p {
+    font-size: 2vw;
+  }
+  footer #redes_sociales .logo {
+    width: 3vw;
+  }
+  footer #box_ubicacion strong {
+    font-size: 2.5vw;
+  }
+  footer #box_ubicacion p {
+    font-size: 2.5vw;
+  }
+  footer #box_ubicacion #maps {
+    height: 40vh;
+    width: 90vw;
+  }
+  footer #box_boton .btn_subir {
+    width: 7vw;
+  }
+}
+@media (min-width: 769.98px) {
+  footer {
+    background-image: url(../assets/img/fondolaptop.png);
+  }
+  footer #redes_sociales {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  footer #redes_sociales strong {
+    font-size: 1.5vw;
+  }
+  footer #redes_sociales p {
+    font-size: 1.5vw;
+  }
+  footer #redes_sociales {
+    padding: 0vw;
+  }
+  footer #redes_sociales .logo {
+    width: 2.5vw;
+  }
+  footer #box_boton .btn_subir {
+    width: 5vw;
+  }
+  footer #box_ubicacion p {
+    font-size: 1.5vw;
+    margin: 0vw 0 2vw 0;
+  }
+  footer #box_ubicacion strong {
+    font-size: 2vw;
+  }
+  footer #box_ubicacion {
+    text-align: center;
+  }
+}
+
+header {
+  align-items: center;
+  background-color: rgb(238, 249, 250);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+header img {
+  cursor: pointer;
+  margin: 2vw 0 2vw 0;
+  width: 15vw;
+}
+header #logo {
+  width: 40vw;
+}
+header #menu_tablet {
+  display: none;
+}
+header {
+  width: 100vw;
+}
+@media (min-width: 481.98px) {
+  header button {
+    font-size: 2vw;
+    margin: 0 2vw 0 0vw;
+  }
+  header button:hover {
+    background-color: #acc9e9;
+    border: white;
+    color: white;
+    cursor: pointer;
+  }
+  header #hamburguesa {
+    display: none;
+  }
+  header #logo {
+    width: 20vw;
+  }
+  header .side_menu {
+    display: flex;
+  }
+  header #menu_tablet {
+    display: flex;
+  }
+}
+@media (min-width: 769.98px) {
+  header #logo {
+    margin: 1vw 0 1vw 0;
+    width: 15vw;
+  }
+  header button {
+    font-size: 1.5vw;
+  }
+}
+
+#side_menu {
+  background: rgba(88, 177, 226, 0.15);
+  backdrop-filter: blur(1.5vw);
+  -webkit-backdrop-filter: blur(1vw);
+  border: 1px solid rgba(100, 175, 229, 0.3);
+  color: white;
+  height: 100vh;
+  padding: 3vw;
+  position: fixed;
+  right: -40vw;
+  transition: right 0.3s ease;
+  top: 0;
+  width: 40vw;
+  z-index: 1;
+}
+#side_menu.active {
+  right: 0;
+}
+#side_menu #close_menu {
+  cursor: pointer;
+  font-size: 7vw;
+  padding: 0 3vw 0 0;
+  text-align: end;
+  margin: 0vw;
+}
+#side_menu img {
+  margin: 2vw;
+  width: 5vw;
+}
+#side_menu #img_menu {
+  cursor: pointer;
+  text-align: center;
+  width: 30vw;
+}
+#side_menu .menu_option {
+  color: rgba(0, 0, 0, 0.57);
+  cursor: pointer;
+  font-size: 3.5vw;
+  margin: 5vw 0;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+main .background_inter {
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  background-color: #87D0CD;
+  height: 5vh;
+  width: 100vw;
+}
+main #box_amalgama {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: white;
+}
+main #box_amalgama #sub_titulo_laptop {
+  display: none;
+}
+main #box_amalgama #first_amalgama h3 {
+  margin: 3vw 0 3vw 0;
+}
+main #box_amalgama #first_amalgama img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #box_amalgama #second_amalgama h4 {
+  margin: 3vw 0 0 0;
+}
+main #box_amalgama #second_amalgama img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #box_amalgama h2 {
+  text-align: center;
+  margin: 2vw 0 3vw 0;
+}
+main #box_amalgama #intro_amalgama {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 3vw 0 3vw 0;
+}
+main #box_amalgama #intro_amalgama img {
+  margin: 0 2vw 0 0;
+  width: 20vw;
+}
+main #box_amalgama #intro_amalgama {
+  width: 70vw;
+}
+main #box_amalgama p {
+  color: white;
+  margin: 2vw 0 2vw 0;
+}
+main #box_blanqueamiento {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: white;
+}
+main #box_blanqueamiento #first_blanqueamiento img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+  margin: 2vw 0 2vw 0;
+}
+main #box_blanqueamiento h2 {
+  text-align: center;
+  font-size: 6vw;
+  margin: 2vw 0 2vw 0;
+}
+main #box_blanqueamiento h4 {
+  font-size: 4vw;
+}
+main #box_blanqueamiento #intro_blanqueamiento {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+main #box_blanqueamiento #intro_blanqueamiento h2 {
+  font-size: 4.5vw;
+}
+main #box_blanqueamiento #intro_blanqueamiento img {
+  margin: 2vw 0 2vw 0;
+  width: 25vw;
+}
+main #box_blanqueamiento p {
+  color: white;
+  margin: 2vw 0 2vw 0;
+}
+main #box_blanqueamiento #second_blanqueamiento img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #box_blanqueamiento video {
+  margin: 2vw 0 2vw 0;
+  width: 90vw;
+}
+main #box_extraccion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #box_extraccion em {
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 0 2vw 0;
+}
+main #box_extraccion h2 {
+  color: #87D0CD;
+  font-size: 6vw;
+}
+main #box_extraccion h4 {
+  color: #86D3DC;
+  font-size: 4vw;
+  margin: 0vw 0 3vw 0;
+  text-align: start;
+  width: 90vw;
+}
+main #box_extraccion #intro_extraccion {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  margin: 5vw 0 5vw 0;
+}
+main #box_extraccion #intro_extraccion h2 {
+  font-size: 5vw;
+}
+main #box_extraccion #intro_extraccion img {
+  width: 10vw;
+}
+main #box_extraccion #intro_extraccion {
+  width: 70vw;
+}
+main #box_extraccion #text_introE {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #box_extraccion p {
+  margin: 2vw 0 2vw 0;
+}
+main #box_extraccion video {
+  width: 90vw;
+}
+main #box_tratamientos {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #beginning_text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+main #beginning_text p {
+  margin: 2vw 0 2vw 0;
+}
+main #beginning_text {
+  width: 90vw;
+}
+main #box_restauracion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #background {
+  mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  background-color: #87D0CD;
+  padding: 30vw 0 0 0;
+  width: 100vw;
+}
+@media (min-width: 769.98px) {
+  main #background {
+    padding: 13vw 0 0 0;
+  }
+}
+main #box_rehabilitacion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  color: white;
+}
+main #box_rehabilitacion h2 {
+  font-size: 6vw;
+  text-align: center;
+  width: 90vw;
+}
+main #box_rehabilitacion p {
+  color: white;
+  font-size: 3.5vw;
+  margin: 1vw 0 1vw 0;
+}
+main #box_rehabilitacion {
+  width: 90vw;
+}
+main #box_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #box_sarro #after_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #box_sarro #after_sarro img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #box_sarro #after_sarro p {
+  font-size: 3.5vw;
+}
+main #box_sarro #because_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #box_sarro #because_sarro img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #box_sarro #because_sarro p {
+  font-size: 3.5vw;
+}
+main #box_sarro h2 {
+  color: #87D0CD;
+  font-size: 6vw;
+  margin: 2vw 0 2vw 0;
+}
+main #box_sarro img {
+  margin: 2vw 0 2vw 0;
+}
+main #box_sarro #intro_sarro_laptop {
+  display: none;
+}
+main #box_sarro #intro_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #86D3DC;
+  font-size: 4vw;
+}
+main #box_sarro #intro_sarro img {
+  width: 23vw;
+}
+main #box_sarro #intro_sarro {
+  width: 70vw;
+}
+main #box_sarro p {
+  margin: 2vw 0 2vw 0;
+}
+main #box_sarro #text_introS {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #box_sarro #text_introS p {
+  font-size: 3.5vw;
+}
+main #caso_rehabilitacion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #caso_rehabilitacion h3 {
+  font-size: 5vw;
+  margin: 2vw 0 2vw 0;
+  text-align: center;
+}
+main #caso_rehabilitacion h4 {
+  font-size: 5vw;
+  margin: 2vw 0 2vw 0;
+  width: 90vw;
+}
+main #caso_rehabilitacion img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+  margin: 2vw 0 2vw 0;
+}
+main #caso_rehabilitacion p {
+  color: white;
+  margin: 1vw 0 1vw 0;
+}
+main #caso_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #caso_fractura h3 {
+  font-size: 5vw;
+  color: #87D0CD;
+  text-align: center;
+}
+main #caso_fractura h4 {
+  color: #86D3DC;
+  font-size: 5vw;
+  margin: 2vw 0 2vw 0;
+}
+main #caso_fractura img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #caso_fractura {
+  margin: 5vw 0 0 0;
+}
+main #caso_fractura p {
+  margin: 1vw 0 1vw 0;
+}
+main #final_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #final_fractura h3 {
+  color: #87D0CD;
+  font-size: 6vw;
+  margin: 0vw 0 2vw 0;
+}
+main #final_fractura img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+  margin: 2vw 0 0vw 0;
+}
+main #final_fractura {
+  margin: 5vw 0 0vw 0;
+}
+main h1 {
+  color: #87D0CD;
+  font-size: 8vw;
+  margin: 3vw 0 3vw 0;
+}
+main #intro_rehabilitacion {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+main #intro_rehabilitacion h3 {
+  font-size: 6vw;
+  text-align: center;
+  width: 90vw;
+}
+main #intro_rehabilitacion img {
+  width: 10vw;
+}
+main #intro_rehabilitacion {
+  width: 90vw;
+}
+main #intro_restauracion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  height: 70vw;
+}
+main li {
+  color: #86D3DC;
+  font-size: 3.5vw;
+  margin: 2vw 0 2vw 0;
+}
+main #muela {
+  margin: 8vw 0 0 0;
+  width: 13vw;
+}
+main #pasos_rehabilitacion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #pasos_rehabilitacion #fourth_rehabilitacion h4 {
+  font-size: 4.5vw;
+  margin: 0 0 3vw 0;
+}
+main #pasos_rehabilitacion #fourth_rehabilitacion p {
+  font-size: 3vw;
+}
+main #pasos_rehabilitacion #firs_rehabilitacion h4 {
+  font-size: 4.5vw;
+  margin: 0 0 3vw 0;
+}
+main #pasos_rehabilitacion #firs_rehabilitacion p {
+  font-size: 3vw;
+}
+main #pasos_rehabilitacion h2 {
+  font-size: 7vw;
+  margin: 2vw 0 2vw 0;
+}
+main #pasos_rehabilitacion img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+  margin: 2vw 0 2vw 0;
+}
+main #pasos_rehabilitacion #second_rehabilitacion h4 {
+  font-size: 4.5vw;
+  margin: 0 0 3vw 0;
+}
+main #pasos_rehabilitacion #second_rehabilitacion p {
+  font-size: 3vw;
+}
+main #pasos_rehabilitacion #third_rehabilitacion h4 {
+  font-size: 4.5vw;
+  text-align: center;
+  margin: 0 0 3vw 0;
+}
+main #pasos_rehabilitacion #third_rehabilitacion p {
+  font-size: 3vw;
+}
+main p {
+  color: rgba(24, 24, 24, 0.636);
+  font-size: 3vw;
+}
+main #second_background {
+  mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  background-color: #87D0CD;
+  padding: 30vw 0 0 0;
+  width: 100vw;
+}
+main #slogan {
+  color: #86D3DC;
+  font-size: 4.2vw;
+  margin: 4vw 0 0vw 2vw;
+}
+main #sub_restauracion {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #86D3DC;
+}
+main #sub_restauracion img {
+  margin: 0 3vw 0 0;
+  width: 10vw;
+}
+main #sub_restauracion h3 {
+  font-size: 4vw;
+}
+main #sub_restauracion {
+  width: 50vw;
+}
+main #second_sarro {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #second_sarro h2 {
+  font-size: 5vw;
+}
+main #second_sarro p {
+  font-size: 3.5vw;
+}
+main #second_sarro #intro_sarroSecond {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+main #second_sarro #intro_sarroSecond img {
+  width: 20vw;
+}
+main #second_sarro #first_sarroSecond {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+main #second_sarro #first_sarroSecond img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+  width: 90vw;
+}
+main #second_sarro #first_sarroSecond {
+  text-align: center;
+}
+main #second_sarro #second_sarroSecond {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #86D3DC;
+}
+main #second_sarro #second_sarroSecond img {
+  border-radius: 0vw 40vw 0vw 40vw;
+  width: 90vw;
+}
+main #second_sarro #second_sarroSecond p {
+  font-size: 3vw;
+}
+main #second_sarro #second_sarroSecond {
+  text-align: center;
+  width: 90vw;
+}
+main #seg_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
+main #seg_fractura #firs_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  margin: 3vw 0 0 0;
+}
+main #seg_fractura #firs_fractura strong {
+  align-items: start;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 90vw;
+}
+main #seg_fractura h3 {
+  font-size: 5vw;
+  color: #87D0CD;
+}
+main #seg_fractura {
+  margin: 5vw 0 0 0;
+}
+main #seg_fractura #second_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  margin: 3vw 0 0 0;
+}
+main #seg_fractura #second_fractura strong {
+  align-items: start;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 90vw;
+}
+main #seg_fractura #third_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  margin: 3vw 0 0 0;
+}
+main #seg_fractura #third_fractura strong {
+  align-items: start;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 90vw;
+}
+main #seg_fractura #fourth_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  margin: 3vw 0 0 0;
+}
+main #seg_fractura #fourth_fractura strong {
+  align-items: start;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 90vw;
+}
+main #seg_fractura #fifth_fractura {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  margin: 3vw 0 0 0;
+}
+main #seg_fractura #fifth_fractura strong {
+  align-items: start;
+  color: #86D3DC;
+  font-size: 4vw;
+  width: 90vw;
+}
+main #third_background {
+  mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to top, black 90%, transparent 100%);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  background-color: #87D0CD;
+  padding: 30vw 0 0 0;
+  width: 100vw;
+}
+@media (min-width: 769.98px) {
+  main #third_background {
+    padding: 13vw 0 0 0;
+  }
+}
+main #title_restauracion {
+  color: #87D0CD;
+  font-size: 5vw;
+  margin: 8vw 0 4vw 4vw;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li::before {
+  background-image: url("../assets/img/viñetaFracturada.png");
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 5vw;
+  margin-right: 1vw;
+  vertical-align: middle;
+  width: 5vw;
+}
+
+@media (min-width: 481.98px) {
+  main #beginning_text h1 {
+    font-size: 6vw;
+  }
+  main #beginning_text p {
+    font-size: 2.5vw;
+  }
+  main #slogan {
+    font-size: 4vw;
+  }
+  main #muela {
+    width: 9vw;
+  }
+  main #box_restauracion #title_restauracion {
+    font-size: 4.5vw;
+  }
+  main #box_restauracion h3 {
+    font-size: 4vw;
+  }
+  main #box_restauracion h4 {
+    font-size: 4vw;
+  }
+  main #box_restauracion p {
+    font-size: 2.3vw;
+  }
+  main #box_restauracion li {
+    font-size: 3vw;
+  }
+  main #box_restauracion strong {
+    font-size: 1vw;
+  }
+  main #seg_fractura #firs_fractura strong {
+    font-size: 3vw;
+  }
+  main #seg_fractura #firs_fractura p {
+    font-size: 2.2vw;
+  }
+  main #seg_fractura #second_fractura strong {
+    font-size: 3vw;
+  }
+  main #seg_fractura #second_fractura p {
+    font-size: 2.2vw;
+  }
+  main #seg_fractura #third_fractura strong {
+    font-size: 3vw;
+  }
+  main #seg_fractura #third_fractura p {
+    font-size: 2.2vw;
+  }
+  main #seg_fractura #fourth_fractura strong {
+    font-size: 3vw;
+  }
+  main #seg_fractura #fourth_fractura p {
+    font-size: 2.2vw;
+  }
+  main #seg_fractura #fifth_fractura strong {
+    font-size: 3vw;
+  }
+  main #seg_fractura #fifth_fractura p {
+    font-size: 2.2vw;
+  }
+  main #box_rehabilitacion h2 {
+    font-size: 5vw;
+  }
+  main #box_rehabilitacion h3 {
+    font-size: 4vw;
+  }
+  main #box_rehabilitacion h4 {
+    font-size: 4vw;
+  }
+  main #box_rehabilitacion #intro_rehabilitacion img {
+    width: 7vw;
+  }
+  main #box_rehabilitacion #intro_rehabilitacion {
+    width: 60vw;
+  }
+  main #box_rehabilitacion p {
+    font-size: 2.5vw;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion h2 {
+    font-size: 4vw;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion h4 {
+    font-size: 3.3vw;
+    margin: 2vw 0 0 0;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro h2 {
+    font-size: 5vw;
+  }
+  main #box_sarro p {
+    font-size: 3vw;
+  }
+  main #box_sarro #intro_sarro h3 {
+    font-size: 3.5vw;
+    text-align: center;
+  }
+  main #box_sarro #intro_sarro img {
+    width: 13vw;
+  }
+  main #box_sarro #intro_sarro {
+    width: 50vw;
+  }
+  main #box_sarro #text_introS p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro #because_sarro h2 {
+    font-size: 4vw;
+  }
+  main #box_sarro #because_sarro p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro #after_sarro h2 {
+    font-size: 4.5vw;
+    text-align: center;
+  }
+  main #box_sarro #after_sarro p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro #second_sarro #intro_sarroSecond h2 {
+    font-size: 4vw;
+    text-align: center;
+  }
+  main #box_sarro #second_sarro #intro_sarroSecond img {
+    width: 13vw;
+  }
+  main #box_sarro #second_sarro #intro_sarroSecond {
+    width: 70vw;
+  }
+  main #box_sarro #second_sarro p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro #second_sarro #second_sarroSecond h3 {
+    font-size: 4vw;
+  }
+  main #box_sarro #second_sarro #second_sarroSecond p {
+    font-size: 2.5vw;
+  }
+  main #box_amalgama h2 {
+    font-size: 4vw;
+  }
+  main #box_amalgama #intro_amalgama h3 {
+    font-size: 3vw;
+  }
+  main #box_amalgama #intro_amalgama img {
+    margin: 0vw;
+    width: 10vw;
+  }
+  main #box_amalgama #intro_amalgama {
+    text-align: center;
+    width: 60vw;
+  }
+  main #box_amalgama p {
+    font-size: 2.5vw;
+  }
+  main #box_amalgama #first_amalgama h3 {
+    font-size: 4vw;
+  }
+  main #box_amalgama #first_amalgama h4 {
+    font-size: 3vw;
+  }
+  main #box_amalgama #first_amalgama p {
+    font-size: 2.3vw;
+  }
+  main #box_amalgama #second_amalgama h4 {
+    font-size: 3vw;
+  }
+  main #box_amalgama #second_amalgama p {
+    font-size: 2.3vw;
+  }
+  main #box_extraccion h2 {
+    font-size: 5vw;
+  }
+  main #box_extraccion #intro_extraccion h2 {
+    font-size: 4vw;
+  }
+  main #box_extraccion #intro_extraccion img {
+    width: 8vw;
+  }
+  main #box_extraccion #intro_extraccion {
+    width: 60vw;
+  }
+  main #box_extraccion #text_introE p {
+    font-size: 2.3vw;
+  }
+  main #box_extraccion #first_extraccion p {
+    font-size: 2.3vw;
+  }
+  main #box_blanqueamiento #first_blanqueamiento h4 {
+    font-size: 3vw;
+  }
+  main #box_blanqueamiento #first_blanqueamiento p {
+    font-size: 2.5vw;
+  }
+  main #box_blanqueamiento h2 {
+    font-size: 4vw;
+  }
+  main #box_blanqueamiento #intro_blanqueamiento h2 {
+    font-size: 2.6vw;
+  }
+  main #box_blanqueamiento #intro_blanqueamiento img {
+    width: 15vw;
+  }
+  main #box_blanqueamiento #intro_blanqueamiento {
+    width: 50vw;
+  }
+  main #box_blanqueamiento #second_blanqueamiento p {
+    font-size: 2.5vw;
+  }
+  main #box_blanqueamiento #text_introB p {
+    font-size: 2.5vw;
+  }
+  main #box_blanqueamiento #third_blanqueamiento p {
+    font-size: 2.5vw;
+  }
+}
+@media (min-width: 769.98px) {
+  main #second_background {
+    padding: 10vw 0 7vw 0;
+  }
+  main #beginning_text {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  main #beginning_text h1 {
+    font-size: 3.5vw;
+    text-align: center;
+    margin: 2vw 0 0vw 0;
+    width: 70vw;
+  }
+  main #beginning_text p {
+    font-size: 1.3vw;
+    width: 40vw;
+  }
+  main #slogan {
+    font-size: 2.5vw;
+    margin: 0vw;
+    width: 90vw;
+  }
+  main #muela {
+    margin: 3vw 0 0 0vw;
+    width: 5vw;
+  }
+  main #box_restauracion {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  main #box_restauracion #title_restauracion {
+    font-size: 3vw;
+    margin: 2vw 0 2vw 0;
+  }
+  main #box_restauracion h3 {
+    font-size: 3vw;
+  }
+  main #box_restauracion h4 {
+    font-size: 3vw;
+  }
+  main #box_restauracion p {
+    font-size: 2.3vw;
+  }
+  main #box_restauracion #intro_restauracion {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  main #box_restauracion #intro_restauracion #sub_restauracion h3 {
+    font-size: 2.5vw;
+  }
+  main #box_restauracion #intro_restauracion #sub_restauracion img {
+    width: 7vw;
+  }
+  main #box_restauracion #intro_restauracion #sub_restauracion {
+    padding: 0 4vw 0 4vw;
+    width: 40vw;
+  }
+  main #box_restauracion #intro_restauracion p {
+    font-size: 1.3vw;
+    margin: 1vw 0 1vw 0;
+    text-align: center;
+  }
+  main #box_restauracion #intro_restauracion ul {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 70vw;
+  }
+  main #box_restauracion #intro_restauracion ul li {
+    margin: 1vw 0 1vw 0;
+  }
+  main #box_restauracion #intro_restauracion ul li::before {
+    background-image: url("../assets/img/viñetaFracturada.png");
+    background-size: contain;
+    content: "";
+    display: inline-block;
+    height: 2vw;
+    margin-right: 1vw;
+    vertical-align: middle;
+    width: 2vw;
+  }
+  main #box_restauracion li {
+    font-size: 2vw;
+  }
+  main #box_restauracion strong {
+    font-size: 1vw;
+  }
+  main #caso_fractura {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  main #caso_fractura #caso_fractura_text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90vw;
+  }
+  main #caso_fractura #caso_fractura_text h4 {
+    font-size: 2.5vw;
+    margin: 0vw 0 1vw 0;
+  }
+  main #caso_fractura #caso_fractura_text p {
+    font-size: 1.5vw;
+  }
+  main #caso_fractura #caso_fractura_text {
+    width: 50vw;
+  }
+  main #caso_fractura img {
+    border-radius: 0vw 15vw 0vw 15vw;
+    margin: 2vw 0 0 0;
+    width: 30vw;
+  }
+  main #caso_fractura {
+    margin: 2vw 0 0 0;
+  }
+  main #seg_fractura #firs_fractura {
+    margin: 1vw 0 0 0;
+  }
+  main #seg_fractura #firs_fractura strong {
+    font-size: 1.5vw;
+    margin: 1vw 0 1vw 0;
+    width: auto;
+  }
+  main #seg_fractura #firs_fractura p {
+    font-size: 1.3vw;
+    text-align: center;
+  }
+  main #seg_fractura #firs_fractura {
+    width: auto;
+  }
+  main #seg_fractura #second_fractura {
+    margin: 1vw 0 0 0;
+  }
+  main #seg_fractura #second_fractura strong {
+    font-size: 1.5vw;
+    margin: 1vw 0 1vw 0;
+    width: auto;
+  }
+  main #seg_fractura #second_fractura p {
+    font-size: 1.3vw;
+    text-align: center;
+  }
+  main #seg_fractura #second_fractura {
+    width: auto;
+  }
+  main #seg_fractura #third_fractura {
+    margin: 1vw 0 0 0;
+  }
+  main #seg_fractura #third_fractura strong {
+    font-size: 1.5vw;
+    margin: 1vw 0 1vw 0;
+    width: auto;
+  }
+  main #seg_fractura #third_fractura p {
+    font-size: 1.3vw;
+    text-align: center;
+  }
+  main #seg_fractura #third_fractura {
+    width: auto;
+  }
+  main #seg_fractura #fourth_fractura {
+    margin: 1vw 0 0 0;
+  }
+  main #seg_fractura #fourth_fractura strong {
+    font-size: 1.5vw;
+    margin: 1vw 0 1vw 0;
+    width: auto;
+  }
+  main #seg_fractura #fourth_fractura p {
+    font-size: 1.3vw;
+    text-align: center;
+  }
+  main #seg_fractura #fourth_fractura {
+    width: auto;
+  }
+  main #seg_fractura #fifth_fractura {
+    margin: 1vw 0 0 0;
+  }
+  main #seg_fractura #fifth_fractura strong {
+    font-size: 1.5vw;
+    margin: 1vw 0 1vw 0;
+    width: auto;
+  }
+  main #seg_fractura #fifth_fractura p {
+    font-size: 1.3vw;
+    text-align: center;
+  }
+  main #seg_fractura #fifth_fractura {
+    width: auto;
+  }
+  main #seg_fractura {
+    margin: 0vw;
+    width: 45vw;
+  }
+  main #final_fractura img {
+    border-radius: 0vw 15vw 0vw 15vw;
+    width: 40vw;
+  }
+  main #final_fractura p {
+    font-size: 1.3vw;
+    text-align: center;
+  }
+  main #final_fractura {
+    width: 43vw;
+  }
+  main #box_rehabilitacion {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  main #box_rehabilitacion h2 {
+    font-size: 3vw;
+  }
+  main #box_rehabilitacion h3 {
+    font-size: 4vw;
+  }
+  main #box_rehabilitacion h4 {
+    font-size: 4vw;
+  }
+  main #box_rehabilitacion #intro_rehabilitacion h3 {
+    font-size: 2vw;
+  }
+  main #box_rehabilitacion #intro_rehabilitacion img {
+    width: 7vw;
+  }
+  main #box_rehabilitacion #intro_rehabilitacion {
+    margin: 2vw 0 2vw 0;
+    width: 40vw;
+  }
+  main #box_rehabilitacion p {
+    font-size: 1.3vw;
+    margin: 0vw 0 1vw 0;
+  }
+  main #box_rehabilitacion #caso_rehabilitacion h3 {
+    font-size: 3vw;
+    margin: 1vw 0 0vw 0;
+  }
+  main #box_rehabilitacion #caso_rehabilitacion h4 {
+    font-size: 3vw;
+  }
+  main #box_rehabilitacion #caso_rehabilitacion img {
+    border-radius: 0vw 20vw 0vw 20vw;
+    width: 45vw;
+  }
+  main #box_rehabilitacion #caso_rehabilitacion p {
+    font-size: 1.5vw;
+    margin: 0vw;
+    text-align: center;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion h2 {
+    font-size: 3vw;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion h4 {
+    font-size: 2.3vw;
+    margin: 2vw 0 0 0;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion img {
+    border-radius: 0vw 30vw 0vw 30vw;
+    width: 60vw;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop h2 {
+    width: auto;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop h4 {
+    margin: 0vw;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop img {
+    border-radius: 0vw 20vw 0vw 20vw;
+    width: 43vw;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop p {
+    margin: 1vw 0 1vw 0;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop {
+    width: 43vw;
+  }
+  main #box_rehabilitacion #pasos_rehabilitacion p {
+    font-size: 1.3vw;
+  }
+  main #box_sarro {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  main #box_sarro h2 {
+    font-size: 3.5vw;
+    margin: 0vw;
+  }
+  main #box_sarro #intro_sarro h3 {
+    font-size: 2.5vw;
+    text-align: center;
+  }
+  main #box_sarro #intro_sarro img {
+    width: 10vw;
+  }
+  main #box_sarro #intro_sarro {
+    padding: 0 3vw 0 3vw;
+    width: 50vw;
+  }
+  main #box_sarro #text_introS p {
+    color: rgba(0, 0, 0, 0.5921568627);
+    font-size: 1.3vw;
+    margin: 0vw 0 1vw 0;
+  }
+  main #box_sarro #because_sarro h2 {
+    font-size: 2vw;
+    margin: 0 0 2vw 0;
+    text-align: center;
+  }
+  main #box_sarro #because_sarro img {
+    border-radius: 0vw 20vw 0vw 20vw;
+    width: 40vw;
+  }
+  main #box_sarro #because_sarro p {
+    font-size: 1.3vw;
+    margin: 0vw 0 1vw 0;
+  }
+  main #box_sarro #because_sarro {
+    width: 43vw;
+  }
+  main #box_sarro #after_sarro h2 {
+    font-size: 2vw;
+    margin: 0 0 2vw 0;
+    text-align: center;
+  }
+  main #box_sarro #after_sarro img {
+    border-radius: 0vw 20vw 0vw 20vw;
+    width: 40vw;
+  }
+  main #box_sarro #after_sarro p {
+    font-size: 1.3vw;
+    margin: 0vw 0 1vw 0;
+  }
+  main #box_sarro #after_sarro {
+    width: 43vw;
+  }
+  main #box_sarro #second_sarro {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  main #box_sarro #second_sarro #intro_sarroSecond {
+    display: none;
+  }
+  main #box_sarro #second_sarro p {
+    font-size: 2.5vw;
+  }
+  main #box_sarro #second_sarro #first_sarroSecond #intro_sarro_laptop {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  main #box_sarro #second_sarro #first_sarroSecond #intro_sarro_laptop h2 {
+    font-size: 2.4vw;
+    text-align: center;
+  }
+  main #box_sarro #second_sarro #first_sarroSecond #intro_sarro_laptop img {
+    border-radius: 0vw;
+    width: 10vw;
+  }
+  main #box_sarro #second_sarro #first_sarroSecond #intro_sarro_laptop {
+    padding: 0 8vw 0 8vw;
+    width: 60vw;
+  }
+  main #box_sarro #second_sarro #first_sarroSecond img {
+    border-radius: 0 20vw 0 20vw;
+    width: 40vw;
+  }
+  main #box_sarro #second_sarro #first_sarroSecond p {
+    font-size: 1.5vw;
+    margin: 0 0 1vw 0;
+  }
+  main #box_sarro #second_sarro #first_sarroSecond {
+    width: 40vw;
+  }
+  main #box_sarro #second_sarro #second_sarroSecond h3 {
+    font-size: 2.4vw;
+    margin: 0 0 1vw 0;
+  }
+  main #box_sarro #second_sarro #second_sarroSecond img {
+    border-radius: 0 20vw 0 20vw;
+    width: 40vw;
+  }
+  main #box_sarro #second_sarro #second_sarroSecond p {
+    font-size: 1.5vw;
+    margin: 0 0 1vw 0;
+  }
+  main #box_sarro #second_sarro #second_sarroSecond {
+    width: 40vw;
+  }
+  main #box_sarro {
+    width: 90vw;
+  }
+  main #box_amalgama {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  main #box_amalgama #sub_titulo_laptop {
+    display: flex;
+    justify-content: center;
+    font-size: 3vw;
+    margin: 2vw 0 2vw 0;
+    width: 90vw;
+  }
+  main #box_amalgama h2 {
+    font-size: 3vw;
+    margin: 1vw 0 1vw 0;
+  }
+  main #box_amalgama #intro_amalgama h3 {
+    font-size: 2vw;
+  }
+  main #box_amalgama #intro_amalgama img {
+    margin: 0vw;
+    width: 8vw;
+  }
+  main #box_amalgama #intro_amalgama {
+    margin: 0 0 1vw 0;
+    text-align: center;
+    width: 45vw;
+  }
+  main #box_amalgama #text_introA p {
+    font-size: 1.5vw;
+    margin: 0 0 1vw 0;
+  }
+  main #box_amalgama #sub_titulo_nothinglap {
+    display: none;
+  }
+  main #box_amalgama #first_amalgama h4 {
+    font-size: 2vw;
+  }
+  main #box_amalgama #first_amalgama img {
+    border-radius: 0 10vw 0 10vw;
+    width: 43vw;
+  }
+  main #box_amalgama #first_amalgama p {
+    font-size: 1.5vw;
+  }
+  main #box_amalgama #first_amalgama {
+    width: 43vw;
+  }
+  main #box_amalgama #second_amalgama h4 {
+    font-size: 2vw;
+    margin: 0vw;
+  }
+  main #box_amalgama #second_amalgama img {
+    border-radius: 0 10vw 0 10vw;
+    width: 40vw;
+  }
+  main #box_amalgama #second_amalgama p {
+    font-size: 1.5vw;
+  }
+  main #box_amalgama #second_amalgama {
+    width: 40vw;
+  }
+  main #box_extraccion h2 {
+    font-size: 3.3vw;
+  }
+  main #box_extraccion #intro_extraccion h2 {
+    font-size: 2.5vw;
+  }
+  main #box_extraccion #intro_extraccion img {
+    width: 6vw;
+  }
+  main #box_extraccion #intro_extraccion {
+    margin: 2vw 0 1vw 0;
+    width: 40vw;
+  }
+  main #box_extraccion #text_introE {
+    font-size: 1.5vw;
+  }
+  main #box_extraccion #text_introE p {
+    font-size: 1.5vw;
+  }
+  main #box_extraccion #first_extraccion {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90vw;
+  }
+  main #box_extraccion #first_extraccion h4 {
+    display: flex;
+    font-size: 3vw;
+    justify-content: center;
+    margin: 0vw;
+    width: 90vw;
+  }
+  main #box_extraccion #first_extraccion p {
+    font-size: 1.5vw;
+  }
+  main #box_extraccion #first_extraccion video {
+    width: 60vw;
+  }
+  main #box_blanqueamiento {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  main #box_blanqueamiento #first_blanqueamiento h4 {
+    font-size: 2.5vw;
+  }
+  main #box_blanqueamiento #first_blanqueamiento img {
+    width: 40vw;
+  }
+  main #box_blanqueamiento #first_blanqueamiento {
+    margin: 2vw 0 0 0;
+  }
+  main #box_blanqueamiento #first_blanqueamiento p {
+    font-size: 1.5vw;
+  }
+  main #box_blanqueamiento #first_blanqueamiento {
+    width: 40vw;
+  }
+  main #box_blanqueamiento h2 {
+    font-size: 3vw;
+    margin: 0vw;
+  }
+  main #box_blanqueamiento #intro_blanqueamiento h2 {
+    font-size: 2vw;
+  }
+  main #box_blanqueamiento #intro_blanqueamiento img {
+    width: 12vw;
+  }
+  main #box_blanqueamiento #intro_blanqueamiento {
+    width: 40vw;
+  }
+  main #box_blanqueamiento #second_blanqueamiento h4 {
+    font-size: 2.5vw;
+  }
+  main #box_blanqueamiento #second_blanqueamiento img {
+    width: 40vw;
+  }
+  main #box_blanqueamiento #second_blanqueamiento {
+    margin: 2vw 0 0 0;
+  }
+  main #box_blanqueamiento #second_blanqueamiento p {
+    font-size: 1.5vw;
+  }
+  main #box_blanqueamiento #second_blanqueamiento {
+    width: 40vw;
+  }
+  main #box_blanqueamiento #text_introB p {
+    font-size: 1.5vw;
+    margin: 0 0 1vw 0;
+  }
+  main #box_blanqueamiento #text_introB {
+    font-size: 1.5vw;
+    margin: 0 0 2vw 0;
+  }
+  main #box_blanqueamiento #third_blanqueamiento {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90vw;
+  }
+  main #box_blanqueamiento #third_blanqueamiento em {
+    font-size: 1.8vw;
+  }
+  main #box_blanqueamiento #third_blanqueamiento h4 {
+    font-size: 3vw;
+  }
+  main #box_blanqueamiento #third_blanqueamiento p {
+    font-size: 1.8vw;
+  }
+  main #box_blanqueamiento #third_blanqueamiento video {
+    width: 60vw;
+  }
+}/*# sourceMappingURL=tratamientos.css.map */
