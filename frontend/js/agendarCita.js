@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         mensajeDiv.textContent = '';
-        mensajeDiv.style.color = 'red';
+        mensajeDiv.className = '';
 
         // Verificar token
         const token = localStorage.getItem('token');
@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
       
         try {
-            mensajeDiv.style.color = 'black';
             mensajeDiv.textContent = 'Enviando solicitud...';
           
             const res = await fetch(`${API_URL}/citas/agendar`, {
@@ -161,20 +160,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     token, tipoSangre, alergias, enfermedadCronica, medicacion
                 );
 
-                mensajeDiv.style.color = 'green';
+                mensajeDiv.classList.add('success');
                 mensajeDiv.textContent = '✅ Cita agendada correctamente. Datos médicos guardados en tu perfil.';
                 form.reset();
 
                 // Recarga los datos para limpiar
                 setTimeout(cargarDatosDelPerfil, 1000);
             } else {
-                mensajeDiv.style.color = 'red';
-                mensajeDiv.textContent = `❌ Error: ${data.msg || 'No se pudo agendar la cita.'}`;
+                mensajeDiv.classList.add('error');
+            mensajeDiv.textContent = `❌ Error: ${data.msg || 'No se pudo agendar la cita.'}`;
             }
 
         } catch (error) {
             console.error('Error agendar cita:', error);
-            mensajeDiv.style.color = 'red';
+            mensajeDiv.classList.add('error');
             mensajeDiv.textContent = '❌ Error de conexión con el servidor.';
         }
     });

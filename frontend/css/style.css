@@ -191,6 +191,26 @@ header img {
   margin: 2vw 0 2vw 0;
   width: 15vw;
 }
+/* fdesde aqui no esta en el scss, paraagregarlo ///////////////////////77
+/* utility classes added for JS interactions */
+.hidden { display: none !important; }
+
+/* simple modal scaffold; full styling to be provided in SCSS */
+#aviso-modal { display: none; }
+#aviso-modal.visible { display: flex; justify-content: center; align-items: center; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index:9999; }
+#aviso-modal #aviso-contenido { background:white; padding:20px; border-radius:8px; max-width:90%; text-align:center; }
+
+/* message element states used by JS */
+.error { color: #c0392b; }
+.success { color: #27ae60; }
+.info { color: #2c3e50; }
+
+/* citas cards and estados */
+.cita-card { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 5px; }
+.estado-confirmada { color: green; }
+.estado-cancelada { color: red; }
+.estado-pendiente { color: orange; }
+
 header #logo {
   width: 40vw;
 }

@@ -1,185 +1,292 @@
-//const API_URL = 'http://localhost:3000/api';
-//
-//const perfilDiv = document.getElementById('perfil');
-//const procedimientosDiv = document.getElementById('procedimientos');
-//const saludoP = document.getElementById('saludo');
-//
-//function cerrarSesion() {
-//	localStorage.removeItem('token');
-//	localStorage.removeItem('usuario');
-//	window.location.href = './iniciar-sesion.html';
-//}
-//
-//async function cargarPanel() {
-//	const token = localStorage.getItem('token');
-//	const usuarioLocal = localStorage.getItem('usuario');
-//
-//	if (!token || !usuarioLocal) {
-//		// No logueado
-//		window.location.href = './iniciar-sesion.html';
-//		return;
-//	}
-//
-//	const usuario = JSON.parse(usuarioLocal);
-//
-//	saludoP.textContent = `Hola, ${usuario.nombre}`;
-//
-//	try {
-//		// 1) Obtener expediente del paciente
-//		const perfilRes = await fetch(`${API_URL}/pacientes/mi-perfil`, {
-//			headers: { Authorization: 'Bearer ' + token }
-//		});
-//
-//		if (!perfilRes.ok) {
-//			throw new Error('No se pudo obtener el perfil');
-//		}
-//
-//		const expediente = await perfilRes.json();
-//
-//		// Mostrar datos básicos
-//		perfilDiv.innerHTML = `
-//			<h3>Datos personales</h3>
-//			<p><strong>Nombre:</strong> ${expediente.usuario?.nombre || usuario.nombre}</p>
-//			<p><strong>Email:</strong> ${expediente.usuario?.email || ''}</p>
-//			<p><strong>Teléfono:</strong> ${expediente.telefono || expediente.telefonoEmergencia || '—'}</p>
-//			<p><strong>Dirección:</strong> ${expediente.direccion || '—'}</p>
-//			<p><strong>Fecha de nacimiento:</strong> ${expediente.fechaNacimiento ? new Date(expediente.fechaNacimiento).toLocaleDateString() : '—'}</p>
-//			<p><strong>Tipo de sangre:</strong> ${expediente.tipoSangre || '—'}</p>
-//			<p><strong>Alergias:</strong> ${expediente.alergias?.length ? expediente.alergias.join(', ') : '—'}</p>
-//			<p><strong>Enfermedades crónicas:</strong> ${expediente.enfermedadesCronicas?.length ? expediente.enfermedadesCronicas.join(', ') : '—'}</p>
-//		`;
-//
-//		// 2) Obtener citas y filtrar las que pertenezcan a este paciente
-//		const citasRes = await fetch(`${API_URL}/citas`, {
-//			headers: { Authorization: 'Bearer ' + token }
-//		});
-//
-//		if (!citasRes.ok) {
-//			throw new Error('No se pudieron obtener las citas');
-//		}
-//
-//		const citas = await citasRes.json();
-//
-//		// Filtrar por paciente: comparar con _id del expediente
-//		const misCitas = citas.filter(c => {
-//			// c.paciente puede ser objeto (poblado) o id
-//			if (typeof c.paciente === 'string') return c.paciente === expediente._id;
-//			if (c.paciente && c.paciente._id) return c.paciente._id === expediente._id;
-//			// Si está poblado hasta usuario: c.paciente.usuario._id
-//			if (c.paciente && c.paciente.usuario && c.paciente.usuario._id) return c.paciente.usuario._id === usuario.id || c.paciente.usuario._id === usuario.id;
-//			return false;
-//		});
-//
-//		if (misCitas.length === 0) {
-//			procedimientosDiv.innerHTML = '<h3>Próximas citas</h3><p>No tienes citas agendadas.</p><p><a href="./agendar-cita.html">Agendar una cita</a></p>';
-//		} else {
-//			procedimientosDiv.innerHTML = '<h3>Próximas citas</h3>' + misCitas.map(c => {
-//				const fecha = new Date(c.fecha);
-//				return `
-//					<div class="cita">
-//						<p><strong>Motivo:</strong> ${c.motivo || '—'}</p>
-//						<p><strong>Fecha:</strong> ${fecha.toLocaleString()}</p>
-//						<p><strong>Estado:</strong> ${c.estado}</p>
-//					</div>
-//				`;
-//			}).join('') + '<p><a href="./agendar-cita.html">Agendar otra cita</a></p>';
-//		}
-//
-//	} catch (error) {
-//		console.error('Error cargando panel:', error);
-//		saludoP.textContent = 'No se pudieron cargar los datos. Intenta recargar.';
-//	}
-//}
-//
-//// Ejecutar al cargar
-//document.addEventListener('DOMContentLoaded', cargarPanel);
-//
-
-
 const API_URL = 'http://localhost:3000/api';
+let pacienteIdActual = null; 
 
-// 1. Candado de Seguridad: Se ejecuta apenas carga la página
+// ==========================================
+// 1. INICIALIZACIÓN Y SEGURIDAD
+// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('token');
     const usuarioStr = localStorage.getItem('usuario');
 
-    // Si no hay token o usuario, lo pateamos al login
     if (!token || !usuarioStr) {
         window.location.href = 'iniciar-sesion.html';
         return;
     }
 
-    // Convertimos el string guardado a un objeto de JS
     const usuario = JSON.parse(usuarioStr);
-
-    // Si es un paciente intentando entrar al panel del doctor... ¡Pa' fuera!
     if (usuario.rol !== 'odontologo') {
-        alert('⛔ Acceso denegado. Esta área es exclusiva para el personal médico.');
-        window.location.href = 'perfil.html';
+        mostrarAviso('⛔ Acceso denegado. Esta área es exclusiva para el personal médico.', 'error', () => {
+            window.location.href = 'perfil.html';
+        });
         return;
     }
 
-    // Si pasó las pruebas, le damos la bienvenida y cargamos los datos
-    document.getElementById('nombreDoctor').textContent = `Dr(a). ${usuario.nombre}`;
-    cargarCitas();
+    // Cargamos todos los pacientes al entrar al panel
+    cargarTodosLosPacientes();
+
+    // Listeners de botones
+    document.getElementById('btn-buscar').addEventListener('click', manejarBusqueda);
+    document.getElementById('btn-ver-todos').addEventListener('click', cargarTodosLosPacientes);
+    document.getElementById('form-nueva-nota').addEventListener('submit', guardarNota);
+    // Listener para registrar nuevos usuarios (solo odontólogos)
+    const formRegistro = document.getElementById('form-registrar-usuario');
+    if (formRegistro) {
+        formRegistro.addEventListener('submit', registrarUsuario);
+    }
 });
 
+// ==========================================
+// 2. GESTIÓN DE PACIENTES (Lista y Búsqueda)
+// ==========================================
 
-// 2. Función para obtener las citas del backend
-async function cargarCitas() {
+// Traer TODOS los pacientes
+async function cargarTodosLosPacientes() {
+    const token = localStorage.getItem('token');
     try {
-        const token = localStorage.getItem('token');
-        
-        // Suponiendo que tienes una ruta GET /api/citas en tu backend
-        const respuesta = await fetch(`${API_URL}/citas`, {
-            method: 'GET',
-            headers: {
-                // Así se manda el token para las rutas protegidas con 'auth'
-                'x-auth-token': token, 
-                'Content-Type': 'application/json'
-            }
+        // Verifica que esta ruta coincida con tu configuración de server.js
+        const res = await fetch(`${API_URL}/pacientes`, { 
+            headers: { 'Authorization': `Bearer ${token}` }
         });
-
-        if (respuesta.ok) {
-            const citas = await respuesta.json();
-            renderizarTabla(citas);
+        
+        if(res.ok){
+            const pacientes = await res.json();
+            mostrarResultadosBusqueda(pacientes);
         } else {
-            console.error("Error al obtener las citas");
+            console.error("Error en la respuesta del servidor");
         }
     } catch (error) {
         console.error("Error de conexión:", error);
     }
 }
 
-// 3. Función para dibujar las citas en el HTML
-function renderizarTabla(citas) {
-    const tbody = document.getElementById('tablaCitas');
-    tbody.innerHTML = ''; // Limpiamos la tabla antes de llenarla
+// Buscar paciente específico
+async function manejarBusqueda() {
+    const term = document.getElementById('input-busqueda').value.trim();
+    if (!term) return cargarTodosLosPacientes(); // Si está vacío, trae todos
 
-    if (citas.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="4">No hay citas agendadas para hoy.</td></tr>';
+    const token = localStorage.getItem('token');
+    try {
+        const res = await fetch(`${API_URL}/pacientes/buscar?term=${term}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        
+        if(res.ok){
+            const pacientes = await res.json();
+            mostrarResultadosBusqueda(pacientes);
+        }
+    } catch (error) {
+        console.error("Error al buscar:", error);
+    }
+}
+
+// Pintar la lista de pacientes en pantalla
+function mostrarResultadosBusqueda(pacientes) {
+    const lista = document.getElementById('lista-resultados');
+    if(!lista) return;
+
+    lista.innerHTML = ''; 
+
+    if (pacientes.length === 0) {
+        lista.innerHTML = '<li">No se encontraron pacientes.</li>';
         return;
     }
 
-    citas.forEach(cita => {
-        const fila = document.createElement('tr');
+    pacientes.forEach(paciente => {
+        const li = document.createElement('li');
         
-        // Asumiendo que cita tiene motivo, fecha y un paciente poblado
-        fila.innerHTML = `
-            <td>${new Date(cita.fecha).toLocaleDateString()} - ${new Date(cita.fecha).toLocaleTimeString()}</td>
-            <td>${cita.paciente ? cita.paciente.nombre : 'Paciente Desconocido'}</td>
-            <td>${cita.motivo}</td>
-            <td>
-                <button onclick="verExpediente('${cita.paciente._id}')">Ver Expediente</button>
-            </td>
+        const nombre = paciente.usuario?.nombre || 'Sin nombre';
+        const email = paciente.usuario?.email || 'Sin email';
+
+        li.innerHTML = `
+            <div id="infoPaciente">
+                <div>
+                    <strong>${nombre}:</strong>
+                    <small>${email}</small>
+                </div>
+                <button>Abrir Expediente</button>
+            </div>
         `;
-        tbody.appendChild(fila);
+
+        // Si le dan clic a cualquier parte del recuadro, abre el expediente
+        li.addEventListener('click', () => abrirExpediente(paciente));
+        lista.appendChild(li);
     });
 }
 
-// 4. Cerrar sesión
+// ==========================================
+// 3. EXPEDIENTE Y NOTAS CLÍNICAS
+// ==========================================
+
+function abrirExpediente(paciente) {
+    pacienteIdActual = paciente._id; 
+    
+    const panel = document.getElementById('panel-historial');
+    const spanNombre = document.getElementById('nombre-paciente-seleccionado');
+    const divDatos = document.getElementById('datos-completos-paciente');
+    
+    // 1. Llenamos los datos principales
+    spanNombre.textContent = paciente.usuario?.nombre || 'Desconocido';
+    
+    // 2. Llenamos la información médica completa
+    divDatos.innerHTML = `
+        <div>
+            <p><strong>📧 Email:</strong> ${paciente.usuario?.email || 'N/A'}</p>
+            <p><strong>📞 Teléfono:</strong> ${paciente.telefono || 'N/A'}</p>
+            <p><strong>🏠 Dirección:</strong> ${paciente.direccion || 'N/A'}</p>
+        </div>
+        <div>
+            <p><strong>🩸 Tipo Sangre:</strong> ${paciente.tipoSangre || 'N/A'}</p>
+            <p><strong>🚫 Alergias:</strong> ${paciente.alergias || 'Ninguna'}</p>
+            <p><strong>🏥 Enf. Crónicas:</strong> ${paciente.enfermedadesCronicas || 'Ninguna'}</p>
+        </div>
+    `;
+
+    // 3. Mostramos el panel y las notas anteriores
+    panel 
+    renderizarHistorial(paciente.historialNotas);
+    
+    // Hacemos scroll suave hacia el expediente
+    panel.scrollIntoView({ behavior: 'smooth' });
+}
+
+function renderizarHistorial(historial) {
+    const contenedor = document.getElementById('historial-pasado');
+    contenedor.innerHTML = '';
+
+    if (!historial || historial.length === 0) {
+        contenedor.innerHTML = '<p>No hay notas previas en el expediente de este paciente.</p>';
+        return;
+    }
+
+    [...historial].reverse().forEach(item => {
+        const fecha = new Date(item.fecha).toLocaleDateString('es-ES', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+        const estadoCita = item.asistio ? '<span>✅ Asistió</span>' : '<span>❌ Faltó</span>';
+        
+        contenedor.innerHTML += `
+            <div>
+                <div>📅 ${fecha} | ${estadoCita}</div>
+                <p>${item.nota}</p>
+            </div>
+        `;
+    });
+}
+
+async function guardarNota(e) {
+    e.preventDefault();
+    if (!pacienteIdActual) {
+    mostrarAviso('Error: No hay un paciente seleccionado.', 'error');
+    return;
+}
+
+    const notaInput = document.getElementById('texto-nota');
+    const checkAsistio = document.getElementById('check-asistio');
+    const nota = notaInput.value.trim();
+    const asistio = checkAsistio.checked;
+    const token = localStorage.getItem('token');
+
+    try {
+        const res = await fetch(`${API_URL}/pacientes/${pacienteIdActual}/notas`, {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}` 
+            },
+            body: JSON.stringify({ nota, asistio })
+        });
+        
+        const data = await res.json();
+        
+        if(res.ok) {
+            mostrarAviso('✅ ' + data.msg, 'success');
+            notaInput.value = ''; 
+            renderizarHistorial(data.historial); 
+        } else {
+            mostrarAviso('❌ Error: ' + (data.msg || 'No se pudo guardar la nota'), 'error');
+        }
+    } catch (error) {
+        mostrarAviso('Error de conexión al guardar la nota.', 'error');
+    }
+}
+
+// ==========================================
+// 4. CERRAR SESIÓN
+// ==========================================
 function cerrarSesion() {
     localStorage.removeItem('token');
     localStorage.removeItem('usuario');
     window.location.href = 'iniciar-sesion.html';
+}
+
+// ---------- mensajería en pantalla ----------
+function mostrarAviso(texto, tipo = 'info', callback) {
+    let modal = document.getElementById('aviso-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'aviso-modal';
+        modal.innerHTML = `
+            <div id="aviso-contenido" class="aviso-contenido">
+                <p id="aviso-texto" class="aviso-texto"></p>
+                <button id="aviso-ok" class="aviso-ok">OK</button>
+            </div>
+        `;
+        const contenedorMain = document.querySelector('main') || document.body;
+        contenedorMain.appendChild(modal);
+        modal.querySelector('#aviso-ok').addEventListener('click', () => {
+            modal.classList.remove('visible');
+            if (typeof callback === 'function') callback();
+        });
+    }
+    const textoElem = modal.querySelector('#aviso-texto');
+    textoElem.textContent = texto;
+    textoElem.className = 'aviso-texto ' + tipo;
+    modal.classList.add('visible');
+}
+
+
+// ==========================================
+// 5. REGISTRAR NUEVOS USUARIOS (POR ODONTÓLOGO)
+// ==========================================
+async function registrarUsuario(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nuevo-nombre').value.trim();
+    const email = document.getElementById('nuevo-email').value.trim();
+    const password = document.getElementById('nuevo-password').value;
+    const rol = document.getElementById('nuevo-rol').value;
+    const msgSpan = document.getElementById('registro-msg');
+    msgSpan.textContent = '';
+
+    if (!nombre || !email || !password) {
+        msgSpan;
+        return msgSpan.textContent = 'Completa todos los campos';
+    }
+
+    const token = localStorage.getItem('token');
+    try {
+        const res = await fetch(`${API_URL}/auth/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ nombre, email, password, rol })
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+            msgSpan;
+            msgSpan.textContent = 'Usuario creado correctamente';
+            // limpiar formulario
+            document.getElementById('nuevo-nombre').value = '';
+            document.getElementById('nuevo-email').value = '';
+            document.getElementById('nuevo-password').value = '';
+            document.getElementById('nuevo-rol').value = 'paciente';
+        } else {
+            msgSpan;
+            msgSpan.textContent = data.msg || 'No se pudo crear el usuario';
+        }
+    } catch (err) {
+        console.error('Error registrar usuario:', err);
+        msgSpan;
+        msgSpan.textContent = 'Error de conexión al servidor';
+    }
 }

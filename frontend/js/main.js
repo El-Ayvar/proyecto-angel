@@ -10,26 +10,58 @@ function actualizarVisibilidadMenus() {
   if (sideMenu) {
     const opcionesOcultas = sideMenu.querySelectorAll('.opcion_oculta_after');
     const opcionesVisibles = sideMenu.querySelectorAll('.opcion_oculta_because');
-    
+
     opcionesOcultas.forEach(el => {
-      el.parentElement.style.display = isLoggedIn ? 'none' : 'block';
+      const p = el.parentElement;
+      if (isLoggedIn) p.classList.add('hidden');
+      else p.classList.remove('hidden');
     });
     opcionesVisibles.forEach(el => {
-      el.parentElement.style.display = isLoggedIn ? 'block' : 'none';
+      const p = el.parentElement;
+      if (isLoggedIn) p.classList.remove('hidden');
+      else p.classList.add('hidden');
+    });
+
+    const opcionesSoloOdontologo = sideMenu.querySelectorAll('.solo-odontologo');
+    const usuario = JSON.parse(localStorage.getItem('usuario') || 'null');
+    const rol = usuario?.rol || null;
+    opcionesSoloOdontologo.forEach(el => {
+      const target = (el.parentElement && el.parentElement.tagName.toLowerCase() === 'a') ? el.parentElement : el;
+      if (isLoggedIn && rol === 'odontologo') {
+        target.classList.remove('hidden');
+      } else {
+        target.classList.add('hidden');
+      }
     });
   }
-  
+
   // Actualizar menu_tablet
   const menuTablet = document.getElementById('menu_tablet');
   if (menuTablet) {
     const opcionesOcultas = menuTablet.querySelectorAll('.opcion_oculta_after');
     const opcionesVisibles = menuTablet.querySelectorAll('.opcion_oculta_because');
-    
+
     opcionesOcultas.forEach(el => {
-      el.parentElement.style.display = isLoggedIn ? 'none' : 'block';
+      const p = el.parentElement;
+      if (isLoggedIn) p.classList.add('hidden');
+      else p.classList.remove('hidden');
     });
     opcionesVisibles.forEach(el => {
-      el.parentElement.style.display = isLoggedIn ? 'block' : 'none';
+      const p = el.parentElement;
+      if (isLoggedIn) p.classList.remove('hidden');
+      else p.classList.add('hidden');
+    });
+
+    const opcionesSoloOdontologoTablet = menuTablet.querySelectorAll('.solo-odontologo');
+    const usuario2 = JSON.parse(localStorage.getItem('usuario') || 'null');
+    const rol2 = usuario2?.rol || null;
+    opcionesSoloOdontologoTablet.forEach(el => {
+      const target = (el.parentElement && el.parentElement.tagName.toLowerCase() === 'a') ? el.parentElement : el;
+      if (isLoggedIn && rol2 === 'odontologo') {
+        target.classList.remove('hidden');
+      } else {
+        target.classList.add('hidden');
+      }
     });
   }
 }
@@ -46,6 +78,31 @@ function closeMenu() {
   if (menu) {
     menu.classList.remove('active');
   }
+}
+
+// ---------- mensajería en pantalla ----------
+function mostrarAviso(texto, tipo = 'info', callback) {
+    let modal = document.getElementById('aviso-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'aviso-modal';
+        // structure only; styling will be handled via CSS/SCSS
+        modal.innerHTML = `
+            <div id="aviso-contenido" class="aviso-contenido">
+                <p id="aviso-texto" class="aviso-texto"></p>
+                <button id="aviso-ok" class="aviso-ok">OK</button>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        modal.querySelector('#aviso-ok').addEventListener('click', () => {
+            modal.classList.remove('visible');
+            if (typeof callback === 'function') callback();
+        });
+    }
+    const textoElem = modal.querySelector('#aviso-texto');
+    textoElem.textContent = texto;
+    textoElem.className = 'aviso-texto ' + tipo; // tipo can be 'error','success','info'
+    modal.classList.add('visible');
 }
 
 // Ejecutar al cargar la página

@@ -13,7 +13,7 @@ document.getElementById('formRegistro').addEventListener('submit', async (e) => 
 
     // Limpiamos mensajes anteriores
     mensajeDiv.textContent = "";
-    mensajeDiv.style.color = "red"; // Por defecto, rojo para errores
+    mensajeDiv.className = '';
 
     // ==========================================
     // 3. VALIDACIONES DEL LADO DEL CLIENTE
@@ -62,7 +62,7 @@ document.getElementById('formRegistro').addEventListener('submit', async (e) => 
 
         // 5. EVALUAMOS LA RESPUESTA
         if (respuesta.ok) {
-            mensajeDiv.style.color = "green";
+            mensajeDiv.classList.add('success');
             mensajeDiv.textContent = "✅ ¡Registro exitoso! Iniciando sesión...";
 
             // Guardamos el token en el navegador para que no tenga que volver a iniciar sesión
@@ -75,11 +75,13 @@ document.getElementById('formRegistro').addEventListener('submit', async (e) => 
 
         } else {
             // Si el backend manda error (ej. el correo ya existe)
+            mensajeDiv.classList.add('error');
             mensajeDiv.textContent = `❌ Error: ${data.msg}`;
         }
 
     } catch (error) {
         console.error("Error en la petición:", error);
+        mensajeDiv.classList.add('error');
         mensajeDiv.textContent = "❌ Error de conexión con el servidor. Asegúrate de que el backend esté encendido.";
     }
 });

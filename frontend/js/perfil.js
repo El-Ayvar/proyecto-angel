@@ -130,15 +130,15 @@ async function guardarCambiosPerfil(token) {
         });
 
         if (res.ok) {
-            alert('✅ Perfil actualizado correctamente');
+            mostrarAviso('✅ Perfil actualizado correctamente', 'success');
             console.log('Perfil guardado:', await res.json());
         } else {
             const error = await res.json();
-            alert(`❌ Error: ${error.msg}`);
+            mostrarAviso(`❌ Error: ${error.msg}`, 'error');
         }
     } catch (error) {
         console.error('Error guardando perfil:', error);
-        alert('❌ Error al guardar los cambios');
+        mostrarAviso('❌ Error al guardar los cambios', 'error');
     }
 }
 
@@ -165,10 +165,10 @@ async function cargarCitasPaciente(token, pacienteId) {
         }
 
         listaCitasDiv.innerHTML = citas.map(c => `
-            <div class="cita-card" style="border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 5px;">
+            <div class="cita-card">
                 <p><strong>Procedimiento:</strong> ${c.motivo}</p>
                 <p><strong>Fecha:</strong> ${new Date(c.fecha).toLocaleString()}</p>
-                <p><strong>Estado:</strong> <span style="color: ${c.estado === 'confirmada' ? 'green' : c.estado === 'cancelada' ? 'red' : 'orange'}">${c.estado}</span></p>
+                <p><strong>Estado:</strong> <span class="estado-${c.estado}">${c.estado}</span></p>
             </div>
         `).join('');
 

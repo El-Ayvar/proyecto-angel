@@ -7,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     const contrasena = document.getElementById('contrasena').value;
     const mensajeDiv = document.getElementById('mensaje');
     mensajeDiv.textContent = "";
-    mensajeDiv.style.color = "red";
+    mensajeDiv.className = '';
 
     // Validaciones básicas
     if (!correo || !contrasena) {
@@ -32,7 +32,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
         console.log('Respuesta del servidor:', data);
 
         if (respuesta.ok) {
-            mensajeDiv.style.color = "green";
+            mensajeDiv.classList.add('success');
             mensajeDiv.textContent = "✅ ¡Bienvenido! Redirigiendo...";
 
             // Guardar token y datos del usuario
@@ -55,11 +55,13 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             }, 1500);
 
         } else {
+            mensajeDiv.classList.add('error');
             mensajeDiv.textContent = `❌ Error: ${data.msg || 'Credenciales inválidas'}`;
         }
 
     } catch (error) {
         console.error("Error en la petición:", error);
+        mensajeDiv.classList.add('error');
         mensajeDiv.textContent = "❌ Error de conexión con el servidor. Asegúrate de que el backend esté encendido.";
     }
 });
