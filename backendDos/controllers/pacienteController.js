@@ -28,16 +28,19 @@ exports.obtenerMiPerfil = async (req, res) => {
 // VISTAS DEL DOCTOR / ADMIN
 // ====================================================
 
-// 2. Obtener la lista de todos los pacientes (Para la agenda/recepción)
 exports.obtenerTodosLosPacientes = async (req, res) => {
     try {
+        // Traemos a todos y poblamos el nombre/email desde el modelo Usuario
         const pacientes = await Paciente.find()
             .populate('usuario', 'nombre email')
-            .sort({ createdAt: -1 }); // Los más recientes primero
+            .sort({ createdAt: -1 });
 
-        res.json(pacientes);
+        // Filtro de seguridad por si hay algún paciente sin usuario vinculado
+        const resultados = pacientes.filter(p => p.usuario !== null);
+        
+        res.json(resultados);
     } catch (error) {
-        console.error(error);
+        console.error("Error al obtener pacientes:", error);
         res.status(500).json({ msg: "Error al obtener la lista de pacientes" });
     }
 };
@@ -120,5 +123,46 @@ exports.obtenerExpediente = async (req, res) => {
         res.json({ msg: "Función de expediente aún en construcción" });
     } catch (error) {
         res.status(500).json({ msg: "Error de servidor" });
+    }
+};
+
+exports.buscarPacientes = async (req, res) => {
+    try {
+        const { term } = req.query;
+        if (!term) return res.json([]);
+
+        // Busca pacientes y trae los datos de 'usuario' para ver el nombre
+        const pacientes = await Paciente.find().populate({
+            path: 'usuario',
+            match: { nombre: { $regex: term, $options: 'i' } }, // Búsqueda insensible a mayúsculas
+            select: 'nombre email'
+        });
+
+        // Filtra los que no coincidieron
+        const resultados = pacientes.filter(p => p.usuario !== null);
+        res.json(resultados);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Error al buscar pacientes" });
+    }
+};
+
+// 2. Agregar una nueva nota al expediente
+exports.agregarNotaHistorial = async (req, res) => {
+    try {
+        const { id } = req.params; // ID del paciente
+        const { nota, asistio } = req.body;
+
+        const paciente = await Paciente.findById(id);
+        if (!paciente) return res.status(404).json({ msg: "Paciente no encontrado" });
+
+        // Empujamos la nueva nota al array del historial
+        paciente.historialNotas.push({ nota, asistio });
+        await paciente.save();
+
+        res.json({ msg: "Nota agregada al expediente correctamente", historial: paciente.historialNotas });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Error al guardar la nota" });
     }
 };

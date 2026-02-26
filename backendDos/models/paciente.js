@@ -15,7 +15,12 @@ const pacienteSchema = new mongoose.Schema({
     tipoSangre: { type: String, enum: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] },
     alergias: [{ type: String }], // Array de textos: ["Penicilina", "Látex"]
     enfermedadesCronicas: [{ type: String }], // ["Diabetes", "Hipertensión"]
-    medicacionActual: { type: String, default: "Ninguna" }
+    medicacionActual: { type: String, default: "Ninguna" },
+    historialNotas: [{
+        fecha: { type: Date, default: Date.now },
+        nota: { type: String, required: true },
+        asistio: { type: Boolean, default: true }// Para marcar si se realizó la cita o no
+    }]
 }, { timestamps: true });
 
 module.exports = mongoose.model('Paciente', pacienteSchema);
