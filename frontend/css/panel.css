@@ -283,6 +283,57 @@ header button {
   background: rgba(52, 152, 219, 0.08);
 }
 
+#aviso-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgba(196, 193, 193, 0.5);
+  z-index: 9999;
+}
+#aviso-modal .modal-message {
+  color: #3498db;
+  font-size: 4vw;
+  margin-bottom: 2vw;
+  text-align: center;
+}
+#aviso-modal div#aviso-contenido {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(52, 152, 219, 0.1);
+  padding: 3vw 5vw;
+  width: 80vw;
+  color: #3498db;
+  font-size: 4vw;
+  text-align: center;
+}
+#aviso-modal div#aviso-contenido button {
+  margin: 2vw 0 0 0;
+  width: 40vw;
+  background: transparent;
+  border: 2px solid rgb(99, 130, 143);
+  border-radius: 50vw;
+  color: rgb(99, 130, 143);
+  cursor: pointer;
+  font-size: 4vw;
+  padding: 0.3vw 0.8vw 0.3vw 0.8vw;
+  transition: all 0.3s ease-in-out;
+}
+#aviso-modal div#aviso-contenido button:hover {
+  background-color: #acc9e9;
+  border: white;
+  color: white;
+  cursor: pointer;
+}
+
+#aviso-modal.visible {
+  display: flex;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -311,7 +362,7 @@ main .buscador-seccion #boxBusqueda {
 }
 main .buscador-seccion #boxBusqueda input {
   color: #498ab5;
-  font-size: 2.5vw;
+  font-size: 3.5vw;
   width: 40vw;
 }
 main input {
@@ -328,6 +379,11 @@ main .logout {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
+}
+main ul {
+  border: 1px solid rgba(100, 175, 229, 0.3);
+  overflow-y: auto;
+  height: 80vh;
 }
 main ul div#infoPaciente {
   display: flex;
@@ -370,11 +426,38 @@ main ul {
 }
 main #panel-historial {
   align-items: center;
-  border: 1px solid rgba(100, 175, 229, 0.3);
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  padding: 2vw;
-  width: 80vw;
+  border: 1px solid #5eb3cf;
+  padding: 4vw;
+  margin-top: 20px;
+  justify-content: center;
+  width: 95vw;
+}
+main #panel-historial h3 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+main #panel-historial #citas-paciente {
+  margin: 2vw 0 2vw 0;
+  border: 1px solid rgba(100, 175, 229, 0.3);
+  padding: 1.5vw;
+  border-radius: 8px;
+}
+main #panel-historial #historial-pasado {
+  display: none;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  border: 1px solid #5990a0;
+}
+main #panel-historial #historial-pasado div {
+  margin: 2vw 0 0 0;
 }
 main #panel-historial #form-nueva-nota {
   align-items: center;
@@ -386,6 +469,10 @@ main #panel-historial #form-nueva-nota h4 {
 }
 main #panel-historial #form-nueva-nota {
   width: 80%;
+}
+main #panel-historial #form-nueva-nota label {
+  font-weight: bold;
+  color: #27ae60;
 }
 main #panel-historial #form-nueva-nota #texto-nota {
   width: 100%;
@@ -452,7 +539,7 @@ main #aviso-modal {
   height: 100%;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(196, 193, 193, 0.5);
   z-index: 9999;
 }
 main #aviso-modal .modal-message {
@@ -460,6 +547,34 @@ main #aviso-modal .modal-message {
   font-size: 4vw;
   margin-bottom: 2vw;
   text-align: center;
+}
+main #aviso-modal div#aviso-contenido {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(52, 152, 219, 0.1);
+  padding: 3vw 5vw;
+  width: 80vw;
+  color: #3498db;
+  font-size: 4vw;
+  text-align: center;
+}
+main #aviso-modal div#aviso-contenido button {
+  margin: 2vw 0 0 0;
+  width: 40vw;
+  background: transparent;
+  border: 2px solid rgb(99, 130, 143);
+  border-radius: 50vw;
+  color: rgb(99, 130, 143);
+  cursor: pointer;
+  font-size: 4vw;
+  padding: 0.3vw 0.8vw 0.3vw 0.8vw;
+  transition: all 0.3s ease-in-out;
+}
+main #aviso-modal div#aviso-contenido button:hover {
+  background-color: #acc9e9;
+  border: white;
+  color: white;
+  cursor: pointer;
 }
 main #aviso-modal.visible {
   display: flex;
@@ -473,6 +588,10 @@ main #aviso-contenido { /* caja blanca, centrada */
   color: #3498db;
   font-size: 4vw;
   text-align: center;
+}
+main #aviso-contenido button {
+  margin: 2vw 0 0 0;
+  width: 40vw;
 }
 main .aviso-texto.error {
   color: #c0392b;

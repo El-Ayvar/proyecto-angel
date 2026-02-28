@@ -18,10 +18,10 @@ const transporter = nodemailer.createTransport({
 exports.crearCita = async (req, res) => {
     try {
         let { fecha, motivo, odontologo, datosMedicosPreventivos } = req.body;
-        const pacienteId = req.user.id; 
+        const usuarioId = req.user.id; 
 
         // Obtener datos del usuario (nombre para el correo)
-        const usuario = await Usuario.findById(pacienteId);
+        const usuario = await Usuario.findById(usuarioId);
         const nombrePaciente = usuario?.nombre || 'Paciente';
 
         // Si no se proporciona odontólogo, asignar al único doctor disponible
@@ -49,9 +49,15 @@ exports.crearCita = async (req, res) => {
             medicacion: 'Ninguna'
         };
 
-        // Crear instancia y guardar
+        // Encontrar el expediente de paciente para guardar su _id (la referencia en Cita es a Paciente)
+        const pacienteDoc = await Paciente.findOne({ usuario: usuarioId });
+        if (!pacienteDoc) {
+            return res.status(400).json({ msg: 'No existe expediente de paciente para este usuario' });
+        }
+
+        // Crear instancia y guardar (referenciando al documento Paciente)
         const nuevaCita = new Cita({
-            paciente: pacienteId,
+            paciente: pacienteDoc._id,
             fecha,
             motivo,
             odontologo,

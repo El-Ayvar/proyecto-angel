@@ -37,6 +37,60 @@
     </header>
 
     <main>
+        <!--<div class="buscador-seccion">
+            <h2>👥 Pacientes Registrados</h2>
+            <div id="boxBusqueda">
+                <input type="text" id="input-busqueda" placeholder="Buscar por nombre...">
+                <button id="btn-buscar">Buscar</button>
+                <button id="btn-ver-todos">Ver Todos</button>
+            </div>
+            
+            <ul id="lista-resultados"></ul>
+        </div>
+        
+        <div id="panel-historial">
+            <h3>Expediente de: <span id="nombre-paciente-seleccionado"></span></h3>
+            
+            <div id="datos-completos-paciente"> </div>
+
+            <div id="historial-pasado"> </div>
+
+            <div id="citas-paciente"></div>
+            
+            <form id="form-nueva-nota">
+                <h4>Añadir Nueva Nota / Evolución:</h4>
+                <label>
+                    <input type="checkbox" id="check-asistio" checked> 
+                    El paciente asistió a la cita
+                </label>
+                <br><br>
+                <textarea id="texto-nota" rows="4" placeholder="Ej: Se realizó profilaxis exitosa..." required></textarea>
+                <br><br>
+                <button type="submit">Guardar en Expediente</button>
+            </form>
+        </div>
+
+        <button class="logout" onclick="cerrarSesion()">Cerrar sesión</button>
+
+        -- Sección: Registrar nuevos usuarios (solo para odontólogos) --
+        <section id="registrar-usuarios">
+            <h3 class="optionRegister" >Registrar nuevo usuario</h3>
+            <p class="optionRegister">Solo el personal odontólogo puede crear otros odontólogos. Usa la opción Rol para elegir.</p>
+            <form id="form-registrar-usuario">
+                <div>
+                    <input class="optionRegister" id="nuevo-nombre" type="text" placeholder="Nombre completo" required />
+                    <input class="optionRegister" id="nuevo-email" type="email" placeholder="Correo electrónico" required />
+                    <input class="optionRegister" id="nuevo-password" type="password" placeholder="Contraseña" required />
+                    <label class="optionRegister" for="nuevo-rol"></label>
+                    <select id="nuevo-rol">
+                        <option value="paciente">Usuario (paciente)</option>
+                        <option value="odontologo">Odontólogo</option>
+                    </select>
+                        <button class="optionRegister" type="submit">Registrar</button>
+                        <span id="registro-msg"></span>
+                </div>
+            </form>
+        </section>-->
         <div class="buscador-seccion">
             <h2>👥 Pacientes Registrados</h2>
             <div id="boxBusqueda">
@@ -52,6 +106,8 @@
             <h3>Expediente de: <span id="nombre-paciente-seleccionado"></span></h3>
             
             <div id="datos-completos-paciente"> </div>
+
+            <div id="citas-paciente"> </div>
 
             <div id="historial-pasado"> </div>
             
@@ -70,22 +126,22 @@
 
         <button class="logout" onclick="cerrarSesion()">Cerrar sesión</button>
 
-        <!-- Sección: Registrar nuevos usuarios (solo para odontólogos) -->
         <section id="registrar-usuarios">
             <h3 class="optionRegister" >Registrar nuevo usuario</h3>
-            <p class="optionRegister">Solo el personal odontólogo puede crear otros odontólogos. Usa la opción Rol para elegir.</p>
+            <p class="optionRegister">Solo el personal odontólogo puede crear otros odontólogos o registrar pacientes manualmente. Usa la opción Rol para elegir.</p>
             <form id="form-registrar-usuario">
                 <div>
-                    <input class="optionRegister" id="nuevo-nombre" type="text" placeholder="Nombre completo" required />
-                    <input class="optionRegister" id="nuevo-email" type="email" placeholder="Correo electrónico" required />
-                    <input class="optionRegister" id="nuevo-password" type="password" placeholder="Contraseña" required />
-                    <label class="optionRegister" for="nuevo-rol"></label>
+                    <input class="optionRegister" id="nuevo-nombre" type="text" placeholder="Nombre completo" required/>
+                    <input class="optionRegister" id="nuevo-email" type="email" placeholder="Correo electrónico" required/>
+                    <input class="optionRegister" id="nuevo-password" type="password" placeholder="Contraseña" required/>
+                    <label class="optionRegister" for="nuevo-rol">Rol:</label>
                     <select id="nuevo-rol">
                         <option value="paciente">Usuario (paciente)</option>
                         <option value="odontologo">Odontólogo</option>
                     </select>
-                        <button class="optionRegister" type="submit">Registrar</button>
-                        <span id="registro-msg"></span>
+                    <button class="optionRegister" type="submit">Registrar</button>
+                    <br>
+                    <span id="registro-msg"></span>
                 </div>
             </form>
         </section>

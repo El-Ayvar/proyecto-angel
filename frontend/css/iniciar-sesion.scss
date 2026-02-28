@@ -90,9 +90,12 @@ header{
 main {
     @include box-centrado();
     width: 100vw;
+
     #boton {
+        display: none;
         margin: 0vw 0 15vw 0;
     }
+
     background: linear-gradient(135deg, #e3f0ff 0%, #b2d8f7 100%);
 
     h2 {
@@ -148,14 +151,15 @@ main {
 
   #mensaje {
     color: #e74c3c;
-    font-size: 2.2vw;
-    margin-top: 1vw;
+    font-size: 3.2vw;
+    margin: 0vw 0 3vw 0;
     text-align: center;
   }
 
   #mensajeBienvenida {
     background: linear-gradient(90deg, #6dd5fa 0%, #3498db 100%);
     color: #fff;
+    display: none;
     font-size: 5vw;
     font-weight: bold;
     border-radius: 16px;

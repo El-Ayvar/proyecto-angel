@@ -354,8 +354,8 @@ main #agendar-cita-section #form-cita button:hover {
   background: linear-gradient(90deg, #2980b9 0%, #3498db 100%);
 }
 main #agendar-cita-section #mensaje-cita {
-  font-size: 1.2vw;
-  margin-top: 1vw;
+  font-size: 3vw;
+  margin: 2vw 0 2vw 0;
   text-align: center;
   font-weight: bold;
 }

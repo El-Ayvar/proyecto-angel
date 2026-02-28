@@ -16,10 +16,17 @@ function actualizarVisibilidadMenus() {
       if (isLoggedIn) p.classList.add('hidden');
       else p.classList.remove('hidden');
     });
+    // estas opciones tienen la clase `opcion_oculta_because` que las oculta por defecto,
+    // para mostrarlas quitamos esa clase del propio elemento cuando el usuario está logueado
     opcionesVisibles.forEach(el => {
       const p = el.parentElement;
-      if (isLoggedIn) p.classList.remove('hidden');
-      else p.classList.add('hidden');
+      if (isLoggedIn) {
+        el.classList.remove('opcion_oculta_because');
+        if (p) p.classList.remove('hidden');
+      } else {
+        el.classList.add('opcion_oculta_because');
+        if (p) p.classList.add('hidden');
+      }
     });
 
     const opcionesSoloOdontologo = sideMenu.querySelectorAll('.solo-odontologo');
@@ -28,8 +35,11 @@ function actualizarVisibilidadMenus() {
     opcionesSoloOdontologo.forEach(el => {
       const target = (el.parentElement && el.parentElement.tagName.toLowerCase() === 'a') ? el.parentElement : el;
       if (isLoggedIn && rol === 'odontologo') {
+        // asegurarnos que el elemento no tenga la clase que lo oculta por defecto
+        el.classList.remove('opcion_oculta_because');
         target.classList.remove('hidden');
       } else {
+        el.classList.add('opcion_oculta_because');
         target.classList.add('hidden');
       }
     });
@@ -48,8 +58,13 @@ function actualizarVisibilidadMenus() {
     });
     opcionesVisibles.forEach(el => {
       const p = el.parentElement;
-      if (isLoggedIn) p.classList.remove('hidden');
-      else p.classList.add('hidden');
+      if (isLoggedIn) {
+        el.classList.remove('opcion_oculta_because');
+        if (p) p.classList.remove('hidden');
+      } else {
+        el.classList.add('opcion_oculta_because');
+        if (p) p.classList.add('hidden');
+      }
     });
 
     const opcionesSoloOdontologoTablet = menuTablet.querySelectorAll('.solo-odontologo');
@@ -58,8 +73,10 @@ function actualizarVisibilidadMenus() {
     opcionesSoloOdontologoTablet.forEach(el => {
       const target = (el.parentElement && el.parentElement.tagName.toLowerCase() === 'a') ? el.parentElement : el;
       if (isLoggedIn && rol2 === 'odontologo') {
+        el.classList.remove('opcion_oculta_because');
         target.classList.remove('hidden');
       } else {
+        el.classList.add('opcion_oculta_because');
         target.classList.add('hidden');
       }
     });

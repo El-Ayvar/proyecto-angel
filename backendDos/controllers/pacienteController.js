@@ -1,6 +1,7 @@
 const Paciente = require('../models/paciente');
 const Tratamiento = require('../models/tratamiento');
 const Usuario = require('../models/usuario');
+const Cita = require('../models/cita');
 
 // ====================================================
 // VISTA DEL PACIENTE
@@ -58,16 +59,21 @@ exports.obtenerExpedienteCompleto = async (req, res) => {
             return res.status(404).json({ msg: "Paciente no encontrado" });
         }
 
-        // Buscamos todos los tratamientos que se le han hecho a este paciente
+        // Buscamos todos los tratamientos
         const tratamientos = await Tratamiento.find({ paciente: idPaciente })
-            .populate('odontologo', 'nombre') // Traemos el nombre del doctor que lo atendió
+            .populate('odontologo', 'nombre')
             .sort({ createdAt: -1 });
 
-        // Devolvemos un JSON unificado al frontend
+        // NUEVO: Buscamos todas las CITAS de este paciente
+        const citas = await Cita.find({ paciente: idPaciente })
+            .sort({ fecha: -1 }); // Las ordenamos de la más reciente a la más vieja
+
+        // Devolvemos todo unificado
         res.json({
             datosPersonales: paciente.usuario,
             historialMedico: paciente,
-            tratamientos: tratamientos
+            tratamientos: tratamientos,
+            citas: citas // <-- Ahora mandamos las citas al frontend
         });
 
     } catch (error) {

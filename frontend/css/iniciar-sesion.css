@@ -289,6 +289,7 @@ main {
   width: 100vw;
 }
 main #boton {
+  display: none;
   margin: 0vw 0 15vw 0;
 }
 main {
@@ -343,13 +344,14 @@ main form#loginForm button[type=submit]:hover {
 }
 main #mensaje {
   color: #e74c3c;
-  font-size: 2.2vw;
-  margin-top: 1vw;
+  font-size: 3.2vw;
+  margin: 0vw 0 3vw 0;
   text-align: center;
 }
 main #mensajeBienvenida {
   background: linear-gradient(90deg, #6dd5fa 0%, #3498db 100%);
   color: #fff;
+  display: none;
   font-size: 5vw;
   font-weight: bold;
   border-radius: 16px;
