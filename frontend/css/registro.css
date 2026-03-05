@@ -232,6 +232,12 @@ main {
   background: rgba(255, 255, 255, 0.95);
   width: 70vw;
 }
+main #mensaje {
+  font-size: 2vw;
+  margin: 1vw 0 3vw 0;
+  text-align: center;
+  width: 50vw;
+}
 main h2 {
   align-items: center;
   display: flex;

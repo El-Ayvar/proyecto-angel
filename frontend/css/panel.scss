@@ -184,6 +184,7 @@ main {
         border: 1px solid rgba(100, 175, 229, 0.3);
         overflow-y: auto;
         height: 80vh;
+        padding: 0 1vw 0 1vw;
         div#infoPaciente {
             display: flex;
             justify-content: space-between;
@@ -229,10 +230,48 @@ main {
          }
 
          #citas-paciente {
+            display: none;
+            flex-direction: column;
             margin: 2vw 0 2vw 0;
+            max-height: 40vh;
             border: 1px solid rgba(100, 175, 229, 0.3);
             padding: 1.5vw;
             border-radius: 8px;
+            overflow-y: auto;
+            #boxInfoCita {
+                background: #f9f9f9; 
+                padding: 10px; 
+                margin-bottom: 10px; 
+                border-radius: 4px; 
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center;
+            }
+            #infoCita {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+            }
+            #avisoCPC {
+                font-size: 2vw;
+                color: white; 
+                padding: 2px 8px; 
+                border-radius: 10px;
+            }
+
+            strong {
+                font-size: 3vw;
+            }
+
+            p {
+                font-size: 3vw;
+            }
+
+            button {
+                font-size: 2vw;
+                margin: 0 0 0 1vw;
+            }
          }
 
          #historial-pasado {
@@ -246,7 +285,13 @@ main {
             border: 1px solid #5990a0;
 
             div {
+                font-size: 3vw;
                 margin: 2vw 0 0 0;
+                text-align: center;
+            }
+
+            h3{
+                text-align: center;
             }
          }
 
@@ -392,4 +437,316 @@ main {
             @include boton();
          }
      }
+}
+
+@media (min-width: 481.98px) {
+    main {
+        .buscador-seccion {
+            h2 {
+                font-size: 3.5vw;
+            }
+
+            #boxBusqueda {
+                input {
+                    font-size: 2.5vw;
+                }
+                button {
+                    font-size: 2.5vw;
+                }
+                width: 70vw;
+            }
+        }
+        ul {
+            width: 80%;
+            strong, small, button {
+                font-size: 2.5vw;
+            }
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                #infoPaciente {
+                    width: 70vw;
+                }
+            }
+        }
+        #panel-historial {
+            width: 80vw;
+            align-items: center;
+            justify-content: center;
+            h3 {
+                font-size: 3.5vw;
+            }
+
+            #datos-completos-paciente{
+                align-items: center;
+                display: flex;
+                font-size: 2.5vw;
+                justify-content: center;
+                text-align: center;
+                width: 60vw;
+            }
+            #citas-paciente {
+                padding: 2vw;
+                width: 75vw;
+
+                #avisoCPC {
+                    font-size: 1.5vw;
+                }
+
+                button {
+                    font-size: 2vw;
+                    margin: 0 0 0 1vw;
+                }
+
+                div {
+                    font-size: 2.5vw;
+                }
+
+            }
+            #historial-pasado {
+                padding: 2vw;
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 2.5vw;
+                }
+                width: 75vw;
+             }
+            #form-nueva-nota {
+                width: 60%;
+                h4 {
+                    font-size: 2.5vw;
+                }
+                label {
+                    font-size: 2vw;
+                }
+                #texto-nota {
+                    font-size: 2.5vw;
+                }
+                button {
+                    font-size: 3vw;
+                }
+            }
+        }
+        #registrar-usuarios {
+            width: 60vw;
+            div {
+                button.optionRegister {
+                    font-size: 2.5vw;
+                }
+            }
+            .optionRegister {
+                font-size: 3.5vw;
+            }
+            p.optionRegister {
+                font-size: 2.5vw;
+                text-align: center;
+            }
+            input.optionRegister {
+                font-size: 2.5vw;
+            }
+            select {
+                font-size: 2.5vw;
+            }
+            p {
+                font-size: 2vw;
+            }
+         }
+
+         #aviso-modal .modal-message {
+             font-size: 3.5vw;
+        }
+    }
+}
+
+@media (min-width: 769.98px) {
+    main {
+        .buscador-seccion {
+            #boxBusqueda {
+                input {
+                    font-size: 1.5vw;
+                    width: 37vw;
+                }
+                button {
+                    font-size: 1.5vw;
+                }
+                width: 60vw;
+            }
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 0 1vw 0 1vw;
+                width: 95vw;
+                li  {
+                    width: 29vw;
+                    small, strong {
+                        font-size: 1.5vw;
+                    }
+                    button {
+                        font-size: 1.5vw;
+                        margin: 0 0 0 1vw;
+                    }
+                    #infoPaciente {
+                        padding: 0vw 0vw 0 0vw;
+                        div {
+                            width: 19vw;
+                        }
+                        button {
+                            width: 9vw;
+                        }
+                        width: 28vw;
+                    }
+                }
+            }
+        }
+        #panel-historial {
+            align-items: center;
+            background: rgba(234, 234, 234, 0.568);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1vw 1vw 1vw 1vw;
+            width: 95vw;
+            #h3Id {
+                text-align: center;
+                margin: 2vw 0 2vw 0;
+                width: 100vw;
+            }
+            #datos-completos-paciente {
+                background: #f9f9f9;
+                border: 1px solid rgba(100, 175, 229, 0.3);
+                margin: 0 0 3vw 0;
+                width: 35vw; //aqui estoy ajustando el espacio
+                p {
+                    font-size: 1.5vw;
+                }
+            }
+            #citas-paciente {
+                background: #f9f9f9;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 1vw 0.5vw 1vw 0.5vw;
+                overflow-y: auto;
+                max-height: 13.5vw;
+                margin: 0 0 3vw 0;
+                width: 55vw; //aqui estoy ajustando el espacio 
+                #boxInfoCita {
+                    padding: 1vw 0vw 0vw 0.5vw;
+                    width: 26vw;
+                }
+                p {
+                    font-size: 1.5vw;
+                }
+                h3 {
+                    font-size: 1.5vw;
+                    margin: 0vw 0 2vw 0;
+                    text-align: center;
+                    width: 100%;
+                }
+                strong {
+                    font-size: 1.3vw;
+                }
+                #avisoCPC {
+                    font-size: 1.3vw;
+                    margin: 0.3vw 0 0.3vw 0;
+                }
+                button {
+                    font-size: 1.2vw;
+                }
+            }
+            #historial-pasado {
+                font-size: 1.5vw;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-between;
+                max-height: 37vh;
+                padding: 0.5vw 1vw 0.5vw 1vw;
+                width: 55vw; //aqui estoy ajustando el espacio
+
+                h3 {
+                    text-align: center;
+                    font-size: 2.5vw;
+                    width: 100%;
+                }
+
+                #boxFe {
+                    width: 25vw;
+
+                    span {
+                        margin: 1vw 0 1vw 0;
+                    }
+
+                    div {
+                        font-size: 1.5vw;
+                        margin: 0vw;
+                    }
+
+                    p {
+                        font-size: 1.5vw;
+                    }
+                }
+            }
+
+            #form-nueva-nota{
+                background: #f9f9f9;
+                border: 1px solid rgba(100, 175, 229, 0.3);
+                width: 35vw; //aqui estoy ajustando el espacio
+                h4 {
+                    font-size: 2.5vw;
+                    text-align: center;
+                    }
+                #check-asistio {
+                    width: 3vw;
+                    height: 3vh;
+                }
+                #texto-nota {
+                    font-size: 1.5vw;
+                    width: 25vw;
+                }
+                button {
+                    font-size: 1.5vw;
+                }
+            }
+        }
+
+        .logout {
+            font-size: 2.5vw;
+            margin: 4vw 0 1vw 0;
+        }
+
+        #registrar-usuarios {
+            margin: 0;
+            width: 40vw;
+            div {
+                button.optionRegister {
+                    font-size: 1.5vw;
+                }
+            }
+            .optionRegister {
+                font-size: 2.5vw;
+            }
+            p.optionRegister {
+                font-size: 1.5vw;
+                text-align: center;
+            }
+            input.optionRegister {
+                font-size: 1.5vw;
+            }
+            select {
+                font-size: 1.5vw;
+            }
+            p {
+                font-size: 1.2vw;
+            }
+         }
+
+         #aviso-modal .modal-message {
+             font-size: 2.5vw;
+        }
+    }
 }

@@ -340,12 +340,13 @@ main #agendar-cita-section #form-cita .optionCita:focus {
 }
 main #agendar-cita-section #form-cita button {
   background: linear-gradient(90deg, #3498db 0%, #6dd5fa 100%);
-  color: white;
-  font-weight: bold;
   border: none;
   border-radius: 8px;
-  padding: 1vw 0;
+  color: white;
+  font-weight: bold;
   font-size: 4vw;
+  margin: 3vw 0 0 0;
+  padding: 1vw 0;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
   transition: background 0.2s;
@@ -405,7 +406,7 @@ main #agendar-cita-section #mensaje-cita {
   main #agendar-cita-section #form-cita button {
     border-radius: 20vw;
     font-size: 1.8vw;
-    margin: 4vw 0 0 20vw;
+    margin: 1vw 0 0 12vw;
     width: 30vw;
   }
   main #agendar-cita-section #form-cita legend {

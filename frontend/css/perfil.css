@@ -283,6 +283,11 @@ header button {
   background: rgba(52, 152, 219, 0.08);
 }
 
+#aviso-contenido {
+  font-size: 4vw;
+  max-width: 100vw;
+}
+
 main {
   align-items: center;
   display: flex;
@@ -393,6 +398,10 @@ main #cerrar-sesion:hover {
 }
 
 @media (min-width: 481.98px) {
+  #aviso-contenido {
+    font-size: 2vw;
+    max-width: 100vw;
+  }
   main h2 {
     font-size: 4vw;
   }

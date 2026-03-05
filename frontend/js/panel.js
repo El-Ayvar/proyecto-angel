@@ -386,7 +386,6 @@ function mostrarResultadosBusqueda(pacientes) {
 
     pacientes.forEach(paciente => {
         const li = document.createElement('li');
-        li.style.padding = '15px';
         li.style.borderBottom = '1px solid #ddd';
         li.style.cursor = 'pointer';
         
@@ -399,7 +398,7 @@ function mostrarResultadosBusqueda(pacientes) {
                     <strong>${nombre}</strong> <br>
                     <small style="color: #7f8c8d;">${email}</small>
                 </div>
-                <button style="background-color: #2ecc71; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 4px;">Abrir Expediente</button>
+                <button style="background-color: #2ecc71; color: white; cursor: pointer; border-radius: 4px;">Abrir Expediente</button>
             </div>
         `;
 
@@ -408,6 +407,13 @@ function mostrarResultadosBusqueda(pacientes) {
         lista.appendChild(li);
         li.addEventListener('click', () => {
             document.getElementById('historial-pasado').style.display = 'flex'; //Aqui hice que se hiciera flexible para que apareciera despues de dar click ya que salia solo el cuadro del borde y se veia feo
+        });
+        li.addEventListener('click', () => {
+            document.getElementById('citas-paciente').style.display = 'flex'; //Aqui hice que se hiciera flexible para que apareciera despues de dar click ya que salia solo el cuadro del borde y se veia feo
+        });
+        li.addEventListener('click',() => {
+            document.getElementById('panel-historial').style.flexWrap = 'wrap';  //Aqui estoyhaciendo que cuando den click al boton el panel historial se vuelva wrap, y que aparecia un cuadro fantasma
+            document.getElementById('panel-historial').style.flexDirection = 'row';  //Aqui estoyhaciendo que cuando den click al boton el panel historial se vuelva row y no column
         });
     });
 }
@@ -486,21 +492,22 @@ function renderizarCitasPaciente(citas) {
         let colorBadge = '#f39c12'; // pendiente
         if (cita.estado === 'confirmada') colorBadge = '#27ae60'; // verde
         if (cita.estado === 'cancelada') colorBadge = '#c0392b'; // rojo
-
+        
         contenedor.innerHTML += `
-            <div style="border-left: 4px solid ${colorBadge}; background: #f9f9f9; padding: 10px; margin-bottom: 10px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <strong>${fecha}</strong> - <span style="background-color: ${colorBadge}; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.8em;">${cita.estado.toUpperCase()}</span>
+            <div id="boxInfoCita" style="border-left: 4px solid ${colorBadge};">
+                <div id="infoCita">
+                    <strong>${fecha}</strong>
+                    <span id="avisoCPC" style="background-color: ${colorBadge}; ">${cita.estado.toUpperCase()}</span>
                     <p><strong>Motivo:</strong> ${cita.motivo}</p>
                 </div>
                 <button onclick="prepararNotaCita('${fecha}', '${cita.motivo}')">
                     Evaluar Asistencia
                 </button>
             </div>
-        `;
-    });
-}
-
+            `;
+        });
+    }
+        
 // Llenar el formulario de notas automáticamente al hacer clic en una cita
 function prepararNotaCita(fecha, motivo) {
     const textarea = document.getElementById('texto-nota');
@@ -525,7 +532,7 @@ function renderizarHistorial(historial) {
         const estadoCita = item.asistio ? '<span>✅ Asistió</span>' : '<span>❌ Faltó</span>';
         
         contenedor.innerHTML += `
-            <div>
+            <div id="boxFe">
                 <div>📅 ${fecha} | ${estadoCita}</div>
                 <p>${item.nota}</p>
             </div>
