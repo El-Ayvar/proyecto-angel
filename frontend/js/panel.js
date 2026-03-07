@@ -641,7 +641,6 @@ function mostrarAviso(texto, tipo = 'info', callback) {
         modal = document.createElement('div');
         modal.id = 'aviso-modal';
         // Estilos en línea para asegurar que se vea por encima de todo
-        modal.style.cssText = "position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 9999;";
         modal.innerHTML = `
             <div id="aviso-contenido">
                 <p id="aviso-texto"></p>

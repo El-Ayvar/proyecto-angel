@@ -322,6 +322,190 @@ main {
                     outline: none;
                 }
             }
+        } 
+
+        #seccion-odontograma {
+            h1 { 
+                color: #2c3e50; 
+            }
+            h3 {
+                text-align: center;
+            }
+
+            .controls {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                margin: 3vw 0 3vw 0;
+            }
+
+            button {
+                padding: 10px 20px;
+                margin: 0 5px;
+                font-size: 16px;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                background-color: #3498db;
+                color: white;
+                transition: background 0.3s;
+            }
+
+            button:hover { 
+                background-color: #2980b9; 
+            }
+
+            button.active {
+                background-color: #2c3e50;
+                font-weight: bold;
+            }
+
+            // Cotainer in odont
+            .odontograma-container {
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                justify-content: flex-start;
+                margin: 0 0 2vw 0;
+                overflow-x: auto;
+                padding: 0 2vw 3vw 2vw;
+                width: 90vw;
+
+                .row {
+                    display: flex;
+                    justify-content: flex-start;
+                    gap: 40px; /* Separación línea media */
+                }
+
+                .quadrant {
+                    display: flex;
+                    gap: 5px;
+                }
+
+                // Style in the each tooth
+                .tooth {
+                    align-items: center;
+                    background-color: white;
+                    border-radius: 5px 5px 15px 15px; /* Forma simulada de diente */
+                    border: 2px solid #bdc3c7;
+                    color: #7f8c8d;
+                    cursor: pointer;
+                    display: flex;
+                    font-weight: bold;
+                    height: 9vh;
+                    justify-content: center;
+                    position: relative;
+                    transition: all 0.2s;
+                    width: 8vw;
+                }
+
+                .tooth:hover {
+                    border-color: #3498db;
+                    transform: scale(1.1);
+                }
+    
+                .tooth.has-data {
+                    background-color: #e8f8f5;
+                    border-color: #1abc9c;
+                    color: #16a085;
+                }
+    
+                .tooth.has-data::after {
+                    content: "✓";
+                    position: absolute;
+                    font-size: 12px;
+                    bottom: -15px;
+                    color: #e74c3c;
+                }
+            }
+
+
+
+
+        }
+
+        // register of data
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+
+            .modal-content {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                width: 70vw;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+                h3 { 
+                    text-align: center;
+                }
+    
+                label {
+                    display: block;
+                    margin-top: 10px;
+                    font-weight: bold;
+                }
+
+                select {
+                        background: transparent;
+                        border: 2px solid rgb(192, 212, 220);
+                        border-radius: 50vw;
+                        color: rgb(99, 130, 143);
+                        cursor: pointer;
+                        font-size: 4vw;
+                        padding: 0.3vw 0.8vw 0.3vw 0.8vw;
+                        transition: all 0.3s ease-in-out;
+
+                        &:hover {
+                            background-color: #6b7077;
+                            border: white;
+                            color: white;
+                            cursor: pointer;
+                        }
+                }
+    
+                textarea { 
+                    resize: vertical; height: 80px; 
+                }
+    
+                .modal-buttons {
+                    margin-top: 15px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+    
+                .btn-cancel { 
+                    background-color: #e74c3c; 
+                }
+    
+                .btn-cancel:hover { 
+                    background-color: #c0392b; 
+                }
+    
+                .btn-save { 
+                    background-color: #2ecc71; 
+                }
+                
+                .btn-save:hover { 
+                    background-color: #27ae60; 
+                }
+            }
+
+        }
+
+        // this hidden the tooth of kid 
+        .hidden { 
+            display: none !important; 
         }
     }
 
