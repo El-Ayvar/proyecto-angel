@@ -473,15 +473,34 @@ main {
                             cursor: pointer;
                         }
                 }
+
+                button {
+                    font-size: 3vw;
+                }
+
+                #btnModalC {
+                    background-color: red;
+                    border: none;
+                    color: white;
+                    padding: 2vw;
+                }
+                
+                #btnModalA {
+                    background-color: green;
+                    border: none;
+                    color: white;
+                    padding: 2vw;
+                }
     
                 textarea { 
                     resize: vertical; height: 80px; 
                 }
     
                 .modal-buttons {
-                    margin-top: 15px;
+                    align-items: center;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: space-evenly;
+                    
                 }
     
                 .btn-cancel { 
@@ -690,6 +709,7 @@ main {
             }
             #historial-pasado {
                 padding: 2vw;
+
                 div {
                     display: flex;
                     flex-direction: column;
@@ -697,21 +717,42 @@ main {
                     align-items: center;
                     font-size: 2.5vw;
                 }
+
                 width: 75vw;
              }
+
             #form-nueva-nota {
                 width: 60%;
                 h4 {
                     font-size: 2.5vw;
                 }
+
                 label {
                     font-size: 2vw;
                 }
+
                 #texto-nota {
                     font-size: 2.5vw;
                 }
+
                 button {
                     font-size: 3vw;
+                }
+            }
+            
+            #seccion-odontograma {
+                
+                .odontograma-container {
+                    width: 75vw;
+                }
+            }
+
+            .modal {
+                .modal-content {
+                    width: 50vw;
+                    select, input, button {
+                        font-size: 2vw;
+                    }
                 }
             }
         }
@@ -722,27 +763,35 @@ main {
                     font-size: 2.5vw;
                 }
             }
+
             .optionRegister {
                 font-size: 3.5vw;
             }
+
             p.optionRegister {
                 font-size: 2.5vw;
                 text-align: center;
             }
+
             input.optionRegister {
                 font-size: 2.5vw;
             }
+
             select {
                 font-size: 2.5vw;
             }
+
             p {
                 font-size: 2vw;
             }
+
+
          }
 
          #aviso-modal .modal-message {
              font-size: 3.5vw;
         }
+
     }
 }
 
@@ -809,6 +858,7 @@ main {
                     font-size: 1.5vw;
                 }
             }
+
             #citas-paciente {
                 background: #f9f9f9;
                 flex-wrap: wrap;
@@ -896,6 +946,22 @@ main {
                     font-size: 1.5vw;
                 }
             }
+
+            #seccion-odontograma {
+                width: 90vw;
+                .odontograma-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 2vw;
+                    overflow: none;
+                    width: 90vw;
+                    .tooth {
+                        font-size: 1.5vw;
+                        width: 5vw;
+                    }
+                }
+            }
         }
 
         .logout {
@@ -927,7 +993,7 @@ main {
             p {
                 font-size: 1.2vw;
             }
-         }
+        }
 
          #aviso-modal .modal-message {
              font-size: 2.5vw;

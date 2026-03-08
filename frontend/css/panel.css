@@ -654,14 +654,29 @@ main #panel-historial .modal .modal-content select:hover {
   color: white;
   cursor: pointer;
 }
+main #panel-historial .modal .modal-content button {
+  font-size: 3vw;
+}
+main #panel-historial .modal .modal-content #btnModalC {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 2vw;
+}
+main #panel-historial .modal .modal-content #btnModalA {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 2vw;
+}
 main #panel-historial .modal .modal-content textarea {
   resize: vertical;
   height: 80px;
 }
 main #panel-historial .modal .modal-content .modal-buttons {
-  margin-top: 15px;
+  align-items: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 main #panel-historial .modal .modal-content .btn-cancel {
   background-color: #e74c3c;
@@ -901,6 +916,15 @@ main #aviso-contenido button:hover {
   main #panel-historial #form-nueva-nota button {
     font-size: 3vw;
   }
+  main #panel-historial #seccion-odontograma .odontograma-container {
+    width: 75vw;
+  }
+  main #panel-historial .modal .modal-content {
+    width: 50vw;
+  }
+  main #panel-historial .modal .modal-content select, main #panel-historial .modal .modal-content input, main #panel-historial .modal .modal-content button {
+    font-size: 2vw;
+  }
   main #registrar-usuarios {
     width: 60vw;
   }
@@ -1070,6 +1094,21 @@ main #aviso-contenido button:hover {
   }
   main #panel-historial #form-nueva-nota button {
     font-size: 1.5vw;
+  }
+  main #panel-historial #seccion-odontograma {
+    width: 90vw;
+  }
+  main #panel-historial #seccion-odontograma .odontograma-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+    overflow: none;
+    width: 90vw;
+  }
+  main #panel-historial #seccion-odontograma .odontograma-container .tooth {
+    font-size: 1.5vw;
+    width: 5vw;
   }
   main .logout {
     font-size: 2.5vw;
