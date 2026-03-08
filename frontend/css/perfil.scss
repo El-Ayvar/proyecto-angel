@@ -150,6 +150,31 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;    
+
+        #seccion-citas-paciente {
+            background: white;
+            border-radius: 15px;
+            height: 50vh;
+            overflow-y: auto;
+            padding: 1vw;
+            width: 80vw;
+
+            h3 {
+                color: #3498db;
+                text-align: center;
+                margin: 2vw 0 2vw 0;
+            }
+
+            .cita-card {
+                border: solid rgb(224, 224, 252);
+                border-radius: 15px;
+                margin: 0 0 2vw 0;
+
+                strong{
+                    color: #7aaaca;
+                }
+            }
+        }
     }
 
     form#perfilForm {
@@ -265,6 +290,13 @@ main {
         #cerrar-sesion {
             font-size: 2vw;
             width: 50vw;
+        }
+
+        .perfil-container {
+
+            #seccion-citas-paciente {
+                width: 70vw;
+            }
         }
     }
 }
