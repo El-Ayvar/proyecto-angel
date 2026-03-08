@@ -420,6 +420,16 @@ main {
                     bottom: -15px;
                     color: #e74c3c;
                 }
+
+                /* ==============================================
+                   AGREGA LOS COLORES AQUÍ (Fuera del media query) 
+                   ============================================== */
+                &.Caries { background-color: #f1c40f !important; } 
+                &.Extraccion { background-color: #e74c3c !important; opacity: 0.3; } 
+                &.Endodoncia { background-color: #9b59b6 !important; } 
+                &.Resina { background-color: #2ecc71 !important; }
+                &.Amalgama { background-color: #95a5a6 !important; }
+                &.Corona { background-color: #e67e22 !important; }
             }
 
 

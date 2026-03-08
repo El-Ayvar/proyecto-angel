@@ -612,6 +612,30 @@ main #panel-historial #seccion-odontograma .odontograma-container .tooth.has-dat
   bottom: -15px;
   color: #e74c3c;
 }
+main #panel-historial #seccion-odontograma .odontograma-container {
+  /* ==============================================
+     AGREGA LOS COLORES AQUÍ (Fuera del media query) 
+     ============================================== */
+}
+main #panel-historial #seccion-odontograma .odontograma-container.Caries {
+  background-color: #f1c40f !important;
+}
+main #panel-historial #seccion-odontograma .odontograma-container.Extraccion {
+  background-color: #e74c3c !important;
+  opacity: 0.3;
+}
+main #panel-historial #seccion-odontograma .odontograma-container.Endodoncia {
+  background-color: #9b59b6 !important;
+}
+main #panel-historial #seccion-odontograma .odontograma-container.Resina {
+  background-color: #2ecc71 !important;
+}
+main #panel-historial #seccion-odontograma .odontograma-container.Amalgama {
+  background-color: #95a5a6 !important;
+}
+main #panel-historial #seccion-odontograma .odontograma-container.Corona {
+  background-color: #e67e22 !important;
+}
 main #panel-historial .modal {
   display: none;
   position: fixed;

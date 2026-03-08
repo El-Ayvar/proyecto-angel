@@ -441,6 +441,7 @@ async function abrirExpediente(idPaciente) {
             const data = await res.json();
             const paciente = data.historialMedico;
             const citas = data.citas;
+            const tratamientos = data.tratamientos; // <--- SACAMOS LOS TRATAMIENTOS
 
             spanNombre.textContent = data.datosPersonales?.nombre || 'Desconocido';
             
@@ -465,6 +466,10 @@ async function abrirExpediente(idPaciente) {
 
             // 3. Mostrar Historial de Notas
             renderizarHistorial(paciente.historialNotas);
+
+            if (typeof cargarTratamientosEnOdontograma === 'function') {
+                cargarTratamientosEnOdontograma(tratamientos || []);
+            }
             
             // 4. Mostrar el panel y hacer scroll hacia él 
             panel.scrollIntoView({ behavior: 'smooth' });
