@@ -18,6 +18,7 @@ exports.registrarPaciente = async (req, res) => {
         const rolesPermitidos = ['paciente', 'odontologo'];
         const rolASalvar = rolesPermitidos.includes(rol) ? rol : 'paciente';
         // Si se intenta crear un odontólogo, verificar que la petición venga de un odontólogo autenticado
+        // AQUI SE LO AGREGUE DESDE EL PANEL AL ODONTOLOGO
         if (rolASalvar === 'odontologo') {
             const authHeader = req.header('Authorization');
             if (!authHeader) return res.status(401).json({ msg: 'Token requerido para crear odontólogos' });
@@ -40,7 +41,7 @@ exports.registrarPaciente = async (req, res) => {
         if (rolASalvar === 'paciente') {
             const nuevoPaciente = new Paciente({
                 usuario: nuevoUsuario._id,
-                fechaNacimiento: new Date(), // Valor por defecto, se actualizará después
+                fechaNacimiento: new Date(), // este es unvalor por defecto, se actualizará después
                 telefono: "",
                 direccion: "",
                 alergias: [],
@@ -77,7 +78,7 @@ exports.login = async (req, res) => {
         }
 
         // 2. Comparar la contraseña ingresada con la encriptada
-        // bcrypt.compare devuelve un booleano (true/false)
+        // aqui hacemos la utilizacion de bcrypt.compare devuelve un booleano (true/false)
         const esCorrecta = await bcrypt.compare(password, usuario.password);
         if (!esCorrecta) {
             return res.status(400).json({ msg: "Credenciales inválidas" });
@@ -90,7 +91,7 @@ exports.login = async (req, res) => {
         };
 
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
-            expiresIn: '8h' // El paciente tendrá 8 horas de sesión
+            expiresIn: '8h' // le puse que paciente tendrá 8 horas de sesión
         });
 
         res.json({

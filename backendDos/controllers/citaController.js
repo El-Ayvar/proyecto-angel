@@ -6,8 +6,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.EMAIL_USER, // Tu correo remitente
-        pass: process.env.EMAIL_PASS // Pon tu contraseña de aplicación de 16 caracteres aquí
+        user: process.env.EMAIL_USER, // de aqui saco el correo del .env
+        pass: process.env.EMAIL_PASS // aqui como el correo pero con la ontraseña
     },
     tls: {
         rejectUnauthorized: false
@@ -71,11 +71,30 @@ exports.crearCita = async (req, res) => {
         const urlAceptar = `http://localhost:3000/api/citas/confirmar/${nuevaCita._id}?accion=confirmada`;
         const urlRechazar = `http://localhost:3000/api/citas/confirmar/${nuevaCita._id}?accion=cancelada`;
 
+//===============================================================================================================================================================================
+//  AQUI ESTOY HACIENDO UTILIZACION DE LOS ESTILOS EN EL JS, YA QUE NO CUENTA CON SU PROPCIO SCSS, CLARO QUE LE HARIA PERO ME DA UNA HUEVA, Y ASI LO VI EN CODIGO DE UN PORTUGUES
+//===============================================================================================================================================================================
+
+
         const mailOptions = {
             from: `AyvarDent <${process.env.EMAIL_USER}>`,
-            to: process.env.EMAIL_USER, // <-- Cambiar después
+            to: process.env.EMAIL_USER,
             subject: `Nueva Solicitud de Cita: ${motivo}`,
             html: `
+                <style>
+                    .button-container {
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        margin-top: 30px;
+                    }
+                    @media (max-width: 600px) {
+                        .button-container {
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                    }
+                </style>
                 <div style="font-family: sans-serif; max-width: 600px; border: 1px solid #eee; padding: 20px;">
                     <h2 style="color: #2c3e50;">🦷 Nueva Solicitud de Cita</h2>
                     <p><strong>Paciente:</strong> ${nombrePaciente}</p>
@@ -89,9 +108,9 @@ exports.crearCita = async (req, res) => {
                         <li><strong>🏥 Enf. Crónicas:</strong> ${infoMedica.enfermedadCronica}</li>
                         <li><strong>💊 Medicación:</strong> ${infoMedica.medicacion}</li>
                     </ul>
-                    <div style="margin-top: 30px; text-align: center;">
+                    <div class="button-container">
                         <a href="${urlAceptar}" style="background-color: #27ae60; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">ACEPTAR CITA</a>
-                        <a href="${urlRechazar}" style="background-color: #c0392b; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-left: 10px;">RECHAZAR</a>
+                        <a href="${urlRechazar}" style="background-color: #c0392b; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold;">RECHAZAR</a>
                     </div>
                 </div>
             `
@@ -215,3 +234,5 @@ exports.confirmarCitaDesdeCorreo = async (req, res) => {
         res.status(500).send('<h1>Error al procesar la respuesta</h1>');
     }
 };
+
+//HICIMIOS UTILIZACION DE IA PARA COMENTAR, IGUAL BORRE COMENTARIOSDE MAS Y ACTUALICE UNOS QUE SI ETSBAN BIEN, TODO NICE

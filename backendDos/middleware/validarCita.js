@@ -21,7 +21,7 @@ const validarCita = (req, res, next) => {
 
     // 4. Validar horario de oficina (8:00 AM a 8:00 PM)
     const hora = fechaCita.getHours();
-    if (hora < 8 || hora >= 20) {
+    if (hora < 7 || hora >= 20) {
         return res.status(400).json({ msg: "El consultorio solo atiende de 8:00 AM a 8:00 PM" });
     }
 
@@ -31,5 +31,7 @@ const validarCita = (req, res, next) => {
     // Si todo está bien, pasamos al siguiente middleware o controlador
     next();
 };
+
+// aqui  pedimos a la ia que me comentara, salio bien, cambie algunas cosas que comento de mas, planeo hacer lo mismo con otros js, actualizacion del 8/03/2026 estaba pdj, no sabia lo que decia, le pedi a la ia en otros js y me hizo un desmadre, no pedir a la ia que te mueva el codigo, haceun desmadre
 
 module.exports = validarCita;

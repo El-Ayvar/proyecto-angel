@@ -1,16 +1,15 @@
 // middleware/rolMiddleware.js
-
 const verificarRol = (...rolesPermitidos) => {
     return (req, res, next) => {
-        // req.user fue inyectado previamente por tu authMiddleware.js
+        // aqui req.user fue inyectado previamente por tu authMiddleware.js
         if (!req.user) {
             return res.status(401).json({ msg: 'No estás autenticado' });
         }
 
-        // Verificamos si el rol del usuario está dentro de los permitidos
+        //  aqui se verifica si el rol del usuario está dentro de los permitidos
         if (!rolesPermitidos.includes(req.user.rol)) {
             return res.status(403).json({ 
-                msg: 'Acceso denegado: No tienes permisos de administrador o dentista' 
+                msg: 'Acceso denegado: No tienes permisos de administrador o dentista' // aqui ponemos una de las resticciones para cuando tienen un rol de paciente
             });
         }
 

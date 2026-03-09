@@ -1,10 +1,13 @@
 
+/* heading color used in the odontograma page */
 h1 { color: #2c3e50; }
 
+/* container around view controls (adult/child toggle buttons) */
 .controls {
     margin-bottom: 20px;
 }
 
+/* base styles for buttons used throughout the odontograma */
 button {
     padding: 10px 20px;
     margin: 0 5px;
@@ -17,14 +20,16 @@ button {
     transition: background 0.3s;
 }
 
+/* hover state for generic buttons */
 button:hover { background-color: #2980b9; }
 
+/* active state (selected) for toggle buttons */
 button.active {
     background-color: #2c3e50;
     font-weight: bold;
 }
 
-/* Contenedor del Odontograma */
+/* Contenedor principal que agrupa todo el odontograma */
 .odontograma-container {
     display: flex;
     flex-direction: column;
@@ -35,45 +40,50 @@ button.active {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+/* fila horizontal de cuadrantes (superior/ inferior) */
 .row {
     display: flex;
     justify-content: center;
     gap: 40px; /* Separación línea media */
 }
 
+/* contenedor de un cuadrante de la boca */
 .quadrant {
     display: flex;
     gap: 5px;
 }
 
-/* Estilo de cada diente */
+/* estilo base de cada cuadro que representa un diente */
 .tooth {
     width: 40px;
     height: 50px;
     border: 2px solid #bdc3c7;
-    border-radius: 5px 5px 15px 15px; /* Forma simulada de diente */
+    border-radius: 5px 5px 15px 15px; /* forma simulada de diente */
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     color: #7f8c8d;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s; /* animación suave al cambiar estado */
     background-color: white;
     position: relative;
 }
 
+/* efecto hover sobre un diente */
 .tooth:hover {
     border-color: #3498db;
     transform: scale(1.1);
 }
 
+/* estilo aplicado cuando un diente tiene datos guardados */
 .tooth.has-data {
     background-color: #e8f8f5;
     border-color: #1abc9c;
     color: #16a085;
 }
 
+/* marca de check debajo del diente con datos */
 .tooth.has-data::after {
     content: "✓";
     position: absolute;
@@ -82,7 +92,7 @@ button.active {
     color: #e74c3c;
 }
 
-/* Modal para ingresar datos */
+/* overlay del modal que aparece al hacer clic en un diente */
 .modal {
     display: none;
     position: fixed;
@@ -92,6 +102,7 @@ button.active {
     align-items: center;
 }
 
+/* caja blanca dentro del modal que contiene el formulario */
 .modal-content {
     background: white;
     padding: 20px;
@@ -102,12 +113,14 @@ button.active {
 
 .modal-content h3 { margin-top: 0; }
 
+/* etiquetas y campos dentro del modal */
 .modal-content label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
 }
 
+/* campos de selección y textarea del modal */
 .modal-content select, .modal-content textarea {
     width: 100%;
     padding: 8px;
@@ -117,17 +130,21 @@ button.active {
     box-sizing: border-box;
 }
 
+/* textarea con ajuste vertical y altura inicial */
 .modal-content textarea { resize: vertical; height: 80px; }
 
+/* contenedor de botones dentro del modal */
 .modal-buttons {
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
 }
 
+/* estilos específicos para botones de cancelar y guardar */
 .btn-cancel { background-color: #e74c3c; }
 .btn-cancel:hover { background-color: #c0392b; }
 .btn-save { background-color: #2ecc71; }
 .btn-save:hover { background-color: #27ae60; }
 
+/* clase utilitaria para ocultar elementos */
 .hidden { display: none !important; }

@@ -123,7 +123,7 @@ exports.agregarNotaHistorial = async (req, res) => {
     }
 };
 
-// Asegúrate de que esta también esté (por si la línea 29 fallaba antes)
+// aqui obtenemos exapediente
 exports.obtenerExpediente = async (req, res) => {
     try {
         res.json({ msg: "Función de expediente aún en construcción" });
@@ -172,3 +172,7 @@ exports.agregarNotaHistorial = async (req, res) => {
         res.status(500).json({ msg: "Error al guardar la nota" });
     }
 };
+
+//============================================================================================
+// aqui comentamos con ayuda de la ia, salio todo bien y agregamos y quitamos cosas que no son
+//============================================================================================

@@ -1,17 +1,18 @@
-// API URL - Cambiar según el entorno
+// URL de la API utilizada en este módulo; ajústala si cambias de entorno
 const API_URL = 'http://localhost:3000/api';
 
+// añadimos listener al formulario de registro para manejarlo con JS
 document.getElementById('formRegistro').addEventListener('submit', async (e) => {
-    // 1. Evitamos que la página se recargue al enviar el formulario
+    // 1. evitar que el form recargue la página
     e.preventDefault();
 
-    // 2. Obtenemos los valores de los inputs
+    // 2. leer los valores ingresados por el usuario
     const nombre = document.getElementById('nombre').value.trim();
     const correo = document.getElementById('correo').value.trim();
     const contrasena = document.getElementById('contrasena').value;
     const mensajeDiv = document.getElementById('mensaje');
 
-    // Limpiamos mensajes anteriores
+    // limpiar cualquier mensaje anterior
     mensajeDiv.textContent = "";
     mensajeDiv.className = '';
 
@@ -19,18 +20,17 @@ document.getElementById('formRegistro').addEventListener('submit', async (e) => 
     // 3. VALIDACIONES DEL LADO DEL CLIENTE
     // ==========================================
 
-    // Validar nombre (mínimo 8 caracteres)
+    // nombre debe tener al menos 8 caracteres
     if (nombre.length < 8) {
         return mensajeDiv.textContent = "❌ El nombre debe tener al menos 8 caracteres.";
     }
 
-    // Validar correo (solo @gmail.com)
+    // el correo debe ser de gmail (ejemplo de validación simple)
     if (!correo.endsWith('@gmail.com')) {
         return mensajeDiv.textContent = "❌ El correo debe ser una cuenta de @gmail.com.";
     }
 
-    // Validar contraseña (Mayúscula, minúscula, número, signo y min 8 caracteres)
-    // Usamos una Expresión Regular (Regex) para revisar esto rápido
+    // la contraseña requiere mayúscula, minúscula, número y carácter especial
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
     if (!passwordRegex.test(contrasena)) {
         return mensajeDiv.textContent = "❌ La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un signo especial (ej. @$!%*?&).";
@@ -42,39 +42,38 @@ document.getElementById('formRegistro').addEventListener('submit', async (e) => 
     try {
         console.log('Enviando registro a:', `${API_URL}/auth/register`);
         
-        // Hacemos la petición POST a tu servidor
+        // llamamos al endpoint de registro con POST
         const respuesta = await fetch(`${API_URL}/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            // Convertimos los datos al formato que espera tu backend
             body: JSON.stringify({
-                nombre: nombre,
-                email: correo, // Tu backend espera "email", no "correo"
-                password: contrasena // Tu backend espera "password", no "contrasena"
+                nombre: nombre,                // campo "nombre"
+                email: correo,                 // backend espera "email"
+                password: contrasena          // backend espera "password"
             })
         });
 
-        // Convertimos la respuesta del backend a JSON
+        // parseo de la respuesta
         const data = await respuesta.json();
         console.log('Respuesta del servidor:', data);
 
-        // 5. EVALUAMOS LA RESPUESTA
+        // 5. procesar la respuesta
         if (respuesta.ok) {
             mensajeDiv.classList.add('success');
             mensajeDiv.textContent = "✅ ¡Registro exitoso! Iniciando sesión...";
 
-            // Guardamos el token en el navegador para que no tenga que volver a iniciar sesión
+            // guardamos token para mantener sesión abierta
             localStorage.setItem('token', data.token);
 
-            // Redirigimos al perfil del paciente después de 2 segundos
+            // redirigir al perfil del paciente tras un par de segundos
             setTimeout(() => {
                 window.location.href = 'perfil.html';
             }, 2000);
 
         } else {
-            // Si el backend manda error (ej. el correo ya existe)
+            // mensaje de error provisto por el servidor
             mensajeDiv.classList.add('error');
             mensajeDiv.textContent = `❌ Error: ${data.msg}`;
         }

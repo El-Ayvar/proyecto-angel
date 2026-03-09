@@ -10,12 +10,12 @@ const usuarioSchema = new mongoose.Schema({
 
 // PUNTO CLAVE: Encriptar antes de guardar
 usuarioSchema.pre('save', async function() {
-    // Si la contraseña no ha sido cambiada, saltamos este paso
+    // si la contraseña no ha sido cambiada, saltamos este paso
     if (!this.isModified('password')) return;
 
     // Generamos un "salt" (una semilla de aleatoriedad)
-    const salt = await bcrypt.genSalt(10);
-    // Reemplazamos la contraseña plana por la encriptada
+    const salt = await bcrypt.genSalt(10); // Vi que servia para encripatar mejor una contraseña, por si era la misma contraseña no tengaan el mismo hsat, correcion del 8/03/26 se escribe hash, todo pdj el del pasado
+    // reemplazamos la contraseña plana por la encriptada
     this.password = await bcrypt.hash(this.password, salt);
 });
 

@@ -1,25 +1,27 @@
+// URL base de la API que se usa en este script
 const API_URL = 'http://localhost:3000/api';
 
+// cuando el DOM está listo, verificamos sesión y mostramos el perfil
 document.addEventListener('DOMContentLoaded', async () => {
-    const token = localStorage.getItem('token');
-    const usuarioJson = localStorage.getItem('usuario');
+    const token = localStorage.getItem('token');                   // token JWT almacenado
+    const usuarioJson = localStorage.getItem('usuario');           // datos del usuario
 
-    // Protección de ruta: Si no hay token, redirigir al login
+    // si falta token o usuario, redirigir a inicio de sesión
     if (!token || !usuarioJson) {
         window.location.href = 'iniciar-sesion.html';
         return;
     }
 
-    const usuarioLogueado = JSON.parse(usuarioJson);
+    const usuarioLogueado = JSON.parse(usuarioJson); // convertir a objeto
 
-    // Cargar datos según el rol
+    // según el rol, cargamos la versión de paciente o doctor
     if (usuarioLogueado.rol === 'odontologo') {
         configurarPerfilParaDoctor();
     } else {
         configurarPerfilParaPaciente(token);
     }
 
-    // Configurar botón de cerrar sesión
+    // configurar el botón "cerrar sesión" si existe
     const btnCerrar = document.getElementById('cerrar-sesion');
     if (btnCerrar) {
         btnCerrar.addEventListener('click', () => {
@@ -31,16 +33,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // --- FUNCIONES PARA EL PACIENTE ---
+// esta función obtiene los datos del paciente y rellena el formulario
 async function configurarPerfilParaPaciente(token) {
     try {
-        // 1. Obtener datos del perfil
+        // petición al backend para obtener el expediente
         const res = await fetch(`${API_URL}/pacientes/mi-perfil`, {
             headers: { 'Authorization': `Bearer ${token}` }
         });
         const expediente = await res.json();
 
         if (res.ok) {
-            // Cargar datos personales
+            // cargar datos personales en los inputs
             const nombreEl = document.getElementById('nombre');
             const correoEl = document.getElementById('correo');
             const fechaNacEl = document.getElementById('fechaNacimiento');
@@ -51,7 +54,7 @@ async function configurarPerfilParaPaciente(token) {
                 fechaNacEl.value = expediente.fechaNacimiento.split('T')[0];
             }
 
-            // Cargar datos médicos
+            // cargar datos médicos si existen
             const tipoSangreEl = document.getElementById('tipoSangre');
             const alergiasEl = document.getElementById('alergias');
             const enfermedadesEl = document.getElementById('enfermedadesCronicas');
@@ -60,15 +63,12 @@ async function configurarPerfilParaPaciente(token) {
             if (tipoSangreEl && expediente.tipoSangre) {
                 tipoSangreEl.value = expediente.tipoSangre;
             }
-
             if (alergiasEl && expediente.alergias?.length > 0) {
                 alergiasEl.value = expediente.alergias.join(', ');
             }
-
             if (enfermedadesEl && expediente.enfermedadesCronicas?.length > 0) {
                 enfermedadesEl.value = expediente.enfermedadesCronicas.join(', ');
             }
-
             if (medicacionEl && expediente.medicacionActual) {
                 medicacionEl.value = expediente.medicacionActual;
             }
@@ -76,7 +76,7 @@ async function configurarPerfilParaPaciente(token) {
             console.log('Perfil cargado:', expediente);
         }
 
-        // 2. Configurar envío del formulario
+        // asociar listener al envío del formulario para guardar cambios
         const form = document.getElementById('perfilForm');
         if (form) {
             form.addEventListener('submit', async (e) => {
@@ -85,7 +85,7 @@ async function configurarPerfilParaPaciente(token) {
             });
         }
 
-        // 3. Cargar citas del paciente
+        // cargar la lista de citas del paciente para mostrarla
         cargarCitasPaciente(token, expediente._id);
 
     } catch (error) {
@@ -93,6 +93,7 @@ async function configurarPerfilParaPaciente(token) {
     }
 }
 
+// envía los cambios de perfil al backend
 async function guardarCambiosPerfil(token) {
     try {
         const tipoSangre = document.getElementById('tipoSangre')?.value || null;
@@ -101,12 +102,11 @@ async function guardarCambiosPerfil(token) {
         const medicacion = document.getElementById('medicacionActual')?.value || 'Ninguna';
         const fechaNac = document.getElementById('fechaNacimiento')?.value || null;
 
-        // Procesar strings a arrays
+        // convertir cadenas en arrays y filtrar entradas inválidas
         const alergiasArray = alergias
             .split(',')
             .map(a => a.trim())
             .filter(a => a && a !== 'Ninguna');
-
         const enfermedadesArray = enfermedades
             .split(',')
             .map(e => e.trim())
@@ -142,6 +142,7 @@ async function guardarCambiosPerfil(token) {
     }
 }
 
+// obtiene y muestra las citas del paciente
 async function cargarCitasPaciente(token, pacienteId) {
     try {
         const res = await fetch(`${API_URL}/citas/mis-citas`, {
@@ -186,7 +187,7 @@ function configurarPerfilParaDoctor() {
     if (nombreEl) nombreEl.value = usuarioLogueado.nombre;
     if (correoEl) correoEl.value = usuarioLogueado.email;
 
-    // Deshabilitar edición de perfil médico para doctor
+    // deshabilitar campos médicos para que el doctor no pueda editarlos
     const fieldsets = document.querySelectorAll('.ficha-medica input, .ficha-medica select, .ficha-medica textarea');
     fieldsets.forEach(el => el.disabled = true);
 }

@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
 
-// Registro: POST /api/auth/register
+// registro: POST /api/auth/register
 router.post('/register', authController.registrarPaciente);
 
-// Login: POST /api/auth/login
+// login: POST /api/auth/login
 router.post('/login', authController.login);
 
 module.exports = router;

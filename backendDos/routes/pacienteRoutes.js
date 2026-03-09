@@ -17,4 +17,6 @@ router.get('/:idPaciente/expediente', [auth, verificarRol('odontologo', 'admin')
 router.post('/:id/notas', auth, pacienteController.agregarNotaHistorial);
 router.put('/actualizar', auth, pacienteController.actualizarPerfil);
 
+// esos comentarios los vi en otro codigo y seveian chidos
+
 module.exports = router;
