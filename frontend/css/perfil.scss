@@ -80,7 +80,7 @@ header{
         color: rgba(0, 0, 0, 0.57);
         cursor: pointer;
         font-size: 3.5vw;
-        margin: 5vw 0;
+        margin: 4vw 0;
         display: block;
         text-align: left;
         border-radius: 8px;
@@ -120,12 +120,14 @@ main {
     .ficha-personal {
         display: flex;
         flex-direction: column;
+        width:100%;
     }
 
     .ficha-medica {
         display: flex;
         flex-direction: column;
         margin: 3vw 0 0 0;
+        width: 100%;
     }
 
     legend {
@@ -183,6 +185,8 @@ main {
         box-shadow: 0 4px 24px rgba(52,152,219,0.10);
         padding: 3vw 5vw;
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
         width: 80vw;
         margin-bottom: 2vw;
@@ -195,6 +199,7 @@ main {
         font-size: 3.5vw;
         background: #f7fbff;
         transition: border-color 0.2s;
+        
         &:focus {
           border-color: #3498db;
           outline: none;
@@ -202,6 +207,7 @@ main {
     }
 
     #btnGuardar {
+        padding: 1vw;
         margin: 4vw 0 2vw 0;
     }
 
@@ -247,43 +253,45 @@ main {
     main {
 
         h2 {
-            font-size: 4vw;
+            font-size: 3vw;
         }
 
         p {
-            font-size: 2.5vw;
+            font-size: 1.5vw;
         }
 
         label,small {
-            font-size: 2.5vw;
+            font-size: 1.5vw;
+        }
+        legend {
+            font-size: 3vw;
         }
 
         #tipoSangre {
-            font-size: 2vw;
+            font-size: 1vw;
         }
 
         select{
             option {
-                font-size: 2vw;
+                font-size: 1vw;
             }
         }
 
         form#perfilForm {
             width: 70vw;
             input, textarea {
-                font-size: 2.5vw;
+                font-size: 1.5vw;
             }
             button[type="submit"] {
-                font-size: 2vw;
+                font-size: 1.5vw;
             }
 
             select {
-                font-size: 2.5vw;
+                font-size: 1.5vw;
             }
 
             #btnGuardar {
                 width: 30vw;
-                margin: 4vw 0 0 15vw;
             }
         }
 
@@ -303,53 +311,52 @@ main {
 
 @media (min-width: 769.98px) {
     main {
-
         h2 {
-            font-size: 3vw;
-        }
-
-        h3 {
-            font-size: 3vw;
-        }
-
-        p {
             font-size: 2vw;
         }
 
+        h3 {
+            font-size: 2vw;
+        }
+
+        p {
+            font-size: 1vw;
+        }
+
         legend {
-            font-size: 2.5vw;
+            font-size: 1.5vw;
         }
 
         label,small {
-            font-size: 1.5vw;
+            font-size: 1vw;
         }
 
         select {
             option {
-                font-size: 1vw;
+                font-size: .8vw;
             }
         }
 
         form#perfilForm {
-            width: 70vw;
+            width: 50vw;
 
             input {
-                font-size: 1.5vw;
+                font-size: 1vw;
             }
 
             button[type="submit"] {
-                font-size: 2vw;
+                font-size: 1vw;
                 border-radius: 20vw;
             }
 
             select, textarea {
-                font-size: 1.5vw;
+                font-size: 1vw;
             }
 
         }
 
         #cerrar-sesion {
-            font-size: 2vw;
+            font-size: 1vw;
             width: 50vw;
         }
     }

@@ -173,6 +173,32 @@ exports.agregarNotaHistorial = async (req, res) => {
     }
 };
 
+// Controlador para eliminar un paciente (admin u odontologo)
+exports.eliminarPaciente = async (req, res) => {
+    try {
+        const { id } = req.params; // ID del paciente a eliminar
+
+        // Primero, obtener el paciente para saber qué usuario eliminar
+        const paciente = await Paciente.findById(id);
+        if (!paciente) return res.status(404).json({ msg: "Paciente no encontrado" });
+
+        const usuarioId = paciente.usuario; // Obtener el ID del usuario asociado
+
+        // Eliminar el paciente
+        await Paciente.findByIdAndDelete(id);
+
+        // Eliminar el usuario asociado
+        if (usuarioId) {
+            await Usuario.findByIdAndDelete(usuarioId);
+        }
+
+        res.json({ msg: "Paciente y usuario eliminados correctamente" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Error al eliminar el paciente" });
+    }
+};
+
 //============================================================================================
 // aqui comentamos con ayuda de la ia, salio todo bien y agregamos y quitamos cosas que no son
 //============================================================================================

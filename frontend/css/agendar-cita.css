@@ -17,7 +17,7 @@ html, body {
 button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 50vw;
+  border-radius: 0.5vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
@@ -145,26 +145,26 @@ footer {
     justify-content: space-around;
   }
   footer #redes_sociales strong {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales p {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales {
     padding: 0vw;
   }
   footer #redes_sociales .logo {
-    width: 2.5vw;
+    width: 2vw;
   }
   footer #box_boton .btn_subir {
-    width: 5vw;
+    width: 4vw;
   }
   footer #box_ubicacion p {
-    font-size: 1.5vw;
+    font-size: 1vw;
     margin: 0vw 0 2vw 0;
   }
   footer #box_ubicacion strong {
-    font-size: 2vw;
+    font-size: 1vw;
   }
   footer #box_ubicacion {
     text-align: center;
@@ -193,8 +193,11 @@ header {
   width: 100vw;
 }
 @media (min-width: 481.98px) {
+  header {
+    padding: 0 4vw 0 4vw;
+  }
   header button {
-    font-size: 2vw;
+    font-size: 1.2vw;
     margin: 0 2vw 0 0vw;
   }
   header button:hover {
@@ -207,7 +210,7 @@ header {
     display: none;
   }
   header #logo {
-    width: 20vw;
+    width: 15vw;
   }
   header .side_menu {
     display: flex;
@@ -217,12 +220,15 @@ header {
   }
 }
 @media (min-width: 769.98px) {
-  header #logo {
-    margin: 1vw 0 1vw 0;
-    width: 15vw;
+  header {
+    padding: 0 5vw 0 5vw;
   }
   header button {
-    font-size: 1.5vw;
+    font-size: 1.1vw;
+  }
+  header #logo {
+    margin: 1vw 0 1vw 0;
+    width: 13vw;
   }
 }
 header button {
@@ -281,6 +287,7 @@ main {
   justify-content: space-around;
   width: 90vw;
   background: linear-gradient(135deg, #e3f0ff 0%, #b2d8f7 100%);
+  width: 100vw;
 }
 main #agendar-cita-section {
   background: rgba(255, 255, 255, 0.98);
@@ -362,25 +369,34 @@ main #agendar-cita-section #mensaje-cita {
 }
 
 @media (min-width: 481.98px) {
+  main #agendar-cita-section {
+    width: 60vw;
+  }
   main #agendar-cita-section h2 {
-    font-size: 3.5vw;
+    font-size: 2.5vw;
+  }
+  main #agendar-cita-section #form-cita {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   main #agendar-cita-section #form-cita label {
-    font-size: 2.5vw;
+    width: 90%;
+    font-size: 1.5vw;
   }
   main #agendar-cita-section #form-cita .optionCita {
-    font-size: 2.5vw;
+    width: 90%;
+    font-size: 1.5vw;
     margin: 0vw 0 0vw 0;
   }
   main #agendar-cita-section #form-cita legend {
-    font-size: 3.5vw;
+    font-size: 2.5vw;
   }
   main #agendar-cita-section #form-cita button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 2.5vw;
-    margin: 5vw 0 0 15vw;
+    font-size: 2vw;
     width: 40vw;
   }
 }
@@ -389,31 +405,33 @@ main #agendar-cita-section #mensaje-cita {
     width: 100vw;
   }
   main #agendar-cita-section {
-    width: 65vw;
+    padding: 0vw;
+    width: 40vw;
   }
   main #agendar-cita-section h2 {
-    font-size: 2.5vw;
+    margin: 2vw 0 0 0;
+    font-size: 1.5vw;
   }
   main #agendar-cita-section #form-cita #alergias {
     margin: 0 0 3vw 0;
   }
   main #agendar-cita-section #form-cita label {
-    font-size: 1.8vw;
+    font-size: 1vw;
   }
   main #agendar-cita-section #form-cita .optionCita {
-    font-size: 1.8vw;
+    font-size: 1vw;
   }
   main #agendar-cita-section #form-cita button {
     border-radius: 20vw;
-    font-size: 1.8vw;
-    margin: 1vw 0 0 12vw;
+    font-size: 1vw;
+    margin: 0vw;
     width: 30vw;
   }
   main #agendar-cita-section #form-cita legend {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
   }
   main #agendar-cita-section #form-cita #procedimiento {
-    font-size: 1.8vw;
+    font-size: 1vw;
     border-radius: 8px;
     border: 1px solid #b2d8f7;
     background: #f7fbff;

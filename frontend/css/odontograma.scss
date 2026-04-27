@@ -141,10 +141,18 @@ button.active {
 }
 
 /* estilos específicos para botones de cancelar y guardar */
-.btn-cancel { background-color: #e74c3c; }
-.btn-cancel:hover { background-color: #c0392b; }
-.btn-save { background-color: #2ecc71; }
-.btn-save:hover { background-color: #27ae60; }
+.btn-cancel { 
+    background-color: #e74c3c; 
+}
+.btn-cancel:hover { 
+    background-color: #c0392b; 
+}
+.btn-save { 
+    background-color: #2ecc71; 
+}
+.btn-save:hover { 
+    background-color: #27ae60; 
+}
 
 /* clase utilitaria para ocultar elementos */
 .hidden { display: none !important; }

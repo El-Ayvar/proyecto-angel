@@ -18,7 +18,7 @@ html, body {
 button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 50vw;
+  border-radius: 0.5vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
@@ -146,26 +146,26 @@ footer {
     justify-content: space-around;
   }
   footer #redes_sociales strong {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales p {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales {
     padding: 0vw;
   }
   footer #redes_sociales .logo {
-    width: 2.5vw;
+    width: 2vw;
   }
   footer #box_boton .btn_subir {
-    width: 5vw;
+    width: 4vw;
   }
   footer #box_ubicacion p {
-    font-size: 1.5vw;
+    font-size: 1vw;
     margin: 0vw 0 2vw 0;
   }
   footer #box_ubicacion strong {
-    font-size: 2vw;
+    font-size: 1vw;
   }
   footer #box_ubicacion {
     text-align: center;
@@ -194,8 +194,11 @@ header {
   width: 100vw;
 }
 @media (min-width: 481.98px) {
+  header {
+    padding: 0 4vw 0 4vw;
+  }
   header button {
-    font-size: 2vw;
+    font-size: 1.2vw;
     margin: 0 2vw 0 0vw;
   }
   header button:hover {
@@ -208,7 +211,7 @@ header {
     display: none;
   }
   header #logo {
-    width: 20vw;
+    width: 15vw;
   }
   header .side_menu {
     display: flex;
@@ -218,12 +221,15 @@ header {
   }
 }
 @media (min-width: 769.98px) {
-  header #logo {
-    margin: 1vw 0 1vw 0;
-    width: 15vw;
+  header {
+    padding: 0 5vw 0 5vw;
   }
   header button {
-    font-size: 1.5vw;
+    font-size: 1.1vw;
+  }
+  header #logo {
+    margin: 1vw 0 1vw 0;
+    width: 13vw;
   }
 }
 
@@ -294,19 +300,31 @@ main #box_amalgama {
 main #box_amalgama #sub_titulo_laptop {
   display: none;
 }
+main #box_amalgama #first_amalgama {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 main #box_amalgama #first_amalgama h3 {
   margin: 3vw 0 3vw 0;
 }
 main #box_amalgama #first_amalgama img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
+}
+main #box_amalgama #second_amalgama {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 main #box_amalgama #second_amalgama h4 {
   margin: 3vw 0 0 0;
 }
 main #box_amalgama #second_amalgama img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
 }
 main #box_amalgama h2 {
   text-align: center;
@@ -338,9 +356,15 @@ main #box_blanqueamiento {
   width: 90vw;
   color: white;
 }
+main #box_blanqueamiento #first_blanqueamiento {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 main #box_blanqueamiento #first_blanqueamiento img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
   margin: 2vw 0 2vw 0;
 }
 main #box_blanqueamiento h2 {
@@ -368,12 +392,25 @@ main #box_blanqueamiento p {
   color: white;
   margin: 2vw 0 2vw 0;
 }
+main #box_blanqueamiento #second_blanqueamiento {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 main #box_blanqueamiento #second_blanqueamiento img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
 }
 main #box_blanqueamiento video {
   margin: 2vw 0 2vw 0;
+  width: 70vw;
+}
+main #box_blanqueamiento #third_blanqueamiento {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 90vw;
 }
 main #box_extraccion {
@@ -426,6 +463,14 @@ main #box_extraccion p {
   margin: 2vw 0 2vw 0;
 }
 main #box_extraccion video {
+  margin: 2vw 0 2vw 0;
+  width: 70vw;
+}
+main #box_extraccion #first_extraccion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 90vw;
 }
 main #box_tratamientos {
@@ -482,13 +527,13 @@ main #box_rehabilitacion {
   color: white;
 }
 main #box_rehabilitacion h2 {
-  font-size: 6vw;
+  font-size: 5vw;
   text-align: center;
   width: 90vw;
 }
 main #box_rehabilitacion p {
   color: white;
-  font-size: 3.5vw;
+  font-size: 3vw;
   margin: 1vw 0 1vw 0;
 }
 main #box_rehabilitacion {
@@ -509,8 +554,8 @@ main #box_sarro #after_sarro {
   width: 90vw;
 }
 main #box_sarro #after_sarro img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
 }
 main #box_sarro #after_sarro p {
   font-size: 3.5vw;
@@ -523,8 +568,8 @@ main #box_sarro #because_sarro {
   width: 90vw;
 }
 main #box_sarro #because_sarro img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
 }
 main #box_sarro #because_sarro p {
   font-size: 3.5vw;
@@ -585,8 +630,8 @@ main #caso_rehabilitacion h4 {
   width: 90vw;
 }
 main #caso_rehabilitacion img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
   margin: 2vw 0 2vw 0;
 }
 main #caso_rehabilitacion p {
@@ -611,8 +656,8 @@ main #caso_fractura h4 {
   margin: 2vw 0 2vw 0;
 }
 main #caso_fractura img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
 }
 main #caso_fractura {
   margin: 5vw 0 0 0;
@@ -633,9 +678,9 @@ main #final_fractura h3 {
   margin: 0vw 0 2vw 0;
 }
 main #final_fractura img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
-  margin: 2vw 0 0vw 0;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
+  margin: 3vw 0 0vw 0;
 }
 main #final_fractura {
   margin: 5vw 0 0vw 0;
@@ -646,15 +691,15 @@ main h1 {
   margin: 3vw 0 3vw 0;
 }
 main #intro_rehabilitacion {
-  align-items: center;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin: 2vw 0 2vw 0;
 }
 main #intro_rehabilitacion h3 {
-  font-size: 6vw;
+  font-size: 5vw;
   text-align: center;
-  width: 90vw;
+  width: 70vw;
+  margin: 2vw 0 2vw 0;
 }
 main #intro_rehabilitacion img {
   width: 10vw;
@@ -686,27 +731,41 @@ main #pasos_rehabilitacion {
   justify-content: space-around;
   width: 90vw;
 }
+main #pasos_rehabilitacion .pasos_rehabilitacion_laptop {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
 main #pasos_rehabilitacion #fourth_rehabilitacion h4 {
-  font-size: 4.5vw;
+  font-size: 4vw;
   margin: 0 0 3vw 0;
 }
 main #pasos_rehabilitacion #fourth_rehabilitacion p {
   font-size: 3vw;
 }
+main #pasos_rehabilitacion #firs_rehabilitacion {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+}
 main #pasos_rehabilitacion #firs_rehabilitacion h4 {
-  font-size: 4.5vw;
+  font-size: 4vw;
   margin: 0 0 3vw 0;
 }
 main #pasos_rehabilitacion #firs_rehabilitacion p {
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
 main #pasos_rehabilitacion h2 {
   font-size: 7vw;
   margin: 2vw 0 2vw 0;
 }
 main #pasos_rehabilitacion img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
   margin: 2vw 0 2vw 0;
 }
 main #pasos_rehabilitacion #second_rehabilitacion h4 {
@@ -793,9 +852,9 @@ main #second_sarro #first_sarroSecond {
   justify-content: space-around;
 }
 main #second_sarro #first_sarroSecond img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
+  width: 50vw;
 }
 main #second_sarro #first_sarroSecond {
   text-align: center;
@@ -808,8 +867,8 @@ main #second_sarro #second_sarroSecond {
   color: #86D3DC;
 }
 main #second_sarro #second_sarroSecond img {
-  border-radius: 0vw 40vw 0vw 40vw;
-  width: 90vw;
+  border-radius: 0vw 30vw 0vw 30vw;
+  width: 50vw;
 }
 main #second_sarro #second_sarroSecond p {
   font-size: 3vw;
@@ -944,221 +1003,229 @@ ul li::before {
 }
 
 @media (min-width: 481.98px) {
-  main #beginning_text h1 {
-    font-size: 6vw;
-  }
-  main #beginning_text p {
-    font-size: 2.5vw;
-  }
-  main #slogan {
-    font-size: 4vw;
-  }
-  main #muela {
-    width: 9vw;
-  }
-  main #box_restauracion #title_restauracion {
-    font-size: 4.5vw;
-  }
-  main #box_restauracion h3 {
-    font-size: 4vw;
-  }
-  main #box_restauracion h4 {
-    font-size: 4vw;
-  }
-  main #box_restauracion p {
-    font-size: 2.3vw;
-  }
-  main #box_restauracion li {
-    font-size: 3vw;
-  }
-  main #box_restauracion strong {
-    font-size: 1vw;
-  }
-  main #seg_fractura #firs_fractura strong {
-    font-size: 3vw;
-  }
-  main #seg_fractura #firs_fractura p {
-    font-size: 2.2vw;
-  }
-  main #seg_fractura #second_fractura strong {
-    font-size: 3vw;
-  }
-  main #seg_fractura #second_fractura p {
-    font-size: 2.2vw;
-  }
-  main #seg_fractura #third_fractura strong {
-    font-size: 3vw;
-  }
-  main #seg_fractura #third_fractura p {
-    font-size: 2.2vw;
-  }
-  main #seg_fractura #fourth_fractura strong {
-    font-size: 3vw;
-  }
-  main #seg_fractura #fourth_fractura p {
-    font-size: 2.2vw;
-  }
-  main #seg_fractura #fifth_fractura strong {
-    font-size: 3vw;
-  }
-  main #seg_fractura #fifth_fractura p {
-    font-size: 2.2vw;
-  }
-  main #box_rehabilitacion h2 {
-    font-size: 5vw;
-  }
-  main #box_rehabilitacion h3 {
-    font-size: 4vw;
-  }
-  main #box_rehabilitacion h4 {
-    font-size: 4vw;
-  }
-  main #box_rehabilitacion #intro_rehabilitacion img {
-    width: 7vw;
-  }
-  main #box_rehabilitacion #intro_rehabilitacion {
-    width: 60vw;
-  }
-  main #box_rehabilitacion p {
-    font-size: 2.5vw;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion h2 {
-    font-size: 4vw;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion h4 {
-    font-size: 3.3vw;
-    margin: 2vw 0 0 0;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion p {
-    font-size: 2.5vw;
-  }
-  main #box_sarro h2 {
-    font-size: 5vw;
-  }
-  main #box_sarro p {
-    font-size: 3vw;
-  }
-  main #box_sarro #intro_sarro h3 {
-    font-size: 3.5vw;
-    text-align: center;
-  }
-  main #box_sarro #intro_sarro img {
-    width: 13vw;
-  }
-  main #box_sarro #intro_sarro {
-    width: 50vw;
-  }
-  main #box_sarro #text_introS p {
-    font-size: 2.5vw;
-  }
-  main #box_sarro #because_sarro h2 {
-    font-size: 4vw;
-  }
-  main #box_sarro #because_sarro p {
-    font-size: 2.5vw;
-  }
-  main #box_sarro #after_sarro h2 {
-    font-size: 4.5vw;
-    text-align: center;
-  }
-  main #box_sarro #after_sarro p {
-    font-size: 2.5vw;
-  }
-  main #box_sarro #second_sarro #intro_sarroSecond h2 {
-    font-size: 4vw;
-    text-align: center;
-  }
-  main #box_sarro #second_sarro #intro_sarroSecond img {
-    width: 13vw;
-  }
-  main #box_sarro #second_sarro #intro_sarroSecond {
+  main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 90vw;
     width: 70vw;
   }
-  main #box_sarro #second_sarro p {
-    font-size: 2.5vw;
-  }
-  main #box_sarro #second_sarro #second_sarroSecond h3 {
+  main #beginning_text h1 {
     font-size: 4vw;
   }
-  main #box_sarro #second_sarro #second_sarroSecond p {
-    font-size: 2.5vw;
+  main #beginning_text p {
+    font-size: 1.8vw;
   }
-  main #box_amalgama h2 {
-    font-size: 4vw;
+  main #beginning_text {
+    width: 70vw;
   }
-  main #box_amalgama #intro_amalgama h3 {
-    font-size: 3vw;
-  }
-  main #box_amalgama #intro_amalgama img {
-    margin: 0vw;
-    width: 10vw;
-  }
-  main #box_amalgama #intro_amalgama {
+  main #slogan {
     text-align: center;
-    width: 60vw;
+    font-size: 2.5vw;
+    margin: 1vw 0 0 0;
   }
-  main #box_amalgama p {
+  main #muela {
+    margin: 2vw 0 0 0;
+    width: 9vw;
+  }
+  main #sub_restauracion img {
+    margin: 0vw;
+    width: 7vw;
+  }
+  main #box_tratamientos {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_restauracion h2 {
+    font-size: 3.5vw;
+  }
+  main #box_tratamientos #box_restauracion h3 {
+    text-align: center;
+    font-size: 3vw;
+  }
+  main #box_tratamientos #box_restauracion h4 {
+    font-size: 3vw;
+  }
+  main #box_tratamientos #box_restauracion #title_restauracion {
+    margin: 2vw 0 2vw 0;
+  }
+  main #box_tratamientos #box_restauracion #sub_restauracion {
+    width: 40vw;
+  }
+  main #box_tratamientos #box_restauracion p {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #box_restauracion {
+    width: 70vw;
+  }
+  main #box_tratamientos #intro_restauracion {
+    width: 70vw;
+  }
+  main #box_tratamientos #intro_restauracion p {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #intro_restauracion li {
     font-size: 2.5vw;
   }
-  main #box_amalgama #first_amalgama h3 {
-    font-size: 4vw;
+  main #box_tratamientos #caso_fractura {
+    width: 70vw;
   }
-  main #box_amalgama #first_amalgama h4 {
-    font-size: 3vw;
+  main #box_tratamientos #seg_fractura {
+    width: 70vw;
   }
-  main #box_amalgama #first_amalgama p {
-    font-size: 2.3vw;
-  }
-  main #box_amalgama #second_amalgama h4 {
-    font-size: 3vw;
-  }
-  main #box_amalgama #second_amalgama p {
-    font-size: 2.3vw;
-  }
-  main #box_extraccion h2 {
-    font-size: 5vw;
-  }
-  main #box_extraccion #intro_extraccion h2 {
-    font-size: 4vw;
-  }
-  main #box_extraccion #intro_extraccion img {
-    width: 8vw;
-  }
-  main #box_extraccion #intro_extraccion {
-    width: 60vw;
-  }
-  main #box_extraccion #text_introE p {
-    font-size: 2.3vw;
-  }
-  main #box_extraccion #first_extraccion p {
-    font-size: 2.3vw;
-  }
-  main #box_blanqueamiento #first_blanqueamiento h4 {
-    font-size: 3vw;
-  }
-  main #box_blanqueamiento #first_blanqueamiento p {
+  main #box_tratamientos #seg_fractura strong {
+    width: 70vw;
     font-size: 2.5vw;
   }
-  main #box_blanqueamiento h2 {
-    font-size: 4vw;
+  main #box_tratamientos #seg_fractura p {
+    width: 70vw;
+    font-size: 2vw;
   }
-  main #box_blanqueamiento #intro_blanqueamiento h2 {
-    font-size: 2.6vw;
+  main #box_tratamientos #final_fractura {
+    width: 70vw;
   }
-  main #box_blanqueamiento #intro_blanqueamiento img {
-    width: 15vw;
+  main #box_tratamientos #box_rehabilitacion {
+    width: 70vw;
   }
-  main #box_blanqueamiento #intro_blanqueamiento {
+  main #box_tratamientos #box_rehabilitacion h2 {
+    font-size: 3.5vw;
+  }
+  main #box_tratamientos #box_rehabilitacion h3 {
+    font-size: 3vw;
+    margin: 1vw 0 0 0;
+  }
+  main #box_tratamientos #box_rehabilitacion p {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #intro_rehabilitacion {
     width: 50vw;
   }
-  main #box_blanqueamiento #second_blanqueamiento p {
+  main #box_tratamientos #box_rehabilitacion #intro_rehabilitacion img {
+    height: 12vh;
+    width: 7vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #caso_rehabilitacion {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #caso_rehabilitacion h4 {
+    font-size: 3vw;
+    width: 70vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop p {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop h4 {
+    font-size: 3vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #firs_rehabilitacion {
+    width: 70vw;
+    margin: 0 0 2vw 0;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #firs_rehabilitacion h4 {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_sarro {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_sarro p {
+    font-size: 2vw;
+    width: 70vw;
+  }
+  main #box_tratamientos #box_sarro h2 {
+    font-size: 3.5vw;
+    text-align: center;
+    width: 70vw;
+  }
+  main #box_tratamientos #box_sarro #intro_sarro {
+    font-size: 3vw;
+    text-align: center;
+    width: 50vw;
+  }
+  main #box_tratamientos #box_sarro #intro_sarro img {
+    width: 11vw;
+  }
+  main #box_tratamientos #box_sarro #intro_sarroSecond {
+    width: 50vw;
+  }
+  main #box_tratamientos #box_sarro #intro_sarroSecond h2 {
+    font-size: 2.8vw;
+  }
+  main #box_tratamientos #box_sarro #intro_sarroSecond img {
+    width: 12vw;
+  }
+  main #box_tratamientos #box_amalgama {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_amalgama #intro_amalgama {
+    width: 50vw;
+    text-align: center;
+  }
+  main #box_tratamientos #box_amalgama #intro_amalgama img {
+    width: 13vw;
+  }
+  main #box_tratamientos #box_amalgama p {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #box_amalgama h4 {
     font-size: 2.5vw;
   }
-  main #box_blanqueamiento #text_introB p {
+  main #box_tratamientos #box_extraccion {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_extraccion p {
+    font-size: 2vw;
+    width: 70vw;
+  }
+  main #box_tratamientos #box_extraccion em {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_extraccion h4 {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_extraccion h2 {
+    font-size: 3.5vw;
+  }
+  main #box_tratamientos #box_extraccion #intro_extraccion {
+    width: 50vw;
+  }
+  main #box_tratamientos #box_extraccion #intro_extraccion img {
+    width: 7vw;
+  }
+  main #box_tratamientos #box_extraccion video {
+    width: 50vw;
+  }
+  main #box_tratamientos #box_blanqueamiento {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_blanqueamiento p {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #box_blanqueamiento h2 {
+    font-size: 3.5vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #intro_blanqueamiento {
+    width: 50vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #intro_blanqueamiento h2 {
     font-size: 2.5vw;
   }
-  main #box_blanqueamiento #third_blanqueamiento p {
-    font-size: 2.5vw;
+  main #box_tratamientos #box_blanqueamiento #intro_blanqueamiento img {
+    width: 13vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #third_blanqueamiento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  main #box_tratamientos #box_blanqueamiento video {
+    width: 50vw;
   }
 }
 @media (min-width: 769.98px) {
@@ -1173,596 +1240,441 @@ ul li::before {
     flex-wrap: wrap;
   }
   main #beginning_text h1 {
-    font-size: 3.5vw;
+    font-size: 2.5vw;
     text-align: center;
     margin: 2vw 0 0vw 0;
     width: 70vw;
   }
   main #beginning_text p {
-    font-size: 1.3vw;
-    width: 40vw;
+    font-size: 1.1vw;
+    width: 34vw;
   }
   main #slogan {
-    font-size: 2.5vw;
+    font-size: 2vw;
     margin: 0vw;
-    width: 90vw;
   }
   main #muela {
     margin: 3vw 0 0 0vw;
     width: 5vw;
   }
-  main #box_restauracion {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  main #box_restauracion #title_restauracion {
-    font-size: 3vw;
-    margin: 2vw 0 2vw 0;
-  }
-  main #box_restauracion h3 {
-    font-size: 3vw;
-  }
-  main #box_restauracion h4 {
-    font-size: 3vw;
-  }
-  main #box_restauracion p {
-    font-size: 2.3vw;
-  }
-  main #box_restauracion #intro_restauracion {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    height: auto;
-  }
-  main #box_restauracion #intro_restauracion #sub_restauracion h3 {
-    font-size: 2.5vw;
-  }
-  main #box_restauracion #intro_restauracion #sub_restauracion img {
-    width: 7vw;
-  }
-  main #box_restauracion #intro_restauracion #sub_restauracion {
-    padding: 0 4vw 0 4vw;
-    width: 40vw;
-  }
-  main #box_restauracion #intro_restauracion p {
-    font-size: 1.3vw;
-    margin: 1vw 0 1vw 0;
-    text-align: center;
-  }
-  main #box_restauracion #intro_restauracion ul {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  main #box_tratamientos {
     width: 70vw;
   }
-  main #box_restauracion #intro_restauracion ul li {
-    margin: 1vw 0 1vw 0;
+  main #box_tratamientos #box_restauracion h2 {
+    font-size: 2.5vw;
   }
-  main #box_restauracion #intro_restauracion ul li::before {
-    background-image: url("../assets/img/viñetaFracturada.png");
-    background-size: contain;
-    content: "";
-    display: inline-block;
-    height: 2vw;
-    margin-right: 1vw;
-    vertical-align: middle;
-    width: 2vw;
-  }
-  main #box_restauracion li {
-    font-size: 2vw;
-  }
-  main #box_restauracion strong {
-    font-size: 1vw;
-  }
-  main #caso_fractura {
-    align-items: center;
+  main #box_tratamientos #box_restauracion #intro_restauracion {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2vw 0 2vw 0;
+    height: auto;
+  }
+  main #box_tratamientos #box_restauracion #intro_restauracion p {
+    font-size: 1.1vw;
+    text-align: center;
+    width: 60vw;
+  }
+  main #box_tratamientos #box_restauracion #intro_restauracion ul {
+    display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    margin: 3vw 0 3vw 0;
+    width: 55vw;
   }
-  main #caso_fractura #caso_fractura_text {
-    align-items: center;
+  main #box_tratamientos #box_restauracion #intro_restauracion ul li {
+    font-size: 1.1vw;
+    width: 26vw;
+    margin: 1vw 0 1vw 0;
+  }
+  main #box_tratamientos #box_restauracion #intro_restauracion ul li::before {
+    width: 2vw;
+    height: 2vw;
+  }
+  main #box_tratamientos #box_restauracion #intro_restauracion #sub_restauracion {
+    margin: 0 0 2vw 0;
+    width: 20vw;
+  }
+  main #box_tratamientos #box_restauracion #intro_restauracion #sub_restauracion h3 {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #box_restauracion #intro_restauracion #sub_restauracion img {
+    width: 3.5vw;
+  }
+  main #box_tratamientos #box_restauracion #caso_fractura {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  main #box_tratamientos #box_restauracion #caso_fractura h3 {
+    font-size: 2vw;
+    margin: 0 0 3vw 0;
+  }
+  main #box_tratamientos #box_restauracion #caso_fractura h4 {
+    font-size: 2vw;
+    margin: 0 0 1vw 0;
+  }
+  main #box_tratamientos #box_restauracion #caso_fractura p {
+    font-size: 1.1vw;
+    margin: 0vw;
+    width: 35vw;
+  }
+  main #box_tratamientos #box_restauracion #caso_fractura img {
+    width: 20vw;
+  }
+  main #box_tratamientos #box_restauracion #caso_fractura #caso_fractura_text {
+    width: 35vw;
+  }
+  main #box_tratamientos #box_restauracion #seg_fractura {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 90vw;
+    flex-wrap: wrap;
+    flex-direction: row;
   }
-  main #caso_fractura #caso_fractura_text h4 {
-    font-size: 2.5vw;
-    margin: 0vw 0 1vw 0;
+  main #box_tratamientos #box_restauracion #seg_fractura h3 {
+    font-size: 2vw;
+    width: 70vw;
   }
-  main #caso_fractura #caso_fractura_text p {
-    font-size: 1.5vw;
+  main #box_tratamientos #box_restauracion #seg_fractura strong {
+    font-size: 1.3vw;
+    width: 33vw;
   }
-  main #caso_fractura #caso_fractura_text {
-    width: 50vw;
+  main #box_tratamientos #box_restauracion #seg_fractura p {
+    font-size: 1.1vw;
+    width: 33vw;
   }
-  main #caso_fractura img {
-    border-radius: 0vw 15vw 0vw 15vw;
-    margin: 2vw 0 0 0;
+  main #box_tratamientos #box_restauracion #seg_fractura #firs_fractura,
+  main #box_tratamientos #box_restauracion #seg_fractura #second_fractura,
+  main #box_tratamientos #box_restauracion #seg_fractura #third_fractura,
+  main #box_tratamientos #box_restauracion #seg_fractura #fourth_fractura,
+  main #box_tratamientos #box_restauracion #seg_fractura #fifth_fractura {
+    width: 33vw;
+    margin-bottom: 1.5vw;
+  }
+  main #box_tratamientos #box_restauracion #final_fractura {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 1vw 0 0 0;
+  }
+  main #box_tratamientos #box_restauracion #final_fractura h3 {
+    font-size: 2vw;
+    width: 70vw;
+  }
+  main #box_tratamientos #box_restauracion #final_fractura img {
+    margin: 0vw;
+    width: 20vw;
+  }
+  main #box_tratamientos #box_restauracion #final_fractura p {
+    font-size: 1.3vw;
     width: 30vw;
   }
-  main #caso_fractura {
-    margin: 2vw 0 0 0;
-  }
-  main #seg_fractura #firs_fractura {
-    margin: 1vw 0 0 0;
-  }
-  main #seg_fractura #firs_fractura strong {
-    font-size: 1.5vw;
-    margin: 1vw 0 1vw 0;
-    width: auto;
-  }
-  main #seg_fractura #firs_fractura p {
-    font-size: 1.3vw;
-    text-align: center;
-  }
-  main #seg_fractura #firs_fractura {
-    width: auto;
-  }
-  main #seg_fractura #second_fractura {
-    margin: 1vw 0 0 0;
-  }
-  main #seg_fractura #second_fractura strong {
-    font-size: 1.5vw;
-    margin: 1vw 0 1vw 0;
-    width: auto;
-  }
-  main #seg_fractura #second_fractura p {
-    font-size: 1.3vw;
-    text-align: center;
-  }
-  main #seg_fractura #second_fractura {
-    width: auto;
-  }
-  main #seg_fractura #third_fractura {
-    margin: 1vw 0 0 0;
-  }
-  main #seg_fractura #third_fractura strong {
-    font-size: 1.5vw;
-    margin: 1vw 0 1vw 0;
-    width: auto;
-  }
-  main #seg_fractura #third_fractura p {
-    font-size: 1.3vw;
-    text-align: center;
-  }
-  main #seg_fractura #third_fractura {
-    width: auto;
-  }
-  main #seg_fractura #fourth_fractura {
-    margin: 1vw 0 0 0;
-  }
-  main #seg_fractura #fourth_fractura strong {
-    font-size: 1.5vw;
-    margin: 1vw 0 1vw 0;
-    width: auto;
-  }
-  main #seg_fractura #fourth_fractura p {
-    font-size: 1.3vw;
-    text-align: center;
-  }
-  main #seg_fractura #fourth_fractura {
-    width: auto;
-  }
-  main #seg_fractura #fifth_fractura {
-    margin: 1vw 0 0 0;
-  }
-  main #seg_fractura #fifth_fractura strong {
-    font-size: 1.5vw;
-    margin: 1vw 0 1vw 0;
-    width: auto;
-  }
-  main #seg_fractura #fifth_fractura p {
-    font-size: 1.3vw;
-    text-align: center;
-  }
-  main #seg_fractura #fifth_fractura {
-    width: auto;
-  }
-  main #seg_fractura {
-    margin: 0vw;
-    width: 45vw;
-  }
-  main #final_fractura img {
-    border-radius: 0vw 15vw 0vw 15vw;
-    width: 40vw;
-  }
-  main #final_fractura p {
-    font-size: 1.3vw;
-    text-align: center;
-  }
-  main #final_fractura {
-    width: 43vw;
-  }
-  main #box_rehabilitacion {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  main #box_rehabilitacion h2 {
-    font-size: 3vw;
-  }
-  main #box_rehabilitacion h3 {
-    font-size: 4vw;
-  }
-  main #box_rehabilitacion h4 {
-    font-size: 4vw;
-  }
-  main #box_rehabilitacion #intro_rehabilitacion h3 {
+  main #box_tratamientos #box_rehabilitacion h2 {
     font-size: 2vw;
   }
-  main #box_rehabilitacion #intro_rehabilitacion img {
-    width: 7vw;
-  }
-  main #box_rehabilitacion #intro_rehabilitacion {
-    margin: 2vw 0 2vw 0;
-    width: 40vw;
-  }
-  main #box_rehabilitacion p {
-    font-size: 1.3vw;
-    margin: 0vw 0 1vw 0;
-  }
-  main #box_rehabilitacion #caso_rehabilitacion h3 {
-    font-size: 3vw;
-    margin: 1vw 0 0vw 0;
-  }
-  main #box_rehabilitacion #caso_rehabilitacion h4 {
-    font-size: 3vw;
-  }
-  main #box_rehabilitacion #caso_rehabilitacion img {
-    border-radius: 0vw 20vw 0vw 20vw;
-    width: 45vw;
-  }
-  main #box_rehabilitacion #caso_rehabilitacion p {
-    font-size: 1.5vw;
-    margin: 0vw;
-    text-align: center;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion h2 {
-    font-size: 3vw;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion h4 {
-    font-size: 2.3vw;
-    margin: 2vw 0 0 0;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion img {
-    border-radius: 0vw 30vw 0vw 30vw;
-    width: 60vw;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop h2 {
-    width: auto;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop h4 {
-    margin: 0vw;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop img {
-    border-radius: 0vw 20vw 0vw 20vw;
-    width: 43vw;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop p {
-    margin: 1vw 0 1vw 0;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop {
-    width: 43vw;
-  }
-  main #box_rehabilitacion #pasos_rehabilitacion p {
-    font-size: 1.3vw;
-  }
-  main #box_sarro {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  main #box_sarro h2 {
-    font-size: 3.5vw;
-    margin: 0vw;
-  }
-  main #box_sarro #intro_sarro h3 {
-    font-size: 2.5vw;
-    text-align: center;
-  }
-  main #box_sarro #intro_sarro img {
-    width: 10vw;
-  }
-  main #box_sarro #intro_sarro {
-    padding: 0 3vw 0 3vw;
+  main #box_tratamientos #box_rehabilitacion p {
+    font-size: 1.1vw;
     width: 50vw;
   }
-  main #box_sarro #text_introS p {
-    color: rgba(0, 0, 0, 0.5921568627);
-    font-size: 1.3vw;
-    margin: 0vw 0 1vw 0;
+  main #box_tratamientos #box_rehabilitacion #intro_rehabilitacion {
+    width: 35vw;
   }
-  main #box_sarro #because_sarro h2 {
+  main #box_tratamientos #box_rehabilitacion #intro_rehabilitacion img {
+    height: 10vh;
+    width: 5vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #intro_rehabilitacion h3 {
     font-size: 2vw;
-    margin: 0 0 2vw 0;
     text-align: center;
   }
-  main #box_sarro #because_sarro img {
-    border-radius: 0vw 20vw 0vw 20vw;
-    width: 40vw;
-  }
-  main #box_sarro #because_sarro p {
-    font-size: 1.3vw;
-    margin: 0vw 0 1vw 0;
-  }
-  main #box_sarro #because_sarro {
-    width: 43vw;
-  }
-  main #box_sarro #after_sarro h2 {
-    font-size: 2vw;
-    margin: 0 0 2vw 0;
-    text-align: center;
-  }
-  main #box_sarro #after_sarro img {
-    border-radius: 0vw 20vw 0vw 20vw;
-    width: 40vw;
-  }
-  main #box_sarro #after_sarro p {
-    font-size: 1.3vw;
-    margin: 0vw 0 1vw 0;
-  }
-  main #box_sarro #after_sarro {
-    width: 43vw;
-  }
-  main #box_sarro #second_sarro {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+  main #box_tratamientos #box_rehabilitacion #caso_rehabilitacion {
     flex-wrap: wrap;
-  }
-  main #box_sarro #second_sarro #intro_sarroSecond {
-    display: none;
-  }
-  main #box_sarro #second_sarro p {
-    font-size: 2.5vw;
-  }
-  main #box_sarro #second_sarro #first_sarroSecond #intro_sarro_laptop {
-    align-items: center;
-    display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    width: 70vw;
   }
-  main #box_sarro #second_sarro #first_sarroSecond #intro_sarro_laptop h2 {
-    font-size: 2.4vw;
-    text-align: center;
+  main #box_tratamientos #box_rehabilitacion #caso_rehabilitacion h4 {
+    font-size: 2vw;
+    width: 35vw;
   }
-  main #box_sarro #second_sarro #first_sarroSecond #intro_sarro_laptop img {
-    border-radius: 0vw;
+  main #box_tratamientos #box_rehabilitacion #caso_rehabilitacion #caso_rehabilitacion_text {
+    width: 35vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #caso_rehabilitacion img {
+    width: 25vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #caso_rehabilitacion p {
+    width: 42vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion {
+    width: 70vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop {
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 70vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop p {
+    width: 50vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop h4 {
+    font-size: 2vw;
+    margin: 0 0 1vw 0;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #firs_rehabilitacion {
+    width: 33vw;
+    margin: 0 0 1.5vw 0;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #firs_rehabilitacion h4 {
+    width: 33vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #firs_rehabilitacion p {
+    width: 33vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #second_rehabilitacion {
+    width: 33vw;
+    margin: 0 0 1.5vw 0;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #second_rehabilitacion h4 {
+    font-size: 2vw;
+    width: 33vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #second_rehabilitacion p {
+    font-size: 1.1vw;
+    width: 33vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop img {
+    width: 25vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #fourth_rehabilitacion {
+    width: 33vw;
+    margin: 0 0 1.5vw 0;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #fourth_rehabilitacion h4 {
+    font-size: 2vw;
+    width: 33vw;
+  }
+  main #box_tratamientos #box_rehabilitacion #pasos_rehabilitacion .pasos_rehabilitacion_laptop #fourth_rehabilitacion p {
+    font-size: 1.1vw;
+    width: 33vw;
+  }
+  main #box_tratamientos #box_sarro h2 {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #box_sarro p {
+    font-size: 1.1vw;
+  }
+  main #box_tratamientos #box_sarro #intro_sarro {
+    width: 30vw;
+  }
+  main #box_tratamientos #box_sarro #intro_sarro img {
     width: 10vw;
   }
-  main #box_sarro #second_sarro #first_sarroSecond #intro_sarro_laptop {
-    padding: 0 8vw 0 8vw;
-    width: 60vw;
-  }
-  main #box_sarro #second_sarro #first_sarroSecond img {
-    border-radius: 0 20vw 0 20vw;
-    width: 40vw;
-  }
-  main #box_sarro #second_sarro #first_sarroSecond p {
-    font-size: 1.5vw;
-    margin: 0 0 1vw 0;
-  }
-  main #box_sarro #second_sarro #first_sarroSecond {
-    width: 40vw;
-  }
-  main #box_sarro #second_sarro #second_sarroSecond h3 {
-    font-size: 2.4vw;
-    margin: 0 0 1vw 0;
-  }
-  main #box_sarro #second_sarro #second_sarroSecond img {
-    border-radius: 0 20vw 0 20vw;
-    width: 40vw;
-  }
-  main #box_sarro #second_sarro #second_sarroSecond p {
-    font-size: 1.5vw;
-    margin: 0 0 1vw 0;
-  }
-  main #box_sarro #second_sarro #second_sarroSecond {
-    width: 40vw;
-  }
-  main #box_sarro {
-    width: 90vw;
-  }
-  main #box_amalgama {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  main #box_amalgama #sub_titulo_laptop {
-    display: flex;
-    justify-content: center;
-    font-size: 3vw;
-    margin: 2vw 0 2vw 0;
-    width: 90vw;
-  }
-  main #box_amalgama h2 {
-    font-size: 3vw;
-    margin: 1vw 0 1vw 0;
-  }
-  main #box_amalgama #intro_amalgama h3 {
+  main #box_tratamientos #box_sarro #intro_sarro h3 {
     font-size: 2vw;
   }
-  main #box_amalgama #intro_amalgama img {
-    margin: 0vw;
-    width: 8vw;
+  main #box_tratamientos #box_sarro #text_introS {
+    width: 70vw;
   }
-  main #box_amalgama #intro_amalgama {
+  main #box_tratamientos #box_sarro #text_introS p {
+    font-size: 1.1vw;
     margin: 0 0 1vw 0;
+    width: 50vw;
+  }
+  main #box_tratamientos #box_sarro #because_sarro img {
+    width: 25vw;
+  }
+  main #box_tratamientos #box_sarro #because_sarro p {
+    font-size: 1.1vw;
+    width: 50vw;
+  }
+  main #box_tratamientos #box_sarro #after_sarro {
+    width: 35vw;
+  }
+  main #box_tratamientos #box_sarro #after_sarro img {
+    width: 25vw;
+  }
+  main #box_tratamientos #box_sarro #after_sarro p {
+    font-size: 1.1vw;
+    margin: 0 0 1vw 0;
+    width: 50vw;
+  }
+  main #box_tratamientos #box_sarro #intro_sarroSecond {
+    width: 30vw;
+  }
+  main #box_tratamientos #box_sarro #intro_sarroSecond h2 {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #box_sarro #intro_sarroSecond img {
+    width: 10vw;
+  }
+  main #box_tratamientos #box_sarro #second_sarro #first_sarroSecond {
+    width: 35vw;
+  }
+  main #box_tratamientos #box_sarro #second_sarro #first_sarroSecond img {
+    width: 25vw;
+  }
+  main #box_tratamientos #box_sarro #second_sarro #first_sarroSecond p {
+    margin: 0 0 1vw 0;
+  }
+  main #box_tratamientos #box_sarro #second_sarro #second_sarroSecond {
+    width: 35vw;
+    color: #86D3DC;
+  }
+  main #box_tratamientos #box_sarro #second_sarro #second_sarroSecond img {
+    width: 25vw;
+  }
+  main #box_tratamientos #box_sarro #second_sarro #second_sarroSecond p {
+    font-size: 1.1vw;
+    margin: 0 0 1vw 0;
+    width: 50vw;
+  }
+  main #box_tratamientos #box_sarro #second_sarro #second_sarroSecond h3 {
+    font-size: 2vw;
+    margin: 0 0 1vw 0;
+  }
+  main #box_tratamientos #box_amalgama h2 {
+    font-size: 2vw;
+    margin: 1vw 0 0 0;
+  }
+  main #box_tratamientos #box_amalgama #intro_amalgama {
+    width: 35vw;
+  }
+  main #box_tratamientos #box_amalgama #intro_amalgama img {
+    width: 10vw;
+  }
+  main #box_tratamientos #box_amalgama #intro_amalgama h3 {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #box_amalgama #text_introA {
+    width: 50vw;
+  }
+  main #box_tratamientos #box_amalgama p {
+    font-size: 1.1vw;
+  }
+  main #box_tratamientos #box_amalgama h4 {
+    font-size: 1.5vw;
+  }
+  main #box_tratamientos #box_amalgama #first_amalgama {
+    width: 50vw;
+  }
+  main #box_tratamientos #box_amalgama #first_amalgama h3 {
+    font-size: 1.5vw;
+  }
+  main #box_tratamientos #box_amalgama #first_amalgama img {
+    width: 25vw;
+  }
+  main #box_tratamientos #box_amalgama #second_amalgama {
+    width: 50vw;
+  }
+  main #box_tratamientos #box_amalgama #second_amalgama h4 {
+    font-size: 1.5vw;
+  }
+  main #box_tratamientos #box_amalgama #second_amalgama img {
+    width: 25vw;
+  }
+  main #box_tratamientos #box_extraccion h2 {
+    font-size: 3vw;
+  }
+  main #box_tratamientos #box_extraccion em {
+    font-size: 1.1vw;
+    width: 50vw;
+  }
+  main #box_tratamientos #box_extraccion h4 {
+    font-size: 1.5vw;
     text-align: center;
-    width: 45vw;
-  }
-  main #box_amalgama #text_introA p {
-    font-size: 1.5vw;
-    margin: 0 0 1vw 0;
-  }
-  main #box_amalgama #sub_titulo_nothinglap {
-    display: none;
-  }
-  main #box_amalgama #first_amalgama h4 {
-    font-size: 2vw;
-  }
-  main #box_amalgama #first_amalgama img {
-    border-radius: 0 10vw 0 10vw;
-    width: 43vw;
-  }
-  main #box_amalgama #first_amalgama p {
-    font-size: 1.5vw;
-  }
-  main #box_amalgama #first_amalgama {
-    width: 43vw;
-  }
-  main #box_amalgama #second_amalgama h4 {
-    font-size: 2vw;
     margin: 0vw;
   }
-  main #box_amalgama #second_amalgama img {
-    border-radius: 0 10vw 0 10vw;
-    width: 40vw;
+  main #box_tratamientos #box_extraccion p {
+    font-size: 1.1vw;
+    width: 50vw;
   }
-  main #box_amalgama #second_amalgama p {
-    font-size: 1.5vw;
-  }
-  main #box_amalgama #second_amalgama {
-    width: 40vw;
-  }
-  main #box_extraccion h2 {
-    font-size: 3.3vw;
-  }
-  main #box_extraccion #intro_extraccion h2 {
-    font-size: 2.5vw;
-  }
-  main #box_extraccion #intro_extraccion img {
-    width: 6vw;
-  }
-  main #box_extraccion #intro_extraccion {
+  main #box_tratamientos #box_extraccion #intro_extraccion {
+    width: 30vw;
     margin: 2vw 0 1vw 0;
-    width: 40vw;
   }
-  main #box_extraccion #text_introE {
-    font-size: 1.5vw;
+  main #box_tratamientos #box_extraccion #intro_extraccion img {
+    width: 5vw;
   }
-  main #box_extraccion #text_introE p {
-    font-size: 1.5vw;
-  }
-  main #box_extraccion #first_extraccion {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 90vw;
-  }
-  main #box_extraccion #first_extraccion h4 {
-    display: flex;
-    font-size: 3vw;
-    justify-content: center;
-    margin: 0vw;
-    width: 90vw;
-  }
-  main #box_extraccion #first_extraccion p {
-    font-size: 1.5vw;
-  }
-  main #box_extraccion #first_extraccion video {
-    width: 60vw;
-  }
-  main #box_blanqueamiento {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  main #box_blanqueamiento #first_blanqueamiento h4 {
-    font-size: 2.5vw;
-  }
-  main #box_blanqueamiento #first_blanqueamiento img {
-    width: 40vw;
-  }
-  main #box_blanqueamiento #first_blanqueamiento {
-    margin: 2vw 0 0 0;
-  }
-  main #box_blanqueamiento #first_blanqueamiento p {
-    font-size: 1.5vw;
-  }
-  main #box_blanqueamiento #first_blanqueamiento {
-    width: 40vw;
-  }
-  main #box_blanqueamiento h2 {
-    font-size: 3vw;
-    margin: 0vw;
-  }
-  main #box_blanqueamiento #intro_blanqueamiento h2 {
+  main #box_tratamientos #box_extraccion #intro_extraccion h2 {
     font-size: 2vw;
   }
-  main #box_blanqueamiento #intro_blanqueamiento img {
-    width: 12vw;
+  main #box_tratamientos #box_extraccion video {
+    width: 30vw;
   }
-  main #box_blanqueamiento #intro_blanqueamiento {
-    width: 40vw;
+  main #box_tratamientos #box_extraccion #first_extraccion {
+    width: 50vw;
   }
-  main #box_blanqueamiento #second_blanqueamiento h4 {
-    font-size: 2.5vw;
-  }
-  main #box_blanqueamiento #second_blanqueamiento img {
-    width: 40vw;
-  }
-  main #box_blanqueamiento #second_blanqueamiento {
-    margin: 2vw 0 0 0;
-  }
-  main #box_blanqueamiento #second_blanqueamiento p {
+  main #box_tratamientos #box_extraccion #first_extraccion h4 {
     font-size: 1.5vw;
   }
-  main #box_blanqueamiento #second_blanqueamiento {
+  main #box_tratamientos #box_blanqueamiento {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  main #box_tratamientos #box_blanqueamiento h2 {
+    font-size: 3vw;
+  }
+  main #box_tratamientos #box_blanqueamiento p {
+    font-size: 1.1vw;
+    width: 50vw;
+  }
+  main #box_tratamientos #box_blanqueamiento em {
+    font-size: 1.1vw;
+    width: 50vw;
+  }
+  main #box_tratamientos #box_blanqueamiento h4 {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #intro_blanqueamiento {
     width: 40vw;
   }
-  main #box_blanqueamiento #text_introB p {
-    font-size: 1.5vw;
+  main #box_tratamientos #box_blanqueamiento #intro_blanqueamiento h2 {
+    font-size: 2vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #intro_blanqueamiento img {
+    width: 10vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #text_introB {
+    width: 50vw;
+  }
+  main #box_tratamientos #box_blanqueamiento video {
+    width: 30vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #first_blanqueamiento {
+    width: 20vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #first_blanqueamiento img {
+    width: 25vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #first_blanqueamiento h4 {
     margin: 0 0 1vw 0;
   }
-  main #box_blanqueamiento #text_introB {
-    font-size: 1.5vw;
+  main #box_tratamientos #box_blanqueamiento #first_blanqueamiento p {
+    margin: 0 0 1vw 0;
+    width: 30vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #second_blanqueamiento {
+    width: 20vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #second_blanqueamiento img {
+    width: 25vw;
+  }
+  main #box_tratamientos #box_blanqueamiento #second_blanqueamiento h4 {
     margin: 0 0 2vw 0;
   }
-  main #box_blanqueamiento #third_blanqueamiento {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 90vw;
+  main #box_tratamientos #box_blanqueamiento #second_blanqueamiento p {
+    margin: 0 0 1vw 0;
+    width: 30vw;
   }
-  main #box_blanqueamiento #third_blanqueamiento em {
-    font-size: 1.8vw;
+  main #box_tratamientos #box_blanqueamiento #third_blanqueamiento {
+    width: 50vw;
   }
-  main #box_blanqueamiento #third_blanqueamiento h4 {
-    font-size: 3vw;
+  main #box_tratamientos #box_blanqueamiento #third_blanqueamiento img {
+    width: 25vw;
   }
-  main #box_blanqueamiento #third_blanqueamiento p {
-    font-size: 1.8vw;
+  main #box_tratamientos #box_blanqueamiento #third_blanqueamiento h4 {
+    margin: 0 0 1vw 0;
   }
-  main #box_blanqueamiento #third_blanqueamiento video {
-    width: 60vw;
+  main #box_tratamientos #box_blanqueamiento #third_blanqueamiento p {
+    margin: 0 0 1vw 0;
+    width: 50vw;
   }
 }/*# sourceMappingURL=tratamientos.css.map */

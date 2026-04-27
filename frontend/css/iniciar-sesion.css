@@ -17,7 +17,7 @@ html, body {
 button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 50vw;
+  border-radius: 0.5vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
@@ -145,26 +145,26 @@ footer {
     justify-content: space-around;
   }
   footer #redes_sociales strong {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales p {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales {
     padding: 0vw;
   }
   footer #redes_sociales .logo {
-    width: 2.5vw;
+    width: 2vw;
   }
   footer #box_boton .btn_subir {
-    width: 5vw;
+    width: 4vw;
   }
   footer #box_ubicacion p {
-    font-size: 1.5vw;
+    font-size: 1vw;
     margin: 0vw 0 2vw 0;
   }
   footer #box_ubicacion strong {
-    font-size: 2vw;
+    font-size: 1vw;
   }
   footer #box_ubicacion {
     text-align: center;
@@ -196,8 +196,11 @@ header {
   width: 100vw;
 }
 @media (min-width: 481.98px) {
+  header {
+    padding: 0 4vw 0 4vw;
+  }
   header button {
-    font-size: 2vw;
+    font-size: 1.2vw;
     margin: 0 2vw 0 0vw;
   }
   header button:hover {
@@ -210,7 +213,7 @@ header {
     display: none;
   }
   header #logo {
-    width: 20vw;
+    width: 15vw;
   }
   header .side_menu {
     display: flex;
@@ -220,12 +223,15 @@ header {
   }
 }
 @media (min-width: 769.98px) {
-  header #logo {
-    margin: 1vw 0 1vw 0;
-    width: 15vw;
+  header {
+    padding: 0 5vw 0 5vw;
   }
   header button {
-    font-size: 1.5vw;
+    font-size: 1.1vw;
+  }
+  header #logo {
+    margin: 1vw 0 1vw 0;
+    width: 13vw;
   }
 }
 header button {
@@ -297,11 +303,12 @@ main {
 }
 main h2 {
   color: #3498db;
-  font-size: 6vw;
+  font-size: 4vw;
   text-shadow: 0 2px 8px rgba(52, 152, 219, 0.15);
   margin: 5vw 0 5vw 0;
 }
 main p {
+  font-size: 2vw;
   margin: 5vw 0 5vw 0;
 }
 main form#loginForm {
@@ -311,14 +318,14 @@ main form#loginForm {
   padding: 3vw 5vw;
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 60vw;
   margin: 5vw 0 5vw 0;
 }
 main form#loginForm input {
   padding: 1vw 2vw;
   border-radius: 8px;
   border: 1px solid #b2d8f7;
-  font-size: 4vw;
+  font-size: 2.5vw;
   margin-bottom: 1vw;
   background: #f7fbff;
   transition: border-color 0.2s;
@@ -334,7 +341,7 @@ main form#loginForm button[type=submit] {
   border: none;
   border-radius: 8px;
   padding: 1vw 0;
-  font-size: 4vw;
+  font-size: 2.5vw;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
   transition: background 0.2s;
@@ -398,10 +405,10 @@ main #mensajeBienvenida {
 }
 @media (min-width: 769.98px) {
   main h2 {
-    font-size: 3vw;
+    font-size: 2vw;
   }
   main p {
-    font-size: 2vw;
+    font-size: 1vw;
   }
   main h1 {
     font-size: 3vw;
@@ -410,13 +417,21 @@ main #mensajeBienvenida {
     font-size: 1.5vw;
   }
   main form#loginForm {
-    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+    width: 30vw;
   }
   main form#loginForm input {
-    font-size: 1.5vw;
+    font-size: 1vw;
+    width: 90%;
   }
   main form#loginForm button[type=submit] {
-    font-size: 1.5vw;
+    justify-content: center;
+    font-size: 1vw;
+    width: 50%;
   }
   main form#loginForm {
     margin: 0vw 0 0vw 0;

@@ -88,28 +88,28 @@
         #redes_sociales {
             @include box-row();
             strong {
-                font-size: 1.5vw;
+                font-size: 1vw;
             }
             p {
-                font-size: 1.5vw;
+                font-size: 1vw;
             }
             padding: 0vw;
             .logo {
-                width: 2.5vw;
+                width: 2vw;
             }
         }
         #box_boton {
             .btn_subir {
-                width: 5vw;
+                width: 4vw;
             }
         }
         #box_ubicacion {
             p {
-                font-size: 1.5vw;
+                font-size: 1vw;
                 margin: 0vw 0 2vw 0;
             }
             strong {
-                font-size: 2vw;
+                font-size: 1vw;
             }
             text-align: center;
         }

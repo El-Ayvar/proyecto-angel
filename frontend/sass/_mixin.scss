@@ -27,7 +27,7 @@
     //background-color: rgba(255, 255, 255, 0.674);
     background: transparent;
     border: 2px solid rgb(99, 130, 143);
-    border-radius: 50vw;
+    border-radius: 0.5vw;
     color: rgb(99, 130, 143);
     cursor: pointer;
     font-size: 4vw;
@@ -65,12 +65,13 @@
 
 @mixin img {
     border-radius: 15px;
-    width: 50vw;
+    width: auto;
+    height: 50%;
 }
 
 @mixin img-tratamientos {
-    border-radius: 0vw 40vw 0vw 40vw;
-    width: 90vw;
+    border-radius: 0vw 30vw 0vw 30vw;
+    width: 50vw;
 }
 
 @mixin info-cards {
@@ -110,7 +111,7 @@
     margin: 0vw 0 3vw 0;
     width: 95vw;
     @media (min-width: 481.98px) {
-        width: 90vw;
+        width: 70vw;
     }
 }
 

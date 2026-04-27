@@ -387,34 +387,41 @@ function mostrarResultadosBusqueda(pacientes) {
     pacientes.forEach(paciente => {
         const li = document.createElement('li');
         li.style.borderBottom = '1px solid #ddd';
-        li.style.cursor = 'pointer';
         
         const nombre = paciente.usuario?.nombre || 'Sin nombre';
         const email = paciente.usuario?.email || 'Sin email';
 
         li.innerHTML = `
             <div id="infoPaciente" style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
+                <div style="flex-grow: 1; cursor: pointer;">
                     <strong>${nombre}</strong> <br>
                     <small style="color: #7f8c8d;">${email}</small>
                 </div>
-                <button style="background-color: #2ecc71; color: white; cursor: pointer; border-radius: 4px;">Abrir Expediente</button>
+                <div class="box_botones">
+                    <button class="btn-abrir-expediente" style="background-color: #2ecc71; color: white; cursor: pointer; border-radius: 4px;">Abrir Expediente</button>
+                    <button class="btn-eliminar" style="background: red; color: white;">Eliminar</button>
+                </div>
             </div>
         `;
 
-        // dandole clic, abre el expediente completo haciendo la consulta al backend
-        li.addEventListener('click', () => abrirExpediente(paciente._id));
+        // Agregar listener al botón "Abrir Expediente"
+        li.querySelector('.btn-abrir-expediente').addEventListener('click', (e) => {
+            e.stopPropagation();
+            abrirExpediente(paciente._id);
+        });
+
+        // Agregar listener al botón "Eliminar"
+        li.querySelector('.btn-eliminar').addEventListener('click', (e) => {
+            e.stopPropagation();
+            borrarRegistro(paciente._id);
+        });
+
+        // Agregar listener al área de información del paciente para abrir expediente
+        li.querySelector('[style*="flex-grow"]').addEventListener('click', () => {
+            abrirExpediente(paciente._id);
+        });
+
         lista.appendChild(li);
-        li.addEventListener('click', () => {
-            document.getElementById('historial-pasado').style.display = 'flex'; //Aqui hice que se hiciera flexible para que apareciera despues de dar click ya que salia solo el cuadro del borde y se veia feo
-        });
-        li.addEventListener('click', () => {
-            document.getElementById('citas-paciente').style.display = 'flex'; //Aqui hice que se hiciera flexible para que apareciera despues de dar click ya que salia solo el cuadro del borde y se veia feo
-        });
-        li.addEventListener('click',() => {
-            document.getElementById('panel-historial').style.flexWrap = 'wrap';  //Aqui estoyhaciendo que cuando den click al boton el panel historial se vuelva wrap, y que aparecia un cuadro fantasma
-            document.getElementById('panel-historial').style.flexDirection = 'row';  //Aqui estoyhaciendo que cuando den click al boton el panel historial se vuelva row y no column
-        });
     });
 }
 
@@ -447,19 +454,39 @@ async function abrirExpediente(idPaciente) {
             
             // 1. Mostrar Datos Médicos
             divDatos.innerHTML = `
-                <div>
-                    <div style="flex: 1;">
-                        <p style="margin: 5px 0;"><strong>📧 Email:</strong> ${data.datosPersonales?.email || 'N/A'}</p>
-                        <p style="margin: 5px 0;"><strong>📞 Teléfono:</strong> ${paciente.telefono || 'N/A'}</p>
-                        <p style="margin: 5px 0;"><strong>🏠 Dirección:</strong> ${paciente.direccion || 'N/A'}</p>
-                    </div>
-                    <div style="flex: 1;">
-                        <p style="margin: 5px 0;"><strong>🩸 Tipo Sangre:</strong> ${paciente.tipoSangre || 'N/A'}</p>
-                        <p style="margin: 5px 0;"><strong>🚫 Alergias:</strong> ${paciente.alergias || 'Ninguna'}</p>
-                        <p style="margin: 5px 0;"><strong>🏥 Enf. Crónicas:</strong> ${paciente.enfermedadesCronicas || 'Ninguna'}</p>
-                    </div>
+                <div id="boxForm">
+                        <div id="formEnfermedadesCronicas" class="form-label">
+                            <strong>Enf. Crónicas</strong> 
+                            <p> ${Array.isArray(paciente.enfermedadesCronicas) ? paciente.enfermedadesCronicas.join(', ') : paciente.enfermedadesCronicas || 'Ninguna'}</p>
+                        </div>
+
+                        <div id="formAlergias" class="form-label">
+                            <strong>Alergias</strong> 
+                            <p> ${Array.isArray(paciente.alergias) ? paciente.alergias.join(', ') : paciente.alergias || 'Ninguna'}</p>
+                        </div>
+
+                        <div id="formTipoSangre" class="form-label">
+                            <strong>Tipo Sangre</strong> 
+                            <p> ${paciente.tipoSangre || 'N/A'}</p>
+                        </div>
+
+                        <div id="formEmail" class="form-label">
+                            <strong>Email</strong> 
+                            <p> ${data.datosPersonales?.email || 'N/A'}</p>
+                        </div>
+
+                        <div id="formTelefono" class="form-label">
+                            <strong>Teléfono</strong> 
+                            <p> ${paciente.telefono || 'N/A'}</p>
+                        </div>
+
+                        <div id="formDireccion" class="form-label">
+                            <strong>Dirección</strong> 
+                            <p> ${paciente.direccion || 'N/A'}</p>
+                        </div>
                 </div>
             `;
+            //console.log("Datos del paciente:", paciente.enfermedadesCronicas);
 
             // 2. Mostrar Citas
             renderizarCitasPaciente(citas);
@@ -472,6 +499,11 @@ async function abrirExpediente(idPaciente) {
             }
             
             // 4. Mostrar el panel y hacer scroll hacia él 
+            document.getElementById('historial-pasado').style.display = 'flex';
+            document.getElementById('citas-paciente').style.display = 'flex';
+            document.getElementById('panel-historial').style.display = 'flex';
+            document.getElementById('panel-historial').style.flexWrap = 'wrap';
+            document.getElementById('panel-historial').style.flexDirection = 'row';
             panel.scrollIntoView({ behavior: 'smooth' });
         } else {
             mostrarAviso('Error al cargar el expediente completo', 'error');
@@ -667,4 +699,90 @@ function mostrarAviso(texto, tipo = 'info', callback) {
     if(tipo === 'error') textoElem.style.color = '#c0392b';
     if(tipo === 'success') textoElem.style.color = '#27ae60';
     if(tipo === 'info') textoElem.style.color = '#2c3e50';
+}
+
+// Función para mostrar un modal de confirmación
+function mostrarConfirmacion(texto, onConfirm, onCancel) {
+    let modal = document.getElementById('confirmacion-modal');
+    
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'confirmacion-modal';
+        // Cambio clave: Usamos 'class' para contenido y texto para coincidir con tu SCSS
+        modal.innerHTML = `
+            <div class="confirmacion-contenido">
+                <p class="confirmacion-texto"></p>
+                <div id="confirmacion-botones">
+                    <button id="confirmacion-cancelar">Cancelar</button>
+                    <button id="confirmacion-confirmar">Eliminar</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        // Se ha eliminado toda la lógica de document.createElement('style')
+    }
+    
+    modal.style.display = 'flex';
+    // Cambio clave: Seleccionamos por clase en lugar de ID
+    const textoElem = modal.querySelector('.confirmacion-texto');
+    textoElem.textContent = texto;
+    
+    const btnCancelar = modal.querySelector('#confirmacion-cancelar');
+    const btnConfirmar = modal.querySelector('#confirmacion-confirmar');
+    
+    btnCancelar.onclick = () => {
+        modal.style.display = 'none';
+        if (typeof onCancel === 'function') onCancel();
+    };
+    
+    btnConfirmar.onclick = () => {
+        modal.style.display = 'none';
+        if (typeof onConfirm === 'function') onConfirm();
+    };
+}
+
+// Función para eliminar un paciente
+async function borrarRegistro(idPaciente) {
+    mostrarConfirmacion(
+        '¿Estás seguro de que deseas eliminar este paciente? Esta acción no se puede deshacer.',
+        async () => {
+            // Si confirma, ejecutar eliminación
+            const token = localStorage.getItem('token');
+            const API_URL = 'http://localhost:3000/api';
+            
+            try {
+                console.log('Intentando eliminar paciente:', idPaciente);
+                const res = await fetch(`${API_URL}/pacientes/${idPaciente}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                console.log('Respuesta del servidor:', res.status, res.statusText);
+                const data = await res.json();
+                console.log('Datos de respuesta:', data);
+                
+                if (res.ok) {
+                    mostrarAviso('✅ Paciente eliminado correctamente', 'success', () => {
+                        cargarTodosLosPacientes(); // Recargar la lista
+                        // Cerrar el expediente si estaba abierto
+                        const panel = document.getElementById('panel-historial');
+                        if (panel) panel.style.display = 'none';
+                    });
+                } else {
+                    mostrarAviso('❌ Error: ' + (data.msg || 'No se pudo eliminar el paciente'), 'error');
+                }
+            } catch (error) {
+                console.error('Error al eliminar paciente:', error);
+                mostrarAviso('❌ Error de conexión al servidor', 'error');
+            }
+        },
+        () => {
+            // Si cancela, no hacer nada
+            console.log('Eliminación cancelada');
+        }
+    );
 }

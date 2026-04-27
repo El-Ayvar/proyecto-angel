@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -25,7 +26,7 @@ html, body {
 button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 50vw;
+  border-radius: 0.5vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
@@ -153,26 +154,26 @@ footer {
     justify-content: space-around;
   }
   footer #redes_sociales strong {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales p {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales {
     padding: 0vw;
   }
   footer #redes_sociales .logo {
-    width: 2.5vw;
+    width: 2vw;
   }
   footer #box_boton .btn_subir {
-    width: 5vw;
+    width: 4vw;
   }
   footer #box_ubicacion p {
-    font-size: 1.5vw;
+    font-size: 1vw;
     margin: 0vw 0 2vw 0;
   }
   footer #box_ubicacion strong {
-    font-size: 2vw;
+    font-size: 1vw;
   }
   footer #box_ubicacion {
     text-align: center;
@@ -201,8 +202,11 @@ header {
   width: 100vw;
 }
 @media (min-width: 481.98px) {
+  header {
+    padding: 0 4vw 0 4vw;
+  }
   header button {
-    font-size: 2vw;
+    font-size: 1.2vw;
     margin: 0 2vw 0 0vw;
   }
   header button:hover {
@@ -215,7 +219,7 @@ header {
     display: none;
   }
   header #logo {
-    width: 20vw;
+    width: 15vw;
   }
   header .side_menu {
     display: flex;
@@ -225,12 +229,15 @@ header {
   }
 }
 @media (min-width: 769.98px) {
-  header #logo {
-    margin: 1vw 0 1vw 0;
-    width: 15vw;
+  header {
+    padding: 0 5vw 0 5vw;
   }
   header button {
-    font-size: 1.5vw;
+    font-size: 1.1vw;
+  }
+  header #logo {
+    margin: 1vw 0 1vw 0;
+    width: 13vw;
   }
 }
 
@@ -239,68 +246,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-main .amalgama {
-  -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
-  mask-image: linear-gradient(to left, black 40%, transparent 100%);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  border-radius: 15px;
-  width: 50vw;
-}
-main .blanqueamiento {
-  -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
-  mask-image: linear-gradient(to left, black 40%, transparent 100%);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  border-radius: 15px;
-  width: 50vw;
-}
-main #boximg_fractura {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  margin: 0vw;
-  width: 50vw;
-}
-main #boximg_sarro {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  border-radius: 15px;
-  margin: 0vw;
-}
-main #boximg_restauracion {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  margin: 0px;
-}
-main #boximg_extraccion {
-  height: auto;
-  margin: 0vw;
-}
-main #boximg_amalgama {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  margin: 0vw;
-}
-main #boximg_blanqueamiento {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  margin: 0vw;
 }
 main #box_publicidad {
   background-color: rgba(238, 249, 250, 0.582);
@@ -311,7 +256,7 @@ main #box_publicidad #pub_promo {
 }
 @media (min-width: 481.98px) {
   main #box_publicidad #pub_promo {
-    width: 90vw;
+    width: 70vw;
   }
 }
 main #box_publicidad #pub_limpieza {
@@ -320,99 +265,170 @@ main #box_publicidad #pub_limpieza {
 }
 @media (min-width: 481.98px) {
   main #box_publicidad #pub_limpieza {
-    width: 90vw;
+    width: 70vw;
   }
 }
 main #box_publicidad {
   height: auto;
   width: 100vw;
 }
-main #card_blanqueamiento {
-  align-items: center;
+main .cards {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #DAF1F0;
-  border-radius: 15px;
-  height: auto;
-  padding: 0 0 0 1vw;
-  margin: 0 0 7vw 0;
-}
-main #card_amalgama {
+  flex-direction: column;
   align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border-radius: 15px;
+  justify-content: center;
   background-color: #DAF1F0;
-  height: auto;
+  border-radius: 5vw;
+  border: 1px solid rgba(132, 162, 203, 0.52);
+  overflow: hidden;
   margin: 0 0 7vw 0;
+  max-width: 70vw;
+  transition: transform 0.3s ease;
+  height: auto;
 }
-main #card_extraccion {
+main .cards #boximg_extraccion {
+  max-width: 70vw;
+  overflow: hidden;
+  height: auto;
+}
+main .cards #boximg_extraccion #video_extraccion {
+  width: 70vw;
+}
+main .cards .boxImg {
+  border-radius: 5vw;
+  position: relative;
+  overflow: hidden;
+  max-width: 100vw;
+  --position: 50%;
+}
+main .cards .boxImg #secondR {
+  display: none;
+}
+main .cards .boxImg img {
+  max-width: 60vw;
+}
+main .cards .boxImg .imgAfter {
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .cards .boxImg .imgBefore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100vw;
+  height: 98%;
+  clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+}
+main .cards .boxImg {
+  /* Input tipo rango invisible (el control interactivo) */
+}
+main .cards .boxImg .slider-range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Invisible pero clickable */
+  cursor: ew-resize; /* Cursor de flechas horizontales */
+  z-index: 10;
+  /* --- AÑADE ESTO PARA ARREGLAR LA VELOCIDAD --- */
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none; /* Quita los estilos por defecto de Google Chrome/Safari */
+  -moz-appearance: none;
+       appearance: none;
+  background: transparent;
+}
+main .cards .boxImg {
+  /* --- AÑADE ESTA NUEVA REGLA --- */
+  /* Esto hace que el "agarre" invisible sea exacto y no cause desfases */
+}
+main .cards .boxImg .slider-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 36px; /* Debe medir lo mismo que tu .slider-button (36px) */
+  height: 36px; /* Que cubra todo el alto para agarrarlo de cualquier parte */
+  cursor: ew-resize;
+}
+main .cards .boxImg {
+  /* Línea separadora blanca */
+}
+main .cards .boxImg .slider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--position);
+  width: 3px;
+  background: white;
+  z-index: 5;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  pointer-events: none; /* Para no estorbar al arrastrar */
+}
+main .cards .boxImg {
+  /* Botón redondo del centro */
+}
+main .cards .boxImg .slider-button {
+  position: absolute;
+  top: 50%;
+  left: var(--position);
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
   align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border-radius: 15px;
-  background-color: #DAF1F0;
-  height: auto;
-  margin: 0 0 7vw 0;
+  justify-content: center;
 }
-main #card_fractura {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #DAF1F0;
-  border-radius: 15px;
-  height: auto;
-  margin: 0 0 7vw 0;
+main .cards .boxImg {
+  /* Flechas del botón */
 }
-main #card_restauracion {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #DAF1F0;
-  border-radius: 15px;
-  height: auto;
-  margin: 0 0 7vw 0;
+main .cards .boxImg .slider-button::after {
+  content: "◀ ▶";
+  color: #333;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: -1px;
 }
-main #card_sarro {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border-radius: 15px;
-  background-color: #DAF1F0;
-  height: auto;
-  margin: 0 0 7vw 0;
-}
-main .cards_tratamientos {
-  flex-direction: row;
-  width: 90vw;
-}
-main .cards_tratamientos div {
-  height: 40vh;
-  color: rgba(0, 0, 0, 0.519);
+main .cards .boxTB {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  max-width: 70vw;
+}
+main .cards .boxTB .text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 70vw;
+  padding: 3vw;
+}
+main .cards .boxTB .text strong {
+  color: rgba(51, 51, 51, 0.8509803922);
+  margin: 2vw 0 2vw 0;
+}
+main .cards .boxTB .text p {
+  color: rgba(51, 51, 51, 0.8509803922);
+  margin: 0 0 2vw 0;
+}
+main .cards .boxTB button {
+  margin: 0 0 3vw 0;
+}
+main .cards:hover {
+  transform: translateY(-5px);
 }
 main .desvanecido {
   mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-}
-main .fractura {
-  border-radius: 15px;
-  width: 50vw;
-  mask-repeat: no-repeat;
-  mask-image: linear-gradient(to right, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
-  -webkit-mask-repeat: no-repeat;
 }
 main h1 {
   color: #87D0CD;
@@ -428,103 +444,7 @@ main h2 {
 main h3 {
   color: #86D3DC;
   font-size: 6vw;
-}
-main #info_blanqueamiento {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  color: rgba(0, 0, 0, 0.532);
-}
-main #info_blanqueamiento p {
-  font-size: 3vw;
-  margin: 2vw 0 2vw 0;
-}
-main #info_blanqueamiento strong {
-  text-align: start;
-  width: 40vw;
-  margin: 2vw 0 2vw 0;
-}
-main #info_fractura {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  color: rgba(0, 0, 0, 0.578);
-}
-main #info_fractura p {
-  font-size: 3vw;
-  margin: 2vw 0 2vw 0;
-}
-main #info_fractura #second_PF {
-  margin: 2vw 0 0vw 0;
-}
-main #info_extraccion {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  color: rgba(0, 0, 0, 0.575);
-}
-main #info_extraccion strong {
-  text-align: start;
-  margin: 2vw 0 0vw 0;
-  width: 30vw;
-}
-main #info_extraccion p {
-  margin: 2vw 0 1vw 0;
-}
-main #info_restauracion {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  color: rgba(0, 0, 0, 0.545);
-  padding: 0 0 0 1vw;
-}
-main #info_restauracion p {
-  font-size: 3.5vw;
-  margin: 2vw 0 1vw 0;
-}
-main #info_restauracion strong {
-  margin: 1vw 0 1vw 0;
-}
-main #info_sarro {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  color: rgba(0, 0, 0, 0.571);
-}
-main #info_sarro p {
-  font-size: 3vw;
-  margin: 0vw 0 1vw 0;
-}
-main #info_sarro strong {
-  margin: 2vw 0 2vw 0;
-}
-main #info_amalgama {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 90vw;
-  color: rgba(0, 0, 0, 0.574);
-  padding: 0 0 0 1vw;
-}
-main #info_amalgama p {
-  font-size: 3vw;
-  margin: 2vw 0 1vw 0;
-}
-main #info_amalgama strong {
-  text-align: start;
-  margin: 2vw 0 2vw 0;
-  width: 40vw;
+  margin: 0 0 2vw 0;
 }
 main #intro_text h2 {
   padding: 0 10vw 0 1vw;
@@ -541,14 +461,6 @@ main .links {
 }
 main p {
   font-size: 3vw;
-}
-main .restauracion {
-  border-radius: 15px;
-  width: 50vw;
-  -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
-  mask-image: linear-gradient(to left, black 40%, transparent 100%);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
 }
 main section {
   align-items: center;
@@ -573,14 +485,6 @@ main .subtitulo_slide {
   right: 5vw;
   width: 90vw;
 }
-main .sarro {
-  mask-repeat: no-repeat;
-  mask-image: linear-gradient(to right, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
-  -webkit-mask-repeat: no-repeat;
-  border-radius: 15px;
-  width: 60vw;
-}
 main #second_intro {
   height: auto;
 }
@@ -603,14 +507,6 @@ main #tratamientos {
 }
 main #tratamientos h3 {
   margin: 2vw 0 4vw 0;
-}
-main #video_extraccion {
-  mask-repeat: no-repeat;
-  mask-image: linear-gradient(to right, black 60%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
-  -webkit-mask-repeat: no-repeat;
-  border-radius: 15px;
-  width: 60vw;
 }
 
 #maps {
@@ -664,154 +560,65 @@ main #video_extraccion {
 
 @media (min-width: 481.98px) {
   main .acceso_redes {
-    width: 8vw;
+    transition: transform 0.3s ease;
+    width: 5.5vw;
+  }
+  main .acceso_redes:hover {
+    transform: scale(1.3);
   }
   main #tratamientos {
-    align-items: center;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    display: block;
+    flex-wrap: wrap;
   }
-  main #tratamientos #card_fractura button {
-    font-size: 2vw;
-  }
-  main #tratamientos #card_fractura #boximg_fractura {
-    height: auto;
-    width: auto;
-  }
-  main #tratamientos #card_fractura .fractura {
-    height: auto;
-    width: 25vw;
-  }
-  main #tratamientos #card_fractura #info_fractura {
+  main #tratamientos .cards {
+    display: flex;
+    overflow: hidden;
     width: 35vw;
   }
-  main #tratamientos #card_fractura strong {
-    font-size: 1.7vw;
+  main #tratamientos .cards .boxTB {
+    width: 30vw;
   }
-  main #tratamientos #card_fractura p {
-    font-size: 1.7vw;
-    margin: 0.5vw 0 0 0;
+  main #tratamientos .cards .boxTB .text {
+    padding: 0.5vw;
   }
-  main #tratamientos #card_fractura {
-    width: 44vw;
-  }
-  main #tratamientos #card_restauracion button {
-    font-size: 2vw;
-  }
-  main #tratamientos #card_restauracion #boximg_restauracion {
-    height: auto;
-    width: auto;
-  }
-  main #tratamientos #card_restauracion .restauracion {
-    height: auto;
-    width: 25vw;
-  }
-  main #tratamientos #card_restauracion strong {
-    font-size: 1.7vw;
-    margin: 0 0 1vw 0;
-  }
-  main #tratamientos #card_restauracion p {
-    font-size: 1.7vw;
-    margin: 1vw 0 0 0;
-  }
-  main #tratamientos #card_restauracion {
-    width: 44vw;
-  }
-  main #tratamientos #card_sarro button {
-    font-size: 2vw;
-  }
-  main #tratamientos #card_sarro #boximg_sarro {
-    height: auto;
-    width: auto;
-  }
-  main #tratamientos #card_sarro strong {
-    font-size: 1.7vw;
+  main #tratamientos .cards .boxTB .text p {
+    font-size: 1.35vw;
     margin: 0 0 0.5vw 0;
   }
-  main #tratamientos #card_sarro p {
-    font-size: 1.7vw;
-    margin: 0.5vw 0 0 0;
-  }
-  main #tratamientos #card_sarro .sarro {
-    width: 25vw;
-  }
-  main #tratamientos #card_sarro {
-    width: 44vw;
-  }
-  main #tratamientos #card_amalgama .amalgama {
-    width: 25vw;
-  }
-  main #tratamientos #card_amalgama #boximg_amalgama {
+  main #tratamientos .cards .boxTB .text {
     height: auto;
-    width: auto;
   }
-  main #tratamientos #card_amalgama button {
-    font-size: 2vw;
-  }
-  main #tratamientos #card_amalgama #info_amalgama {
-    width: 20vw;
-  }
-  main #tratamientos #card_amalgama strong {
-    font-size: 1.7vw;
+  main #tratamientos .cards .boxTB .text strong {
+    font-size: 1.5vw;
     margin: 0 0 1vw 0;
-    width: 18vw;
   }
-  main #tratamientos #card_amalgama p {
-    font-size: 1.7vw;
-    margin: 1vw 0 0 0;
+  main #tratamientos .cards .boxTB button {
+    font-size: 1.5vw;
   }
-  main #tratamientos #card_amalgama {
-    width: 44vw;
-  }
-  main #tratamientos #card_extraccion #boximg_extraccion {
-    height: auto;
-    width: auto;
-  }
-  main #tratamientos #card_extraccion button {
-    font-size: 2vw;
-  }
-  main #tratamientos #card_extraccion strong {
-    font-size: 1.7vw;
-    margin: 0 0 0vw 0;
-    width: 19vw;
-  }
-  main #tratamientos #card_extraccion p {
-    font-size: 1.7vw;
-    margin: 0.5vw 0 0 0;
-  }
-  main #tratamientos #card_extraccion video {
-    width: 25vw;
-  }
-  main #tratamientos #card_extraccion {
-    width: 44vw;
-  }
-  main #tratamientos #card_blanqueamiento #boximg_blanqueamiento {
-    height: auto;
-    width: auto;
-  }
-  main #tratamientos #card_blanqueamiento .blanqueamiento {
-    width: 25vw;
-  }
-  main #tratamientos #card_blanqueamiento button {
-    font-size: 2vw;
-    margin: 2vw 0 0 0;
-  }
-  main #tratamientos #card_blanqueamiento strong {
-    font-size: 1.7vw;
+  main #tratamientos .cards .boxImg {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+    border-radius: 15px;
+    aspect-ratio: 3/2;
+    -o-object-fit: cover;
+       object-fit: cover;
     margin: 0 0 1vw 0;
-    width: auto;
+    width: 35vw;
   }
-  main #tratamientos #card_blanqueamiento #info_blanqueamiento {
-    width: 20vw;
+  main #tratamientos .cards .boxImg .imgAfter {
+    width: 100%;
   }
-  main #tratamientos #card_blanqueamiento p {
-    font-size: 1.7vw;
-    margin: 1vw 0 0 0;
+  main #tratamientos .cards .boxImg .imgBefore {
+    width: 35vw;
+    height: 100%;
   }
-  main #tratamientos #card_blanqueamiento {
-    width: 44vw;
+  main #tratamientos .cards #boximg_extraccion {
+    overflow: hidden;
+    margin: 0vw;
+  }
+  main #tratamientos .cards #boximg_extraccion #video_extraccion {
+    max-width: 35vw;
   }
   main #tratamientos {
     -moz-column-count: 2;
@@ -821,41 +628,62 @@ main #video_extraccion {
     flex-wrap: wrap;
   }
   main h1 {
-    font-size: 5vw;
+    font-size: 3.3vw;
   }
   main h3 {
-    font-size: 5vw;
+    font-size: 3vw;
     margin: 0 0 4vw 0;
   }
   main #intro_text h2 {
-    font-size: 4vw;
+    font-size: 2.5vw;
+    text-align: start;
+    padding: 0;
+    width: 70vw;
   }
   main #intro_text p {
-    font-size: 2.3vw;
+    font-size: 1.5vw;
+  }
+  main #intro_text {
+    width: 70vw;
   }
   main #second_intro h2 {
-    font-size: 4vw;
+    font-size: 2.5vw;
+    text-align: start;
+    padding: 0;
+    width: 70vw;
   }
   main #second_intro p {
-    font-size: 2.3vw;
+    font-size: 1.5vw;
+  }
+  main #second_intro {
+    width: 70vw;
+  }
+  main #box_publicidad {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  main #box_publicidad #pub_promo {
+    width: 40vw;
+  }
+  main #box_publicidad #pub_limpieza {
+    width: 43vw;
+  }
+  main {
+    width: 80vw;
   }
   #whatsapp {
-    bottom: 15vw;
+    bottom: 12vw;
   }
 }
 @media (min-width: 769.98px) {
-  main {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
   main .acceso_redes {
     bottom: 1vw;
-    width: 5vw;
+    transition: transform 0.3s ease;
+    width: 3vw;
   }
-  main {
-    flex-wrap: wrap;
+  main .acceso_redes:hover {
+    transform: scale(1.3);
   }
   main h1 {
     font-size: 2.8vw;
@@ -866,21 +694,21 @@ main #video_extraccion {
   main #intro_text h2 {
     font-size: 1.5vw;
     padding: 0vw;
-    width: 45vw;
+    width: 60vw;
   }
   main #intro_text p {
     color: rgba(0, 0, 0, 0.5921568627);
     font-size: 1vw;
     margin: 0.5vw 0 0.5vw 0;
+    width: 60vw;
   }
   main #intro_text {
-    margin: 0 0vw 4vw 3vw;
-    width: 45vw;
+    width: 60vw;
   }
   main #second_intro h2 {
     font-size: 1.5vw;
     padding: 0vw;
-    width: 45vw;
+    width: 60vw;
   }
   main #second_intro p {
     color: rgba(0, 0, 0, 0.5921568627);
@@ -888,165 +716,54 @@ main #video_extraccion {
     margin: 0.5vw 0 0.5vw 0;
   }
   main #second_intro {
-    margin: 0 1vw 4vw 0;
-    width: 45vw;
+    width: 60vw;
   }
-  main #tratamientos #card_fractura button {
-    font-size: 1.5vw;
-  }
-  main #tratamientos #card_fractura #boximg_fractura {
-    height: auto;
+  main #tratamientos .cards {
+    overflow-y: hidden;
     width: auto;
   }
-  main #tratamientos #card_fractura .fractura {
+  main #tratamientos .cards .boxImg {
     height: auto;
-    width: 17vw;
-  }
-  main #tratamientos #card_fractura #info_fractura {
-    width: 15vw;
-  }
-  main #tratamientos #card_fractura strong {
-    font-size: 1.3vw;
-  }
-  main #tratamientos #card_fractura p {
-    font-size: 1.2vw;
-    margin: 0.5vw 0 0 0;
-  }
-  main #tratamientos #card_fractura {
-    margin: 0 0 5vw 0;
-    width: auto;
-  }
-  main #tratamientos #card_restauracion button {
-    font-size: 1.5vw;
-  }
-  main #tratamientos #card_restauracion #boximg_restauracion {
-    height: auto;
-    width: auto;
-  }
-  main #tratamientos #card_restauracion .restauracion {
-    height: auto;
-    width: 15vw;
-  }
-  main #tratamientos #card_restauracion strong {
-    font-size: 1.2vw;
-    margin: 0 0 1vw 0;
-    width: 100%;
-  }
-  main #tratamientos #card_restauracion p {
-    font-size: 1.2vw;
-    margin: 0vw 0 0.8vw 0;
-  }
-  main #tratamientos #card_restauracion {
-    width: auto;
-  }
-  main #tratamientos #card_sarro button {
-    font-size: 1.5vw;
-  }
-  main #tratamientos #card_sarro #boximg_sarro {
-    height: auto;
-    width: auto;
-  }
-  main #tratamientos #card_sarro strong {
-    font-size: 1.2vw;
     margin: 0 0 0.5vw 0;
-    width: 100%;
-  }
-  main #tratamientos #card_sarro p {
-    font-size: 1.2vw;
-    margin: 0.5vw 0 0 0;
-  }
-  main #tratamientos #card_sarro .sarro {
-    width: 18vw;
-  }
-  main #tratamientos #card_sarro {
-    margin: 0 0 4vw 0;
     width: auto;
   }
-  main #tratamientos #card_amalgama .amalgama {
-    width: 18vw;
+  main #tratamientos .cards .boxImg .imgAfter {
+    width: 25vw;
   }
-  main #tratamientos #card_amalgama #boximg_amalgama {
-    height: auto;
+  main #tratamientos .cards .boxImg .imgBefore {
+    width: 25vw;
+  }
+  main #tratamientos .cards .boxImg .slider-button {
+    width: 3vw;
+    height: 4.5vh;
+  }
+  main #tratamientos .cards .boxImg .slider-button::after {
+    content: "◀ ▶";
+    font-weight: bold;
+    font-size: 0.8vw;
+  }
+  main #tratamientos .cards .boxImg {
+    letter-spacing: -1px;
+  }
+  main #tratamientos .cards #boximg_extraccion {
     width: auto;
-  }
-  main #tratamientos #card_amalgama button {
-    font-size: 1.5vw;
-  }
-  main #tratamientos #card_amalgama #info_amalgama {
-    width: 15vw;
-  }
-  main #tratamientos #card_amalgama strong {
-    font-size: 1.2vw;
-    margin: 0 0 1vw 0;
-    width: 100%;
-  }
-  main #tratamientos #card_amalgama p {
-    font-size: 1.2vw;
-    margin: 0vw 0 1vw 0;
-  }
-  main #tratamientos #card_amalgama {
-    width: auto;
-  }
-  main #tratamientos #card_extraccion #boximg_extraccion {
-    height: auto;
-    width: auto;
-  }
-  main #tratamientos #card_extraccion button {
-    font-size: 1.5vw;
-  }
-  main #tratamientos #card_extraccion #info_extraccion {
-    width: 13vw;
-  }
-  main #tratamientos #card_extraccion strong {
-    font-size: 1.2vw;
-    margin: 0 0 0.3vw 0;
-    width: 13vw;
-  }
-  main #tratamientos #card_extraccion p {
-    font-size: 1.2vw;
-    margin: 0vw 0 0.8vw 0;
-  }
-  main #tratamientos #card_extraccion video {
-    width: 18vw;
-  }
-  main #tratamientos #card_extraccion {
-    margin: 0 0 5vw 0;
-    width: auto;
-  }
-  main #tratamientos #card_blanqueamiento #boximg_blanqueamiento {
-    height: auto;
-    width: auto;
-  }
-  main #tratamientos #card_blanqueamiento .blanqueamiento {
-    width: 16vw;
-  }
-  main #tratamientos #card_blanqueamiento button {
-    font-size: 1.5vw;
     margin: 0vw;
   }
-  main #tratamientos #card_blanqueamiento strong {
-    font-size: 1.2vw;
-    margin: 0 0 1vw 0;
-    padding: 0vw;
-    width: 15vw;
+  main #tratamientos .cards #video_extraccion {
+    width: 25vw;
   }
-  main #tratamientos #card_blanqueamiento #info_blanqueamiento {
-    width: 15vw;
+  main #tratamientos .cards .boxTB {
+    width: 25vw;
+    padding: 1vw;
   }
-  main #tratamientos #card_blanqueamiento p {
-    font-size: 1.2vw;
-    margin: 0vw 0 1vw 0vw;
+  main #tratamientos .cards .boxTB .text strong {
+    font-size: 1.3vw;
   }
-  main #tratamientos #card_blanqueamiento {
-    width: auto;
+  main #tratamientos .cards .boxTB .text p {
+    font-size: 1.1vw;
   }
-  main #tratamientos {
-    -moz-column-count: 3;
-         column-count: 3;
-    -moz-column-gap: 1vw;
-         column-gap: 1vw;
-    flex-wrap: wrap;
-    width: 95vw;
+  main #tratamientos .cards .boxTB button {
+    margin: 1vw 0 0vw 0;
   }
   main #box_publicidad {
     align-items: center;
@@ -1055,12 +772,13 @@ main #video_extraccion {
     justify-content: space-around;
   }
   main #box_publicidad #pub_promo {
-    width: 45vw;
+    width: 40vw;
   }
   main #box_publicidad #pub_limpieza {
-    width: 45vw;
+    width: 40vw;
   }
   #whatsapp {
-    bottom: 7vw;
+    bottom: 3vw;
+    margin: 0 0 2vw 0;
   }
 }/*# sourceMappingURL=style.css.map */

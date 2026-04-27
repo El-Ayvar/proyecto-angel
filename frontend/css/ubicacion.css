@@ -17,7 +17,7 @@ html, body {
 button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 50vw;
+  border-radius: 0.5vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
@@ -138,26 +138,26 @@ footer {
     justify-content: space-around;
   }
   footer #redes_sociales strong {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales p {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales {
     padding: 0vw;
   }
   footer #redes_sociales .logo {
-    width: 2.5vw;
+    width: 2vw;
   }
   footer #box_boton .btn_subir {
-    width: 5vw;
+    width: 4vw;
   }
   footer #box_ubicacion p {
-    font-size: 1.5vw;
+    font-size: 1vw;
     margin: 0vw 0 2vw 0;
   }
   footer #box_ubicacion strong {
-    font-size: 2vw;
+    font-size: 1vw;
   }
   footer #box_ubicacion {
     text-align: center;
@@ -186,8 +186,11 @@ header {
   width: 100vw;
 }
 @media (min-width: 481.98px) {
+  header {
+    padding: 0 4vw 0 4vw;
+  }
   header button {
-    font-size: 2vw;
+    font-size: 1.2vw;
     margin: 0 2vw 0 0vw;
   }
   header button:hover {
@@ -200,7 +203,7 @@ header {
     display: none;
   }
   header #logo {
-    width: 20vw;
+    width: 15vw;
   }
   header .side_menu {
     display: flex;
@@ -210,12 +213,15 @@ header {
   }
 }
 @media (min-width: 769.98px) {
-  header #logo {
-    margin: 1vw 0 1vw 0;
-    width: 15vw;
+  header {
+    padding: 0 5vw 0 5vw;
   }
   header button {
-    font-size: 1.5vw;
+    font-size: 1.1vw;
+  }
+  header #logo {
+    margin: 1vw 0 1vw 0;
+    width: 13vw;
   }
 }
 

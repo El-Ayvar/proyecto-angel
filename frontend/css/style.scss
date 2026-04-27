@@ -42,50 +42,6 @@ main {
 
     @include box-column();
 
-    .amalgama {
-        @include opacar-left();
-        border-radius: 15px;
-        width: 50vw;
-    }
-    
-    .blanqueamiento {
-        @include opacar-left();
-        border-radius: 15px;
-        width: 50vw;
-    }
-    
-    #boximg_fractura {
-        @include box-centrado();
-        margin: 0vw;
-        width: 50vw;
-    }
-
-    #boximg_sarro {
-        @include box-centrado();
-        border-radius: 15px;
-        margin: 0vw;
-    }
-
-    #boximg_restauracion {
-        @include box-centrado();
-        margin: 0px;
-    }
-    
-    #boximg_extraccion {
-        height: auto;
-        margin: 0vw;
-    }
-    
-    #boximg_amalgama {
-        @include box-centrado();
-        margin: 0vw;
-    }
-    
-    #boximg_blanqueamiento {
-        @include box-centrado();
-        margin: 0vw;
-    }
-    
     #box_publicidad {
         background-color: rgba(238, 249, 250, 0.582);
         #pub_promo {
@@ -100,68 +56,160 @@ main {
         width: 100vw;
     }
     
-    #card_blanqueamiento {
-        @include box-row();
+    .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         background-color: $color-fondo;
-        border-radius: 15px;
-        height: auto;
-        padding: 0 0 0 1vw;
+        border-radius: 5vw;
+        border: 1px solid rgba(132, 162, 203, 0.52);
+        overflow: hidden;
         margin: 0 0 7vw 0;
-    }
-    
-    #card_amalgama {
-        @include box-row();
-        border-radius: 15px;
-        background-color: $color-fondo;
+        max-width: 70vw;
+        transition: transform 0.3s ease;
         height: auto;
-        margin: 0 0 7vw 0;
-    }
-    
-    #card_extraccion {
-        @include box-row();
-        border-radius: 15px;
-        background-color: $color-fondo;
-        height: auto;
-        margin: 0 0 7vw 0;
-    }
+        #boximg_extraccion {
+                max-width: 70vw;
+                overflow: hidden;
+                height: auto;
+                #video_extraccion {
+                    width: 70vw;
+                }
+        }
+        .boxImg {
+            border-radius: 5vw;
+            position: relative;
+            overflow: hidden;
+            max-width: 100vw;
+            --position: 50%;
+            #secondR {
+                display: none;
+            }
+            img {
+                max-width: 60vw;
+            }
+            .imgAfter {
+                max-width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .imgBefore {
+                position: absolute;
+                top: 0;
+                left: 0;
+                max-width: 100vw;
+                height: 98%;
+                //object-fit: cover;
+                clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+            }
+            
+            
+        /* Input tipo rango invisible (el control interactivo) */
+        .slider-range {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0; /* Invisible pero clickable */
+            cursor: ew-resize; /* Cursor de flechas horizontales */
+            z-index: 10;
+            /* --- AÑADE ESTO PARA ARREGLAR LA VELOCIDAD --- */
+            margin: 0;
+            padding: 0;
+            -webkit-appearance: none; /* Quita los estilos por defecto de Google Chrome/Safari */
+            appearance: none;
+            background: transparent;
+        }
+        /* --- AÑADE ESTA NUEVA REGLA --- */
+        /* Esto hace que el "agarre" invisible sea exacto y no cause desfases */
+        .slider-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 36px; /* Debe medir lo mismo que tu .slider-button (36px) */
+            height: 36px; /* Que cubra todo el alto para agarrarlo de cualquier parte */
+            cursor: ew-resize;
+        }
 
-    #card_fractura {
-        @include box-row();
-        background-color: $color-fondo;
-        border-radius: 15px;
-        height: auto;
-        margin: 0 0 7vw 0;
+        /* Línea separadora blanca */
+        .slider-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: var(--position);
+            width: 3px;
+            background: white;
+            z-index: 5;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            pointer-events: none; /* Para no estorbar al arrastrar */
+        }
+
+        /* Botón redondo del centro */
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            left: var(--position);
+            transform: translate(-50%, -50%);
+            width: 36px;
+            height: 36px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            z-index: 5;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Flechas del botón */
+        .slider-button::after {
+            content: '◀ ▶';
+            color: #333;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+        }   
+
+        .boxTB {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 70vw;
+            .text {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                //mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+                max-width: 70vw;
+                padding: 3vw;
+                strong {
+                    color: #333333d9;
+                    margin: 2vw 0 2vw 0;
+                }
+
+                p {
+                    color: #333333d9;
+                    margin: 0 0 2vw 0;
+                }
+            }
+            button {
+                margin: 0 0 3vw 0;
+            }
+        }
+    }
+    .cards:hover { 
+        transform: translateY(-5px);
     }
     
-    #card_restauracion {
-        @include box-row();
-        background-color: $color-fondo;
-        border-radius: 15px;
-        height: auto;
-        margin: 0 0 7vw 0;
-    }
-    
-    #card_sarro {
-        @include box-row();
-        border-radius: 15px;
-        background-color: $color-fondo;
-        height: auto;
-        margin: 0 0 7vw 0;
-    }    
-    
-    .cards_tratamientos {
-        @include cards();
-    }    
-    
+
     .desvanecido {
         @include opacar-bottom();
     }
-    
-    .fractura {
-        @include img();
-        @include opacar-right();
-    }    
-    
+
     h1 {
         color: $titulo;
         font-size: 7vw;
@@ -178,88 +226,9 @@ main {
     h3 {
         color: $sub-titulo;
         font-size: 6vw;
+        margin: 0 0 2vw 0;
     }    
 
-    #info_blanqueamiento {
-        @include box-centrado();
-        color: rgba(0, 0, 0, 0.532);
-        p {
-            font-size: 3vw;
-            margin: 2vw 0 2vw 0;
-        }
-        strong {
-            text-align: start;
-            width: 40vw;
-            margin: 2vw 0 2vw 0;
-        }
-    }
-
-    #info_fractura {
-        @include box-centrado();
-        color: rgba(0, 0, 0, 0.578);
-        p {
-            font-size: 3vw;
-            margin: 2vw 0 2vw 0;
-        }
-        #second_PF {
-            margin: 2vw 0 0vw 0;
-        }
-
-    }
-    
-    #info_extraccion {
-        @include box-centrado();
-        color: rgba(0, 0, 0, 0.575);
-        strong {
-            text-align: start;
-            margin: 2vw 0 0vw 0;
-            width: 30vw;
-        }
-        p {
-            margin: 2vw 0 1vw 0;
-        }
-    }
-    
-    #info_restauracion {
-        @include box-centrado();
-        color: rgba(0, 0, 0, 0.545);
-        padding: 0 0 0 1vw;
-        p {
-            font-size: 3.5vw;
-            margin: 2vw 0 1vw 0;
-        }
-        strong {
-            margin: 1vw 0 1vw 0;
-        }
-    }
-    
-    #info_sarro {
-        @include box-centrado();
-        color: rgba(0, 0, 0, 0.571);
-        p {
-            font-size: 3vw;
-            margin: 0vw 0 1vw 0;
-        }
-        strong {
-            margin: 2vw 0 2vw 0;
-        }
-    }
-    
-    #info_amalgama {
-        @include box-centrado();
-        color: rgba(0, 0, 0, 0.574);
-        padding: 0 0 0 1vw;
-        p {
-            font-size: 3vw;
-            margin: 2vw 0 1vw 0;
-        }
-        strong {
-            text-align: start;
-            margin: 2vw 0 2vw 0;
-            width: 40vw;
-        }
-    }
-    
     #intro_text {
         h2 {
             padding: 0 10vw 0 1vw;
@@ -279,11 +248,6 @@ main {
         font-size: 3vw;
     }    
     
-    .restauracion {
-        @include img();
-        @include opacar-left();
-    }
-    
     section {
         @include box-column();
         height: 25vh;
@@ -299,12 +263,6 @@ main {
         @include subtitulos();
     }    
     
-    .sarro {
-        @include opacar-right();
-        border-radius: 15px;
-        width: 60vw;
-    }
-
     #second_intro {
         height: auto;
         h2 {
@@ -326,12 +284,6 @@ main {
         h3 {
             margin: 2vw 0 4vw 0;
         }
-    }
-
-    #video_extraccion {
-        @include opacar-right();
-        border-radius: 15px;
-        width: 60vw;
     }
 }
 
@@ -391,192 +343,129 @@ main {
 @media (min-width: 481.98px) {
     main {
         .acceso_redes {
-            width: 8vw;
+            transition: transform 0.3s ease;
+            width: 5.5vw;
+        }
+
+        .acceso_redes:hover {
+            transform: scale(1.3);
         }
         #tratamientos {
-            @include box-row();
-            display: block; //Si quito esto se vuelvea display flexy hace que se ponga todo en linea
-            #card_fractura {
-                button {
-                    font-size: 2vw;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .cards {
+                display: flex;
+                overflow: hidden;
+                width: 35vw;     
+                .boxTB {
+                    width: 30vw;
+                    .text {
+                        padding: 0.5vw;
+                        p {
+                            font-size: 1.35vw;
+                            margin: 0 0 0.5vw 0;
+                        }
+                        height: auto;
+                        strong {
+                            font-size: 1.5vw;
+                            margin: 0 0 1vw 0;
+                        }
+                    }
+
+                    button {
+                        font-size: 1.5vw;
+                    }
                 }
-                #boximg_fractura {
-                    height: auto;
-                    width: auto;
-                }
-                .fractura {
-                    height: auto;
-                    width: 25vw;
-                }
-                #info_fractura {
-                    width: 35vw;
-                }
-                strong {
-                    font-size: 1.7vw;
-                }
-                p {
-                    font-size: 1.7vw;
-                    margin: 0.5vw 0 0 0;
-                }
-                width: 44vw;
-            }
-            #card_restauracion {
-                button {
-                    font-size: 2vw;
-                }
-                #boximg_restauracion {
-                    height: auto;
-                    width: auto;
-                }
-                .restauracion {
-                    height: auto;
-                    width: 25vw;
-                }
-                strong {
-                    font-size: 1.7vw;
+                .boxImg {
+                    display: grid;
+                    grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+                    border-radius: 15px;
+                    aspect-ratio: 3/2;
+                    object-fit: cover;
                     margin: 0 0 1vw 0;
+                    width: 35vw; 
+                    .imgAfter {
+                        width: 100%;
+                    }
+                    .imgBefore {
+                        width: 35vw;
+                        height: 100%;
+                    }
                 }
-                p {
-                    font-size: 1.7vw;
-                    margin: 1vw 0 0 0;
-                }
-                width: 44vw;
-            }
-            #card_sarro {
-                button {
-                    font-size: 2vw;
-                }
-                #boximg_sarro {
-                    height: auto;
-                    width: auto;
-                }
-                strong {
-                    font-size: 1.7vw;
-                    margin: 0 0 0.5vw 0;
-                }
-                p {
-                    font-size: 1.7vw;
-                    margin: 0.5vw 0 0 0;
-                }
-                .sarro {
-                    width: 25vw;
-                }
-                width: 44vw;
-            }
-            #card_amalgama {
-                .amalgama {
-                    width: 25vw;
-                }
-                #boximg_amalgama {
-                    height: auto;
-                    width: auto;
-                }
-                button {
-                    font-size: 2vw;
-                }
-                #info_amalgama {
-                    width: 20vw;
-                }
-                strong {
-                    font-size: 1.7vw;
-                    margin: 0 0 1vw 0;
-                    width: 18vw;
-                }
-                p {
-                    font-size: 1.7vw;
-                    margin: 1vw 0 0 0;
-                }
-                width: 44vw;
-            }
-            #card_extraccion {
                 #boximg_extraccion {
-                    height: auto;
-                    width: auto;
+                    overflow: hidden;
+                    margin: 0vw;
+                    
+                    #video_extraccion {
+                        max-width: 35vw;
+                    }
                 }
-                button {
-                    font-size: 2vw;
-                }
-                strong {
-                    font-size: 1.7vw;
-                    margin: 0 0 0vw 0;
-                    width: 19vw;
-                }
-                p {
-                    font-size: 1.7vw;
-                    margin: 0.5vw 0 0 0;
-                }
-                video {
-                    width: 25vw;
-                }
-                width: 44vw;
-            }
-            #card_blanqueamiento {
-                #boximg_blanqueamiento {
-                    height: auto;
-                    width: auto;
-                }
-                .blanqueamiento {
-                    width: 25vw;
-                }
-                button {
-                    font-size: 2vw;
-                    margin: 2vw 0 0 0;
-                }
-                strong {
-                    font-size: 1.7vw;
-                    margin: 0 0 1vw 0;
-                    width: auto;
-                }
-                #info_blanqueamiento {
-                    width: 20vw;
-                }
-                p {
-                    font-size: 1.7vw;
-                    margin: 1vw 0 0 0;
-                }
-                width: 44vw;
             }
             column-count: 2;
             column-gap: 1vw;
             flex-wrap: wrap;
         }
         h1 {
-            font-size: 5vw;
+            font-size: 3.3vw;
         }
         h3 {
-            font-size: 5vw;
+            font-size: 3vw;
             margin: 0 0 4vw 0;
         }
         #intro_text {
             h2 {
-                font-size: 4vw;
+                font-size: 2.5vw;
+                text-align: start;
+                padding: 0;
+                width: 70vw;
             }
             p {
-                font-size: 2.3vw;
+                font-size: 1.5vw;
             }
+            width: 70vw; 
         }
         #second_intro {
             h2 {
-                font-size: 4vw;
-            }
+                font-size: 2.5vw;
+                text-align: start;
+                padding: 0;
+                width: 70vw;            }
             p {
-                font-size: 2.3vw;
+                font-size: 1.5vw;
+            }
+            width: 70vw;
+        }
+        #box_publicidad {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            #pub_promo {
+                width: 40vw;
+            }
+            #pub_limpieza {
+                width: 43vw;
             }
         }
+        width: 80vw;
     }
     #whatsapp {
-        bottom: 15vw;
+        bottom: 12vw;
     }
 }
 
 @media (min-width: 769.98px) {
     main {
-        @include box-row();
         .acceso_redes {
             bottom: 1vw;
-            width: 5vw;
+            transition: transform 0.3s ease;
+            width: 3vw;
         }
-        flex-wrap: wrap;
+
+        .acceso_redes:hover {
+            transform: scale(1.3);
+        }
+
         h1 {
             font-size:2.8vw;
         }
@@ -589,203 +478,94 @@ main {
             h2 {
                 font-size: 1.5vw;
                 padding: 0vw;
-                width: 45vw;
+                width: 60vw;
             }
             p {
                 color: $color-letra;
                 font-size: 1vw;
                 margin: 0.5vw 0 0.5vw 0;
+                width: 60vw;
             }
-            margin: 0 0vw 4vw 3vw;
-            width: 45vw;
+            width: 60vw;
         }
         
         #second_intro {
             h2 {
                 font-size: 1.5vw;
                 padding: 0vw;
-                width: 45vw;
+                width: 60vw;
             }
             p {
                 color: $color-letra;
                 font-size: 1vw;
                 margin: 0.5vw 0 0.5vw 0;
             }
-            margin: 0 1vw 4vw 0;
-            width: 45vw;
+            width: 60vw;
         }
         #tratamientos {
-            #card_fractura {
-                button {
-                    font-size: 1.5vw;
-                }
-                #boximg_fractura {
-                    height: auto;
-                    width: auto;
-                }
-                .fractura {
-                    height: auto;
-                    width: 17vw;
-                }
-                #info_fractura {
-                    width: 15vw;
-                }
-                strong {
-                    font-size: 1.3vw;
-                }
-                p {
-                    font-size: 1.2vw;
-                    margin: 0.5vw 0 0 0;
-                }
-                margin: 0 0 5vw 0;
+            .cards {
+                overflow-y: hidden;
+                //max-height: 60vh;
                 width: auto;
-            }
-            #card_restauracion {
-                button {
-                    font-size: 1.5vw;
-                }
-                #boximg_restauracion {
+                .boxImg {
                     height: auto;
-                    width: auto;
-                }
-                .restauracion {
-                    height: auto;
-                    width: 15vw;
-                }
-                strong {
-                    font-size: 1.2vw;
-                    margin: 0 0 1vw 0;
-                    width: 100%;
-                }
-                p {
-                    font-size: 1.2vw;
-                    margin: 0vw 0 0.8vw 0;
-                }
-                width:auto;
-            }
-            #card_sarro {
-                button {
-                    font-size: 1.5vw;
-                }
-                #boximg_sarro {
-                    height: auto;
-                    width: auto;
-                }
-                strong {
-                    font-size: 1.2vw;
                     margin: 0 0 0.5vw 0;
-                    width: 100%;
-                }
-                p {
-                    font-size: 1.2vw;
-                    margin: 0.5vw 0 0 0;
-                }
-                .sarro {
-                    width: 18vw;
-                }
-                margin: 0 0 4vw 0;
-                width: auto;
-            }
-
-            #card_amalgama {
-                .amalgama {
-                    width: 18vw;
-                }
-                #boximg_amalgama {
-                    height: auto;
                     width: auto;
+                    .imgAfter {
+                        width: 25vw;
+                    }
+                    .imgBefore {
+                        width: 25vw;
+                    }
+                    .slider-button {
+                        width: 3vw;
+                        height: 4.5vh;
+                         
+                     }
+                     .slider-button::after {
+                         content: '◀ ▶';
+                         font-weight: bold;
+                         font-size: 0.8vw;
+                     }
+            letter-spacing: -1px;
                 }
-                button {
-                    font-size: 1.5vw;
-                }
-                #info_amalgama {
-                    width: 15vw;
-                }
-                strong {
-                    font-size: 1.2vw;
-                    margin: 0 0 1vw 0;
-                    width: 100%;
-                }
-                p {
-                    font-size: 1.2vw;
-                    margin: 0vw 0 1vw 0;
-                }
-                width: auto;
-            }
-            #card_extraccion {
                 #boximg_extraccion {
-                    height: auto;
                     width: auto;
-                }
-
-                button {
-                    font-size: 1.5vw;
-                }
-
-                #info_extraccion {
-                    width: 13vw;
-                }
-
-                strong {
-                    font-size: 1.2vw;
-                    margin: 0 0 0.3vw 0;
-                    width: 13vw;
-                }
-
-                p {
-                    font-size: 1.2vw;
-                    margin: 0vw 0 0.8vw 0;
-                }
-
-                video {
-                    width: 18vw;
-                }
-                margin: 0 0 5vw 0;
-                width: auto;
-            }
-            #card_blanqueamiento {
-                #boximg_blanqueamiento {
-                    height: auto;
-                    width: auto;
-                }
-                .blanqueamiento {
-                    width: 16vw;
-                }
-                button {
-                    font-size: 1.5vw;
                     margin: 0vw;
                 }
-                strong {
-                    font-size: 1.2vw;
-                    margin: 0 0 1vw 0;
-                    padding: 0vw;
-                    width: 15vw;
+                #video_extraccion {
+                    width: 25vw;
+                   // max-height: 30vh;
                 }
-                #info_blanqueamiento {
-                    width: 15vw;
+                .boxTB {
+                    width: 25vw;
+                    padding: 1vw;
+                    .text {
+                        strong {
+                            font-size: 1.3vw;
+                        }
+                        p {
+                            font-size: 1.1vw;
+                        }
+                    }
+                    button {
+                        margin: 1vw 0 0vw 0;
+                    }
                 }
-                p {
-                    font-size: 1.2vw;
-                    margin: 0vw 0 1vw 0vw;
-                }
-                width: auto;
             }
-            column-count: 3;
-            column-gap: 1vw;
-            flex-wrap: wrap;
-            width: 95vw;
         }
         #box_publicidad {
             @include box-row();
             #pub_promo {
-                width: 45vw;
+                width: 40vw;
             }
             #pub_limpieza {
-                width: 45vw;
+                width: 40vw;
             }
         }
     }
     #whatsapp {
-        bottom: 7vw;
+        bottom: 3vw;
+        margin: 0 0 2vw 0;
     }
 }

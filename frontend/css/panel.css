@@ -5,6 +5,92 @@
   padding: 0px;
 }
 
+#confirmacion-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.confirmacion-contenido {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  text-align: center;
+}
+
+.confirmacion-texto {
+  font-size: 3vw;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+#confirmacion-botones {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+#confirmacion-cancelar {
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 3vw;
+  transition: all 0.3s;
+  font-weight: bold;
+  background-color: #95a5a6; /* Color por defecto */
+  color: white;
+}
+#confirmacion-cancelar:hover {
+  background-color: #7f8c8d;
+}
+
+#confirmacion-confirmar {
+  padding: 0.7rem 2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 3vw;
+  transition: all 0.3s;
+  font-weight: bold;
+  background-color: #e74c3c; /* Color por defecto */
+  color: white;
+}
+#confirmacion-confirmar:hover {
+  background-color: #c0392b;
+}
+
+@media (min-width: 481.98px) {
+  .confirmacion-contenido {
+    max-width: 60%;
+  }
+  .confirmacion-texto {
+    font-size: 2vw;
+  }
+  #confirmacion-cancelar, #confirmacion-confirmar {
+    font-size: 2vw;
+  }
+}
+@media (min-width: 769.98px) {
+  .confirmacion-contenido {
+    max-width: 40%;
+  }
+  .confirmacion-texto {
+    font-size: 1.5vw;
+  }
+  #confirmacion-cancelar, #confirmacion-confirmar {
+    font-size: 1.5vw;
+  }
+}
 html, body {
   align-items: center;
   display: flex;
@@ -18,7 +104,7 @@ html, body {
 button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 50vw;
+  border-radius: 0.5vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
@@ -146,26 +232,26 @@ footer {
     justify-content: space-around;
   }
   footer #redes_sociales strong {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales p {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   footer #redes_sociales {
     padding: 0vw;
   }
   footer #redes_sociales .logo {
-    width: 2.5vw;
+    width: 2vw;
   }
   footer #box_boton .btn_subir {
-    width: 5vw;
+    width: 4vw;
   }
   footer #box_ubicacion p {
-    font-size: 1.5vw;
+    font-size: 1vw;
     margin: 0vw 0 2vw 0;
   }
   footer #box_ubicacion strong {
-    font-size: 2vw;
+    font-size: 1vw;
   }
   footer #box_ubicacion {
     text-align: center;
@@ -194,8 +280,11 @@ header {
   width: 100vw;
 }
 @media (min-width: 481.98px) {
+  header {
+    padding: 0 4vw 0 4vw;
+  }
   header button {
-    font-size: 2vw;
+    font-size: 1.2vw;
     margin: 0 2vw 0 0vw;
   }
   header button:hover {
@@ -208,7 +297,7 @@ header {
     display: none;
   }
   header #logo {
-    width: 20vw;
+    width: 15vw;
   }
   header .side_menu {
     display: flex;
@@ -218,12 +307,15 @@ header {
   }
 }
 @media (min-width: 769.98px) {
-  header #logo {
-    margin: 1vw 0 1vw 0;
-    width: 15vw;
+  header {
+    padding: 0 5vw 0 5vw;
   }
   header button {
-    font-size: 1.5vw;
+    font-size: 1.1vw;
+  }
+  header #logo {
+    margin: 1vw 0 1vw 0;
+    width: 13vw;
   }
 }
 header button {
@@ -317,7 +409,7 @@ header button {
   width: 40vw;
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 50vw;
+  border-radius: 0.5vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
@@ -363,7 +455,7 @@ main .buscador-seccion #boxBusqueda {
 }
 main .buscador-seccion #boxBusqueda input {
   color: #498ab5;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   width: 40vw;
 }
 main input {
@@ -389,22 +481,25 @@ main ul {
 }
 main ul div#infoPaciente {
   display: flex;
+  border-left: #4a90e2 solid 6px;
+  border-bottom: rgba(58, 102, 151, 0.7725490196) solid 3px;
+  border-radius: 10px;
   justify-content: space-between;
   margin: 2vw 0 2vw 0;
-  border: 1px solid rgba(100, 175, 229, 0.3);
   padding: 1.5vw;
+  width: 80vw;
 }
 main ul strong {
-  font-size: 3vw;
+  font-size: 2.5vw;
   margin: 0 0.5vw 0 0;
 }
 main ul small {
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
 main ul button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 50vw;
+  border-radius: 0.5vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
@@ -418,9 +513,11 @@ main ul button:hover {
   cursor: pointer;
 }
 main ul button {
-  font-size: 3.5vw;
+  font-size: 2.5vw;
 }
 main ul li {
+  justify-content: center;
+  display: flex;
   list-style: none;
 }
 main ul {
@@ -429,43 +526,106 @@ main ul {
 main #panel-historial {
   align-items: center;
   border-radius: 8px;
-  display: flex;
+  display: none;
   flex-direction: column;
-  border: 1px solid #5eb3cf;
+  background-color: #e4e9f0;
   padding: 4vw;
   margin-top: 20px;
   justify-content: center;
-  width: 95vw;
+  width: 97vw;
 }
-main #panel-historial h3 {
+main #panel-historial #expediente {
+  background-color: white;
+  border-radius: 15px;
+  padding: 1vw;
+  width: 100%;
+}
+main #panel-historial #h3Id {
+  background-color: white;
+  border-radius: 10px;
+  border-left: 5px solid #3498db;
+  font-size: 4vw;
   color: #2c3e50;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 10px;
+  margin: 0 0 2vw 0;
+  padding: 2vw;
+}
+main #panel-historial #boxForm {
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 2vw;
+  margin: 2vw 0 2vw 0;
+  overflow-x: auto;
+}
+main #panel-historial #boxForm .form-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5vw;
+  padding: 1.5vw;
+  border-radius: 8px;
+  margin: 0 2vw 0 0;
+}
+main #panel-historial #boxForm strong {
+  margin: 0 0 1vw 0;
+  width: 30vw;
+}
+main #panel-historial #boxForm p {
+  color: black;
+  width: 35vw;
+}
+main #panel-historial #formEmail {
+  background-color: rgba(127, 140, 141, 0.6862745098);
+  color: #353a3b;
+}
+main #panel-historial #formTelefono {
+  background-color: rgba(17, 101, 170, 0.527);
+  color: rgb(0, 31, 105);
+}
+main #panel-historial #formDireccion {
+  background-color: rgba(141, 68, 173, 0.5725490196);
+  color: #450062;
+}
+main #panel-historial #formTipoSangre {
+  background-color: rgba(41, 127, 185, 0.662745098);
+  color: #013a5f;
+}
+main #panel-historial #formAlergias {
+  background-color: rgba(245, 221, 170, 0.7254901961);
+  color: #503101;
+}
+main #panel-historial #formEnfermedadesCronicas {
+  background-color: rgba(255, 190, 190, 0.7411764706);
+  color: #992729;
 }
 main #panel-historial #citas-paciente {
   display: none;
   flex-direction: column;
-  margin: 2vw 0 2vw 0;
+  margin: 4vw 0 2vw 0;
   max-height: 40vh;
-  border: 1px solid rgba(100, 175, 229, 0.3);
-  padding: 1.5vw;
   border-radius: 8px;
+  background-color: white;
+  border-bottom: white solid 4px;
+  border-top: white solid 4px;
+  padding: 2vw;
   overflow-y: auto;
 }
 main #panel-historial #citas-paciente #boxInfoCita {
+  align-items: center;
   background: #f9f9f9;
-  padding: 10px;
-  margin-bottom: 10px;
   border-radius: 4px;
   display: flex;
+  margin: 2vw 0 2vw 0;
+  padding: 10px;
+  margin-bottom: 10px;
   justify-content: space-between;
-  align-items: center;
 }
 main #panel-historial #citas-paciente #infoCita {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-evenly;
+  text-align: start;
 }
 main #panel-historial #citas-paciente #avisoCPC {
   font-size: 2vw;
@@ -478,6 +638,11 @@ main #panel-historial #citas-paciente strong {
 }
 main #panel-historial #citas-paciente p {
   font-size: 3vw;
+  margin: 1vw 0 1vw 0;
+}
+main #panel-historial #citas-paciente h3 {
+  text-align: center;
+  margin: 0 0 1vw 0;
 }
 main #panel-historial #citas-paciente button {
   font-size: 2vw;
@@ -486,17 +651,26 @@ main #panel-historial #citas-paciente button {
 main #panel-historial #historial-pasado {
   display: none;
   flex-direction: column;
-  background-color: #f9f9f9;
+  background-color: white;
+  border-bottom: white solid 4px;
+  border-top: white solid 4px;
   padding: 15px;
   max-height: 300px;
+  margin: 2vw 0 2vw 0;
   overflow-y: auto;
   margin-bottom: 20px;
-  border: 1px solid #5990a0;
+  border-radius: 8px;
 }
 main #panel-historial #historial-pasado div {
   font-size: 3vw;
   margin: 2vw 0 0 0;
   text-align: center;
+}
+main #panel-historial #historial-pasado #boxFe {
+  background-color: rgba(222, 223, 224, 0.4784313725);
+  border-radius: 15px;
+  color: rgb(126, 125, 125);
+  margin: 2vw 0 2vw 0;
 }
 main #panel-historial #historial-pasado h3 {
   text-align: center;
@@ -505,19 +679,20 @@ main #panel-historial #form-nueva-nota {
   align-items: center;
   display: flex;
   flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  padding: 3vw 0 6vw 0;
+  width: 90%;
 }
 main #panel-historial #form-nueva-nota h4 {
   margin: 1vw 0 1vw 0;
-}
-main #panel-historial #form-nueva-nota {
-  width: 80%;
 }
 main #panel-historial #form-nueva-nota label {
   font-weight: bold;
   color: #27ae60;
 }
 main #panel-historial #form-nueva-nota #texto-nota {
-  width: 100%;
+  width: 90%;
   padding: 1vw;
   border: 1px solid rgba(100, 175, 229, 0.3);
   border-radius: 8px;
@@ -528,6 +703,11 @@ main #panel-historial #form-nueva-nota #texto-nota {
 main #panel-historial #form-nueva-nota #texto-nota:focus {
   border-color: #3498db;
   outline: none;
+}
+main #panel-historial #seccion-odontograma {
+  background-color: white;
+  border-radius: 15px;
+  padding: 1vw;
 }
 main #panel-historial #seccion-odontograma h1 {
   color: #2c3e50;
@@ -741,6 +921,7 @@ main #registrar-usuarios .optionRegister {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  text-align: center;
   color: #537286;
   font-size: 3vw;
   margin: 1vw 0 1vw 0;
@@ -793,7 +974,7 @@ main #aviso-modal div#aviso-contenido button {
   width: 40vw;
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 50vw;
+  border-radius: 0.5vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
@@ -841,7 +1022,7 @@ main #aviso-contenido {
 main #aviso-contenido button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
-  border-radius: 50vw;
+  border-radius: 0.5vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
   font-size: 4vw;
@@ -859,36 +1040,66 @@ main #aviso-contenido button:hover {
   main .buscador-seccion h2 {
     font-size: 3.5vw;
   }
+  main .buscador-seccion #boxBusqueda {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2vw;
+  }
   main .buscador-seccion #boxBusqueda input {
-    font-size: 2.5vw;
+    font-size: 1.2vw;
   }
   main .buscador-seccion #boxBusqueda button {
-    font-size: 2.5vw;
+    font-size: 1.2vw;
   }
   main .buscador-seccion #boxBusqueda {
-    width: 70vw;
+    width: 60vw;
+  }
+  main .buscador-seccion {
+    background-color: #e4e9f0;
+    padding: 0 0 2vw 0;
   }
   main ul {
-    width: 80%;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1vw;
+    border-top: 6px solid white;
+    border-bottom: 6px solid white;
+    justify-content: space-evenly;
+    width: 85%;
   }
   main ul strong, main ul small, main ul button {
-    font-size: 2.5vw;
+    font-size: 1.2vw;
   }
   main ul li {
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    width: 37vw;
   }
   main ul li #infoPaciente {
-    width: 70vw;
+    border: none;
+    background-color: #f8f7f7;
+    color: #4c4d4e;
+    padding: 1vw 0.5vw 1vw 0.5vw;
+    width: 35vw;
   }
   main #panel-historial {
-    width: 80vw;
+    width: 95vw;
     align-items: center;
     justify-content: center;
   }
-  main #panel-historial h3 {
-    font-size: 3.5vw;
+  main #panel-historial #expediente {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main #panel-historial #h3Id {
+    font-size: 2.5vw;
+    margin: 0vw;
+    width: 100%;
   }
   main #panel-historial #datos-completos-paciente {
     align-items: center;
@@ -896,216 +1107,321 @@ main #aviso-contenido button:hover {
     font-size: 2.5vw;
     justify-content: center;
     text-align: center;
-    width: 60vw;
+    width: 80vw;
   }
-  main #panel-historial #citas-paciente {
-    padding: 2vw;
-    width: 75vw;
+  main #panel-historial #datos-completos-paciente #boxForm {
+    margin: 0 0 2vw 0;
   }
-  main #panel-historial #citas-paciente #avisoCPC {
-    font-size: 1.5vw;
-  }
-  main #panel-historial #citas-paciente button {
-    font-size: 2vw;
-    margin: 0 0 0 1vw;
-  }
-  main #panel-historial #citas-paciente div {
-    font-size: 2.5vw;
-  }
-  main #panel-historial #historial-pasado {
-    padding: 2vw;
-  }
-  main #panel-historial #historial-pasado div {
+  main #panel-historial #datos-completos-paciente #boxForm .form-label {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2.5vw;
+    font-size: 1.2vw;
+    width: 25vw;
+  }
+  main #panel-historial #datos-completos-paciente #boxForm .form-label strong {
+    width: 20vw;
+  }
+  main #panel-historial #datos-completos-paciente #boxForm .form-label p {
+    width: 20vw;
+  }
+  main #panel-historial #citas-paciente {
+    align-items: center;
+    justify-content: space-around;
+    display: none;
+    padding: 2vw;
+    max-width: 70vw;
+    flex-flow: wrap;
+  }
+  main #panel-historial #citas-paciente #avisoCPC {
+    font-size: 1.1vw;
+    margin: 1vw 0 1vw 0;
+  }
+  main #panel-historial #citas-paciente p {
+    font-size: 1.2vw;
+    margin: 0vw 0 2vw 0;
+  }
+  main #panel-historial #citas-paciente h3 {
+    width: 60vw;
+  }
+  main #panel-historial #citas-paciente button {
+    font-size: 1.2vw;
+    margin: 0 0 0 1vw;
+  }
+  main #panel-historial #citas-paciente div {
+    font-size: 1.2vw;
+    width: 28vw;
+  }
+  main #panel-historial #citas-paciente #infoCita {
+    font-size: 1.2vw;
+  }
+  main #panel-historial #citas-paciente #infoCita strong, main #panel-historial #citas-paciente #infoCita p {
+    font-size: 1.2vw;
+    margin: 0.5vw 0 0.5vw 0;
+  }
+  main #panel-historial #historial-pasado {
+    padding: 2vw;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    width: 70vw;
+  }
+  main #panel-historial #historial-pasado h3 {
+    width: 100%;
+  }
+  main #panel-historial #historial-pasado div {
+    align-items: center;
+    display: flex;
+    font-size: 1.2vw;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0vw 0 1vw 0;
+  }
+  main #panel-historial #historial-pasado #boxFe {
+    padding: 1vw;
+    width: 30vw;
   }
   main #panel-historial #historial-pasado {
     width: 75vw;
   }
   main #panel-historial #form-nueva-nota {
-    width: 60%;
+    width: 50%;
   }
   main #panel-historial #form-nueva-nota h4 {
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
   main #panel-historial #form-nueva-nota label {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
   main #panel-historial #form-nueva-nota #texto-nota {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
+    max-width: 30vw;
   }
   main #panel-historial #form-nueva-nota button {
-    font-size: 3vw;
+    font-size: 1.5vw;
   }
   main #panel-historial #seccion-odontograma .odontograma-container {
-    width: 75vw;
+    width: 60vw;
+  }
+  main #panel-historial #seccion-odontograma .odontograma-container .tooth {
+    height: 6vh;
+    width: 5vw;
+    font-size: 1.2vw;
   }
   main #panel-historial .modal .modal-content {
-    width: 50vw;
+    width: 40vw;
   }
   main #panel-historial .modal .modal-content select, main #panel-historial .modal .modal-content input, main #panel-historial .modal .modal-content button {
-    font-size: 2vw;
+    font-size: 1vw;
+  }
+  main #panel-historial .modal .modal-content .modal-buttons button {
+    display: flex;
+    justify-content: center;
+    width: 5vw;
+  }
+  main #panel-historial .modal .modal-content .modal-buttons #btnModalC {
+    padding: 1vw;
+  }
+  main #panel-historial .modal .modal-content .modal-buttons #btnModalA {
+    font-size: 0.8vw;
+    padding: 1vw 2vw 1vw 2vw;
   }
   main #registrar-usuarios {
     width: 60vw;
   }
   main #registrar-usuarios div button.optionRegister {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
   }
   main #registrar-usuarios .optionRegister {
-    font-size: 3.5vw;
+    font-size: 1.5vw;
   }
   main #registrar-usuarios p.optionRegister {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     text-align: center;
   }
   main #registrar-usuarios input.optionRegister {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
   }
   main #registrar-usuarios select {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
   }
   main #registrar-usuarios p {
-    font-size: 2vw;
+    font-size: 1vw;
   }
   main #aviso-modal .modal-message {
     font-size: 3.5vw;
   }
+  main .logout {
+    font-size: 1.5vw;
+  }
 }
 @media (min-width: 769.98px) {
+  main .buscador-seccion {
+    border-top: solid white 6px;
+    width: 95vw;
+  }
+  main .buscador-seccion h2 {
+    font-size: 2vw;
+  }
+  main .buscador-seccion #boxBusqueda {
+    padding: 1vw;
+  }
   main .buscador-seccion #boxBusqueda input {
-    font-size: 1.5vw;
+    font-size: 1vw;
     width: 37vw;
   }
   main .buscador-seccion #boxBusqueda button {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   main .buscador-seccion #boxBusqueda {
-    width: 60vw;
+    width: 55vw;
   }
   main .buscador-seccion ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 1vw 0 1vw;
-    width: 95vw;
+    max-height: 110vh;
+    overflow-y: auto;
+    width: 77vw;
   }
   main .buscador-seccion ul li {
-    width: 29vw;
+    width: auto;
   }
   main .buscador-seccion ul li small, main .buscador-seccion ul li strong {
-    font-size: 1.5vw;
+    font-size: 0.8vw;
   }
   main .buscador-seccion ul li button {
-    font-size: 1.5vw;
+    font-size: 0.8vw;
     margin: 0 0 0 1vw;
   }
   main .buscador-seccion ul li #infoPaciente {
-    padding: 0vw 0vw 0 0vw;
+    padding: 1vw 0 1vw 0;
+  }
+  main .buscador-seccion ul li #infoPaciente .box_botones {
+    display: flex;
   }
   main .buscador-seccion ul li #infoPaciente div {
-    width: 19vw;
+    padding: 0 0 0 0.5vw;
+    width: 12vw;
   }
   main .buscador-seccion ul li #infoPaciente button {
-    width: 9vw;
+    margin: 0vw 0.5vw 0 0;
+    width: 6vw;
   }
   main .buscador-seccion ul li #infoPaciente {
-    width: 28vw;
+    width: auto;
   }
   main #panel-historial {
-    align-items: center;
-    background: rgba(234, 234, 234, 0.568);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1vw 1vw 1vw 1vw;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+    flex-direction: row;
     width: 95vw;
   }
-  main #panel-historial #h3Id {
+  main #panel-historial #expediente {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    width: 95%;
+  }
+  main #panel-historial #h3Id {
+    text-align: start;
     margin: 2vw 0 2vw 0;
-    width: 100vw;
+    font-size: 1vw;
+    width: 70vw;
+    padding: 1vw 0vw 1vw 0.5vw;
   }
   main #panel-historial #datos-completos-paciente {
-    background: #f9f9f9;
-    border: 1px solid rgba(100, 175, 229, 0.3);
-    margin: 0 0 3vw 0;
-    width: 35vw;
+    width: auto;
   }
-  main #panel-historial #datos-completos-paciente p {
-    font-size: 1.5vw;
+  main #panel-historial #datos-completos-paciente #boxForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: center;
+    width: 55vw;
+    padding: 0vw;
+    margin: 0vw;
+  }
+  main #panel-historial #datos-completos-paciente #boxForm .form-label {
+    font-size: 0.8vw;
+    padding: 1vw;
+    width: 15vw;
+  }
+  main #panel-historial #datos-completos-paciente #boxForm .form-label strong {
+    font-size: 0.8vw;
+    width: 15vw;
+  }
+  main #panel-historial #datos-completos-paciente #boxForm .form-label p {
+    font-size: 0.8vw;
+    width: 15vw;
   }
   main #panel-historial #citas-paciente {
-    background: #f9f9f9;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1vw 0.5vw 1vw 0.5vw;
-    overflow-y: auto;
-    max-height: 13.5vw;
-    margin: 0 0 3vw 0;
-    width: 55vw;
+    padding: 0vw;
+    margin: 1vw 0 0 0;
+    width: 45vw;
   }
   main #panel-historial #citas-paciente #boxInfoCita {
-    padding: 1vw 0vw 0vw 0.5vw;
-    width: 26vw;
+    margin: 0 0 2vw 0;
+    width: 20vw;
   }
-  main #panel-historial #citas-paciente p {
-    font-size: 1.5vw;
+  main #panel-historial #citas-paciente #boxInfoCita #infoCita strong {
+    font-size: 0.9vw;
+  }
+  main #panel-historial #citas-paciente #boxInfoCita #infoCita p {
+    font-size: 0.8vw;
   }
   main #panel-historial #citas-paciente h3 {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     margin: 0vw 0 2vw 0;
     text-align: center;
     width: 100%;
   }
-  main #panel-historial #citas-paciente strong {
-    font-size: 1.3vw;
-  }
   main #panel-historial #citas-paciente #avisoCPC {
-    font-size: 1.3vw;
+    font-size: 0.8vw;
     margin: 0.3vw 0 0.3vw 0;
   }
   main #panel-historial #citas-paciente button {
-    font-size: 1.2vw;
+    font-size: 0.8vw;
   }
   main #panel-historial #historial-pasado {
     font-size: 1.5vw;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    max-height: 37vh;
+    max-height: 40vh;
+    border-radius: 15px;
     padding: 0.5vw 1vw 0.5vw 1vw;
-    width: 55vw;
+    width: 47%;
   }
   main #panel-historial #historial-pasado h3 {
     text-align: center;
-    font-size: 2.5vw;
+    font-size: 1.3vw;
     width: 100%;
   }
   main #panel-historial #historial-pasado #boxFe {
-    width: 25vw;
+    width: 18vw;
   }
   main #panel-historial #historial-pasado #boxFe span {
     margin: 1vw 0 1vw 0;
   }
   main #panel-historial #historial-pasado #boxFe div {
-    font-size: 1.5vw;
+    font-size: 0.8vw;
     margin: 0vw;
   }
   main #panel-historial #historial-pasado #boxFe p {
-    font-size: 1.5vw;
+    font-size: 0.8vw;
   }
   main #panel-historial #form-nueva-nota {
     background: #f9f9f9;
     border: 1px solid rgba(100, 175, 229, 0.3);
-    width: 35vw;
+    padding: 2vw 0 3vw 0;
+    width: 25vw;
   }
   main #panel-historial #form-nueva-nota h4 {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     text-align: center;
   }
   main #panel-historial #form-nueva-nota #check-asistio {
@@ -1113,29 +1429,27 @@ main #aviso-contenido button:hover {
     height: 3vh;
   }
   main #panel-historial #form-nueva-nota #texto-nota {
-    font-size: 1.5vw;
-    width: 25vw;
+    font-size: 0.8vw;
+    width: 20vw;
   }
   main #panel-historial #form-nueva-nota button {
-    font-size: 1.5vw;
+    font-size: 0.9vw;
   }
   main #panel-historial #seccion-odontograma {
-    width: 90vw;
+    width: 60vw;
   }
   main #panel-historial #seccion-odontograma .odontograma-container {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 2vw;
-    overflow: none;
-    width: 90vw;
+    justify-content: center;
+    padding: 1vw 0 1vw 0;
+    width: auto;
   }
   main #panel-historial #seccion-odontograma .odontograma-container .tooth {
-    font-size: 1.5vw;
-    width: 5vw;
+    font-size: 0.9vw;
+    width: 3vw;
   }
   main .logout {
-    font-size: 2.5vw;
+    font-size: 1.3vw;
     margin: 4vw 0 1vw 0;
   }
   main #registrar-usuarios {
@@ -1143,23 +1457,23 @@ main #aviso-contenido button:hover {
     width: 40vw;
   }
   main #registrar-usuarios div button.optionRegister {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   main #registrar-usuarios .optionRegister {
-    font-size: 2.5vw;
+    font-size: 1.2vw;
   }
   main #registrar-usuarios p.optionRegister {
-    font-size: 1.5vw;
+    font-size: 1vw;
     text-align: center;
   }
   main #registrar-usuarios input.optionRegister {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   main #registrar-usuarios select {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
   main #registrar-usuarios p {
-    font-size: 1.2vw;
+    font-size: 0.8vw;
   }
   main #aviso-modal .modal-message {
     font-size: 2.5vw;
