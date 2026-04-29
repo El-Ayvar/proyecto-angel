@@ -280,7 +280,6 @@ main .cards {
   background-color: #DAF1F0;
   border-radius: 5vw;
   border: 1px solid rgba(132, 162, 203, 0.52);
-  overflow: hidden;
   margin: 0 0 7vw 0;
   max-width: 70vw;
   transition: transform 0.3s ease;
@@ -577,6 +576,8 @@ main #tratamientos h3 {
     width: 35vw;
   }
   main #tratamientos .cards .boxTB {
+    aspect-ratio: 3/1;
+    text-align: center;
     width: 30vw;
   }
   main #tratamientos .cards .boxTB .text {
@@ -698,7 +699,7 @@ main #tratamientos h3 {
   }
   main #intro_text p {
     color: rgba(0, 0, 0, 0.5921568627);
-    font-size: 1vw;
+    font-size: 0.9vw;
     margin: 0.5vw 0 0.5vw 0;
     width: 60vw;
   }
@@ -712,14 +713,13 @@ main #tratamientos h3 {
   }
   main #second_intro p {
     color: rgba(0, 0, 0, 0.5921568627);
-    font-size: 1vw;
+    font-size: 0.9vw;
     margin: 0.5vw 0 0.5vw 0;
   }
   main #second_intro {
     width: 60vw;
   }
   main #tratamientos .cards {
-    overflow-y: hidden;
     width: auto;
   }
   main #tratamientos .cards .boxImg {
@@ -757,12 +757,13 @@ main #tratamientos h3 {
     padding: 1vw;
   }
   main #tratamientos .cards .boxTB .text strong {
-    font-size: 1.3vw;
+    font-size: 0.9vw;
   }
   main #tratamientos .cards .boxTB .text p {
-    font-size: 1.1vw;
+    font-size: 0.9vw;
   }
   main #tratamientos .cards .boxTB button {
+    font-size: 0.9vw;
     margin: 1vw 0 0vw 0;
   }
   main #box_publicidad {

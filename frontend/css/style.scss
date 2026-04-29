@@ -64,7 +64,6 @@ main {
         background-color: $color-fondo;
         border-radius: 5vw;
         border: 1px solid rgba(132, 162, 203, 0.52);
-        overflow: hidden;
         margin: 0 0 7vw 0;
         max-width: 70vw;
         transition: transform 0.3s ease;
@@ -359,6 +358,8 @@ main {
                 overflow: hidden;
                 width: 35vw;     
                 .boxTB {
+                    aspect-ratio: 3/1;
+                    text-align: center;
                     width: 30vw;
                     .text {
                         padding: 0.5vw;
@@ -482,7 +483,7 @@ main {
             }
             p {
                 color: $color-letra;
-                font-size: 1vw;
+                font-size: 0.9vw;
                 margin: 0.5vw 0 0.5vw 0;
                 width: 60vw;
             }
@@ -497,14 +498,13 @@ main {
             }
             p {
                 color: $color-letra;
-                font-size: 1vw;
+                font-size: 0.9vw;
                 margin: 0.5vw 0 0.5vw 0;
             }
             width: 60vw;
         }
         #tratamientos {
             .cards {
-                overflow-y: hidden;
                 //max-height: 60vh;
                 width: auto;
                 .boxImg {
@@ -542,13 +542,14 @@ main {
                     padding: 1vw;
                     .text {
                         strong {
-                            font-size: 1.3vw;
+                            font-size: 0.9vw;
                         }
                         p {
-                            font-size: 1.1vw;
+                            font-size: 0.9vw;
                         }
                     }
                     button {
+                        font-size: 0.9vw;
                         margin: 1vw 0 0vw 0;
                     }
                 }
