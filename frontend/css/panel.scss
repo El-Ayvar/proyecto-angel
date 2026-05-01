@@ -756,6 +756,20 @@ main {
 }
 
 @media (min-width: 481.98px) {
+    #aviso-modal {
+        .modal-message {
+            font-size: 2vw;
+        }
+
+        div#aviso-contenido {
+            width: 60vw;
+            font-size: 2vw;
+            #aviso-ok {
+                font-size: 2vw;
+                width: 20vw;
+            }
+        }
+    }
     main {
         .buscador-seccion {
             h2 {

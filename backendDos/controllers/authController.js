@@ -15,7 +15,7 @@ exports.registrarPaciente = async (req, res) => {
 
         // 2. Crear el nuevo usuario (la encriptación ocurre en el modelo automáticamente)
         // Validar rol entrante y usar 'paciente' como valor por defecto
-        const rolesPermitidos = ['paciente', 'odontologo'];
+        const rolesPermitidos = ['paciente', 'odontologo', 'asistente', 'admin'];
         const rolASalvar = rolesPermitidos.includes(rol) ? rol : 'paciente';
         // Si se intenta crear un odontólogo, verificar que la petición venga de un odontólogo autenticado
         // AQUI SE LO AGREGUE DESDE EL PANEL AL ODONTOLOGO

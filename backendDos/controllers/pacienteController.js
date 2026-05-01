@@ -29,20 +29,75 @@ exports.obtenerMiPerfil = async (req, res) => {
 // VISTAS DEL DOCTOR / ADMIN
 // ====================================================
 
+// OBTENER TODOS LOS PACIENTES (Con filtro de roles y status)
 exports.obtenerTodosLosPacientes = async (req, res) => {
     try {
-        // Traemos a todos y poblamos el nombre/email desde el modelo Usuario
         const pacientes = await Paciente.find()
-            .populate('usuario', 'nombre email')
+            .populate('usuario', 'nombre email rol status') 
             .sort({ createdAt: -1 });
 
-        // Filtro de seguridad por si hay algún paciente sin usuario vinculado
-        const resultados = pacientes.filter(p => p.usuario !== null);
-        
-        res.json(resultados);
+        // Filtrado por seguridad y roles
+        const filtrados = pacientes.filter(p => {
+            if (!p.usuario) return false;
+            
+            // Manejo de datos antiguos: si no tiene status, es 'activo'
+            const estado = p.usuario.status || 'activo';
+
+            if (req.user.rol === 'admin') {
+                return true; // El administrador ve todo, incluyendo la papelera
+            } else {
+                return estado === 'activo'; // Odontólogos y Asistentes solo ven los activos
+            }
+        });
+
+        res.json(filtrados);
     } catch (error) {
-        console.error("Error al obtener pacientes:", error);
+        console.error(error);
         res.status(500).json({ msg: "Error al obtener la lista de pacientes" });
+    }
+};
+
+// ELIMINAR PACIENTE (Soft Delete / Papelera)
+exports.eliminarPaciente = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const paciente = await Paciente.findById(id).populate('usuario');
+        
+        if (!paciente) return res.status(404).json({ msg: "Paciente no encontrado" });
+
+        // REGLA: Un odontólogo no puede eliminar a otro odontólogo
+        if (req.user.rol === 'odontologo' && paciente.usuario.rol === 'odontologo') {
+            return res.status(403).json({ msg: "No tienes permisos para eliminar a otro doctor" });
+        }
+
+        // En lugar de borrar, marcamos el usuario asociado como eliminado temporal
+        await Usuario.findByIdAndUpdate(paciente.usuario._id, { status: 'eliminado_temporal' });
+
+        res.json({ msg: "Paciente movido a la papelera (Solo el Admin puede verlo ahora)" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Error al procesar la eliminación" });
+    }
+};
+
+// ACCIONES DE PAPELERA (Solo para Admin)
+exports.accionPapelera = async (req, res) => {
+    try {
+        const { id } = req.params; // ID del Usuario asociado
+        const { accion } = req.body; // 'restaurar' o 'borrar_definitivo'
+
+        if (accion === 'restaurar') {
+            await Usuario.findByIdAndUpdate(id, { status: 'activo' });
+            res.json({ msg: "Registro restaurado con éxito" });
+        } else if (accion === 'borrar_definitivo') {
+            const paciente = await Paciente.findOne({ usuario: id });
+            if (paciente) await Paciente.findByIdAndDelete(paciente._id);
+            await Usuario.findByIdAndDelete(id);
+            res.json({ msg: "Registro eliminado permanentemente de la base de datos" });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Error en la operación de papelera" });
     }
 };
 

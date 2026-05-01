@@ -4,21 +4,20 @@ const pacienteController = require('../controllers/pacienteController');
 const auth = require('../middleware/authMiddleware'); 
 const verificarRol = require('../middleware/rolMiddleware'); 
 
-// --- RUTAS DE BÚSQUEDA Y PERFIL PROPIO (Prioridad Alta) ---
+// --- RUTAS DE BÚSQUEDA Y PERFIL PROPIO ---
 router.get('/mi-perfil', auth, pacienteController.obtenerMiPerfil);
 router.get('/buscar', auth, pacienteController.buscarPacientes);
 
-// --- RUTAS DE GESTIÓN (Solo Odontólogo/Admin) ---
-// Esta es la ruta que usa el botón "Ver Todos"
-router.get('/', [auth, verificarRol('odontologo', 'admin')], pacienteController.obtenerTodosLosPacientes);
+// --- RUTAS DE GESTIÓN (Lista y Papelera) ---
+router.get('/', [auth, verificarRol('odontologo', 'admin', 'asistente')], pacienteController.obtenerTodosLosPacientes);
+router.post('/papelera/:id', [auth, verificarRol('admin')], pacienteController.accionPapelera);
 
-// --- RUTAS POR ID (Deben ir al final) ---
-router.get('/:idPaciente/expediente', [auth, verificarRol('odontologo', 'admin')], pacienteController.obtenerExpedienteCompleto);
+// --- RUTAS POR ID Y EXPEDIENTE ---
+router.get('/:idPaciente/expediente', [auth, verificarRol('odontologo', 'admin', 'asistente')], pacienteController.obtenerExpedienteCompleto);
 router.post('/:id/notas', auth, pacienteController.agregarNotaHistorial);
 router.put('/actualizar', auth, pacienteController.actualizarPerfil);
 
-// Ruta para eliminar un paciente (admin u odontologo)
+// --- ELIMINAR PACIENTE ---
 router.delete('/:id', [auth, verificarRol('odontologo', 'admin')], pacienteController.eliminarPaciente);
-// esos comentarios los vi en otro codigo y seveian chidos
 
 module.exports = router;

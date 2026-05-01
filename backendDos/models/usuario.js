@@ -5,7 +5,17 @@ const usuarioSchema = new mongoose.Schema({
     nombre: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    rol: { type: String, enum: ['paciente', 'odontologo'], default: 'paciente' }
+    rol: { 
+        type: String, 
+        enum: ['paciente', 'odontologo', 'asistente', 'admin'], 
+        default: 'paciente' 
+    },
+    // Este campo es la clave para la papelera
+    status: { 
+        type: String, 
+        enum: ['activo', 'eliminado_temporal'], 
+        default: 'activo' 
+    }
 }, { timestamps: true });
 
 // PUNTO CLAVE: Encriptar antes de guardar

@@ -26,9 +26,10 @@ function actualizarVisibilidadMenus() {
         el.style.display = isLoggedIn ? '' : 'none';
     });
 
-    // 3. Elementos que APARECEN SOLO para Odontólogos (ej. Panel Doctor)
+    // 3. Elementos que APARECEN SOLO para el personal médico autorizado
     document.querySelectorAll('.solo-odontologo').forEach(el => {
-        if (isLoggedIn && rol === 'odontologo') {
+        const rolesPermitidos = ['odontologo', 'admin', 'asistente'];
+        if (isLoggedIn && rolesPermitidos.includes(rol)) {
             el.style.display = '';
         } else {
             el.style.display = 'none';

@@ -306,27 +306,106 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const usuario = JSON.parse(usuarioStr);
-    if (usuario.rol !== 'odontologo') {
-        mostrarAviso('⛔ Acceso denegado. Esta área es exclusiva para el personal médico.', 'error', () => {
-            window.location.href = 'perfil.html';
-        });
+    
+    // Validar que el rol tenga acceso al panel
+    const rolesAutorizados = ['odontologo', 'admin', 'asistente'];
+    if (!rolesAutorizados.includes(usuario.rol)) {
+        window.location.href = 'perfil.html';
         return;
     }
 
-    // Cargamos todos los pacientes al entrar al panel
-    cargarTodosLosPacientes();
-
-    // Listeners de botones del buscador y formulario
-    document.getElementById('btn-buscar').addEventListener('click', manejarBusqueda);
-    document.getElementById('btn-ver-todos').addEventListener('click', cargarTodosLosPacientes);
-    document.getElementById('form-nueva-nota').addEventListener('submit', guardarNota);
-    
-    // Listener para registrar nuevos usuarios (solo odontólogos)
-    const formRegistro = document.getElementById('form-registrar-usuario');
-    if (formRegistro) {
-        formRegistro.addEventListener('submit', registrarUsuario);
+    // RESTRICCIONES PARA ASISTENTE (Solo lectura)
+    if (usuario.rol === 'asistente') {
+        const registrarSeccion = document.getElementById('registrar-usuarios');
+        if (registrarSeccion) registrarSeccion.style.display = 'none';
+        
+        // Bloquear formularios de edición después de un pequeño delay para asegurar carga
+        setTimeout(() => {
+            document.querySelectorAll('#form-nueva-nota input, #form-nueva-nota textarea, #form-nueva-nota button').forEach(el => {
+                el.disabled = true;
+                el.style.opacity = '0.5';
+            });
+        }, 500);
     }
+
+    const btnBuscar = document.getElementById('btn-buscar');
+    if (btnBuscar) btnBuscar.addEventListener('click', manejarBusqueda);
+
+    const btnVerTodos = document.getElementById('btn-ver-todos');
+    if (btnVerTodos) btnVerTodos.addEventListener('click', cargarTodosLosPacientes);
+
+    const formNota = document.getElementById('form-nueva-nota');
+    if (formNota) formNota.addEventListener('submit', guardarNota);
+
+    const formRegistro = document.getElementById('form-registrar-usuario');
+    if (formRegistro) formRegistro.addEventListener('submit', registrarUsuario);
+    
+    cargarTodosLosPacientes();
 });
+
+// FUNCIÓN PARA RENDERIZAR (Con lógica de papelera)
+function renderizarPacientes(pacientes) {
+    const contenedor = document.getElementById('lista-pacientes');
+    const usuarioLogueado = JSON.parse(localStorage.getItem('usuario'));
+    
+    if (pacientes.length === 0) {
+        contenedor.innerHTML = '<p class="aviso">No se encontraron pacientes activos.</p>';
+        return;
+    }
+
+    contenedor.innerHTML = pacientes.map(p => {
+        const estado = p.usuario.status || 'activo';
+        const esPapelera = estado === 'eliminado_temporal';
+
+        return `
+            <div class="card ${esPapelera ? 'en-papelera' : ''}">
+                <div class="info_paciente">
+                    <p><strong>Nombre:</strong> ${p.usuario.nombre}</p>
+                    <p><strong>Email:</strong> ${p.usuario.email}</p>
+                    ${esPapelera ? '<span class="tag-status">EN PAPELERA</span>' : ''}
+                </div>
+                <div class="box_botones">
+                    ${!esPapelera ? `
+                        <button class="btn-abrir" onclick="verExpediente('${p._id}')">Ver Expediente</button>
+                        ${usuarioLogueado.rol !== 'asistente' ? `
+                            <button class="btn-borrar" onclick="borrarRegistro('${p._id}')">Eliminar</button>
+                        ` : ''}
+                    ` : `
+                        <button class="btn-verde" onclick="manejarPapelera('${p.usuario._id}', 'restaurar')">Restaurar</button>
+                        <button class="btn-negro" onclick="manejarPapelera('${p.usuario._id}', 'borrar_definitivo')">Eliminar Permanente</button>
+                    `}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// NUEVA FUNCIÓN: Gestión de Papelera para el Admin
+async function manejarPapelera(idUsuario, accion) {
+    const confirmacion = confirm(`¿Estás seguro de que deseas ${accion.replace('_', ' ')} este registro?`);
+    if (!confirmacion) return;
+
+    try {
+        const res = await fetch(`${API_URL}/pacientes/papelera/${idUsuario}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify({ accion })
+        });
+
+        if (res.ok) {
+            alert('Operación realizada con éxito');
+            cargarTodosLosPacientes();
+        } else {
+            const error = await res.json();
+            alert('Error: ' + error.msg);
+        }
+    } catch (error) {
+        console.error('Error en papelera:', error);
+    }
+}
 
 // ==========================================
 // 2. GESTIÓN DE PACIENTES (Lista y Búsqueda)

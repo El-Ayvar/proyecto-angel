@@ -235,6 +235,59 @@ header button {
   margin: 0 0 0 3vw;
 }
 
+/* ==========================================================================
+   NUEVOS ESTILOS PARA ROLES Y PAPELERA
+   ========================================================================== */
+
+.card.en-papelera {
+    border: 2px dashed #e74c3c !important; 
+    background-color: #fdf2f2 !important; 
+    opacity: 0.85;
+    position: relative;
+    transition: all 0.3s ease;
+    &:hover {
+        opacity: 1;
+        transform: scale(1.01);
+    }
+
+    p {
+        color: #c0392b !important;
+        font-weight: bold;
+    }
+}
+
+.acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+
+    .btn-verde {
+        background-color: #27ae60 !important;
+        color: white;
+        &:hover { background-color: #219150 !important; }
+    }
+
+    .btn-negro {
+        background-color: #2c3e50 !important;
+        color: white;
+        &:hover { background-color: #1a252f !important; }
+    }
+
+    .btn-rojo {
+        background-color: #e74c3c !important;
+        color: white;
+        &:hover { background-color: #c0392b !important; }
+    }
+}
+
+.modo-lectura {
+    input, textarea, select {
+        background-color: #f5f5f5 !important;
+        cursor: not-allowed;
+        border: 1px solid #ddd !important;
+    }
+}
+
 .opcion_oculta_because {
   display: none !important;
 }
