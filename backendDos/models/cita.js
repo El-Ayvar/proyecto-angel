@@ -14,6 +14,10 @@ const citaSchema = new mongoose.Schema({
         type: String, 
         required: true 
     },
+    telefono: { 
+        type: String, 
+        required: true 
+    },
     // añadimos 'confirmada' al enum para que coincida con la acción del correo
     estado: { 
         type: String, 

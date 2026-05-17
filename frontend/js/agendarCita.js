@@ -17,6 +17,11 @@ async function cargarDatosDelPerfil() {
 
         const data = await res.json(); // parseo la respuesta JSON
 
+        if (data.telefono && data.telefono !== 'Sin disponible') {
+            const telefonoEl = document.getElementById('telefono');
+            if (telefonoEl) telefonoEl.value = data.telefono;
+        }
+
         // si hay tipo de sangre y no es "Desconocido", lo pongo en el input
         if (data.tipoSangre && data.tipoSangre !== 'Desconocido') {
             const tipoSangreEl = document.getElementById('tipoSangre');
@@ -122,10 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // obtengo los campos básicos de la cita
         const procedimiento = document.getElementById('procedimiento').value;
         const fecha = document.getElementById('fecha').value; 
-        const hora = document.getElementById('hora').value;   
+        const hora = document.getElementById('hora').value;
+        const telefono = document.getElementById('telefono').value;   
 
-        if (!procedimiento || !fecha || !hora) {
-            mensajeDiv.textContent = 'Por favor completa fecha, hora y procedimiento.';
+        if (!procedimiento || !fecha || !hora || !telefono) {
+            mensajeDiv.textContent = 'Por favor completa fecha, hora, procedimiento y teléfono.';
             return; // si falta algo, no continúo
         }
 
@@ -140,8 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // preparo el cuerpo del POST
         const body = {
-            fecha: fechaISO,
             motivo: procedimiento,
+            fecha: fechaISO,
+            telefono: telefono,
             datosMedicosPreventivos: {
                 tipoSangre: tipoSangre,
                 alergias: alergias,

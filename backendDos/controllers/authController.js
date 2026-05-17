@@ -26,8 +26,53 @@ exports.registrarPaciente = async (req, res) => {
             try {
                 const tokenLimpio = authHeader.split(' ')[1] || authHeader;
                 const cifrado = jwt.verify(tokenLimpio, process.env.JWT_SECRET);
-                if (!cifrado || cifrado.rol !== 'odontologo') {
-                    return res.status(403).json({ msg: 'Solo odontólogos pueden crear odontólogos' });
+                if (!cifrado || cifrado.rol !== 'admin') {
+                    return res.status(403).json({ msg: 'Solo administradores pueden crear odontólogos' });
+                }
+            } catch (err) {
+                return res.status(401).json({ msg: 'Token no válido' });
+            }
+        }
+
+        if (rolASalvar === 'admin') {
+            const authHeader = req.header('Authorization');
+            if (!authHeader) return res.status(401).json({ msg: 'Token requerido para crear administradores' });
+
+            try {
+                const tokenLimpio = authHeader.split(' ')[1] || authHeader;
+                const cifrado = jwt.verify(tokenLimpio, process.env.JWT_SECRET);
+                if (!cifrado || cifrado.rol !== 'admin') {
+                    return res.status(403).json({ msg: 'Solo administradores pueden crear otros administradores' });
+                }
+            } catch (err) {
+                return res.status(401).json({ msg: 'Token no válido' });
+            }
+        }
+
+        if (rolASalvar === 'asistente') {
+            const authHeader = req.header('Authorization');
+            if (!authHeader) return res.status(401).json({ msg: 'Token requerido para crear asistentes' });
+
+            try {
+                const tokenLimpio = authHeader.split(' ')[1] || authHeader;
+                const cifrado = jwt.verify(tokenLimpio, process.env.JWT_SECRET);
+                if (!cifrado || cifrado.rol !== 'admin, odontologo') {
+                    return res.status(403).json({ msg: 'Solo administradores y odontólogos pueden crear asistentes' });
+                }
+            } catch (err) {
+                return res.status(401).json({ msg: 'Token no válido' });
+            }
+        }
+
+        if (rolASalvar === 'paciente') {
+            const authHeader = req.header('Authorization');
+            if (!authHeader) return res.status(401).json({ msg: 'Token requerido para crear pacientes' });
+
+            try {
+                const tokenLimpio = authHeader.split(' ')[1] || authHeader;
+                const cifrado = jwt.verify(tokenLimpio, process.env.JWT_SECRET);
+                if (!cifrado || !(cifrado.rol === 'admin' || cifrado.rol === 'odontologo' || cifrado.rol === 'asistente')) {
+                    return res.status(403).json({ msg: 'Solo administradores, odontólogos y asistentes pueden crear pacientes' });
                 }
             } catch (err) {
                 return res.status(401).json({ msg: 'Token no válido' });

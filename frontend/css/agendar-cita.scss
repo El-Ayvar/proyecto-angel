@@ -77,7 +77,7 @@ header{
     .menu_option {
         color: rgba(0, 0, 0, 0.57);
         cursor: pointer;
-        font-size: 3.5vw;
+        font-size: 2vw;
         margin: 5vw 0;
     }
     
@@ -93,12 +93,12 @@ main {
     padding: 3vw 5vw;
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    width: 65vw;
     margin: 8vw 0 10vw 0;
 
     h2 {
       color: #3498db;
-      font-size: 5vw;
+      font-size: 3vw;
       margin-bottom: 2vw;
       text-align: center;
       text-shadow: 0 2px 8px rgba(52, 152, 219, 0.10);
@@ -112,7 +112,7 @@ main {
 
       label {
         color: #2980b9;
-        font-size: 4vw;
+        font-size: 2.5vw;
         margin: 2vw 0 2vw 0;
       }
 
@@ -120,7 +120,7 @@ main {
         align-items: center;
         color: #2980b9;
         display: flex;
-        font-size: 4vw;
+        font-size: 2.5vw;
         font-weight: bold;
         justify-content: center;
         margin: 3vw 0 1vw 0;
@@ -139,7 +139,7 @@ main {
         padding: 1vw 2vw;
         border-radius: 8px;
         border: 1px solid #b2d8f7;
-        font-size: 3.5vw;
+        font-size: 2.5vw;
         background: #f7fbff;
         transition: border-color 0.2s;
         &:focus {
@@ -154,7 +154,7 @@ main {
         border-radius: 8px;
         color: white;
         font-weight: bold;
-        font-size: 4vw;
+        font-size: 2.5vw;
         margin: 3vw 0 0 0;
         padding: 1vw 0;
         cursor: pointer;
@@ -167,7 +167,7 @@ main {
     }
 
     #mensaje-cita {
-      font-size: 3vw;
+      font-size: 1.3vw;
       margin: 2vw 0 2vw 0;
       text-align: center;
       font-weight: bold;

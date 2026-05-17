@@ -17,6 +17,7 @@ button {
 
 footer {
     @include footer();
+    margin: 0vw;
 }
 
 header{
@@ -24,10 +25,41 @@ header{
 }
 
 main {
-    @include box-centrado();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-fondo;
+    padding: 5vw;
+    width: 100vw;
+    .promocion {
+        align-items: center;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 2vw;
+        margin: 0 0 5vw 0;
+        border-radius: 15px;
+        width: 75vw;
+        .btn {
+            padding: 0.5vw 1vw;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 3vw 0 2vw 0;
+            border: none;
+        }
+        #btnB {
+            background: #3498db;
+            color: white;
+        }
+
+        #btnU {
+            background: #2ecc71;
+            color: white;
+        }
+    }
     img {
-        margin: 5vw 0 5vw 0;
-        width: 90vw;
+        width: 70vw;
     }
 }
 
@@ -75,5 +107,67 @@ main {
         margin: 5vw 0;
     }
     
+}
+
+@media (min-width: 481.98px) {
+    main {
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 100vw;
+        .promocion {
+            width: 40vw;
+            .btn {
+               padding: 0.5vw 1vw;
+               border-radius: 4px;
+               cursor: pointer;
+               margin: 2vw 0 0vw 0;
+               border: none;
+               font-size: 1.5vw;
+           }
+           #btnB {
+               background: #3498db;
+               color: white;
+           }
+
+               #btnU {
+                   background: #2ecc71;
+                   color: white;
+               }
+           }
+           img {
+               width: 35vw;
+       }
+    }   
+}
+
+@media (min-width: 769.98px) {
+    main {
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 100vw;
+        .promocion {
+            width: 37vw;
+            .btn {
+               padding: 0.5vw 1vw;
+               border-radius: 4px;
+               cursor: pointer;
+               margin: 2vw 0 1cm 0;
+               border: none;
+               font-size: 1.5vw;
+           }
+           #btnB {
+               background: #3498db;
+               color: white;
+           }
+
+               #btnU {
+                   background: #2ecc71;
+                   color: white;
+               }
+           }
+           img {
+               width: 33vw;
+       }
+    }   
 }
 

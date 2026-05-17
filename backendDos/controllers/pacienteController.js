@@ -38,44 +38,59 @@ exports.obtenerTodosLosPacientes = async (req, res) => {
 
         // Filtrado por seguridad y roles
         const filtrados = pacientes.filter(p => {
+            // Si el paciente no tiene usuario vinculado, lo ignoramos (evita errores)
             if (!p.usuario) return false;
             
-            // Manejo de datos antiguos: si no tiene status, es 'activo'
+            // Si el status no existe en la DB, asumimos que es 'activo'
             const estado = p.usuario.status || 'activo';
 
             if (req.user.rol === 'admin') {
-                return true; // El administrador ve todo, incluyendo la papelera
+                return true; // El administrador ve a todos (Activos + Papelera)
             } else {
-                return estado === 'activo'; // Odontólogos y Asistentes solo ven los activos
+                // Odontólogos y Asistentes SOLO ven los que dicen 'activo'
+                return estado === 'activo'; 
             }
         });
 
         res.json(filtrados);
     } catch (error) {
-        console.error(error);
+        console.error("Error en obtenerTodosLosPacientes:", error);
         res.status(500).json({ msg: "Error al obtener la lista de pacientes" });
     }
 };
 
 // ELIMINAR PACIENTE (Soft Delete / Papelera)
+// CONTROLADOR ACTUALIZADO: Borrado Lógico (Papelera)
 exports.eliminarPaciente = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { id } = req.params; // Este es el ID del Paciente (expediente)
+
+        // 1. Buscamos el expediente para encontrar al usuario vinculado
+        // Usamos .populate('usuario') para poder acceder al ID de la cuenta
         const paciente = await Paciente.findById(id).populate('usuario');
         
-        if (!paciente) return res.status(404).json({ msg: "Paciente no encontrado" });
+        if (!paciente) {
+            return res.status(404).json({ msg: "Paciente no encontrado" });
+        }
 
-        // REGLA: Un odontólogo no puede eliminar a otro odontólogo
+        // 2. Seguridad: Evitar que un odontólogo elimine a otro (opcional)
         if (req.user.rol === 'odontologo' && paciente.usuario.rol === 'odontologo') {
             return res.status(403).json({ msg: "No tienes permisos para eliminar a otro doctor" });
         }
 
-        // En lugar de borrar, marcamos el usuario asociado como eliminado temporal
-        await Usuario.findByIdAndUpdate(paciente.usuario._id, { status: 'eliminado_temporal' });
+        // 3. LA CLAVE: Aquí es donde cambiamos la lógica.
+        // En lugar de usar findByIdAndDelete, usamos findByIdAndUpdate
+        // para cambiar el status a 'eliminado_temporal'
+        if (paciente.usuario) {
+            await Usuario.findByIdAndUpdate(paciente.usuario._id, { 
+                status: 'eliminado_temporal' 
+            });
+        }
 
-        res.json({ msg: "Paciente movido a la papelera (Solo el Admin puede verlo ahora)" });
+        // NO BORRAMOS EL PACIENTE. El documento sigue vivo en MongoDB.
+        res.json({ msg: "Paciente movido a la papelera correctamente" });
     } catch (error) {
-        console.error(error);
+        console.error("Error al eliminar:", error);
         res.status(500).json({ msg: "Error al procesar la eliminación" });
     }
 };
@@ -225,32 +240,6 @@ exports.agregarNotaHistorial = async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ msg: "Error al guardar la nota" });
-    }
-};
-
-// Controlador para eliminar un paciente (admin u odontologo)
-exports.eliminarPaciente = async (req, res) => {
-    try {
-        const { id } = req.params; // ID del paciente a eliminar
-
-        // Primero, obtener el paciente para saber qué usuario eliminar
-        const paciente = await Paciente.findById(id);
-        if (!paciente) return res.status(404).json({ msg: "Paciente no encontrado" });
-
-        const usuarioId = paciente.usuario; // Obtener el ID del usuario asociado
-
-        // Eliminar el paciente
-        await Paciente.findByIdAndDelete(id);
-
-        // Eliminar el usuario asociado
-        if (usuarioId) {
-            await Usuario.findByIdAndDelete(usuarioId);
-        }
-
-        res.json({ msg: "Paciente y usuario eliminados correctamente" });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ msg: "Error al eliminar el paciente" });
     }
 };
 

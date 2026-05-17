@@ -125,7 +125,6 @@ main {
       border-radius: 8px;
       border: 1px solid #b2d8f7;
       font-size: 2.5vw;
-      margin-bottom: 1vw;
       background: #f7fbff;
       transition: border-color 0.2s;
       &:focus {
@@ -223,6 +222,9 @@ main {
             align-items: center;
             padding: 1vw;
             width: 30vw;
+            #correo {
+                margin: 1vw 0 0vw 0;
+            }
             input {
                 font-size: 1vw;
                 width: 90%;

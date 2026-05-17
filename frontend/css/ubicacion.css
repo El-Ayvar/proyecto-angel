@@ -78,6 +78,7 @@ footer #box_ubicacion #maps {
   width: 90vw;
 }
 footer #box_ubicacion p {
+  font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
 }
@@ -92,6 +93,12 @@ footer #redes_sociales {
   height: auto;
   justify-content: space-around;
   padding: 3vw;
+}
+footer #redes_sociales strong {
+  font-size: 2.5vw;
+}
+footer #redes_sociales p {
+  font-size: 2.5vw;
 }
 footer {
   margin: 5vw 0 0 0;
@@ -174,10 +181,10 @@ header {
 header img {
   cursor: pointer;
   margin: 2vw 0 2vw 0;
-  width: 15vw;
+  width: 12vw;
 }
 header #logo {
-  width: 40vw;
+  width: 30vw;
 }
 header #menu_tablet {
   display: none;
@@ -232,6 +239,7 @@ main {
   justify-content: space-around;
   width: 90vw;
   background-color: #DAF1F0;
+  padding: 2vw;
 }
 main #box_location {
   align-items: center;
@@ -251,43 +259,18 @@ main #box_location #direccion img {
   margin: 0 2vw 0 0;
   width: 7vw;
 }
-@media (min-width: 481.98px) {
-  main #box_location #direccion img {
-    margin: 0 0 0 0vw;
-  }
-}
 main #box_location #direccion strong {
   color: rgba(0, 0, 0, 0.585);
-}
-@media (min-width: 481.98px) {
-  main #box_location #direccion strong {
-    font-size: 2.5vw;
-    text-align: center;
-  }
-}
-@media (min-width: 769.98px) {
-  main #box_location #direccion strong {
-    font-size: 2vw;
-  }
+  font-size: 2.5vw;
+  text-align: center;
 }
 main #box_location #direccion {
   width: 90vw;
-}
-@media (min-width: 481.98px) {
-  main #box_location #direccion {
-    margin: 0 0 2vw 0;
-    width: 70vw;
-  }
 }
 main #box_location #maps {
   border-radius: 15px;
   margin: 0vw 0 2vw 0;
   width: 90vw;
-}
-@media (min-width: 481.98px) {
-  main #box_location #maps {
-    height: 50vh;
-  }
 }
 main #box_location {
   width: 90vw;
@@ -309,71 +292,33 @@ main #box_horario #horario {
 main #box_horario #horario p {
   color: rgba(0, 0, 0, 0.56);
   margin: 0 0 1vw 0;
-  width: 58vw;
-}
-@media (min-width: 481.98px) {
-  main #box_horario #horario p {
-    margin: 0 0 0 2vw;
-  }
-}
-@media (min-width: 769.98px) {
-  main #box_horario #horario p {
-    font-size: 1.5vw;
-  }
+  width: 45vw;
+  font-size: 2.5vw;
 }
 main #box_horario #horario h3 {
   margin: 0 0 1vw 0;
   text-align: start;
-  width: 58vw;
-}
-@media (min-width: 481.98px) {
-  main #box_horario #horario h3 {
-    margin: 0 0 0 2vw;
-  }
+  width: 45vw;
 }
 main #box_horario {
   margin: 5vw 0 5vw 0;
 }
 main #box_horario img {
-  margin: 0 0 7vw 0;
   width: 8vw;
 }
-@media (min-width: 481.98px) {
-  main #box_horario img {
-    margin: 0vw 0 0 0;
-  }
-}
 main #box_horario {
-  width: 70vw;
-}
-@media (min-width: 481.98px) {
-  main #box_horario {
-    width: 50vw;
-  }
-}
-@media (min-width: 769.98px) {
-  main #box_horario {
-    width: 38vw;
-  }
+  width: 60vw;
 }
 main h1 {
   color: rgba(0, 0, 0, 0.582);
   margin: 3vw 0 3vw 0;
-}
-@media (min-width: 769.98px) {
-  main h1 {
-    font-size: 2.5vw;
-  }
+  font-size: 4vw;
 }
 main h3 {
   color: rgba(0, 0, 0, 0.582);
   margin: 3vw 0 3vw 0;
   text-align: center;
-}
-@media (min-width: 769.98px) {
-  main h3 {
-    font-size: 1.5vw;
-  }
+  font-size: 2.5vw;
 }
 main {
   width: 100vw;
@@ -418,4 +363,88 @@ main {
   cursor: pointer;
   font-size: 3.5vw;
   margin: 5vw 0;
+}
+
+@media (min-width: 481.98px) {
+  main #box_location #direccion {
+    margin: 0 0 2vw 0;
+  }
+  main #box_location #direccion img {
+    width: 3vw;
+  }
+  main #box_location #direccion strong {
+    font-size: 1.5vw;
+  }
+  main #box_location #direccion {
+    width: 40vw;
+  }
+  main #box_location #maps {
+    width: 60vw;
+  }
+  main #box_location {
+    width: 60vw;
+  }
+  main #box_horario #horario p {
+    font-size: 1.5vw;
+    margin: 0 0 0vw 0;
+    width: 30vw;
+  }
+  main #box_horario #horario h3 {
+    font-size: 2vw;
+    margin: 0 0 0vw 0;
+    width: 30vw;
+  }
+  main #box_horario img {
+    width: 4vw;
+  }
+  main #box_horario {
+    padding: 1vw 0 1vw 0;
+    width: 40vw;
+  }
+  main h1 {
+    font-size: 2vw;
+  }
+  main h3 {
+    font-size: 1.5vw;
+  }
+}
+@media (min-width: 769.98px) {
+  main #box_location #direccion img {
+    width: 2vw;
+  }
+  main #box_location #direccion strong {
+    font-size: 1vw;
+  }
+  main #box_location #direccion {
+    width: 40vw;
+  }
+  main #box_location #maps {
+    aspect-ratio: 16/9;
+  }
+  main #box_location {
+    width: auto;
+  }
+  main #box_horario #horario p {
+    font-size: 1vw;
+    margin: 0 0 0vw 0;
+    width: 20vw;
+  }
+  main #box_horario #horario h3 {
+    font-size: 1.5vw;
+    margin: 0 0 0vw 0;
+    width: 20vw;
+  }
+  main #box_horario img {
+    width: 3vw;
+  }
+  main #box_horario {
+    padding: 1vw 0 1vw 0;
+    width: 30vw;
+  }
+  main h1 {
+    font-size: 1.5vw;
+  }
+  main h3 {
+    font-size: 1vw;
+  }
 }/*# sourceMappingURL=ubicacion.css.map */

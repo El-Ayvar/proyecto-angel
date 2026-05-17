@@ -3,12 +3,16 @@
 @use "../sass/footer" as *;
 @use "../sass/header" as *;
 @use "../sass/confirmacion" as *;
+@use "../sass/tarjeta-eliminada" as *;
+@use "../sass/citasPCC" as *;
 
 * {
     @include wiport();
 }
 
+@include citasPCC();
 @include confirmacion();
+@include tarjeta-eliminada();
 
 html, body {
     @include body();
@@ -197,6 +201,9 @@ main {
             margin: 2vw 0 2vw 0;
             padding: 1.5vw;
             width: 80vw;
+            #separador {
+                display: none;
+            }
         }
 
         strong {

@@ -15,9 +15,9 @@ router.post('/agendar', [auth, validarCita], citaController.crearCita);
 router.get('/confirmar/:id', citaController.confirmarCitaDesdeCorreo);
 
 // ruta para que doctor actualice estado de cita
-router.patch('/estado/:id', [auth, verificarRol('odontologo', 'admin')], citaController.actualizarEstadoCita);
+router.patch('/estado/:id', [auth, verificarRol('odontologo', 'admin', 'asistente')], citaController.actualizarEstadoCita);
 
 // ruta para que doctor vea todas las citas
-router.get('/', [auth, verificarRol('odontologo')], citaController.obtenerCitas);
+router.get('/', [auth, verificarRol('odontologo', 'admin', 'asistente')], citaController.obtenerCitas);
 
 module.exports = router;

@@ -43,17 +43,43 @@ main {
     @include box-column();
 
     #box_publicidad {
-        background-color: rgba(238, 249, 250, 0.582);
-        #pub_promo {
-            @include publicidad();
-        }
-    
-        #pub_limpieza {
-            @include publicidad();
-        }
-    
+        align-items: center;
+        background: linear-gradient(to bottom, #ffffff 0%, $color-fondo 90%, #ffffff 100%);        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5vw;
         height: auto;
         width: 100vw;
+        .promocion {
+            align-items: center;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 2vw;
+            margin: 0 0 5vw 0;
+            border-radius: 15px;
+            width: 75vw;
+            .btn {
+                padding: 0.5vw 1vw;
+                border-radius: 4px;
+                cursor: pointer;
+                margin: 3vw 0 2vw 0;
+                border: none;
+            }
+            #btnB {
+                background: #3498db;
+                color: white;
+            }
+
+            #btnU {
+                background: #2ecc71;
+                color: white;
+            }
+        }
+        img {
+            width: 70vw;
+        }
     }
     
     .cards {
@@ -341,6 +367,46 @@ main {
 
 @media (min-width: 481.98px) {
     main {
+        #box_publicidad {
+            align-items: center;
+            background: linear-gradient(to bottom, #ffffff 0%, $color-fondo 90%, #ffffff 100%);        
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 0vw;
+            height: auto;
+            width: 100vw;
+            .promocion {
+                align-items: center;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                padding: 2vw;
+                margin: 0 1vw 5vw 1vw;
+                border-radius: 15px;
+                width: 40vw;
+                .btn {
+                    padding: 0.5vw 1vw;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    margin: 2vw 0 0vw 0;
+                    border: none;
+                    font-size: 1.5vw;
+                }
+                #btnB {
+                    background: #3498db;
+                    color: white;
+                }
+
+                #btnU {
+                    background: #2ecc71;
+                    color: white;
+                }
+            }
+            img {
+                width: 35vw;
+            }
+        }
         .acceso_redes {
             transition: transform 0.3s ease;
             width: 5.5vw;
@@ -436,17 +502,6 @@ main {
                 font-size: 1.5vw;
             }
             width: 70vw;
-        }
-        #box_publicidad {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            #pub_promo {
-                width: 40vw;
-            }
-            #pub_limpieza {
-                width: 43vw;
-            }
         }
         width: 80vw;
     }
@@ -558,10 +613,10 @@ main {
         #box_publicidad {
             @include box-row();
             #pub_promo {
-                width: 40vw;
+                width: 30vw;
             }
             #pub_limpieza {
-                width: 40vw;
+                width: 30vw;
             }
         }
     }

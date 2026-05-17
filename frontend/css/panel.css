@@ -5,6 +5,163 @@
   padding: 0px;
 }
 
+#citasPCC {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 1vw;
+  margin: 5vw 0 0 0;
+  border: solid 1px #ddd;
+}
+#citasPCC .infoCitasPCC {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 2.5vw;
+}
+#citasPCC .infoCitasPCC h3 {
+  margin: 0 0 2vw 0;
+}
+#citasPCC .infoCitasPCC .cita-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: white;
+}
+#citasPCC .botones-estado {
+  padding: 0vw;
+  display: flex;
+  justify-content: space-around;
+  margin: 1vw 0 0 0;
+}
+#citasPCC .botones-estado #buttonP {
+  background: #f1c40f;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  aspect-ratio: 12;
+}
+#citasPCC .botones-estado #buttonC {
+  background: #2ecc71;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  aspect-ratio: 12;
+}
+#citasPCC .botones-estado #buttonCa {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  aspect-ratio: 12;
+}
+#citasPCC #infoP {
+  background: #f9f9f9;
+  aspect-ratio: 1;
+  overflow-y: auto;
+}
+#citasPCC #infoCo {
+  background: #e8f5e9;
+  aspect-ratio: 1;
+  overflow-y: auto;
+}
+#citasPCC #infoCa {
+  background: #ffebee;
+  aspect-ratio: 1/3;
+  overflow-y: auto;
+}
+
+@media (min-width: 481.98px) {
+  #citasPCC {
+    padding: 2vw;
+    width: 100%;
+  }
+  #citasPCC #infoP {
+    background: #f9f9f9;
+    overflow-y: auto;
+  }
+  #citasPCC #infoCo {
+    background: #e8f5e9;
+    overflow-y: auto;
+  }
+  #citasPCC #infoCa {
+    background: #ffebee;
+    aspect-ratio: 1/2;
+    overflow-y: auto;
+  }
+  #citasPCC .infoCitasPCC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5vw;
+  }
+  #citasPCC .infoCitasPCC .cita-item {
+    align-items: center;
+    width: 25vw;
+  }
+  #citasPCC .infoCitasPCC .cita-item strong, #citasPCC .infoCitasPCC .cita-item small, #citasPCC .infoCitasPCC .cita-item p {
+    width: 100%;
+  }
+  #citasPCC .botones-estado {
+    margin: 2vw 0 0 0;
+    width: 13vw;
+  }
+  #citasPCC .botones-estado #buttonP, #citasPCC .botones-estado #buttonC, #citasPCC .botones-estado #buttonCa {
+    font-size: 2.5vw;
+    width: 4vw;
+  }
+}
+@media (min-width: 769.98px) {
+  #citasPCC {
+    padding: 2vw;
+    width: 100%;
+  }
+  #citasPCC #infoP {
+    background: #f9f9f9;
+    overflow-y: auto;
+  }
+  #citasPCC #infoCo {
+    background: #e8f5e9;
+    overflow-y: auto;
+  }
+  #citasPCC #infoCa {
+    background: #ffebee;
+    aspect-ratio: 1/1.5;
+    overflow-y: auto;
+  }
+  #citasPCC .infoCitasPCC {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8vw;
+  }
+  #citasPCC .infoCitasPCC #lista-pendientes, #citasPCC .infoCitasPCC #lista-confirmadas, #citasPCC .infoCitasPCC #lista-canceladas {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    width: 90%;
+  }
+  #citasPCC .infoCitasPCC .cita-item {
+    align-items: center;
+    width: 11vw;
+  }
+  #citasPCC .infoCitasPCC .cita-item strong, #citasPCC .infoCitasPCC .cita-item small, #citasPCC .infoCitasPCC .cita-item p {
+    width: 100%;
+  }
+  #citasPCC .botones-estado {
+    margin: 2vw 0 0 0;
+    width: 7vw;
+  }
+  #citasPCC .botones-estado #buttonP, #citasPCC .botones-estado #buttonC, #citasPCC .botones-estado #buttonCa {
+    font-size: 0.9vw;
+    width: 2vw;
+  }
+}
 #confirmacion-modal {
   display: none;
   position: fixed;
@@ -91,6 +248,99 @@
     font-size: 1.5vw;
   }
 }
+#estado-eliminado {
+  font-size: 2vw;
+  color: #d32f2f;
+  margin: 0vw;
+}
+
+#infoPaciente {
+  background-color: white;
+}
+
+.btn-restaurar {
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  padding: 2px 5px;
+  font-size: 2.5vw;
+  transition: background 0.2s;
+}
+.btn-restaurar:hover {
+  background-color: #2980b9;
+}
+
+.btn-borrar-definitivo {
+  background: #34495e;
+  color: white;
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 2.5vw;
+  transition: background 0.2s;
+}
+.btn-borrar-definitivo:hover {
+  background-color: #2c3e50;
+}
+
+.btn-abrir-expediente {
+  background-color: #2ecc71;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  padding: 5px 10px;
+  font-size: 2.5vw;
+  transition: background 0.2s;
+}
+.btn-abrir-expediente:hover {
+  background-color: #27ae60;
+}
+
+.btn-eliminar {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 2.5vw;
+  transition: background 0.2s;
+}
+.btn-eliminar:hover {
+  background-color: #c0392b;
+}
+
+@media (min-width: 481.98px) {
+  #estado-eliminado {
+    font-size: 1vw;
+  }
+  .btn-restaurar, .btn-borrar-definitivo, .btn-abrir-expediente, .btn-eliminar {
+    font-size: 1vw;
+  }
+  .btn-abrir-expediente {
+    padding: 4px 8px;
+  }
+  .btn-eliminar {
+    padding: 4px 8px;
+  }
+}
+@media (min-width: 769.98px) {
+  #estado-eliminado {
+    font-size: 0.8vw;
+  }
+  .btn-restaurar, .btn-borrar-definitivo, .btn-abrir-expediente, .btn-eliminar {
+    font-size: 0.8vw;
+  }
+  .btn-abrir-expediente {
+    padding: 3px 6px;
+  }
+  .btn-eliminar {
+    padding: 3px 6px;
+  }
+}
 html, body {
   align-items: center;
   display: flex;
@@ -172,6 +422,7 @@ footer #box_ubicacion #maps {
   width: 90vw;
 }
 footer #box_ubicacion p {
+  font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
 }
@@ -186,6 +437,12 @@ footer #redes_sociales {
   height: auto;
   justify-content: space-around;
   padding: 3vw;
+}
+footer #redes_sociales strong {
+  font-size: 2.5vw;
+}
+footer #redes_sociales p {
+  font-size: 2.5vw;
 }
 footer {
   margin: 5vw 0 0 0;
@@ -268,10 +525,10 @@ header {
 header img {
   cursor: pointer;
   margin: 2vw 0 2vw 0;
-  width: 15vw;
+  width: 12vw;
 }
 header #logo {
-  width: 40vw;
+  width: 30vw;
 }
 header #menu_tablet {
   display: none;
@@ -488,6 +745,9 @@ main ul div#infoPaciente {
   margin: 2vw 0 2vw 0;
   padding: 1.5vw;
   width: 80vw;
+}
+main ul div#infoPaciente #separador {
+  display: none;
 }
 main ul strong {
   font-size: 2.5vw;

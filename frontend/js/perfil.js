@@ -47,11 +47,15 @@ async function configurarPerfilParaPaciente(token) {
             const nombreEl = document.getElementById('nombre');
             const correoEl = document.getElementById('correo');
             const fechaNacEl = document.getElementById('fechaNacimiento');
+            const telefonoEl = document.getElementById('telefono');
 
             if (nombreEl) nombreEl.value = expediente.usuario?.nombre || '';
             if (correoEl) correoEl.value = expediente.usuario?.email || '';
             if (fechaNacEl && expediente.fechaNacimiento) {
                 fechaNacEl.value = expediente.fechaNacimiento.split('T')[0];
+            }
+            if (telefonoEl && expediente.telefono) {
+                telefonoEl.value = expediente.telefono;
             }
 
             // cargar datos médicos si existen
@@ -101,6 +105,7 @@ async function guardarCambiosPerfil(token) {
         const enfermedades = document.getElementById('enfermedadesCronicas')?.value || '';
         const medicacion = document.getElementById('medicacionActual')?.value || 'Ninguna';
         const fechaNac = document.getElementById('fechaNacimiento')?.value || null;
+        const telefono = document.getElementById('telefono')?.value || '';
 
         // convertir cadenas en arrays y filtrar entradas inválidas
         const alergiasArray = alergias
@@ -113,6 +118,7 @@ async function guardarCambiosPerfil(token) {
             .filter(e => e && e !== 'Ninguna');
 
         const body = {
+            telefono: telefono,
             tipoSangre: tipoSangre === 'Desconocido' ? null : tipoSangre,
             alergias: alergiasArray,
             enfermedadesCronicas: enfermedadesArray,
@@ -169,6 +175,7 @@ async function cargarCitasPaciente(token, pacienteId) {
             <div class="cita-card">
                 <p><strong>Procedimiento:</strong> ${c.motivo}</p>
                 <p><strong>Fecha:</strong> ${new Date(c.fecha).toLocaleString()}</p>
+                <p><strong>Teléfono:</strong> ${c.telefono || 'Sin disponible'}</p>
                 <p><strong>Estado:</strong> <span class="estado-${c.estado}">${c.estado}</span></p>
             </div>
         `).join('');

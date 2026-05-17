@@ -82,6 +82,7 @@ footer #box_ubicacion #maps {
   width: 90vw;
 }
 footer #box_ubicacion p {
+  font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
 }
@@ -96,6 +97,12 @@ footer #redes_sociales {
   height: auto;
   justify-content: space-around;
   padding: 3vw;
+}
+footer #redes_sociales strong {
+  font-size: 2.5vw;
+}
+footer #redes_sociales p {
+  font-size: 2.5vw;
 }
 footer {
   margin: 5vw 0 0 0;
@@ -178,10 +185,10 @@ header {
 header img {
   cursor: pointer;
   margin: 2vw 0 2vw 0;
-  width: 15vw;
+  width: 12vw;
 }
 header #logo {
-  width: 40vw;
+  width: 30vw;
 }
 header #menu_tablet {
   display: none;
@@ -239,10 +246,10 @@ main {
   margin: 7vw 0 5vw 0;
   border-radius: 10vw;
   background: rgba(255, 255, 255, 0.95);
-  width: 70vw;
+  width: 60vw;
 }
 main #mensaje {
-  font-size: 2vw;
+  font-size: 1.5vw;
   margin: 1vw 0 3vw 0;
   text-align: center;
   width: 50vw;
@@ -250,7 +257,7 @@ main #mensaje {
 main h2 {
   align-items: center;
   display: flex;
-  font-size: 4vw;
+  font-size: 3.5vw;
   margin: 2vw 0 2vw 0;
   justify-content: center;
 }
@@ -260,15 +267,19 @@ main input {
   border-radius: 50vw;
   color: rgb(99, 130, 143);
   cursor: pointer;
-  font-size: 3vw;
+  font-size: 2.5vw;
   margin: 1vw 0 1vw 0;
-  padding: 0.3vw 0.8vw 0.3vw 0.8vw;
-  width: 50vw;
+  padding: 1vw;
+  width: 45vw;
 }
 main #formRegistro {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+main #formRegistro button {
+  font-size: 2vw;
+  margin: 2vw 0 0 0;
 }
 
 #side_menu {
@@ -319,17 +330,17 @@ main #formRegistro {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60vw;
+    width: 50vw;
   }
   main h2 {
-    font-size: 3.5vw;
+    font-size: 2.5vw;
     margin: 2vw 0 2vw 0;
   }
   main input {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     margin: 1vw 0 1vw 0;
     padding: 1vw;
-    width: 50vw;
+    width: 40vw;
   }
   #formRegistro {
     display: flex;
@@ -350,19 +361,19 @@ main #formRegistro {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60vw;
+    width: 40vw;
   }
-  main button {
-    font-size: 3.5vw;
+  main #formRegistro button {
+    font-size: 1vw;
   }
   main h2 {
-    font-size: 3.5vw;
+    font-size: 1.5vw;
     margin: 2vw 0 2vw 0;
   }
   main input {
-    font-size: 2vw;
+    font-size: 1vw;
     margin: 1vw 0 1vw 0;
     padding: 1vw;
-    width: 50vw;
+    width: 30vw;
   }
 }/*# sourceMappingURL=registro.css.map */

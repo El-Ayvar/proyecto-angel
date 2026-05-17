@@ -85,6 +85,7 @@ footer #box_ubicacion #maps {
   width: 90vw;
 }
 footer #box_ubicacion p {
+  font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
 }
@@ -99,6 +100,12 @@ footer #redes_sociales {
   height: auto;
   justify-content: space-around;
   padding: 3vw;
+}
+footer #redes_sociales strong {
+  font-size: 2.5vw;
+}
+footer #redes_sociales p {
+  font-size: 2.5vw;
 }
 footer {
   margin: 5vw 0 0 0;
@@ -181,10 +188,10 @@ header {
 header img {
   cursor: pointer;
   margin: 2vw 0 2vw 0;
-  width: 15vw;
+  width: 12vw;
 }
 header #logo {
-  width: 40vw;
+  width: 30vw;
 }
 header #menu_tablet {
   display: none;
@@ -305,14 +312,14 @@ main {
 }
 main h2 {
   color: #3498db;
-  font-size: 5vw;
+  font-size: 3vw;
   margin-top: 4vw;
   margin-bottom: 2vw;
   text-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
 }
 main p {
   color: #555;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   margin-bottom: 2vw;
   text-align: center;
 }
@@ -332,14 +339,16 @@ main legend {
   display: flex;
   color: #2980b9;
   flex-direction: column;
-  font-size: 4vw;
+  font-size: 2.5vw;
   margin: 2vw 0 0vw 0;
 }
 main label {
+  font-size: 2.5vw;
   margin: 3vw 0 1vw 0;
   color: #2980b9;
 }
 main small {
+  font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.518);
 }
 main .perfil-container {
@@ -357,6 +366,7 @@ main .perfil-container #seccion-citas-paciente {
 }
 main .perfil-container #seccion-citas-paciente h3 {
   color: #3498db;
+  font-size: 2.5vw;
   text-align: center;
   margin: 2vw 0 2vw 0;
 }
@@ -385,7 +395,7 @@ main form#perfilForm input, main form#perfilForm select, main form#perfilForm te
   color: rgba(0, 0, 0, 0.518);
   border-radius: 8px;
   border: 1px solid #b2d8f7;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   background: #f7fbff;
   transition: border-color 0.2s;
 }
@@ -404,7 +414,7 @@ main form#perfilForm button[type=submit] {
   border: none;
   border-radius: 8px;
   padding: 1vw 0;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
   transition: background 0.2s;
@@ -418,10 +428,10 @@ main #cerrar-sesion {
   border: none;
   border-radius: 8px;
   padding: 1vw 0;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   cursor: pointer;
   margin: 2vw 0 10vw 0;
-  width: 80vw;
+  width: 50vw;
   box-shadow: 0 2px 8px rgba(231, 76, 60, 0.1);
   transition: background 0.2s;
 }
@@ -453,7 +463,7 @@ main #cerrar-sesion:hover {
     font-size: 1vw;
   }
   main form#perfilForm {
-    width: 70vw;
+    width: 50vw;
   }
   main form#perfilForm input, main form#perfilForm textarea {
     font-size: 1.5vw;
@@ -469,10 +479,10 @@ main #cerrar-sesion:hover {
   }
   main #cerrar-sesion {
     font-size: 2vw;
-    width: 50vw;
+    width: 30vw;
   }
   main .perfil-container #seccion-citas-paciente {
-    width: 70vw;
+    width: 50vw;
   }
 }
 @media (min-width: 769.98px) {
@@ -495,6 +505,7 @@ main #cerrar-sesion:hover {
     font-size: 0.8vw;
   }
   main form#perfilForm {
+    padding: 1vw;
     width: 50vw;
   }
   main form#perfilForm input {
@@ -509,6 +520,6 @@ main #cerrar-sesion:hover {
   }
   main #cerrar-sesion {
     font-size: 1vw;
-    width: 50vw;
+    width: 30vw;
   }
 }/*# sourceMappingURL=perfil.css.map */

@@ -94,6 +94,7 @@ footer #box_ubicacion #maps {
   width: 90vw;
 }
 footer #box_ubicacion p {
+  font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
 }
@@ -108,6 +109,12 @@ footer #redes_sociales {
   height: auto;
   justify-content: space-around;
   padding: 3vw;
+}
+footer #redes_sociales strong {
+  font-size: 2.5vw;
+}
+footer #redes_sociales p {
+  font-size: 2.5vw;
 }
 footer {
   margin: 5vw 0 0 0;
@@ -190,10 +197,10 @@ header {
 header img {
   cursor: pointer;
   margin: 2vw 0 2vw 0;
-  width: 15vw;
+  width: 12vw;
 }
 header #logo {
-  width: 40vw;
+  width: 30vw;
 }
 header #menu_tablet {
   display: none;
@@ -248,29 +255,42 @@ main {
   justify-content: space-around;
 }
 main #box_publicidad {
-  background-color: rgba(238, 249, 250, 0.582);
-}
-main #box_publicidad #pub_promo {
-  margin: 0vw 0 3vw 0;
-  width: 95vw;
-}
-@media (min-width: 481.98px) {
-  main #box_publicidad #pub_promo {
-    width: 70vw;
-  }
-}
-main #box_publicidad #pub_limpieza {
-  margin: 0vw 0 3vw 0;
-  width: 95vw;
-}
-@media (min-width: 481.98px) {
-  main #box_publicidad #pub_limpieza {
-    width: 70vw;
-  }
-}
-main #box_publicidad {
+  align-items: center;
+  background: linear-gradient(to bottom, #ffffff 0%, #DAF1F0 90%, #ffffff 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5vw;
   height: auto;
   width: 100vw;
+}
+main #box_publicidad .promocion {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  margin: 0 0 5vw 0;
+  border-radius: 15px;
+  width: 75vw;
+}
+main #box_publicidad .promocion .btn {
+  padding: 0.5vw 1vw;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 3vw 0 2vw 0;
+  border: none;
+}
+main #box_publicidad .promocion #btnB {
+  background: #3498db;
+  color: white;
+}
+main #box_publicidad .promocion #btnU {
+  background: #2ecc71;
+  color: white;
+}
+main #box_publicidad img {
+  width: 70vw;
 }
 main .cards {
   display: flex;
@@ -558,6 +578,45 @@ main #tratamientos h3 {
 }
 
 @media (min-width: 481.98px) {
+  main #box_publicidad {
+    align-items: center;
+    background: linear-gradient(to bottom, #ffffff 0%, #DAF1F0 90%, #ffffff 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0vw;
+    height: auto;
+    width: 100vw;
+  }
+  main #box_publicidad .promocion {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    margin: 0 1vw 5vw 1vw;
+    border-radius: 15px;
+    width: 40vw;
+  }
+  main #box_publicidad .promocion .btn {
+    padding: 0.5vw 1vw;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2vw 0 0vw 0;
+    border: none;
+    font-size: 1.5vw;
+  }
+  main #box_publicidad .promocion #btnB {
+    background: #3498db;
+    color: white;
+  }
+  main #box_publicidad .promocion #btnU {
+    background: #2ecc71;
+    color: white;
+  }
+  main #box_publicidad img {
+    width: 35vw;
+  }
   main .acceso_redes {
     transition: transform 0.3s ease;
     width: 5.5vw;
@@ -658,17 +717,6 @@ main #tratamientos h3 {
   }
   main #second_intro {
     width: 70vw;
-  }
-  main #box_publicidad {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  main #box_publicidad #pub_promo {
-    width: 40vw;
-  }
-  main #box_publicidad #pub_limpieza {
-    width: 43vw;
   }
   main {
     width: 80vw;
@@ -773,10 +821,10 @@ main #tratamientos h3 {
     justify-content: space-around;
   }
   main #box_publicidad #pub_promo {
-    width: 40vw;
+    width: 30vw;
   }
   main #box_publicidad #pub_limpieza {
-    width: 40vw;
+    width: 30vw;
   }
   #whatsapp {
     bottom: 3vw;

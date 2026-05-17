@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport({
 // 1. Crear una nueva cita (Paciente agendando)
 exports.crearCita = async (req, res) => {
     try {
-        let { fecha, motivo, odontologo, datosMedicosPreventivos } = req.body;
+        let { fecha, motivo, telefono, odontologo, datosMedicosPreventivos } = req.body;
         const usuarioId = req.user.id; 
 
         // Obtener datos del usuario (nombre para el correo)
@@ -60,6 +60,7 @@ exports.crearCita = async (req, res) => {
             paciente: pacienteDoc._id,
             fecha,
             motivo,
+            telefono: telefono || pacienteDoc.telefono,
             odontologo,
             estado: 'pendiente',
             datosMedicos: infoMedica 
@@ -98,6 +99,7 @@ exports.crearCita = async (req, res) => {
                 <div style="font-family: sans-serif; max-width: 600px; border: 1px solid #eee; padding: 20px;">
                     <h2 style="color: #2c3e50;">🦷 Nueva Solicitud de Cita</h2>
                     <p><strong>Paciente:</strong> ${nombrePaciente}</p>
+                    <p><strong>Teléfono:</strong> ${telefono || 'No disponible'}</p>
                     <p><strong>Procedimiento:</strong> ${motivo}</p>
                     <p><strong>Fecha solicitada:</strong> ${new Date(fecha).toLocaleString()}</p>
                     <hr>

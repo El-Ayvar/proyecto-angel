@@ -85,6 +85,7 @@ footer #box_ubicacion #maps {
   width: 90vw;
 }
 footer #box_ubicacion p {
+  font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
 }
@@ -99,6 +100,12 @@ footer #redes_sociales {
   height: auto;
   justify-content: space-around;
   padding: 3vw;
+}
+footer #redes_sociales strong {
+  font-size: 2.5vw;
+}
+footer #redes_sociales p {
+  font-size: 2.5vw;
 }
 footer {
   margin: 5vw 0 0 0;
@@ -184,10 +191,10 @@ header {
 header img {
   cursor: pointer;
   margin: 2vw 0 2vw 0;
-  width: 15vw;
+  width: 12vw;
 }
 header #logo {
-  width: 40vw;
+  width: 30vw;
 }
 header #menu_tablet {
   display: none;
@@ -326,7 +333,6 @@ main form#loginForm input {
   border-radius: 8px;
   border: 1px solid #b2d8f7;
   font-size: 2.5vw;
-  margin-bottom: 1vw;
   background: #f7fbff;
   transition: border-color 0.2s;
 }
@@ -423,6 +429,9 @@ main #mensajeBienvenida {
     align-items: center;
     padding: 1vw;
     width: 30vw;
+  }
+  main form#loginForm #correo {
+    margin: 1vw 0 0vw 0;
   }
   main form#loginForm input {
     font-size: 1vw;
