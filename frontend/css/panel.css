@@ -87,6 +87,19 @@
   overflow-y: auto;
   height: 50vw;
 }
+#citasPCC #infoR #buttonR {
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 2vw 0 0 0;
+  width: 15vw;
+  font-size: 2vw;
+}
+#citasPCC #infoR #lista-recordatorios div {
+  text-align: center;
+}
 
 @media (min-width: 481.98px) {
   #citasPCC {
@@ -97,14 +110,55 @@
     background: #f9f9f9;
     overflow-y: auto;
   }
+  #citasPCC #infoP #lista-pendientes {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    width: 39vw;
+    padding: 0 0 1vw 0;
+  }
   #citasPCC #infoCo {
     background: #e8f5e9;
     overflow-y: auto;
   }
+  #citasPCC #infoCo #lista-confirmadas {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    width: 38vw;
+    padding: 0 0 1vw 0;
+  }
   #citasPCC #infoCa {
     background: #ffebee;
-    aspect-ratio: 1/1.7;
     overflow-y: auto;
+  }
+  #citasPCC #infoCa #lista-canceladas {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    width: 39vw;
+    padding: 0 0 1vw 0;
+  }
+  #citasPCC #infoR {
+    background: #e3f2fd;
+    overflow-y: auto;
+  }
+  #citasPCC #infoR #lista-recordatorios {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    width: 39vw;
+    padding: 0 0 1vw 0;
+  }
+  #citasPCC #infoR #lista-recordatorios #buttonR {
+    background: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 2vw 0 0 0;
+    width: 10vw;
+    font-size: 1.5vw;
   }
   #citasPCC .infoCitasPCC {
     display: flex;
@@ -114,7 +168,7 @@
   }
   #citasPCC .infoCitasPCC .cita-item {
     align-items: center;
-    width: 25vw;
+    width: 18vw;
   }
   #citasPCC .infoCitasPCC .cita-item strong, #citasPCC .infoCitasPCC .cita-item small, #citasPCC .infoCitasPCC .cita-item p {
     width: 100%;

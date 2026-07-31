@@ -83,6 +83,21 @@
             width: 40vw;
             overflow-y: auto;
             height: 50vw;
+            #buttonR {
+                background: #3498db; 
+                color: white; 
+                border: none; 
+                cursor: pointer; 
+                border-radius: 4px; 
+                margin: 2vw 0 0 0;
+                width: 15vw;
+                font-size: 2vw;
+            }
+            #lista-recordatorios {
+                div {
+                    text-align: center;
+                }
+            }
         }
     }
     @media (min-width: 481.98px) {
@@ -92,15 +107,56 @@
             #infoP {
                 background: #f9f9f9;
                 overflow-y: auto;
+                #lista-pendientes {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-flow: wrap;
+                    width: 39vw;
+                    padding: 0 0 1vw 0;
+                }
             }
             #infoCo {
                 background: #e8f5e9;
                 overflow-y: auto;
+                #lista-confirmadas {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-flow: wrap;
+                    width: 38vw;
+                    padding: 0 0 1vw 0;
+                }
             }
             #infoCa {
                 background: #ffebee;
-                aspect-ratio: 1/1.7;
                 overflow-y: auto;
+                #lista-canceladas {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-flow: wrap;
+                    width: 39vw;
+                    padding: 0 0 1vw 0;
+                }
+            }
+            #infoR {
+                background: #e3f2fd;
+                overflow-y: auto;
+                #lista-recordatorios {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-flow: wrap;
+                    width: 39vw;
+                    padding: 0 0 1vw 0;
+                    #buttonR {
+                        background: #3498db; 
+                        color: white; 
+                        border: none; 
+                        cursor: pointer; 
+                        border-radius: 4px; 
+                        margin: 2vw 0 0 0;
+                        width: 10vw;
+                        font-size: 1.5vw;
+                    }
+                }
             }
             .infoCitasPCC {
                 display: flex;
@@ -109,7 +165,7 @@
                 font-size: 1.5vw;
                 .cita-item {
                     align-items: center;
-                    width: 25vw;
+                    width: 18vw;
                     strong, small, p {
                         width: 100%;
                     }
@@ -118,7 +174,8 @@
             .botones-estado {
                 margin: 2vw 0 0 0;
                 width: 13vw;
-                #buttonP, #buttonC, #buttonCa {
+                #buttonP, #buttonC, #buttonCa
+                {
                     font-size: 2.5vw;
                     width: 4vw;
                 }

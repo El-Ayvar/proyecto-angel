@@ -91,10 +91,8 @@ function renderizarPacientes(pacientes) {
 
 // NUEVA FUNCIÓN: Gestión de Papelera para el Admin
 async function manejarPapelera(idUsuario, accion) {
-    const confirmacion = confirm(`¿Estás seguro de que deseas ${accion.replace('_', ' ')} este registro?`);
-    if (!confirmacion) return;
-
-    try {
+    mostrarConfirmacion(`¿Estás seguro de que deseas ${accion.replace('_', ' ')} este registro?`, async () => {
+        try {
         const res = await fetch(`${API_URL}/pacientes/papelera/${idUsuario}`, {
             method: 'POST',
             headers: {
@@ -104,16 +102,19 @@ async function manejarPapelera(idUsuario, accion) {
             body: JSON.stringify({ accion })
         });
 
-        if (res.ok) {
-            alert('Operación realizada con éxito');
-            cargarTodosLosPacientes();
-        } else {
-            const error = await res.json();
-            alert('Error: ' + error.msg);
+            if (res.ok) {
+                mostrarAviso('Operación realizada con éxito', 'success', () => {
+                    cargarTodosLosPacientes();
+                });
+            } else {
+                const error = await res.json();
+                mostrarAviso('Error: ' + error.msg, 'error');
+            }
+        } catch (error) {
+            console.error('Error en papelera:', error);
+            mostrarAviso('Error de conexión con el servidor', 'error');
         }
-    } catch (error) {
-        console.error('Error en papelera:', error);
-    }
+    });
 }
 
 // ==========================================
@@ -532,7 +533,7 @@ function mostrarConfirmacion(texto, onConfirm, onCancel) {
                 <p class="confirmacion-texto"></p>
                 <div id="confirmacion-botones">
                     <button id="confirmacion-cancelar">Cancelar</button>
-                    <button id="confirmacion-confirmar">Eliminar</button>
+                    <button id="confirmacion-confirmar">Confirmar</button>
                 </div>
             </div>
         `;
@@ -606,10 +607,9 @@ async function borrarRegistro(idPaciente) {
 }
 
 function confirmarAccion(mensaje, callback) {
-    const respuesta = confirm(mensaje);
-    if (respuesta) {
+    mostrarConfirmacion(mensaje, () => {
         callback();
-    }
+    });
 }
 
 async function restaurarPaciente(usuarioId) {
@@ -747,8 +747,8 @@ async function cargarGestionCitas() {
 
                 <!-- El botón de WhatsApp SOLO aparece si la cita está confirmada y es para mañana -->
                 ${(cita.estado === 'confirmada' && esParaManana) ? `
-                <div style="margin-top: 8px;">
-                    <button onclick="enviarRecordatorio('${telefono}', '${nombre}', '${fecha}')" style="background: #3498db; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; width: 100%; font-size: 0.9em;">
+                <div>
+                    <button id="buttonR" onclick="enviarRecordatorio('${telefono}', '${nombre}', '${fecha}')">
                         💬 Enviar Recordatorio
                     </button>
                 </div>
@@ -787,7 +787,7 @@ window.cambiarStatusCita = async (id, nuevoEstado, telefonoPaciente, nombrePacie
     if (telefonoPaciente && telefonoPaciente !== 'Sin telefono' && telefonoPaciente !== 'undefined') {
         let mensaje = '';
         if (nuevoEstado === 'confirmada') {
-            mensaje = `Hola ${nombrePaciente}, te confirmamos tu cita en AyvarDent. ¡Te esperamos! 🦷✨`;
+            mensaje = `Hola ${nombrePaciente}, te confirmamos tu cita en AyvarDent. ¡Te esperamos!`;
         } else if (nuevoEstado === 'cancelada') {
             mensaje = `Hola ${nombrePaciente}, te informamos que tu cita en AyvarDent ha sido cancelada. Si deseas reagendar, estamos a tus órdenes.`;
         }
