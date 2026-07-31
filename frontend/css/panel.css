@@ -6,12 +6,15 @@
 }
 
 #citasPCC {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: white;
+  padding: 3vw;
   gap: 20px;
   justify-content: space-around;
-  padding: 1vw;
   margin: 5vw 0 0 0;
   border: solid 1px #ddd;
+  width: 90vw;
 }
 #citasPCC .infoCitasPCC {
   flex: 1;
@@ -62,18 +65,27 @@
 }
 #citasPCC #infoP {
   background: #f9f9f9;
-  aspect-ratio: 1;
+  width: 40vw;
   overflow-y: auto;
+  height: 50vw;
 }
 #citasPCC #infoCo {
   background: #e8f5e9;
-  aspect-ratio: 1;
+  width: 40vw;
   overflow-y: auto;
+  height: 50vw;
 }
 #citasPCC #infoCa {
   background: #ffebee;
-  aspect-ratio: 1/3;
+  width: 40vw;
   overflow-y: auto;
+  height: 50vw;
+}
+#citasPCC #infoR {
+  background: #e3f2fd;
+  width: 40vw;
+  overflow-y: auto;
+  height: 50vw;
 }
 
 @media (min-width: 481.98px) {
@@ -91,7 +103,7 @@
   }
   #citasPCC #infoCa {
     background: #ffebee;
-    aspect-ratio: 1/2;
+    aspect-ratio: 1/1.7;
     overflow-y: auto;
   }
   #citasPCC .infoCitasPCC {
@@ -131,7 +143,7 @@
   }
   #citasPCC #infoCa {
     background: #ffebee;
-    aspect-ratio: 1/1.5;
+    aspect-ratio: 1/1;
     overflow-y: auto;
   }
   #citasPCC .infoCitasPCC {
@@ -145,6 +157,7 @@
     justify-content: space-around;
     flex-flow: wrap;
     width: 90%;
+    padding: 0 0 1vw 0;
   }
   #citasPCC .infoCitasPCC .cita-item {
     align-items: center;
@@ -349,6 +362,7 @@ html, body {
   font-size: 16px;
   justify-content: space-between;
   overflow-x: hidden;
+  background-color: rgba(245, 247, 251, 0.8549019608);
 }
 
 button {
@@ -388,7 +402,7 @@ footer .btn_subir {
   background-color: rgba(121, 194, 196, 0.762);
   border-radius: 10vw;
   cursor: pointer;
-  margin: 0 0 3vw 0;
+  margin: 3vw 0 3vw 0;
   width: 8vw;
 }
 footer .box_redes {
@@ -425,6 +439,9 @@ footer #box_ubicacion p {
   font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
+}
+footer #box_ubicacion iframe {
+  aspect-ratio: 16/9;
 }
 footer .logo {
   margin: 2vw 0 2vw 0;
@@ -465,17 +482,24 @@ footer {
     width: 3vw;
   }
   footer #box_ubicacion strong {
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
   footer #box_ubicacion p {
-    font-size: 2.5vw;
+    font-size: 2vw;
+    text-align: center;
   }
   footer #box_ubicacion #maps {
     height: 40vh;
     width: 90vw;
   }
+  footer #box_ubicacion iframe {
+    aspect-ratio: 15/7;
+  }
+  footer #box_boton {
+    margin: 2vw 0 0vw 0;
+  }
   footer #box_boton .btn_subir {
-    width: 7vw;
+    width: 5vw;
   }
 }
 @media (min-width: 769.98px) {
@@ -510,6 +534,10 @@ footer {
   footer #box_ubicacion strong {
     font-size: 1vw;
   }
+  footer #box_ubicacion iframe {
+    width: 60vw;
+    aspect-ratio: 16/9;
+  }
   footer #box_ubicacion {
     text-align: center;
   }
@@ -521,6 +549,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  position: fixed;
+  z-index: 11;
 }
 header img {
   cursor: pointer;
@@ -685,15 +715,17 @@ header button {
 }
 
 main {
+  align-items: center;
+  background-color: rgba(245, 247, 251, 0.8549019608);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 main .buscador-seccion {
   align-items: center;
   display: flex;
   flex-direction: column;
+  padding: 13vw 0 0vw 0;
   width: 95vw;
 }
 main .buscador-seccion h2 {
@@ -732,6 +764,7 @@ main .logout {
 }
 main ul {
   border: 1px solid rgba(100, 175, 229, 0.3);
+  background-color: white;
   overflow-y: auto;
   height: 80vh;
   padding: 0 1vw 0 1vw;
@@ -1326,8 +1359,8 @@ main #aviso-contenido button:hover {
     width: 60vw;
   }
   main .buscador-seccion {
-    background-color: #e4e9f0;
-    padding: 0 0 2vw 0;
+    background-color: rgba(245, 247, 251, 0.8549019608);
+    padding: 8vw 0 2vw 0;
   }
   main ul {
     background-color: white;
@@ -1529,6 +1562,7 @@ main #aviso-contenido button:hover {
 @media (min-width: 769.98px) {
   main .buscador-seccion {
     border-top: solid white 6px;
+    padding: 4vw 0 0vw 0;
     width: 95vw;
   }
   main .buscador-seccion h2 {

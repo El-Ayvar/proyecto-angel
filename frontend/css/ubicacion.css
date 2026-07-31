@@ -12,6 +12,15 @@ html, body {
   font-size: 16px;
   justify-content: space-between;
   overflow-x: hidden;
+  background-color: rgb(228, 239, 245);
+}
+
+.acceso_redes {
+  bottom: 5vw;
+  cursor: pointer;
+  position: fixed;
+  right: 1vw;
+  width: 10vw;
 }
 
 button {
@@ -44,7 +53,7 @@ footer .btn_subir {
   background-color: rgba(121, 194, 196, 0.762);
   border-radius: 10vw;
   cursor: pointer;
-  margin: 0 0 3vw 0;
+  margin: 3vw 0 3vw 0;
   width: 8vw;
 }
 footer .box_redes {
@@ -81,6 +90,9 @@ footer #box_ubicacion p {
   font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
+}
+footer #box_ubicacion iframe {
+  aspect-ratio: 16/9;
 }
 footer .logo {
   margin: 2vw 0 2vw 0;
@@ -121,17 +133,24 @@ footer {
     width: 3vw;
   }
   footer #box_ubicacion strong {
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
   footer #box_ubicacion p {
-    font-size: 2.5vw;
+    font-size: 2vw;
+    text-align: center;
   }
   footer #box_ubicacion #maps {
     height: 40vh;
     width: 90vw;
   }
+  footer #box_ubicacion iframe {
+    aspect-ratio: 15/7;
+  }
+  footer #box_boton {
+    margin: 2vw 0 0vw 0;
+  }
   footer #box_boton .btn_subir {
-    width: 7vw;
+    width: 5vw;
   }
 }
 @media (min-width: 769.98px) {
@@ -166,6 +185,10 @@ footer {
   footer #box_ubicacion strong {
     font-size: 1vw;
   }
+  footer #box_ubicacion iframe {
+    width: 60vw;
+    aspect-ratio: 16/9;
+  }
   footer #box_ubicacion {
     text-align: center;
   }
@@ -177,6 +200,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  position: fixed;
+  z-index: 11;
 }
 header img {
   cursor: pointer;
@@ -238,8 +263,9 @@ main {
   flex-direction: column;
   justify-content: space-around;
   width: 90vw;
-  background-color: #DAF1F0;
-  padding: 2vw;
+  padding: 6rem 1rem 2rem;
+  width: 100%;
+  max-width: 1100px;
 }
 main #box_location {
   align-items: center;
@@ -248,32 +274,40 @@ main #box_location {
   justify-content: space-around;
   background-color: white;
   border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  width: min(100%, 56rem);
 }
 main #box_location #direccion {
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  padding: 1rem 0.5rem 0;
+  width: 100%;
 }
 main #box_location #direccion img {
-  margin: 0 2vw 0 0;
-  width: 7vw;
+  margin: 0;
+  width: clamp(2rem, 6vw, 3rem);
 }
 main #box_location #direccion strong {
   color: rgba(0, 0, 0, 0.585);
-  font-size: 2.5vw;
-  text-align: center;
-}
-main #box_location #direccion {
-  width: 90vw;
+  font-size: clamp(1rem, 2.3vw, 1.35rem);
+  flex: 1 1 16rem;
+  max-width: 32rem;
+  text-align: left;
 }
 main #box_location #maps {
   border-radius: 15px;
-  margin: 0vw 0 2vw 0;
-  width: 90vw;
-}
-main #box_location {
-  width: 90vw;
+  height: min(55vw, 350px);
+  margin: 0 0 1rem 0;
+  width: 100%;
+  max-height: 420px;
 }
 main #box_horario {
   align-items: center;
@@ -282,46 +316,48 @@ main #box_horario {
   justify-content: space-around;
   background-color: white;
   border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0 0 2rem 0;
+  padding: 1.25rem 1rem;
+  width: min(100%, 34rem);
 }
 main #box_horario #horario {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: flex-start;
 }
 main #box_horario #horario p {
   color: rgba(0, 0, 0, 0.56);
-  margin: 0 0 1vw 0;
-  width: 45vw;
-  font-size: 2.5vw;
+  font-size: clamp(0.95rem, 2.1vw, 1.1rem);
+  margin: 0 0 0.5rem 0;
+  text-align: left;
+  width: 100%;
 }
 main #box_horario #horario h3 {
-  margin: 0 0 1vw 0;
-  text-align: start;
-  width: 45vw;
-}
-main #box_horario {
-  margin: 5vw 0 5vw 0;
+  margin: 0 0 0.5rem 0;
+  text-align: left;
+  width: 100%;
 }
 main #box_horario img {
-  width: 8vw;
-}
-main #box_horario {
-  width: 60vw;
+  width: clamp(2.6rem, 8vw, 3.5rem);
 }
 main h1 {
   color: rgba(0, 0, 0, 0.582);
-  margin: 3vw 0 3vw 0;
-  font-size: 4vw;
+  margin: 0 0 1rem 0;
+  font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+  text-align: center;
 }
 main h3 {
   color: rgba(0, 0, 0, 0.582);
-  margin: 3vw 0 3vw 0;
+  margin: 0 0 1.2rem 0;
   text-align: center;
-  font-size: 2.5vw;
-}
-main {
-  width: 100vw;
+  font-size: clamp(1rem, 2.3vw, 1.25rem);
 }
 
 #side_menu {

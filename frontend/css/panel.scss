@@ -16,6 +16,7 @@
 
 html, body {
     @include body();
+    background-color: #f5f7fbda;
 }
 
 button {
@@ -139,15 +140,17 @@ header{
 }
 
 main {
+    align-items: center;
+    background-color: #f5f7fbda;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     
     .buscador-seccion {
         align-items: center;
         display: flex;
         flex-direction: column;
+        padding: 13vw 0 0vw 0;
         width: 95vw;
         h2 {
             display: flex;
@@ -189,6 +192,7 @@ main {
     }
     ul {
         border: 1px solid rgba(100, 175, 229, 0.3);
+        background-color: white;
         overflow-y: auto;
         height: 80vh;
         padding: 0 1vw 0 1vw;
@@ -798,8 +802,8 @@ main {
         }
 
         .buscador-seccion {
-            background-color: #e4e9f0;
-            padding: 0 0 2vw 0;
+            background-color: #f5f7fbda;
+            padding: 8vw 0 2vw 0;
         }
 
         ul {
@@ -1042,6 +1046,7 @@ main {
     main {
         .buscador-seccion {
             border-top: solid white 6px;
+            padding: 4vw 0 0vw 0;
             width: 95vw;
             h2 {
                 font-size: 2vw;

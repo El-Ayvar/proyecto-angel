@@ -56,7 +56,7 @@ exports.registrarPaciente = async (req, res) => {
             try {
                 const tokenLimpio = authHeader.split(' ')[1] || authHeader;
                 const cifrado = jwt.verify(tokenLimpio, process.env.JWT_SECRET);
-                if (!cifrado || cifrado.rol !== 'admin, odontologo') {
+                if (!cifrado || cifrado.rol !== 'admin') {
                     return res.status(403).json({ msg: 'Solo administradores y odontólogos pueden crear asistentes' });
                 }
             } catch (err) {
@@ -64,21 +64,21 @@ exports.registrarPaciente = async (req, res) => {
             }
         }
 
-        if (rolASalvar === 'paciente') {
-            const authHeader = req.header('Authorization');
-            if (!authHeader) return res.status(401).json({ msg: 'Token requerido para crear pacientes' });
-
-            try {
-                const tokenLimpio = authHeader.split(' ')[1] || authHeader;
-                const cifrado = jwt.verify(tokenLimpio, process.env.JWT_SECRET);
-                if (!cifrado || !(cifrado.rol === 'admin' || cifrado.rol === 'odontologo' || cifrado.rol === 'asistente')) {
-                    return res.status(403).json({ msg: 'Solo administradores, odontólogos y asistentes pueden crear pacientes' });
-                }
-            } catch (err) {
-                return res.status(401).json({ msg: 'Token no válido' });
-            }
-        }
-
+        //if (rolASalvar === 'paciente') {
+        //    const authHeader = req.header('Authorization');
+        //    if (!authHeader) return res.status(401).json({ msg: 'Token requerido para crear pacientes' });
+//
+        //    try {
+        //        const tokenLimpio = authHeader.split(' ')[1] || authHeader;
+        //        const cifrado = jwt.verify(tokenLimpio, process.env.JWT_SECRET);
+        //        if (!cifrado || !(cifrado.rol === 'admin' || cifrado.rol === 'odontologo' || cifrado.rol === 'asistente')) {
+        //            return res.status(403).json({ msg: 'Solo administradores, odontólogos y asistentes pueden crear pacientes' });
+        //        }
+        //    } catch (err) {
+        //        return res.status(401).json({ msg: 'Token no válido' });
+        //    }
+        //}
+//
         const nuevoUsuario = new Usuario({ nombre, email, password, rol: rolASalvar });
         await nuevoUsuario.save();
 
@@ -96,7 +96,6 @@ exports.registrarPaciente = async (req, res) => {
             await nuevoPaciente.save();
         }
 
-        // 3. (Opcional pero recomendado) Generar un Token para que entre directo
         const token = jwt.sign({ id: nuevoUsuario._id, rol: nuevoUsuario.rol }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
         res.status(201).json({

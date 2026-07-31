@@ -13,6 +13,7 @@ html, body {
   font-size: 16px;
   justify-content: space-between;
   overflow-x: hidden;
+  background-color: rgb(245, 251, 255);
 }
 
 .acceso_redes {
@@ -60,7 +61,7 @@ footer .btn_subir {
   background-color: rgba(121, 194, 196, 0.762);
   border-radius: 10vw;
   cursor: pointer;
-  margin: 0 0 3vw 0;
+  margin: 3vw 0 3vw 0;
   width: 8vw;
 }
 footer .box_redes {
@@ -97,6 +98,9 @@ footer #box_ubicacion p {
   font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
+}
+footer #box_ubicacion iframe {
+  aspect-ratio: 16/9;
 }
 footer .logo {
   margin: 2vw 0 2vw 0;
@@ -137,17 +141,24 @@ footer {
     width: 3vw;
   }
   footer #box_ubicacion strong {
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
   footer #box_ubicacion p {
-    font-size: 2.5vw;
+    font-size: 2vw;
+    text-align: center;
   }
   footer #box_ubicacion #maps {
     height: 40vh;
     width: 90vw;
   }
+  footer #box_ubicacion iframe {
+    aspect-ratio: 15/7;
+  }
+  footer #box_boton {
+    margin: 2vw 0 0vw 0;
+  }
   footer #box_boton .btn_subir {
-    width: 7vw;
+    width: 5vw;
   }
 }
 @media (min-width: 769.98px) {
@@ -182,6 +193,10 @@ footer {
   footer #box_ubicacion strong {
     font-size: 1vw;
   }
+  footer #box_ubicacion iframe {
+    width: 60vw;
+    aspect-ratio: 16/9;
+  }
   footer #box_ubicacion {
     text-align: center;
   }
@@ -193,6 +208,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  position: fixed;
+  z-index: 11;
 }
 header img {
   cursor: pointer;
@@ -253,10 +270,10 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 15vw 0 0 0;
 }
 main #box_publicidad {
   align-items: center;
-  background: linear-gradient(to bottom, #ffffff 0%, #DAF1F0 90%, #ffffff 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -298,12 +315,13 @@ main .cards {
   align-items: center;
   justify-content: center;
   background-color: #DAF1F0;
-  border-radius: 5vw;
+  border-radius: 10px;
   border: 1px solid rgba(132, 162, 203, 0.52);
   margin: 0 0 7vw 0;
   max-width: 70vw;
   transition: transform 0.3s ease;
   height: auto;
+  padding: 2vw;
 }
 main .cards #boximg_extraccion {
   max-width: 70vw;
@@ -311,10 +329,10 @@ main .cards #boximg_extraccion {
   height: auto;
 }
 main .cards #boximg_extraccion #video_extraccion {
-  width: 70vw;
+  width: 65vw;
 }
 main .cards .boxImg {
-  border-radius: 5vw;
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
   max-width: 100vw;
@@ -426,8 +444,9 @@ main .cards .boxTB .text {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  text-align: center;
   max-width: 70vw;
-  padding: 3vw;
+  padding: 1vw;
 }
 main .cards .boxTB .text strong {
   color: rgba(51, 51, 51, 0.8509803922);
@@ -578,9 +597,11 @@ main #tratamientos h3 {
 }
 
 @media (min-width: 481.98px) {
+  main {
+    padding: 10vw 0 0 0;
+  }
   main #box_publicidad {
     align-items: center;
-    background: linear-gradient(to bottom, #ffffff 0%, #DAF1F0 90%, #ffffff 100%);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -632,6 +653,7 @@ main #tratamientos h3 {
   main #tratamientos .cards {
     display: flex;
     overflow: hidden;
+    padding: 1vw 1vw 0vw 1vw;
     width: 35vw;
   }
   main #tratamientos .cards .boxTB {
@@ -659,18 +681,18 @@ main #tratamientos h3 {
   main #tratamientos .cards .boxImg {
     display: grid;
     grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
-    border-radius: 15px;
+    border-radius: 10px;
     aspect-ratio: 3/2;
     -o-object-fit: cover;
        object-fit: cover;
     margin: 0 0 1vw 0;
-    width: 35vw;
+    width: 33vw;
   }
   main #tratamientos .cards .boxImg .imgAfter {
     width: 100%;
   }
   main #tratamientos .cards .boxImg .imgBefore {
-    width: 35vw;
+    width: 33vw;
     height: 100%;
   }
   main #tratamientos .cards #boximg_extraccion {
@@ -678,7 +700,7 @@ main #tratamientos h3 {
     margin: 0vw;
   }
   main #tratamientos .cards #boximg_extraccion #video_extraccion {
-    max-width: 35vw;
+    max-width: 33vw;
   }
   main #tratamientos {
     -moz-column-count: 2;

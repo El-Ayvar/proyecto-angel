@@ -106,6 +106,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('form-cita');          // el formulario principal
     const mensajeDiv = document.getElementById('mensaje-cita'); // elemento para mensajes
 
+    const horaInput = document.getElementById('hora');
+
+    if (horaInput) {
+        horaInput.addEventListener('change', () => {
+            const hora = horaInput.value;
+            if (hora && (hora < '07:00' || hora > '20:00')) {
+                mensajeDiv.className = 'error';
+                mensajeDiv.textContent = '⚠️ Horario fuera de servicio. Selecciona una hora entre 7:00 AM y 8:00 PM.';
+                horaInput.value = ''; 
+            } else if (mensajeDiv.textContent.includes('Horario fuera de servicio')) {
+                mensajeDiv.textContent = ''; 
+                mensajeDiv.className = '';
+            }
+        });
+    }
+
+
     // si no existe el formulario en esta página, salgo
     if (!form) return; 
 
@@ -133,6 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!procedimiento || !fecha || !hora || !telefono) {
             mensajeDiv.textContent = 'Por favor completa fecha, hora, procedimiento y teléfono.';
             return; // si falta algo, no continúo
+        }
+
+        if (hora < '07:00' || hora > '20:00') {
+            mensajeDiv.className = 'error';
+            mensajeDiv.textContent = '❌ La hora seleccionada debe estar entre las 7:00 AM y las 8:00 PM.';
+            return;
         }
 
         // obtengo también los datos médicos opcionales

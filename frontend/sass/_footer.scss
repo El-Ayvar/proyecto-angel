@@ -10,7 +10,7 @@
         background-color: rgba(121, 194, 196, 0.762);
         border-radius: 10vw;
         cursor: pointer;
-        margin: 0 0 3vw 0;
+        margin: 3vw 0 3vw 0;
         width: 8vw;
     }
     .box_redes {
@@ -36,6 +36,9 @@
             font-size: 2.5vw;
             color: $color-letra;
             margin: 3vw 0 3vw 0;
+        }
+        iframe {
+            aspect-ratio: 16/9;
         }
     }
     .logo {
@@ -74,19 +77,24 @@
         }
         #box_ubicacion {
             strong {
-                font-size: 2.5vw;
+                font-size: 2vw;
             }
             p {
-                font-size: 2.5vw;
+                font-size: 2vw;
+                text-align: center;
             }
             #maps {
                 height: 40vh;
                 width: 90vw;
             }
+            iframe {
+            aspect-ratio: 15/7;
+            }
         }
         #box_boton {
+            margin: 2vw 0 0vw 0;
             .btn_subir {
-                width: 7vw;
+                width: 5vw;
             }
         }
     }
@@ -117,6 +125,10 @@
             }
             strong {
                 font-size: 1vw;
+            }
+            iframe {
+                width: 60vw;
+                aspect-ratio: 16/9;
             }
             text-align: center;
         }

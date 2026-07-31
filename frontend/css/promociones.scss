@@ -11,6 +11,14 @@ html, body {
     @include body();
 }
 
+.acceso_redes {
+    bottom: 5vw;
+    cursor: pointer;
+    position: fixed;
+    right: 1vw;
+    width: 10vw;
+}
+
 button {
     @include boton();
 }
@@ -30,7 +38,7 @@ main {
     justify-content: center;
     align-items: center;
     background-color: $color-fondo;
-    padding: 5vw;
+    padding: 20vw 0 0 0;
     width: 100vw;
     .promocion {
         align-items: center;
@@ -143,6 +151,7 @@ main {
 @media (min-width: 769.98px) {
     main {
         justify-content: space-evenly;
+        padding: 10vw 0 0vw 0;
         flex-direction: row;
         width: 100vw;
         .promocion {
@@ -156,13 +165,15 @@ main {
                font-size: 1.5vw;
            }
            #btnB {
-               background: #3498db;
-               color: white;
+                margin: 3vw 0vw 2vw 0;
+                background: #3498db;
+                color: white;
            }
 
                #btnU {
-                   background: #2ecc71;
-                   color: white;
+                    margin: 3vw 0vw 2vw 0;
+                    background: #2ecc71;
+                    color: white;
                }
            }
            img {

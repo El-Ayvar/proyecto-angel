@@ -89,6 +89,7 @@ header{
 
 main {
     @include box-centrado();
+    padding: 15vw 0 0 0;
     width: 100vw;
 
     #boton {

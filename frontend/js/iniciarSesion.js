@@ -53,7 +53,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
             // redirección según rol después de un breve retraso
             setTimeout(() => {
                 const rol = data.usuario.rol;
-                if (rol === 'odontologo') {
+                if (rol === 'admin', 'odontologo') {
                     window.location.href = '../views/panel.html'; // panel de doctores
                 } else {
                     window.location.href = '../index.html'; // perfil de paciente

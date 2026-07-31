@@ -7,6 +7,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    position: fixed;
+    z-index: 11;
     img {
         cursor: pointer;
         margin: 2vw 0 2vw 0;

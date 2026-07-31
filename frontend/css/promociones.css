@@ -14,6 +14,14 @@ html, body {
   overflow-x: hidden;
 }
 
+.acceso_redes {
+  bottom: 5vw;
+  cursor: pointer;
+  position: fixed;
+  right: 1vw;
+  width: 10vw;
+}
+
 button {
   background: transparent;
   border: 2px solid rgb(99, 130, 143);
@@ -44,7 +52,7 @@ footer .btn_subir {
   background-color: rgba(121, 194, 196, 0.762);
   border-radius: 10vw;
   cursor: pointer;
-  margin: 0 0 3vw 0;
+  margin: 3vw 0 3vw 0;
   width: 8vw;
 }
 footer .box_redes {
@@ -81,6 +89,9 @@ footer #box_ubicacion p {
   font-size: 2.5vw;
   color: rgba(0, 0, 0, 0.5921568627);
   margin: 3vw 0 3vw 0;
+}
+footer #box_ubicacion iframe {
+  aspect-ratio: 16/9;
 }
 footer .logo {
   margin: 2vw 0 2vw 0;
@@ -121,17 +132,24 @@ footer {
     width: 3vw;
   }
   footer #box_ubicacion strong {
-    font-size: 2.5vw;
+    font-size: 2vw;
   }
   footer #box_ubicacion p {
-    font-size: 2.5vw;
+    font-size: 2vw;
+    text-align: center;
   }
   footer #box_ubicacion #maps {
     height: 40vh;
     width: 90vw;
   }
+  footer #box_ubicacion iframe {
+    aspect-ratio: 15/7;
+  }
+  footer #box_boton {
+    margin: 2vw 0 0vw 0;
+  }
   footer #box_boton .btn_subir {
-    width: 7vw;
+    width: 5vw;
   }
 }
 @media (min-width: 769.98px) {
@@ -166,6 +184,10 @@ footer {
   footer #box_ubicacion strong {
     font-size: 1vw;
   }
+  footer #box_ubicacion iframe {
+    width: 60vw;
+    aspect-ratio: 16/9;
+  }
   footer #box_ubicacion {
     text-align: center;
   }
@@ -180,6 +202,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  position: fixed;
+  z-index: 11;
 }
 header img {
   cursor: pointer;
@@ -241,7 +265,7 @@ main {
   justify-content: center;
   align-items: center;
   background-color: #DAF1F0;
-  padding: 5vw;
+  padding: 20vw 0 0 0;
   width: 100vw;
 }
 main .promocion {
@@ -346,6 +370,7 @@ main img {
 @media (min-width: 769.98px) {
   main {
     justify-content: space-evenly;
+    padding: 10vw 0 0vw 0;
     flex-direction: row;
     width: 100vw;
   }
@@ -361,10 +386,12 @@ main img {
     font-size: 1.5vw;
   }
   main .promocion #btnB {
+    margin: 3vw 0vw 2vw 0;
     background: #3498db;
     color: white;
   }
   main .promocion #btnU {
+    margin: 3vw 0vw 2vw 0;
     background: #2ecc71;
     color: white;
   }

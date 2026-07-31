@@ -605,6 +605,13 @@ async function borrarRegistro(idPaciente) {
     );
 }
 
+function confirmarAccion(mensaje, callback) {
+    const respuesta = confirm(mensaje);
+    if (respuesta) {
+        callback();
+    }
+}
+
 async function restaurarPaciente(usuarioId) {
     const token = localStorage.getItem('token');
     
@@ -634,6 +641,63 @@ async function restaurarPaciente(usuarioId) {
     });
 }
 
+// ==========================================
+// BORRAR DEFINITIVAMENTE DE LA PAPELERA
+// ==========================================
+async function borrarRegistroDefinitivo(usuarioId) {
+    const token = localStorage.getItem('token');
+    
+    try {
+        // Hacemos la petición a tu ruta de papelera indicando la acción
+        const res = await fetch(`${API_URL}/pacientes/papelera/${usuarioId}`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ accion: 'borrar_definitivo' }) 
+        });
+
+        // Verificamos si el backend no devolvió contenido (204 No Content) o si devolvió un JSON
+        let data = {};
+        if (res.headers.get("content-type")?.includes("application/json")) {
+            data = await res.json();
+        }
+
+        if (res.ok) {
+            mostrarAviso('✅ Paciente eliminado de la base de datos', 'success');
+            cargarTodosLosPacientes(); // Recargamos la lista para que desaparezca
+        } else {
+            mostrarAviso('❌ ' + (data.msg || 'No se pudo eliminar al paciente'), 'error');
+        }
+    } catch (error) {
+        console.error("Error al borrar definitivamente:", error);
+        mostrarAviso('Error de conexión con el servidor', 'error');
+    }
+}
+
+// ==========================================
+// FUNCIÓN PARA ENVIAR RECORDATORIOS DE WHATSAPP
+// ==========================================
+window.enviarRecordatorio = (telefonoPaciente, nombrePaciente, fechaCita) => {
+    // Validamos que el paciente tenga un número válido registrado
+    if (telefonoPaciente && telefonoPaciente !== 'Sin teléfono' && telefonoPaciente !== 'undefined') {
+        
+        // Redactamos el mensaje de recordatorio. 
+        // Nota: Como 'fechaCita' ya viene formateada desde tu código anterior (ej. 29/7/2026, 16:00), se leerá natural.
+        const mensaje = `Hola ${nombrePaciente}, AyvarDent te recuerda que tienes una cita programada para el ${fechaCita}. ¡Te esperamos! 🦷✨`;
+        
+        // Limpiamos los espacios del teléfono y abrimos la pestaña
+        const telLimpio = telefonoPaciente.replace(/\s+/g, '');
+        const url = `https://wa.me/52${telLimpio}?text=${encodeURIComponent(mensaje)}`;
+        
+        window.open(url, '_blank');
+    } else {
+        // Si no tiene teléfono, usamos tu modal de avisos
+        mostrarAviso('Este paciente no tiene un número de teléfono registrado.', 'info');
+    }
+};
+
 async function cargarGestionCitas() {
     const token = localStorage.getItem('token');
     try {
@@ -646,14 +710,27 @@ async function cargarGestionCitas() {
         const colPendientes = document.getElementById('lista-pendientes');
         const colConfirmadas = document.getElementById('lista-confirmadas');
         const colCanceladas = document.getElementById('lista-canceladas');
+        const colRecordatorios = document.getElementById('lista-recordatorios');
 
         // Limpiar antes de cargar
-        [colPendientes, colConfirmadas, colCanceladas].forEach(c => { if(c) c.innerHTML = ''; });
+        [colPendientes, colConfirmadas, colCanceladas, colRecordatorios].forEach(c => { if(c) c.innerHTML = ''; });
+
+        // Obtener la fecha de hoy y mañana para filtrar recordatorios
+        const hoy = new Date();
+        const fechaManana = new Date();
+        fechaManana.setDate(hoy.getDate() + 1);
 
         citas.forEach(cita => {
             const nombre = cita.paciente?.usuario?.nombre || 'Paciente Desconocido';
-            const fecha = new Date(cita.fecha).toLocaleString();
+            const telefono = cita.telefono || 'Sin teléfono';
+            //const fecha = new Date(cita.fecha).toLocaleString();
+            const fechaCitaObj = new Date(cita.fecha);
+            const fecha = fechaCitaObj.toLocaleString();
             
+            const esParaManana = fechaCitaObj.getDate() === fechaManana.getDate() &&
+                                 fechaCitaObj.getMonth() === fechaManana.getMonth() &&
+                                 fechaCitaObj.getFullYear() === fechaManana.getFullYear();
+
             const div = document.createElement('div');
             div.className = `cita-item status-${cita.estado}`;
             
@@ -663,16 +740,39 @@ async function cargarGestionCitas() {
                 <small>${fecha}</small><br>
                 <p>${cita.motivo}</p>
                 <div class="botones-estado">
-                    ${cita.estado !== 'confirmada' ? `<button id="buttonC" onclick="cambiarStatusCita('${cita._id}', 'confirmada')" >✔</button>` : ''}
-                    ${cita.estado !== 'cancelada' ? `<button id="buttonCa" onclick="cambiarStatusCita('${cita._id}', 'cancelada')" >✖</button>` : ''}
-                    ${cita.estado !== 'pendiente' ? `<button id="buttonP" onclick="cambiarStatusCita('${cita._id}', 'pendiente')" >⟳</button>` : ''}
+                    ${cita.estado !== 'confirmada' ? `<button id="buttonC" onclick="cambiarStatusCita('${cita._id}', 'confirmada', '${telefono}', '${nombre}')" >✔</button>` : ''}
+                    ${cita.estado !== 'cancelada' ? `<button id="buttonCa" onclick="cambiarStatusCita('${cita._id}', 'cancelada', '${telefono}', '${nombre}')" >✖</button>` : ''}
+                    ${cita.estado !== 'pendiente' ? `<button id="buttonP" onclick="cambiarStatusCita('${cita._id}', 'pendiente', '${telefono}', '${nombre}')" >⟳</button>` : ''}
                 </div>
+
+                <!-- El botón de WhatsApp SOLO aparece si la cita está confirmada y es para mañana -->
+                ${(cita.estado === 'confirmada' && esParaManana) ? `
+                <div style="margin-top: 8px;">
+                    <button onclick="enviarRecordatorio('${telefono}', '${nombre}', '${fecha}')" style="background: #3498db; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; width: 100%; font-size: 0.9em;">
+                        💬 Enviar Recordatorio
+                    </button>
+                </div>
+                ` : ''}
             `;
 
             // Clasificar en la columna correspondiente
-            if (cita.estado === 'confirmada' && colConfirmadas) colConfirmadas.appendChild(div);
-            else if (cita.estado === 'cancelada' && colCanceladas) colCanceladas.appendChild(div);
-            else if (colPendientes) colPendientes.appendChild(div);
+            //if (cita.estado === 'confirmada' && colConfirmadas) colConfirmadas.appendChild(div);
+            //else if (cita.estado === 'cancelada' && colCanceladas) colCanceladas.appendChild(div);
+            //else if (colPendientes) colPendientes.appendChild(div);
+            if (cita.estado === 'cancelada' && colCanceladas) {
+                colCanceladas.appendChild(div);
+            } 
+            else if (cita.estado === 'pendiente' && colPendientes) {
+                colPendientes.appendChild(div);
+            } 
+            else if (cita.estado === 'confirmada') {
+                // Si está confirmada, decidimos en qué columna de las dos va a vivir hoy
+                if (esParaManana && colRecordatorios) {
+                    colRecordatorios.appendChild(div); // Va a la columna de recordatorios
+                } else if (colConfirmadas) {
+                    colConfirmadas.appendChild(div); // Se queda en confirmadas normales
+                }
+            }
         });
     } catch (error) {
         console.error("Error cargando citas:", error);
@@ -680,8 +780,27 @@ async function cargarGestionCitas() {
 }
 
 // Función para el cambio de estado
-window.cambiarStatusCita = async (id, nuevoEstado) => {
+window.cambiarStatusCita = async (id, nuevoEstado, telefonoPaciente, nombrePaciente) => {
     const token = localStorage.getItem('token');
+
+    // 1. ¡PRIMERO ABRIMOS WHATSAPP! (Así el navegador no lo bloquea)
+    if (telefonoPaciente && telefonoPaciente !== 'Sin telefono' && telefonoPaciente !== 'undefined') {
+        let mensaje = '';
+        if (nuevoEstado === 'confirmada') {
+            mensaje = `Hola ${nombrePaciente}, te confirmamos tu cita en AyvarDent. ¡Te esperamos! 🦷✨`;
+        } else if (nuevoEstado === 'cancelada') {
+            mensaje = `Hola ${nombrePaciente}, te informamos que tu cita en AyvarDent ha sido cancelada. Si deseas reagendar, estamos a tus órdenes.`;
+        }
+
+        if (mensaje !== '') {
+            const telLimpio = telefonoPaciente.replace(/\s+/g, '');
+            // Nota: Aquí dejamos el prefijo 52 para México
+            const url = `https://wa.me/52${telLimpio}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank'); 
+        }
+    }
+
+    // 2. DESPUÉS GUARDAMOS EL CAMBIO EN LA BASE DE DATOS
     try {
         const res = await fetch(`${API_URL}/citas/estado/${id}`, {
             method: 'PATCH',
@@ -693,7 +812,7 @@ window.cambiarStatusCita = async (id, nuevoEstado) => {
         });
 
         if (res.ok) {
-            cargarGestionCitas(); // Recargar para mover la tarjeta de columna
+            cargarGestionCitas(); // Recargamos visualmente las columnas
         }
     } catch (error) {
         console.error("Error al actualizar cita:", error);
