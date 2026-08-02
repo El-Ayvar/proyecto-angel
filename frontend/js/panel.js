@@ -1,5 +1,6 @@
 const API_URL = 'http://localhost:3000/api';
 let pacienteIdActual = null; 
+let tratamientosSesionActual = [];
 
 // ==========================================
 // 1. INICIALIZACIÓN Y SEGURIDAD
@@ -316,6 +317,8 @@ async function abrirExpediente(idPaciente) {
             if (typeof cargarTratamientosEnOdontograma === 'function') {
                 cargarTratamientosEnOdontograma(tratamientos || []);
             }
+
+            configurarSelectorSesionesTicket(tratamientos || []);
             
             // 4. Mostrar el panel y hacer scroll hacia él 
             document.getElementById('historial-pasado').style.display = 'flex';
@@ -777,6 +780,156 @@ async function cargarGestionCitas() {
     } catch (error) {
         console.error("Error cargando citas:", error);
     }
+}
+
+function obtenerClaveSesion(fecha) {
+    const fechaObj = new Date(fecha);
+    if (Number.isNaN(fechaObj.getTime())) return null;
+
+    const anio = fechaObj.getFullYear();
+    const mes = String(fechaObj.getMonth() + 1).padStart(2, '0');
+    const dia = String(fechaObj.getDate()).padStart(2, '0');
+    return `${anio}-${mes}-${dia}`;
+}
+
+function formatearEtiquetaSesion(fecha) {
+    const fechaObj = new Date(fecha);
+    if (Number.isNaN(fechaObj.getTime())) return 'Sesión sin fecha';
+
+    return fechaObj.toLocaleDateString('es-ES', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+}
+
+function configurarSelectorSesionesTicket(tratamientos) {
+    const selector = document.getElementById('selector-sesion-ticket');
+    if (!selector) return;
+
+    selector.innerHTML = '<option value="">Selecciona una sesión para cobrar</option>';
+    tratamientosSesionActual = [];
+
+    if (!Array.isArray(tratamientos) || tratamientos.length === 0) {
+        selector.disabled = true;
+        return;
+    }
+
+    const sesiones = new Map();
+
+    tratamientos.forEach(tratamiento => {
+        const clave = obtenerClaveSesion(tratamiento.createdAt || tratamiento.updatedAt || tratamiento.fecha);
+        if (!clave) return;
+
+        if (!sesiones.has(clave)) {
+            sesiones.set(clave, []);
+        }
+
+        sesiones.get(clave).push(tratamiento);
+    });
+
+    if (sesiones.size === 0) {
+        selector.disabled = true;
+        return;
+    }
+
+    const sesionesOrdenadas = Array.from(sesiones.entries()).sort(([a], [b]) => b.localeCompare(a));
+
+    sesionesOrdenadas.forEach(([clave, items]) => {
+        const option = document.createElement('option');
+        option.value = clave;
+        option.textContent = `Sesión ${formatearEtiquetaSesion(items[0].createdAt || items[0].updatedAt || items[0].fecha)} (${items.length} tratamiento${items.length > 1 ? 's' : ''})`;
+        selector.appendChild(option);
+    });
+
+    selector.disabled = false;
+    selector.value = sesionesOrdenadas[0][0];
+    tratamientosSesionActual = sesionesOrdenadas[0][1];
+
+    selector.onchange = () => {
+        const claveSeleccionada = selector.value;
+        const tratamientosSeleccionados = sesiones.get(claveSeleccionada) || [];
+        tratamientosSesionActual = tratamientosSeleccionados;
+    };
+}
+
+function generarTicketPDF(nombrePaciente, tratamientos, total) {
+    // Inicializamos la librería jsPDF
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // 1. Encabezado del Ticket
+    doc.setFontSize(22);
+    doc.setTextColor(44, 62, 80); // Color azul oscuro (como el de tu diseño)
+    doc.text("AyvarDent", 105, 20, { align: "center" });
+    
+    doc.setFontSize(14);
+    doc.setTextColor(100, 100, 100);
+    doc.text("Comprobante de Tratamiento", 105, 30, { align: "center" });
+    
+    // Línea separadora
+    doc.setLineWidth(0.5);
+    doc.line(20, 35, 190, 35);
+
+    // 2. Datos del Paciente y Fecha
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.text(`Paciente: ${nombrePaciente}`, 20, 50);
+    doc.text(`Fecha: ${new Date().toLocaleDateString()}`, 20, 60);
+
+    // 3. Desglose de Tratamientos
+    let ejeY = 80;
+    doc.setFont(undefined, 'bold');
+    doc.text("Procedimiento", 20, ejeY);
+    doc.text("Costo", 180, ejeY, { align: "right" });
+    
+    doc.setFont(undefined, 'normal');
+    ejeY += 10;
+
+    // Recorremos el arreglo de tratamientos para imprimirlos en el PDF
+    tratamientos.forEach(t => {
+        doc.text(t.nombre, 20, ejeY);
+        doc.text(`$${t.costo}`, 180, ejeY, { align: "right" });
+        ejeY += 10;
+    });
+
+    // 4. Total a Pagar
+    doc.line(20, ejeY, 190, ejeY); // Línea divisoria final
+    ejeY += 10;
+    
+    doc.setFontSize(14);
+    doc.setFont(undefined, 'bold');
+    doc.text("Total:", 140, ejeY);
+    doc.text(`$${total}`, 180, ejeY, { align: "right" });
+
+    // 5. Mensaje de agradecimiento
+    ejeY += 20;
+    doc.setFontSize(10);
+    doc.setFont(undefined, 'italic');
+    doc.text("Fuiste atendido por el odontologo, Jose Angel, ¡Gracias por confiar tu sonrisa en AyvarDent!", 105, ejeY, { align: "center" });
+
+    // 6. Descargar el archivo
+    // Limpiamos el nombre del paciente para que el archivo no tenga espacios raros
+    const nombreArchivo = `Ticket_${nombrePaciente.replace(/\s+/g, '_')}.pdf`;
+    doc.save(nombreArchivo);
+}
+
+function cobrarYGenerarTicket() {
+    const nombrePaciente = document.getElementById('nombre-paciente-seleccionado')?.innerText?.trim() || 'Paciente';
+
+    if (!Array.isArray(tratamientosSesionActual) || tratamientosSesionActual.length === 0) {
+        alert('No hay tratamientos registrados para cobrar en esta sesión. Primero selecciona un paciente y registra o carga una sesión de tratamientos.');
+        return;
+    }
+
+    const tratamientosRealizados = tratamientosSesionActual.map(tratamiento => ({
+        nombre: tratamiento.nombre,
+        costo: Number(tratamiento.costo || 0)
+    }));
+
+    const totalPagar = tratamientosRealizados.reduce((acumulado, tratamiento) => acumulado + tratamiento.costo, 0);
+
+    generarTicketPDF(nombrePaciente, tratamientosRealizados, totalPagar);
 }
 
 // Función para el cambio de estado

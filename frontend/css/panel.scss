@@ -651,6 +651,47 @@ main {
         }
     }
 
+    #box-cobrar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 3vw 0 0vw 0;
+        padding: 2vw;
+
+        label {
+            font-size: 3vw;
+            margin:2vw;
+            background-color: white;
+            padding: 1vw 2vw;
+            border-radius: 8px;
+        }
+
+        #selector-sesion-ticket {
+            font-size: 2.5vw;
+            padding: 1vw;
+            border-radius: 8px;
+            border: 1px solid #b2d8f7;
+            background-color: #f7fbff;
+            color: rgba(0, 0, 0, 0.919);
+            width: 45vw;
+        }
+
+        button {
+            font-size: 3.5vw;
+            padding: 2vw;
+            border-radius: 8px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #2980b9;
+            }
+        }
+    }
+
     #registrar-usuarios {
         @include box-column();
         margin: 3vw 0 0 0;
@@ -1036,6 +1077,20 @@ main {
          #aviso-modal .modal-message {
              font-size: 3.5vw;
         }
+        #box-cobrar {
+            label {
+                font-size: 1.5vw;
+                margin: 1vw;
+            }
+            #selector-sesion-ticket {
+                font-size: 1.5vw;
+            }
+            button {
+                font-size: 1.5vw;
+                margin: 1vw;
+                padding: 1vw 2vw;
+            }
+        }
         .logout {
             font-size: 1.5vw;
         }
@@ -1245,6 +1300,21 @@ main {
                         width: 3vw;
                     }
                 }
+            }
+        }
+
+        #box-cobrar {
+            label {
+                font-size: 1vw;
+                margin: 0.5vw;
+            }
+            #selector-sesion-ticket {
+                font-size: 1vw;
+            }
+            button {
+                font-size: 1vw;
+                margin: 0.5vw;
+                padding: 0.5vw 1vw;
             }
         }
 
