@@ -12,14 +12,14 @@ html, body {
 }
 
 button {
-    @include boton();
+  @include boton();
 }
 
 #box_boton {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
 }
 
 footer {
@@ -106,63 +106,165 @@ main {
     }
 
     #form-cita {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 100%;
-
-      label {
-        color: #2980b9;
-        font-size: 2.5vw;
-        margin: 2vw 0 2vw 0;
-      }
-
-      legend {
-        align-items: center;
-        color: #2980b9;
         display: flex;
-        font-size: 2.5vw;
-        font-weight: bold;
-        justify-content: center;
-        margin: 3vw 0 1vw 0;
-      }
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
 
-      select {
-        color: rgba(0, 0, 0, 0.518);
-      }
+        label {
+          color: #2980b9;
+          font-size: 2.5vw;
+          margin: 2vw 0 2vw 0;
+        }
 
-      input {
-        color: rgba(0, 0, 0, 0.518);
-      }
+        legend {
+          align-items: center;
+          color: #2980b9;
+          display: flex;
+          font-size: 2.5vw;
+          font-weight: bold;
+          justify-content: center;
+          margin: 3vw 0 1vw 0;
+        }
 
-      .optionCita {
-        margin: 1vw 0 1vw 0;
-        padding: 1vw 2vw;
-        border-radius: 8px;
-        border: 1px solid #b2d8f7;
-        font-size: 2.5vw;
-        background: #f7fbff;
-        transition: border-color 0.2s;
-        &:focus {
-          border-color: #3498db;
-          outline: none;
+        select {
+          color: rgba(0, 0, 0, 0.518);
+        }
+
+        input {
+          color: rgba(0, 0, 0, 0.518);
+        }
+
+        .optionCita {
+          margin: 1vw 0 1vw 0;
+          padding: 1vw 2vw;
+          border-radius: 8px;
+          border: 1px solid #b2d8f7;
+          font-size: 2.5vw;
+          background: #f7fbff;
+          transition: border-color 0.2s;
+          &:focus {
+            border-color: #3498db;
+            outline: none;
+          }
+        }
+
+        button {
+          background: linear-gradient(90deg, #3498db 0%, #6dd5fa 100%);
+          border: none;
+          border-radius: 8px;
+          color: white;
+          font-weight: bold;
+          font-size: 2.5vw;
+          margin: 3vw 0 0 0;
+          padding: 1vw 0;
+          cursor: pointer;
+          box-shadow: 0 2px 8px rgba(52,152,219,0.10);
+          transition: background 0.2s;
+          &:hover {
+            background: linear-gradient(90deg, #2980b9 0%, #3498db 100%);
+          }
+        }
+
+        #selector-horas {
+          display: none;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin: 10px 0 15px;
+        
+        &.visible {
+          align-items: center;
+          border: 1px solid #b2d8f7;
+          display: flex;
+          height: 170px;
+          justify-content: center;
+          overflow-y: auto;
         }
       }
 
-      button {
-        background: linear-gradient(90deg, #3498db 0%, #6dd5fa 100%);
-        border: none;
+      .hora-slot {
+        background: #f7fbff;
+        border: 1px solid #b2d8f7;
         border-radius: 8px;
-        color: white;
-        font-weight: bold;
-        font-size: 2.5vw;
-        margin: 3vw 0 0 0;
-        padding: 1vw 0;
+        color: #2c3e50;
         cursor: pointer;
-        box-shadow: 0 2px 8px rgba(52,152,219,0.10);
-        transition: background 0.2s;
-        &:hover {
-          background: linear-gradient(90deg, #2980b9 0%, #3498db 100%);
+        font-size: 0.95rem;
+        min-width: 92px;
+        padding: 8px 10px;
+      
+        &.disponible {
+          background: #dff6e8;
+          border-color: #2ecc71;
+          color: #1e7f45;
+          font-size: 2.5vw;
+        }
+      
+        &.ocupada {
+          background: #fce4e4;
+          border-color: #e74c3c;
+          color: #b71c1c;
+          cursor: not-allowed;
+          opacity: 0.9;
+          font-size: 2.5vw;
+        }
+      
+        &.cerrada {
+          background: #ececec;
+          border-color: #95a5a6;
+          color: #7f8c8d;
+          cursor: not-allowed;
+        }
+      
+        &.selected {
+          outline: 2px solid #2c3e50;
+          transform: scale(1.02);
+        }
+      
+        &:disabled {
+          opacity: 0.85;
+        }
+      }
+
+      #selector-horas {
+        margin: 10px 0 15px; 
+        display: none;
+      }
+
+      #leyenda-horas {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        font-size: 2.5vw;
+        margin: 1vw;
+        justify-content: center;
+
+        .DOC {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+
+          #disp {
+            width: 3vw;
+            height: 3vw;
+            display: inline-block;
+            background: #2ecc71;
+            border-radius: 2px;
+          }
+          #ocup {
+            width: 3vw;
+            height: 3vw;
+            display: inline-block;
+            background: #e74c3c;
+            border-radius: 2px;
+          }
+          #cerr {
+            width: 3vw;
+            height: 3vw;
+            display: inline-block;
+            background: #95a5a6;
+            border-radius: 2px;
+          }
         }
       }
     }
@@ -210,6 +312,23 @@ main {
           align-items: center;
           font-size: 2vw;
           width: 40vw;
+        }
+
+        #selector-horas {
+          .hora-slot {
+            font-size: 1.5vw;
+            width: 15vw;
+          }
+        }
+
+        #leyenda-horas {
+          font-size: 1.5vw;
+          .DOC {
+            #disp, #ocup, #cerr {
+              width: 2vw;
+              height: 2vw;
+            }
+          }
         }
       }
     }
@@ -259,6 +378,25 @@ main {
             border: 1px solid #b2d8f7;
             background: #f7fbff;
             padding: 1vw;
+        }
+
+        #selector-horas {
+          margin: 1vw 0 1vw 0;
+          width: 35vw;
+          .hora-slot {
+            font-size: 1vw;
+            margin: 0 1vw 0 1vw;
+            width: 8vw;
+          }
+        }
+        #leyenda-horas {
+          font-size: 1vw;
+          .DOC {
+            #disp, #ocup, #cerr {
+              width: 1.5vw;
+              height: 1.5vw;
+            }
+          }
         }
       }
     }

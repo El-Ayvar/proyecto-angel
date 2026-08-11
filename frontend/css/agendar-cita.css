@@ -387,6 +387,96 @@ main #agendar-cita-section #form-cita button {
 main #agendar-cita-section #form-cita button:hover {
   background: linear-gradient(90deg, #2980b9 0%, #3498db 100%);
 }
+main #agendar-cita-section #form-cita #selector-horas {
+  display: none;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 15px;
+}
+main #agendar-cita-section #form-cita #selector-horas.visible {
+  align-items: center;
+  border: 1px solid #b2d8f7;
+  display: flex;
+  height: 170px;
+  justify-content: center;
+  overflow-y: auto;
+}
+main #agendar-cita-section #form-cita .hora-slot {
+  background: #f7fbff;
+  border: 1px solid #b2d8f7;
+  border-radius: 8px;
+  color: #2c3e50;
+  cursor: pointer;
+  font-size: 0.95rem;
+  min-width: 92px;
+  padding: 8px 10px;
+}
+main #agendar-cita-section #form-cita .hora-slot.disponible {
+  background: #dff6e8;
+  border-color: #2ecc71;
+  color: #1e7f45;
+  font-size: 2.5vw;
+}
+main #agendar-cita-section #form-cita .hora-slot.ocupada {
+  background: #fce4e4;
+  border-color: #e74c3c;
+  color: #b71c1c;
+  cursor: not-allowed;
+  opacity: 0.9;
+  font-size: 2.5vw;
+}
+main #agendar-cita-section #form-cita .hora-slot.cerrada {
+  background: #ececec;
+  border-color: #95a5a6;
+  color: #7f8c8d;
+  cursor: not-allowed;
+}
+main #agendar-cita-section #form-cita .hora-slot.selected {
+  outline: 2px solid #2c3e50;
+  transform: scale(1.02);
+}
+main #agendar-cita-section #form-cita .hora-slot:disabled {
+  opacity: 0.85;
+}
+main #agendar-cita-section #form-cita #selector-horas {
+  margin: 10px 0 15px;
+  display: none;
+}
+main #agendar-cita-section #form-cita #leyenda-horas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 2.5vw;
+  margin: 1vw;
+  justify-content: center;
+}
+main #agendar-cita-section #form-cita #leyenda-horas .DOC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+main #agendar-cita-section #form-cita #leyenda-horas .DOC #disp {
+  width: 3vw;
+  height: 3vw;
+  display: inline-block;
+  background: #2ecc71;
+  border-radius: 2px;
+}
+main #agendar-cita-section #form-cita #leyenda-horas .DOC #ocup {
+  width: 3vw;
+  height: 3vw;
+  display: inline-block;
+  background: #e74c3c;
+  border-radius: 2px;
+}
+main #agendar-cita-section #form-cita #leyenda-horas .DOC #cerr {
+  width: 3vw;
+  height: 3vw;
+  display: inline-block;
+  background: #95a5a6;
+  border-radius: 2px;
+}
 main #agendar-cita-section #mensaje-cita {
   font-size: 1.3vw;
   margin: 2vw 0 2vw 0;
@@ -424,6 +514,17 @@ main #agendar-cita-section #mensaje-cita {
     align-items: center;
     font-size: 2vw;
     width: 40vw;
+  }
+  main #agendar-cita-section #form-cita #selector-horas .hora-slot {
+    font-size: 1.5vw;
+    width: 15vw;
+  }
+  main #agendar-cita-section #form-cita #leyenda-horas {
+    font-size: 1.5vw;
+  }
+  main #agendar-cita-section #form-cita #leyenda-horas .DOC #disp, main #agendar-cita-section #form-cita #leyenda-horas .DOC #ocup, main #agendar-cita-section #form-cita #leyenda-horas .DOC #cerr {
+    width: 2vw;
+    height: 2vw;
   }
 }
 @media (min-width: 769.98px) {
@@ -463,6 +564,22 @@ main #agendar-cita-section #mensaje-cita {
     border: 1px solid #b2d8f7;
     background: #f7fbff;
     padding: 1vw;
+  }
+  main #agendar-cita-section #form-cita #selector-horas {
+    margin: 1vw 0 1vw 0;
+    width: 35vw;
+  }
+  main #agendar-cita-section #form-cita #selector-horas .hora-slot {
+    font-size: 1vw;
+    margin: 0 1vw 0 1vw;
+    width: 8vw;
+  }
+  main #agendar-cita-section #form-cita #leyenda-horas {
+    font-size: 1vw;
+  }
+  main #agendar-cita-section #form-cita #leyenda-horas .DOC #disp, main #agendar-cita-section #form-cita #leyenda-horas .DOC #ocup, main #agendar-cita-section #form-cita #leyenda-horas .DOC #cerr {
+    width: 1.5vw;
+    height: 1.5vw;
   }
   footer {
     margin: 0vw;

@@ -17,6 +17,9 @@ router.get('/confirmar/:id', citaController.confirmarCitaDesdeCorreo);
 // ruta para que doctor actualice estado de cita
 router.patch('/estado/:id', [auth, verificarRol('odontologo', 'admin', 'asistente')], citaController.actualizarEstadoCita);
 
+// ruta para consultar disponibilidad de horas del cliente
+router.get('/disponibilidad', auth, citaController.obtenerDisponibilidadPorFecha);
+
 // ruta para que doctor vea todas las citas
 router.get('/', [auth, verificarRol('odontologo', 'admin', 'asistente')], citaController.obtenerCitas);
 

@@ -96,6 +96,97 @@ async function actualizarPerfilConDatosMedicos(token, tipoSangre, alergias, enfe
     }
 }
 
+let horasOcupadasPorFecha = [];
+
+function generarHorasDisponibles() {
+    const inicio = 7;
+    const fin = 20;
+    const duracionMinutos = 60;
+    const horas = [];
+
+    for (let hora = inicio; hora < fin; hora += duracionMinutos / 60) {
+        const hh = String(hora).padStart(2, '0');
+        horas.push(`${hh}:00`);
+    }
+
+    return horas;
+}
+
+function esHoraCerrada(hora) {
+    const [hh, mm] = hora.split(':').map(Number);
+    const minutos = hh * 60 + mm;
+    return minutos < 7 * 60 || minutos > 19 * 60;
+}
+
+function formatearHora(hora) {
+    const [hh, mm] = hora.split(':').map(Number);
+    const periodo = hh >= 12 ? 'PM' : 'AM';
+    const hora12 = hh % 12 === 0 ? 12 : hh % 12;
+    return `${hora12}:${String(mm).padStart(2, '0')} ${periodo}`;
+}
+
+async function cargarDisponibilidadHoras() {
+    const fechaInput = document.getElementById('fecha');
+    const selectorHoras = document.getElementById('selector-horas');
+    const horaInput = document.getElementById('hora');
+    const mensajeDiv = document.getElementById('mensaje-cita');
+
+    if (!fechaInput || !selectorHoras || !horaInput) return;
+
+    const fechaSeleccionada = fechaInput.value;
+    selectorHoras.innerHTML = '';
+    selectorHoras.style.display = 'none';
+    selectorHoras.classList.remove('visible');
+    horaInput.value = '';
+
+    if (!fechaSeleccionada) return;
+
+    try {
+        const token = localStorage.getItem('token');
+        const res = await fetch(`${API_URL}/citas/disponibilidad?fecha=${fechaSeleccionada}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (!res.ok) return;
+
+        const data = await res.json();
+        horasOcupadasPorFecha = data.horasOcupadas || [];
+
+        const horas = generarHorasDisponibles();
+        const botones = [];
+
+        horas.forEach(hora => {
+            const cerrada = esHoraCerrada(hora);
+            const ocupado = horasOcupadasPorFecha.includes(hora);
+            const estado = cerrada ? 'cerrada' : (ocupado ? 'ocupada' : 'disponible');
+
+            const boton = document.createElement('button');
+            boton.type = 'button';
+            boton.className = `hora-slot ${estado}`;
+            boton.textContent = formatearHora(hora);
+            boton.disabled = estado !== 'disponible';
+            boton.dataset.hora = hora;
+            boton.addEventListener('click', () => {
+                if (estado !== 'disponible') return;
+                horaInput.value = hora;
+                document.querySelectorAll('.hora-slot').forEach(btn => btn.classList.remove('selected'));
+                boton.classList.add('selected');
+                if (mensajeDiv) {
+                    mensajeDiv.textContent = '';
+                    mensajeDiv.className = '';
+                }
+            });
+            botones.push(boton);
+        });
+
+        selectorHoras.append(...botones);
+        selectorHoras.style.display = 'flex';
+        selectorHoras.classList.add('visible');
+    } catch (error) {
+        console.error('Error cargando disponibilidad:', error);
+    }
+}
+
 // cuando el documento está listo
 document.addEventListener('DOMContentLoaded', () => {
     console.log('agendarCita.js cargado correctamente');
@@ -107,6 +198,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const mensajeDiv = document.getElementById('mensaje-cita'); // elemento para mensajes
 
     const horaInput = document.getElementById('hora');
+    const fechaInput = document.getElementById('fecha');
+
+    if (fechaInput) {
+        fechaInput.addEventListener('change', cargarDisponibilidadHoras);
+    }
 
     if (horaInput) {
         horaInput.addEventListener('change', () => {
@@ -155,6 +251,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (hora < '07:00' || hora > '20:00') {
             mensajeDiv.className = 'error';
             mensajeDiv.textContent = '❌ La hora seleccionada debe estar entre las 7:00 AM y las 8:00 PM.';
+            return;
+        }
+
+        if (horasOcupadasPorFecha.includes(hora)) {
+            mensajeDiv.className = 'error';
+            mensajeDiv.textContent = '❌ Esa hora ya tiene una cita confirmada. Selecciona otra.';
+            return;
+        }
+
+        if (esHoraCerrada(hora)) {
+            mensajeDiv.className = 'error';
+            mensajeDiv.textContent = '❌ Esa hora está fuera del horario de atención.';
             return;
         }
 

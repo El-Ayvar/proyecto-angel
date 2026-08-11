@@ -33,11 +33,20 @@ exports.crearCita = async (req, res) => {
             odontologo = primerDoctor._id;
         }
 
-        // Verificación de disponibilidad
-        const citaOcupada = await Cita.findOne({ fecha, odontologo });
+        // Verificación de disponibilidad para bloques de 1 hora
+        const fechaInicio = new Date(fecha);
+        const fechaFin = new Date(fechaInicio);
+        fechaFin.setHours(fechaInicio.getHours() + 1);
+
+        const citaOcupada = await Cita.findOne({
+            odontologo,
+            estado: 'confirmada',
+            fecha: { $lt: fechaFin, $gte: fechaInicio }
+        });
+
         if (citaOcupada) {
             return res.status(400).json({ 
-                msg: "El odontólogo ya tiene una cita programada para esa hora." 
+                msg: "Ese horario ya está ocupado por una cita confirmada." 
             });
         }
 
@@ -167,6 +176,39 @@ exports.obtenerCitas = async (req, res) => {
     } catch (error) {
         console.error("Error en obtenerCitas:", error);
         res.status(500).json({ msg: "Error al obtener las citas" });
+    }
+};
+
+// 3. Obtener horas ocupadas de un día para la agenda del cliente
+exports.obtenerDisponibilidadPorFecha = async (req, res) => {
+    try {
+        const { fecha } = req.query;
+
+        if (!fecha) {
+            return res.status(400).json({ msg: 'Se requiere una fecha para consultar disponibilidad' });
+        }
+
+        const [anio, mes, dia] = fecha.split('-').map(Number);
+        const inicioDia = new Date(anio, mes - 1, dia, 0, 0, 0, 0);
+        const finDia = new Date(anio, mes - 1, dia, 23, 59, 59, 999);
+
+        const citasConfirmadas = await Cita.find({
+            estado: 'confirmada',
+            fecha: { $gte: inicioDia, $lte: finDia }
+        }).sort({ fecha: 1 });
+
+        const horasOcupadas = citasConfirmadas.map(cita => {
+            const fechaCita = new Date(cita.fecha);
+            return `${String(fechaCita.getHours()).padStart(2, '0')}:00`;
+        });
+
+        res.json({
+            fecha,
+            horasOcupadas: [...new Set(horasOcupadas)]
+        });
+    } catch (error) {
+        console.error('Error obteniendo disponibilidad:', error);
+        res.status(500).json({ msg: 'Error al consultar disponibilidad' });
     }
 };
 

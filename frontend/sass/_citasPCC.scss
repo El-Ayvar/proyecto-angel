@@ -189,15 +189,33 @@
             #infoP {
                 background: #f9f9f9;
                 overflow-y: auto;
+                height: 50vh;
             }
             #infoCo {
                 background: #e8f5e9;
                 overflow-y: auto;
+                height: 50vh;
             }
             #infoCa {
                 background: #ffebee;
                 aspect-ratio: 1/1;
                 overflow-y: auto;
+                height: 50vh;
+            }
+            #infoR {
+                height: 50vh;
+                #lista-recordatorios {
+                    #buttonR {
+                        background: #3498db; 
+                        color: white; 
+                        border: none; 
+                        cursor: pointer; 
+                        border-radius: 4px; 
+                        margin: 2vw 0 0 0;
+                        width: 10vw;
+                        font-size: 1vw;
+                    }
+                }
             }
             .infoCitasPCC {
                 align-items: center;
