@@ -101,7 +101,12 @@ exports.registrarPaciente = async (req, res) => {
         res.status(201).json({
             msg: "Usuario registrado con éxito",
             token,
-            usuario: { nombre: nuevoUsuario.nombre, email: nuevoUsuario.email },
+            usuario: {
+                id: nuevoUsuario._id,
+                nombre: nuevoUsuario.nombre,
+                email: nuevoUsuario.email,
+                rol: nuevoUsuario.rol
+            },
             rol: nuevoUsuario.rol
         });
 

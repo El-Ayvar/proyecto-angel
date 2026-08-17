@@ -64,13 +64,23 @@ document.getElementById('formRegistro').addEventListener('submit', async (e) => 
             mensajeDiv.classList.add('success');
             mensajeDiv.textContent = "✅ ¡Registro exitoso! Iniciando sesión...";
 
-            // guardamos token para mantener sesión abierta
+            // guardamos token y usuario para mantener sesión abierta
             localStorage.setItem('token', data.token);
+            localStorage.setItem('usuario', JSON.stringify(data.usuario));
+
+            if (typeof actualizarVisibilidadMenus === 'function') {
+                actualizarVisibilidadMenus();
+            }
 
             // redirigir al perfil del paciente tras un par de segundos
             setTimeout(() => {
-                window.location.href = 'perfil.html';
-            }, 2000);
+                const rol = data.usuario?.rol;
+                if (rol === 'admin' || rol === 'odontologo') {
+                    window.location.href = 'panel.html';
+                } else {
+                    window.location.href = 'perfil.html';
+                }
+            }, 1500);
 
         } else {
             // mensaje de error provisto por el servidor
