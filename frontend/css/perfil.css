@@ -147,7 +147,7 @@ footer {
   }
   footer #box_ubicacion #maps {
     height: 40vh;
-    width: 90vw;
+    width: 70vw;
   }
   footer #box_ubicacion iframe {
     aspect-ratio: 15/7;
