@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const tratamientoController = require('../controllers/tratamientoController');
+const tratamientoController = require('../controllers/tratamientocontroller');
 const auth = require('../middleware/authMiddleware');
 const verificarRol = require('../middleware/rolMiddleware');
 
