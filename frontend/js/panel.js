@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://proyecto-angel.onrender.com/api';
 let pacienteIdActual = null; 
 let tratamientosSesionActual = [];
 

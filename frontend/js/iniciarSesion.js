@@ -1,5 +1,5 @@
 // URL base del backend; modifica si cambias la dirección o el puerto
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://proyecto-angel.onrender.com/api';
 
 // capturamos el formulario de inicio de sesión y le agregamos un "submit" listener
 // para controlar el envío con JavaScript en lugar de permitir que el navegador

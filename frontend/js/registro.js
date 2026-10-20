@@ -1,5 +1,5 @@
 // URL de la API utilizada en este módulo; ajústala si cambias de entorno
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://proyecto-angel.onrender.com/api';
 
 // añadimos listener al formulario de registro para manejarlo con JS
 document.getElementById('formRegistro').addEventListener('submit', async (e) => {

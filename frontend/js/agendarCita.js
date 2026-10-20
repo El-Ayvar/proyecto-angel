@@ -1,5 +1,5 @@
 // dirección base de la API que se usa en todas las peticiones
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://proyecto-angel.onrender.com/api';
 
 // función que carga datos del perfil cuando se abre la página
 async function cargarDatosDelPerfil() {

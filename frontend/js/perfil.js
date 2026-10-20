@@ -1,5 +1,5 @@
 // URL base de la API que se usa en este script
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://proyecto-angel.onrender.com/api';
 
 // cuando el DOM está listo, verificamos sesión y mostramos el perfil
 document.addEventListener('DOMContentLoaded', async () => {
